@@ -11,5 +11,3 @@
 
 look up the `/index.tsx` for the sandbox component
 ![image](https://user-images.githubusercontent.com/97293373/148636004-ada6741e-9eb0-46fe-aedc-881f9484d492.png)
-
-happy hacking✨
