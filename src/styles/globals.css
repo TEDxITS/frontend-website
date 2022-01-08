@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* #region  /**=========== Primary Color =========== */
+  /* /generated from https://colour-palette-generator.azurewebsites.net with  #eb5d37 */
+  --tw-clr-primary-50: 253, 238, 235;
+  --tw-clr-primary-100: 250, 214, 205;
+  --tw-clr-primary-200: 245, 174, 155;
+  --tw-clr-primary-300: 240, 133, 105;
+  --tw-clr-primary-400: 238, 117, 85;
+  --tw-clr-primary-500: 235, 93, 35;
+  --tw-clr-primary-600: 199, 79, 46;
+  --tw-clr-primary-700: 176, 69, 41;
+  --tw-clr-primary-800: 117, 46, 27;
+  --tw-clr-primary-900: 58, 23, 13;
+  --clr-primary-50: rgb(var(--tw-clr-primary-50)); /* #fdeeeb */
+  --clr-primary-100: rgb(var(--tw-clr-primary-100)); /* #fad6cd */
+  --clr-primary-200: rgb(var(--tw-clr-primary-200)); /* #f5ae9b */
+  --clr-primary-300: rgb(var(--tw-clr-primary-300)); /* #f08569 */
+  --clr-primary-400: rgb(var(--tw-clr-primary-400)); /* #ee7555 */
+  --clr-primary-500: rgb(var(--tw-clr-primary-500)); /* #eb5d37 */
+  --clr-primary-600: rgb(var(--tw-clr-primary-600)); /* #c74f2e */
+  --clr-primary-700: rgb(var(--tw-clr-primary-700)); /* #b04529 */
+  --clr-primary-800: rgb(var(--tw-clr-primary-800)); /* #752e1b */
+  --clr-primary-900: rgb(var(--tw-clr-primary-900)); /* #3a170d */
+  /* #endregion  /**======== Primary Color =========== */
+}
+
+@layer base {
+  /* #region  /**=========== Fivo Sans Modern =========== */
+  @font-face {
+    font-family: 'FivoSansModern';
+    font-style: normal;
+    font-weight: 400;
+    font-display: optional;
+    src: url('/fonts/FivoSansModern/FivoSansModern-Regular.woff2')
+      format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: 'Fivo Sans Modern';
+    font-style: normal;
+    font-weight: 500;
+    font-display: optional;
+    src: url('/fonts/FivoSansModern/FivoSansModern-Medium.woff2')
+      format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: 'Fivo Sans Modern';
+    font-style: normal;
+    font-weight: 700;
+    font-display: optional;
+    src: url('/fonts/FivoSansModern/FivoSansModern-Bold.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: 'Fivo Sans Modern';
+    font-style: normal;
+    font-weight: 800;
+    font-display: optional;
+    src: url('/fonts/FivoSansModern/FivoSansModern-Heavy.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: 'Fivo Sans Modern';
+    font-style: normal;
+    font-weight: 900;
+    font-display: optional;
+    src: url('/fonts/FivoSansModern/FivoSansModern-ExtraBlack.woff2')
+      format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+  /* #endregion  /**======== Fivo Sans Modern =========== */
+
+  /* #region  /**=========== Additional Font =========== */
+  @font-face {
+    font-family: 'Luckiest Guy';
+    font-style: normal;
+    font-weight: 400;
+    font-display: optional;
+    src: url('/fonts/LuckiestGuy/LuckiestGuy-Regular.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+
+  @font-face {
+    font-family: 'Pilow Lava';
+    font-style: normal;
+    font-weight: 400;
+    font-display: optional;
+    src: url('/fonts/PilowLava/PilowLava-Regular.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: 'Sympathizing';
+    font-style: normal;
+    font-weight: 400;
+    font-display: optional;
+    src: url('/fonts/Sympathizing/Sympathizing-Regular.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+  /* #endregion  /**======== Additional Font =========== */
+
+  .cursor-newtab {
+    cursor: url('/images/new-tab.png') 10 10, pointer;
+  }
+
+  /* #region  /**=========== Typography =========== */
+  h1 {
+    @apply font-black text-2xl md:text-4xl;
+  }
+
+  h2 {
+    @apply font-bold text-xl md:text-3xl;
+  }
+
+  h3 {
+    @apply font-bold text-lg md:text-2xl;
+  }
+
+  h4 {
+    @apply font-bold text-base md:text-lg;
+  }
+
+  body {
+    @apply text-sm md:text-base;
+  }
+  /* #endregion  /**======== Typography =========== */
+
+  .layout {
+    /* 1100px */
+    max-width: 68.75rem;
+    @apply mx-auto w-11/12;
+  }
+
+  .bg-dark a.custom-link {
+    @apply border-gray-200 hover:border-gray-200/0;
+  }
+
+  /* Class to adjust with sticky footer */
+  .min-h-main {
+    @apply min-h-[calc(100vh-56px)];
+  }
+}
+
+@layer utilities {
+  .animated-underline {
+    background-image: linear-gradient(#33333300, #33333300),
+      linear-gradient(to right, var(--clr-primary-400), var(--clr-primary-500));
+    background-size: 100% 2px, 0 2px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .animated-underline {
+      transition: 0.3s ease;
+      transition-property: background-size, color, background-color,
+        border-color;
+    }
+  }
+  .animated-underline:hover,
+  .animated-underline:focus-visible {
+    background-size: 0 2px, 100% 2px;
+  }
+}
+
+/* #region  /**=========== Custom Scrollbar =========== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--tw-clr-primary-100);
+}
+::-webkit-scrollbar-thumb {
+  background: #eb5d37;
+  opacity: 0.5;
+  border: 1px solid #fdeeeb;
+  border-radius: 4px;
+}
+/* #endregion  /**======== Custom Scrollbar =========== */
