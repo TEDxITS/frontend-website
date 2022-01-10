@@ -77,11 +77,11 @@
   }
 
   @font-face {
-    font-family: 'Pilow Lava';
+    font-family: 'Pilowlava';
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('/fonts/PilowLava/PilowLava-Regular.otf');
+    src: url('/fonts/PilowLava/Pilowlava-Regular.otf');
   }
   @font-face {
     font-family: 'Sympathizing';

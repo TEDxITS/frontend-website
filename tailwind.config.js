@@ -15,7 +15,7 @@ module.exports = {
       fontFamily: {
         fivo: ['Fivo Sans Modern'],
         lucki: ['Luckiest Guy'],
-        pilow: ['Pilow Lava'],
+        pilow: ['Pilowlava'],
         sympath: ['Sympathizing'],
       },
       colors: {
