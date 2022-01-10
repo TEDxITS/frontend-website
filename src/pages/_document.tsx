@@ -19,59 +19,51 @@ class MyDocument extends Document {
         <Head>
           <link
             rel='preload'
-            href='/fonts/FivoSansModern/FivoSansModern-Regular.woff2'
+            href='/fonts/FivoSansModern/FivoSansModern-Regular.ttf'
             as='font'
-            type='font/woff2'
-            crossOrigin='anonymous'
+            crossOrigin=''
           />
           <link
             rel='preload'
-            href='/fonts/FivoSansModern/FivoSansModern-Medium.woff2'
+            href='/fonts/FivoSansModern/FivoSansModern-Medium.ttf'
             as='font'
-            type='font/woff2'
-            crossOrigin='anonymous'
+            crossOrigin=''
           />
           <link
             rel='preload'
-            href='/fonts/FivoSansModern/FivoSansModern-Bold.woff2'
+            href='/fonts/FivoSansModern/FivoSansModern-Bold.ttf'
             as='font'
-            type='font/woff2'
-            crossOrigin='anonymous'
+            crossOrigin=''
           />
           <link
             rel='preload'
-            href='/fonts/FivoSansModern/FivoSansModern-Heavy.woff2'
+            href='/fonts/FivoSansModern/FivoSansModern-Heavy.ttf'
             as='font'
-            type='font/woff2'
-            crossOrigin='anonymous'
+            crossOrigin=''
           />
           <link
             rel='preload'
-            href='/fonts/FivoSansModern/FivoSansModern-ExtraBlack.woff2'
+            href='/fonts/FivoSansModern/FivoSansModern-ExtraBlack.ttf'
             as='font'
-            type='font/woff2'
-            crossOrigin='anonymous'
+            crossOrigin=''
           />
           <link
             rel='preload'
-            href='/fonts/LuckiestGuy/LuckiestGuy-Regular.woff2'
+            href='/fonts/LuckiestGuy/LuckiestGuy-Regular.ttf'
             as='font'
-            type='font/woff2'
-            crossOrigin='anonymous'
+            crossOrigin=''
           />
           <link
             rel='preload'
-            href='/fonts/PilowLava/PilowLava-Regular.woff2'
+            href='/fonts/PilowLava/Pilowlava-Regular.otf'
             as='font'
-            type='font/woff2'
-            crossOrigin='anonymous'
+            crossOrigin=''
           />
           <link
             rel='preload'
-            href='/fonts/Sympathizing/Sympathizing-Regular.woff2'
+            href='/fonts/Sympathizing/Sympathizing.ttf'
             as='font'
-            type='font/woff2'
-            crossOrigin='anonymous'
+            crossOrigin=''
           />
         </Head>
         <body>
