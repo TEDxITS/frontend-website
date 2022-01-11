@@ -5,26 +5,26 @@
 :root {
   /* #region  /**=========== Primary Color =========== */
   /* /generated from https://colour-palette-generator.azurewebsites.net with  #eb5d37 */
-  --tw-clr-primary-50: 253, 238, 235;
-  --tw-clr-primary-100: 250, 214, 205;
-  --tw-clr-primary-200: 245, 174, 155;
-  --tw-clr-primary-300: 240, 133, 105;
-  --tw-clr-primary-400: 238, 117, 85;
-  --tw-clr-primary-500: 235, 93, 35;
-  --tw-clr-primary-600: 199, 79, 46;
-  --tw-clr-primary-700: 176, 69, 41;
-  --tw-clr-primary-800: 117, 46, 27;
-  --tw-clr-primary-900: 58, 23, 13;
-  --clr-primary-50: rgb(var(--tw-clr-primary-50)); /* #fdeeeb */
-  --clr-primary-100: rgb(var(--tw-clr-primary-100)); /* #fad6cd */
-  --clr-primary-200: rgb(var(--tw-clr-primary-200)); /* #f5ae9b */
-  --clr-primary-300: rgb(var(--tw-clr-primary-300)); /* #f08569 */
-  --clr-primary-400: rgb(var(--tw-clr-primary-400)); /* #ee7555 */
-  --clr-primary-500: rgb(var(--tw-clr-primary-500)); /* #eb5d37 */
-  --clr-primary-600: rgb(var(--tw-clr-primary-600)); /* #c74f2e */
-  --clr-primary-700: rgb(var(--tw-clr-primary-700)); /* #b04529 */
-  --clr-primary-800: rgb(var(--tw-clr-primary-800)); /* #752e1b */
-  --clr-primary-900: rgb(var(--tw-clr-primary-900)); /* #3a170d */
+  --tw-clr-primary-50: 255, 232, 233;
+  --tw-clr-primary-100: 255, 198, 200;
+  --tw-clr-primary-200: 255, 142, 146;
+  --tw-clr-primary-300: 255, 85, 91;
+  --tw-clr-primary-400: 255, 62, 69;
+  --tw-clr-primary-500: 255, 29, 37;
+  --tw-clr-primary-600: 216, 24, 31;
+  --tw-clr-primary-700: 191, 21, 27;
+  --tw-clr-primary-800: 127, 14, 18;
+  --tw-clr-primary-900: 63, 7, 9;
+  --clr-primary-50: rgb(var(--tw-clr-primary-50));
+  --clr-primary-100: rgb(var(--tw-clr-primary-100));
+  --clr-primary-200: rgb(var(--tw-clr-primary-200));
+  --clr-primary-300: rgb(var(--tw-clr-primary-300));
+  --clr-primary-400: rgb(var(--tw-clr-primary-400));
+  --clr-primary-500: rgb(var(--tw-clr-primary-500));
+  --clr-primary-600: rgb(var(--tw-clr-primary-600));
+  --clr-primary-700: rgb(var(--tw-clr-primary-700));
+  --clr-primary-800: rgb(var(--tw-clr-primary-800));
+  --clr-primary-900: rgb(var(--tw-clr-primary-900));
   /* #endregion  /**======== Primary Color =========== */
 }
 
@@ -119,9 +119,9 @@
   /* #endregion  /**======== Typography =========== */
 
   .layout {
-    /* 1100px */
-    max-width: 68.75rem;
-    @apply mx-auto w-11/12;
+    /* 1184px */
+    max-width: 74rem;
+    @apply mx-auto w-10/12;
   }
 
   .bg-dark a.custom-link {
