@@ -27,7 +27,10 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
-    "tailwind-merge": "^1.1.1"
+    "react-scroll-parallax": "^2.4.3",
+    "react-spring-3d-carousel": "^1.2.1",
+    "tailwind-merge": "^1.1.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.2.1",
@@ -38,6 +41,7 @@
     "@testing-library/react": "^12.1.2",
     "@types/react": "^17.0.38",
     "@types/tailwindcss": "^2.2.4",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "autoprefixer": "^10.4.1",
