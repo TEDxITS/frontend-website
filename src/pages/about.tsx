@@ -149,7 +149,7 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
-        <section className='bg-2 bg-[length:100vw_8rem] bg-clight text-cdark overflow-hidden relative pb-32 bg-top bg-no-repeat md:bg-[length:100vw_15rem]'>
+        <section className='bg-2 bg-[length:100vw_8rem] bg-cgray text-cdark overflow-hidden relative pb-32 bg-top bg-no-repeat md:bg-[length:100vw_15rem]'>
           <div className='layout flex flex-col justify-center items-center min-h-screen text-center'>
             <div className='w-full'>
               <div className='flex place-content-center'>
