@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
@@ -8,8 +9,9 @@ export default function HomePage() {
     <Layout>
       <Seo templateTitle='Sandbox' />
 
-      <main>
-        <section className='bg-cdark text-clight'>
+      <main className='bg-cdark text-clight pt-8 md:pt-16'>
+        <Header />
+        <section>
           <div className='layout flex flex-col justify-center items-center min-h-screen text-center'>
             <h1 className='mt-4'>TEDxITS 2022</h1>
             <p className='mt-2 text-sm'>A starter configuration project</p>
@@ -87,13 +89,13 @@ export default function HomePage() {
                         primary-200
                       </div>
                       <div className='p-4 w-full bg-primary-300 border-2 border-primary-100 shadow-xl'>
-                        primary-300{' '}
+                        primary-300
                       </div>
                       <div className='p-4 w-full bg-primary-400 border-2 border-primary-100 shadow-xl'>
                         primary-400
                       </div>
                       <div className='p-4 w-full bg-primary-500 border-2 border-primary-100 shadow-xl'>
-                        primary-500{' '}
+                        primary-500
                       </div>
                       <div className='p-4 w-full text-primary-100 bg-primary-600 border-2 border-primary-100 shadow-xl'>
                         primary-600
