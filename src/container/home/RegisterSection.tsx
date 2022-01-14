@@ -74,17 +74,7 @@ export default function RegisterSection() {
         </motion.div>
       )}
       {isTicketClick && (
-        <motion.img
-          initial={{
-            y: 60,
-          }}
-          animate={{
-            y: 0,
-            transition: {
-              duration: 0.6,
-              ease: [0.6, -0.05, 0.01, 0.99],
-            },
-          }}
+        <img
           src='/svg/pink-splash.svg'
           alt=''
           className='absolute inset-0 z-0 lg:top-0'
