@@ -13,24 +13,11 @@ export default function RegisterSection() {
   const showRegister = () => {
     setIsTicketOpen(true);
     setIsTicketClick(true);
-    scrollTo('register');
   };
   const hideRegister = () => {
     setIsTicketOpen(false);
-    scrollTo('prompt');
   };
 
-  const scrollTo = (id: string) => {
-    setTimeout(() => {
-      const component = document.getElementById(id);
-      if (component !== null) {
-        component.scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-        });
-      }
-    }, 200);
-  };
   return (
     <>
       <div className='relative z-10 w-full max-w-xl'>
