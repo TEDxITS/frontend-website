@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import { motion } from "framer-motion";
-import React from "react";
+import { motion } from 'framer-motion';
+import React from 'react';
 
-import Button from "@/components/buttons/Button";
+import Button from '@/components/buttons/Button';
 
-import Ticket from "./Ticket";
+import Ticket from './Ticket';
 
 export default function RegisterSection() {
   const [isTicketOpen, setIsTicketOpen] = React.useState<boolean>(false);
@@ -13,11 +13,11 @@ export default function RegisterSection() {
   const showRegister = () => {
     setIsTicketOpen(true);
     setIsTicketClick(true);
-    scrollTo("register");
+    scrollTo('register');
   };
   const hideRegister = () => {
     setIsTicketOpen(false);
-    scrollTo("prompt");
+    scrollTo('prompt');
   };
 
   const scrollTo = (id: string) => {
@@ -25,40 +25,40 @@ export default function RegisterSection() {
       const component = document.getElementById(id);
       if (component !== null) {
         component.scrollIntoView({
-          behavior: "smooth",
-          block: "center",
+          behavior: 'smooth',
+          block: 'center',
         });
       }
     }, 200);
   };
   return (
     <>
-      <div className="relative z-10 w-full max-w-xl">
-        <svg className="-mb-[2%] / drop-shadow-md" viewBox="0 0 769.2 45.2">
+      <div className='relative z-10 w-full max-w-xl'>
+        <svg className='-mb-[2%] / drop-shadow-md' viewBox='0 0 769.2 45.2'>
           <rect
-            width="757"
-            height="43"
-            x="5.02"
-            y="0"
-            className="fill-cblue"
-            rx="21.5"
+            width='757'
+            height='43'
+            x='5.02'
+            y='0'
+            className='fill-cblue'
+            rx='21.5'
           />
           <rect
-            width="680"
-            height="17"
-            x="43.52"
-            y="13"
-            className="fill-cdark"
-            rx="8.5"
+            width='680'
+            height='17'
+            x='43.52'
+            y='13'
+            className='fill-cdark'
+            rx='8.5'
           />
         </svg>
         <div
-          className="relative w-full"
+          className='relative w-full'
           style={{
-            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
           }}
         >
-          <div className="relative mx-auto w-5/6">
+          <div className='relative mx-auto w-5/6'>
             <Ticket
               isTicketOpen={isTicketOpen}
               showRegister={showRegister}
@@ -79,9 +79,9 @@ export default function RegisterSection() {
               ease: [0.6, -0.05, 0.01, 0.99],
             },
           }}
-          className="flex flex-col mt-4"
+          className='flex flex-col mt-4'
         >
-          <Button variant="secondary" className="z-10">
+          <Button variant='secondary' className='z-10'>
             Register Now
           </Button>
         </motion.div>
@@ -98,9 +98,9 @@ export default function RegisterSection() {
               ease: [0.6, -0.05, 0.01, 0.99],
             },
           }}
-          src="/svg/pink-splash.svg"
-          alt=""
-          className="absolute inset-0 z-0"
+          src='/svg/pink-splash.svg'
+          alt=''
+          className='absolute inset-0 z-0'
         />
       )}
     </>

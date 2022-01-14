@@ -1,14 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 
-import { motion } from "framer-motion";
-import { Sling as Hamburger } from "hamburger-react";
-import * as React from "react";
+import { motion } from 'framer-motion';
+import { Sling as Hamburger } from 'hamburger-react';
+import * as React from 'react';
 
-import clsxm from "@/lib/clsxm";
+import clsxm from '@/lib/clsxm';
 
-import { pageLinks, socialMediaLinks } from "@/data/links";
+import { pageLinks, socialMediaLinks } from '@/data/links';
 
-import HeaderLink from "../links/HeaderLink";
+import HeaderLink from '../links/HeaderLink';
 
 //#region  //*=========== Type ===========
 type HeaderProps = {
@@ -26,7 +26,7 @@ export default function Header({ topBreakpoint }: HeaderProps) {
     React.useState<boolean>(false);
 
   React.useEffect(() => {
-    document.addEventListener("scroll", () => {
+    document.addEventListener('scroll', () => {
       window.scrollY < 64 + (topBreakpoint ? topBreakpoint : 0)
         ? setisNavbarScrolled(false)
         : setisNavbarScrolled(true);
@@ -37,30 +37,30 @@ export default function Header({ topBreakpoint }: HeaderProps) {
 
   return (
     <header
-      className={clsxm("sticky top-0 z-50 bg-transparent transition-all", {
-        "backdrop-blur-sm": isNavbarScrolled,
+      className={clsxm('sticky top-0 z-50 bg-transparent transition-all', {
+        'backdrop-blur-sm': isNavbarScrolled,
       })}
     >
-      <div className="layout / flex items-center h-16">
-        <nav className="w-full">
+      <div className='/ layout flex items-center h-16'>
+        <nav className='w-full'>
           {/* Desktop View Navbar */}
-          <div className="hidden w-full md:block">
-            <div className="flex justify-between items-center w-full h-full">
+          <div className='hidden w-full md:block'>
+            <div className='flex justify-between items-center w-full h-full'>
               <img
-                src="/images/tedxits.png"
-                alt="TedxITS logo"
-                className="h-12"
+                src='/images/tedxits.png'
+                alt='TedxITS logo'
+                className='h-12'
               />
-              <ul className="flex gap-16 items-center">
+              <ul className='flex gap-16 items-center'>
                 {pageLinks.map(({ href, label }) => (
                   <li key={`${href}${label}`}>
-                    <HeaderLink href={href} className="font-fivo / text-lg">
+                    <HeaderLink href={href} className='/ font-fivo text-lg'>
                       {label}
                     </HeaderLink>
                   </li>
                 ))}
               </ul>
-              <ul className="flex gap-4 items-center">
+              <ul className='flex gap-4 items-center'>
                 {socialMediaLinks.map(({ href, label, logo }) => (
                   <li key={`${href}${label}`}>{logo}</li>
                 ))}
@@ -68,17 +68,17 @@ export default function Header({ topBreakpoint }: HeaderProps) {
             </div>
           </div>
           {/* Mobile View Navbar */}
-          <div className="block relative items-center h-16 md:hidden">
-            <div className="flex absolute inset-0 z-40 justify-between items-center w-full">
+          <div className='block relative items-center h-16 md:hidden'>
+            <div className='flex absolute inset-0 z-40 justify-between items-center w-full'>
               <img
-                src="/images/tedxits.png"
-                alt="TedxITS logo"
-                className="h-12"
+                src='/images/tedxits.png'
+                alt='TedxITS logo'
+                className='h-12'
               />
-              <ul className="flex justify-between items-center space-x-4">
+              <ul className='flex justify-between items-center space-x-4'>
                 <button
                   onClick={() => setIsNavOpen(!isNavOpen)}
-                  className="cursor-pointer"
+                  className='cursor-pointer'
                 >
                   <Hamburger />
                 </button>
@@ -94,11 +94,11 @@ export default function Header({ topBreakpoint }: HeaderProps) {
                     duration: 0.05,
                   },
                 }}
-                className="bg-cdark/90 / fixed inset-0 z-30 h-screen transition-all"
+                className='/ bg-cdark/90 fixed inset-0 z-30 h-screen transition-all'
               >
-                <div className="layout min-h-main / flex flex-col justify-center items-end pt-16">
+                <div className='/ layout min-h-main flex flex-col justify-center items-end pt-16'>
                   <motion.ul
-                    className="flex flex-col gap-8"
+                    className='flex flex-col gap-8'
                     initial={{
                       y: 60,
                     }}
@@ -112,9 +112,9 @@ export default function Header({ topBreakpoint }: HeaderProps) {
                   >
                     {pageLinks.map(({ href, label }) => (
                       <li key={`${href}${label}`}>
-                        <p className="text-right">
-                          <HeaderLink href={href} className="text-2xl">
-                            <p className="font-fivo / text-2xl text-right">
+                        <p className='text-right'>
+                          <HeaderLink href={href} className='text-2xl'>
+                            <p className='/ font-fivo text-2xl text-right'>
                               {label}
                             </p>
                           </HeaderLink>
@@ -123,7 +123,7 @@ export default function Header({ topBreakpoint }: HeaderProps) {
                     ))}
                   </motion.ul>
                   <motion.ul
-                    className="flex gap-4 items-center mt-8"
+                    className='flex gap-4 items-center mt-8'
                     initial={{
                       y: 60,
                     }}

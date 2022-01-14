@@ -1,7 +1,7 @@
-import InstagramLogoIllustration from "@/assets/svg/InstagramLogoIllustration";
-import LinkedinLogoIllustration from "@/assets/svg/LinkedinLogoIllustration";
-import TwitterLogoIllustration from "@/assets/svg/TwitterLogoIllustration";
-import YoutubeLogoIllustration from "@/assets/svg/YoutubeLogoIllustration";
+import InstagramLogoIllustration from '@/assets/svg/InstagramLogoIllustration';
+import LinkedinLogoIllustration from '@/assets/svg/LinkedinLogoIllustration';
+import TwitterLogoIllustration from '@/assets/svg/TwitterLogoIllustration';
+import YoutubeLogoIllustration from '@/assets/svg/YoutubeLogoIllustration';
 
 //#region  //*=========== Type ===========
 type LinkType = {
@@ -16,49 +16,49 @@ type SoialMediaLinkType = LinkType & {
 
 //#region  //*=========== Link Data ===========
 export const pageLinks: LinkType[] = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/committee", label: "Our Committee" },
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/committee', label: 'Our Committee' },
 ];
 
 export const socialMediaLinks: SoialMediaLinkType[] = [
   {
-    href: "/",
-    label: "Instagram",
+    href: '/',
+    label: 'Instagram',
     logo: (
       <InstagramLogoIllustration
-        className="hover:cursor-pointer / h-10 md:h-7"
-        pathClassName="duration-150 transition-all"
+        className='/ h-10 md:h-7 hover:cursor-pointer'
+        pathClassName='duration-150 transition-all'
       />
     ),
   },
   {
-    href: "/",
-    label: "Twitter",
+    href: '/',
+    label: 'Twitter',
     logo: (
       <TwitterLogoIllustration
-        className="hover:cursor-pointer / h-10 md:h-7"
-        pathClassName="duration-150 transition-all"
+        className='/ h-10 md:h-7 hover:cursor-pointer'
+        pathClassName='duration-150 transition-all'
       />
     ),
   },
   {
-    href: "/",
-    label: "LinkedIn",
+    href: '/',
+    label: 'LinkedIn',
     logo: (
       <LinkedinLogoIllustration
-        className="hover:cursor-pointer / h-10 md:h-7"
-        pathClassName="duration-150 transition-all"
+        className='/ h-10 md:h-7 hover:cursor-pointer'
+        pathClassName='duration-150 transition-all'
       />
     ),
   },
   {
-    href: "/",
-    label: "Youtube",
+    href: '/',
+    label: 'Youtube',
     logo: (
       <YoutubeLogoIllustration
-        className="hover:cursor-pointer / h-10 md:h-7"
-        pathClassName="duration-150 transition-all"
+        className='/ h-10 md:h-7 hover:cursor-pointer'
+        pathClassName='duration-150 transition-all'
       />
     ),
   },

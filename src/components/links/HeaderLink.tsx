@@ -1,15 +1,15 @@
-import Link, { LinkProps } from "next/link";
-import { useRouter } from "next/router";
-import * as React from "react";
+import Link, { LinkProps } from 'next/link';
+import { useRouter } from 'next/router';
+import * as React from 'react';
 
-import clsxm from "@/lib/clsxm";
+import clsxm from '@/lib/clsxm';
 
 export type UnstyledLinkProps = {
   href: string;
   children: React.ReactNode;
-  nextLinkProps?: Omit<LinkProps, "href">;
+  nextLinkProps?: Omit<LinkProps, 'href'>;
   className?: string;
-} & React.ComponentPropsWithoutRef<"a">;
+} & React.ComponentPropsWithoutRef<'a'>;
 
 export default function HeaderLink({
   children,
@@ -32,10 +32,10 @@ export default function HeaderLink({
       <a
         {...rest}
         className={clsxm(
-          "animated-underline custom-link font-fivo inline-flex items-center text-lg",
-          "border-b border-transparent border-dotted hover:border-black/0",
+          'animated-underline custom-link font-fivo inline-flex items-center text-lg',
+          'border-b border-transparent border-dotted hover:border-black/0',
           {
-            "text-primary-500 pointer-events-none": isActive,
+            'text-primary-500 pointer-events-none': isActive,
           },
           className
         )}
