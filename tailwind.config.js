@@ -13,13 +13,13 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        home: 'url(/images/home-bg.svg)',
+        home: 'url(/images/bg-home.png)',
+        story: 'url(/images/bg-story.png)',
+        'story-mobile': 'url(/images/bg-story-mobile.png)',
         volunteer: 'url(/images/volunteer-bg-plain.png)',
         footer: 'url(/images/footer-bg.svg)',
-        story: 'url(/images/story-bg.svg)',
-        1: "url('/images/bg-01.png')",
-        2: "url('/images/bg-02.png')",
-        3: "url('/images/bg-03.svg')",
+        about: "url('/images/bg-about.png')",
+        blob: 'url(/images/blob.svg)',
       },
       dropShadow: {
         'solid-sm': '-1px 1px rgb(33 33 33)',
@@ -145,5 +145,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
 };

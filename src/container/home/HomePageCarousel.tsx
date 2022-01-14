@@ -3,13 +3,15 @@ import React from 'react';
 
 import clsxm from '@/lib/clsxm';
 
+import NextImage from '@/components/NextImage';
+
 //#region  //*=========== Image Data ===========
 //change this according to your data
 const homePageImage = [
   '/sample/sample-home-1.png',
-  '/sample/sample-home-2.png',
-  '/sample/sample-home-3.png',
-  '/sample/sample-home-2.png',
+  '/images/socialExperiment.jpg',
+  '/images/guidingYourPassion.jpg',
+  '/images/spaceOfMind.jpg',
 ];
 const homePageStyle = [
   'top-0 left-0 z-[4]',
@@ -50,11 +52,15 @@ export default function HomePageCarousel({
                   'absolute bg-gradient-to-b from-transparent inset-0 via-cdark/20 to-cdark/80'
               )}
             ></div>
-            <img
-              key={i}
+            <NextImage
+              useSkeleton={true}
               src={image}
-              alt='TedXITS 2022 Recap'
-              className={clsxm('w-full h-full')}
+              alt=''
+              width={1980}
+              height={1980}
+              layout='responsive'
+              objectFit='cover'
+              className='h-fit overflow-hidden mx-auto w-full rounded-2xl md:mx-0'
             />
           </div>
         ))}

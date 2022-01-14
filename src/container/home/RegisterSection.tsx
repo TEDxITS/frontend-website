@@ -76,7 +76,7 @@ export default function RegisterSection() {
       {isTicketClick && (
         <img
           src='/svg/pink-splash.svg'
-          alt=''
+          alt='pink splash'
           className='absolute inset-0 z-0 lg:top-0'
         />
       )}

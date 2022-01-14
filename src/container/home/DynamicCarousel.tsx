@@ -8,6 +8,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 import clsxm from '@/lib/clsxm';
 
+import NextImage from '@/components/NextImage';
+
 // @ts-ignore
 const Carousel = dynamic(() => import('react-spring-3d-carousel'), {
   ssr: false,
@@ -29,100 +31,150 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
     {
       key: uuidv4(),
       content: (
-        <img
+        <NextImage
+          useSkeleton={true}
           src='/sample/sample-home-1.png'
-          alt='1'
-          className='max-w-[18rem] w-[65vw]'
+          alt=''
+          width={1980}
+          height={1980}
+          layout='responsive'
+          objectFit='cover'
+          className='h-fit max-w-[18rem] w-[65vw] overflow-hidden mx-auto rounded-2xl md:mx-0'
         />
       ),
     },
     {
       key: uuidv4(),
       content: (
-        <img
-          src='/sample/sample-home-2.png'
-          alt='2'
-          className='max-w-[18rem] w-[65vw]'
+        <NextImage
+          useSkeleton={true}
+          src='/images/socialExperiment.jpg'
+          alt=''
+          width={1980}
+          height={1980}
+          layout='responsive'
+          objectFit='cover'
+          className='h-fit max-w-[18rem] w-[65vw] overflow-hidden mx-auto rounded-2xl md:mx-0'
         />
       ),
     },
     {
       key: uuidv4(),
       content: (
-        <img
-          src='/sample/sample-home-3.png'
-          alt='3'
-          className='max-w-[18rem] w-[65vw]'
+        <NextImage
+          useSkeleton={true}
+          src='/images/socialExperiment.jpg'
+          alt=''
+          width={1980}
+          height={1980}
+          layout='responsive'
+          objectFit='cover'
+          className='h-fit max-w-[18rem] w-[65vw] overflow-hidden mx-auto rounded-2xl md:mx-0'
         />
       ),
     },
     {
       key: uuidv4(),
       content: (
-        <img
-          src='/sample/sample-home-1.png'
-          alt='4'
-          className='max-w-[18rem] w-[65vw]'
+        <NextImage
+          useSkeleton={true}
+          src='/images/socialExperiment.jpg'
+          alt=''
+          width={1980}
+          height={1980}
+          layout='responsive'
+          objectFit='cover'
+          className='h-fit max-w-[18rem] w-[65vw] overflow-hidden mx-auto rounded-2xl md:mx-0'
         />
       ),
     },
     {
       key: uuidv4(),
       content: (
-        <img
-          src='/sample/sample-home-1.png'
-          alt='5'
-          className='max-w-[18rem] w-[65vw]'
+        <NextImage
+          useSkeleton={true}
+          src='/images/socialExperiment.jpg'
+          alt=''
+          width={1980}
+          height={1980}
+          layout='responsive'
+          objectFit='cover'
+          className='h-fit max-w-[18rem] w-[65vw] overflow-hidden mx-auto rounded-2xl md:mx-0'
         />
       ),
     },
     {
       key: uuidv4(),
       content: (
-        <img
-          src='/sample/sample-home-1.png'
-          alt='1'
-          className='max-w-[18rem] w-[65vw]'
+        <NextImage
+          useSkeleton={true}
+          src='/images/socialExperiment.jpg'
+          alt=''
+          width={1980}
+          height={1980}
+          layout='responsive'
+          objectFit='cover'
+          className='h-fit max-w-[18rem] w-[65vw] overflow-hidden mx-auto rounded-2xl md:mx-0'
         />
       ),
     },
     {
       key: uuidv4(),
       content: (
-        <img
-          src='/sample/sample-home-2.png'
-          alt='2'
-          className='max-w-[18rem] w-[65vw]'
+        <NextImage
+          useSkeleton={true}
+          src='/images/socialExperiment.jpg'
+          alt=''
+          width={1980}
+          height={1980}
+          layout='responsive'
+          objectFit='cover'
+          className='h-fit max-w-[18rem] w-[65vw] overflow-hidden mx-auto rounded-2xl md:mx-0'
         />
       ),
     },
     {
       key: uuidv4(),
       content: (
-        <img
-          src='/sample/sample-home-3.png'
-          alt='3'
-          className='max-w-[18rem] w-[65vw]'
+        <NextImage
+          useSkeleton={true}
+          src='/images/socialExperiment.jpg'
+          alt=''
+          width={1980}
+          height={1980}
+          layout='responsive'
+          objectFit='cover'
+          className='h-fit max-w-[18rem] w-[65vw] overflow-hidden mx-auto rounded-2xl md:mx-0'
         />
       ),
     },
     {
       key: uuidv4(),
       content: (
-        <img
-          src='/sample/sample-home-1.png'
-          alt='4'
-          className='max-w-[18rem] w-[65vw]'
+        <NextImage
+          useSkeleton={true}
+          src='/images/socialExperiment.jpg'
+          alt=''
+          width={1980}
+          height={1980}
+          layout='responsive'
+          objectFit='cover'
+          className='h-fit max-w-[18rem] w-[65vw] overflow-hidden mx-auto rounded-2xl md:mx-0'
         />
       ),
     },
     {
       key: uuidv4(),
       content: (
-        <img
-          src='/sample/sample-home-1.png'
-          alt='5'
-          className='max-w-[18rem] w-[65vw]'
+        <NextImage
+          useSkeleton={true}
+          src='/images/socialExperiment.jpg'
+          alt=''
+          width={1980}
+          height={1980}
+          layout='responsive'
+          objectFit='cover'
+          className='h-fit max-w-[18rem] w-[65vw] overflow-hidden mx-auto rounded-2xl md:mx-0'
         />
       ),
     },

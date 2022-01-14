@@ -51,7 +51,7 @@ export default function Header({ topBreakpoint }: HeaderProps) {
                 alt='TedxITS logo'
                 className='h-12'
               />
-              <ul className='flex gap-16 items-center'>
+              <ul className='flex gap-8 items-center lg:gap-16'>
                 {pageLinks.map(({ href, label }) => (
                   <li key={`${href}${label}`}>
                     <HeaderLink href={href} className='/ font-fivo text-lg'>

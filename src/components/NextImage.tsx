@@ -49,6 +49,8 @@ export default function NextImage({
         src={src}
         width={width}
         height={height}
+        placeholder={useSkeleton ? 'blur' : 'empty'}
+        blurDataURL={String(src)}
         alt={alt}
         onLoadingComplete={() => setStatus('complete')}
         layout='responsive'

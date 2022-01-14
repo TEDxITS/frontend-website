@@ -3,8 +3,8 @@ import React from 'react';
 import ArrowDownButton from '@/components/buttons/ArrowDownButton';
 import Button from '@/components/buttons/Button';
 
-import DynamicCarousel from '../DynamicCarousel';
-import HomePageCarousel from '../HomePageCarousel';
+import DynamicCarousel from './DynamicCarousel';
+import HomePageCarousel from './HomePageCarousel';
 
 export default function CoverSection() {
   return (
