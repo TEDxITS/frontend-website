@@ -114,7 +114,7 @@
 
   /* #region  /**=========== Typography =========== */
   h1 {
-    @apply font-black font-fivo text-2xl text-cgray md:text-5xl;
+    @apply font-black font-fivo text-4xl text-cgray md:text-5xl;
   }
 
   h2 {

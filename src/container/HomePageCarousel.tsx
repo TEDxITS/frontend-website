@@ -4,25 +4,31 @@ import React from 'react';
 import clsxm from '@/lib/clsxm';
 
 //#region  //*=========== Image Data ===========
+//change this according to your data
 const homePageImage = [
   '/sample/sample-home-1.png',
   '/sample/sample-home-2.png',
   '/sample/sample-home-3.png',
+  '/sample/sample-home-2.png',
 ];
 const homePageStyle = [
-  'top-0 left-0 z-30',
-  '-top-8 left-40 z-20 opacity-95',
-  '-top-16 left-80 z-10 blur-sm opacity-95',
+  'top-0 left-0 z-[4]',
+  '-top-[2rem] left-[10rem] z-[3] opacity-95',
+  '-top-[4rem] left-[20rem] z-[2] blur-sm opacity-95',
+  '-top-[6rem] left-[30rem] z-[1] blur-sm opacity-95',
 ];
 const TOTAL_PHOTO = homePageImage.length;
 //#endregion  //*======== Image Data ===========
 
-export default function HomePageCarousel() {
+export default function HomePageCarousel({
+  className,
+  ...rest
+}: React.ComponentPropsWithoutRef<'div'>) {
   const [active, setActive] = React.useState<number>(0);
 
   return (
-    <div className='relative p-16'>
-      <div className='flex relative flex-col gap-4'>
+    <div className={clsxm('relative p-8 lg:p-16', className)} {...rest}>
+      <div className='flex relative flex-col gap-4 md:mt-32 lg:mt-0'>
         {homePageImage.map((image, i) => (
           <div
             onClick={() => setActive(i)}
@@ -54,7 +60,7 @@ export default function HomePageCarousel() {
         ))}
       </div>
 
-      <div className='flex absolute bottom-0 left-1/2 gap-2 justify-center mb-8 -translate-x-1/2'>
+      <div className='flex absolute bottom-4 left-1/2 gap-2 justify-center mb-8 -translate-x-1/2 lg:bottom-0'>
         {[...Array(TOTAL_PHOTO)].map((_, idx) => (
           <button
             onClick={() => setActive(idx)}

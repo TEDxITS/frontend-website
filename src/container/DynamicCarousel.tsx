@@ -6,15 +6,21 @@ import React, { useState } from 'react';
 import { config } from 'react-spring';
 import { v4 as uuidv4 } from 'uuid';
 
+import clsxm from '@/lib/clsxm';
+
 // @ts-ignore
 const Carousel = dynamic(() => import('react-spring-3d-carousel'), {
   ssr: false,
 });
 
-export const Example = () => {
+type DynamicCarouselProps = {
+  imgClassName?: string;
+} & React.ComponentPropsWithoutRef<'div'>;
+
+export default function DynamicCarousel({ className }: DynamicCarouselProps) {
   const [state, setState] = useState({
     goToSlide: 1,
-    offsetRadius: 4,
+    offsetRadius: 2,
     showNavigation: false,
     config: config.gentle,
   });
@@ -26,7 +32,7 @@ export const Example = () => {
         <img
           src='/sample/sample-home-1.png'
           alt='1'
-          className='w-full -translate-x-1/2'
+          className='max-w-[18rem] w-[65vw]'
         />
       ),
     },
@@ -36,7 +42,7 @@ export const Example = () => {
         <img
           src='/sample/sample-home-2.png'
           alt='2'
-          className='w-full -translate-x-1/2'
+          className='max-w-[18rem] w-[65vw]'
         />
       ),
     },
@@ -46,7 +52,7 @@ export const Example = () => {
         <img
           src='/sample/sample-home-3.png'
           alt='3'
-          className='w-full -translate-x-1/2'
+          className='max-w-[18rem] w-[65vw]'
         />
       ),
     },
@@ -56,7 +62,7 @@ export const Example = () => {
         <img
           src='/sample/sample-home-1.png'
           alt='4'
-          className='w-full -translate-x-1/2'
+          className='max-w-[18rem] w-[65vw]'
         />
       ),
     },
@@ -66,7 +72,7 @@ export const Example = () => {
         <img
           src='/sample/sample-home-1.png'
           alt='5'
-          className='w-full -translate-x-1/2'
+          className='max-w-[18rem] w-[65vw]'
         />
       ),
     },
@@ -76,7 +82,7 @@ export const Example = () => {
         <img
           src='/sample/sample-home-1.png'
           alt='1'
-          className='w-full -translate-x-1/2'
+          className='max-w-[18rem] w-[65vw]'
         />
       ),
     },
@@ -86,7 +92,7 @@ export const Example = () => {
         <img
           src='/sample/sample-home-2.png'
           alt='2'
-          className='w-full -translate-x-1/2'
+          className='max-w-[18rem] w-[65vw]'
         />
       ),
     },
@@ -96,7 +102,7 @@ export const Example = () => {
         <img
           src='/sample/sample-home-3.png'
           alt='3'
-          className='w-full -translate-x-1/2'
+          className='max-w-[18rem] w-[65vw]'
         />
       ),
     },
@@ -106,7 +112,7 @@ export const Example = () => {
         <img
           src='/sample/sample-home-1.png'
           alt='4'
-          className='w-full -translate-x-1/2'
+          className='max-w-[18rem] w-[65vw]'
         />
       ),
     },
@@ -116,7 +122,7 @@ export const Example = () => {
         <img
           src='/sample/sample-home-1.png'
           alt='5'
-          className='w-full -translate-x-1/2'
+          className='max-w-[18rem] w-[65vw]'
         />
       ),
     },
@@ -128,6 +134,7 @@ export const Example = () => {
     };
   });
 
+  //#region  //*=========== Handle Touch Events ===========
   let xDown: number | null = null;
   let yDown: number | null = null;
 
@@ -183,24 +190,23 @@ export const Example = () => {
     xDown = null;
     yDown = null;
   };
+  //#endregion  //*======== Handle Touch Events ===========
 
   return (
-    <div className='flex'>
-      <div
-        style={{ width: '100%' }}
-        onTouchStart={handleTouchStart}
-        // @ts-ignore
-        onTouchMove={handleTouchMove}
-        className='/ min-h-main text-black'
-      >
-        <Carousel
-          slides={slides}
-          goToSlide={state.goToSlide}
-          offsetRadius={state.offsetRadius}
-          showNavigation={state.showNavigation}
-          animationConfig={state.config}
-        />
-      </div>
+    <div
+      style={{ width: '100%' }}
+      onTouchStart={handleTouchStart}
+      // @ts-ignore
+      onTouchMove={handleTouchMove}
+      className={clsxm(className)}
+    >
+      <Carousel
+        slides={slides}
+        goToSlide={state.goToSlide}
+        offsetRadius={state.offsetRadius}
+        showNavigation={state.showNavigation}
+        animationConfig={state.config}
+      />
     </div>
   );
-};
+}

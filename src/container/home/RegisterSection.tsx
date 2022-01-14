@@ -100,7 +100,7 @@ export default function RegisterSection() {
           }}
           src='/svg/pink-splash.svg'
           alt=''
-          className='absolute inset-0 z-0'
+          className='absolute inset-0 z-0 lg:top-0'
         />
       )}
     </>

@@ -28,12 +28,12 @@ export default function Ticket({
     <div className={clsxm('relative w-full')}>
       <div
         onClick={toggleRegister}
-        className='/ from-cdark/30 absolute top-0 z-20 w-full h-4 bg-gradient-to-b to-transparent'
+        className='from-cdark/30 absolute top-0 z-20 w-full h-4 bg-gradient-to-b to-transparent'
       >
         &nbsp;
       </div>
       <div className='flex absolute top-1/2 left-1/2 flex-col justify-center items-center w-full -translate-x-1/2 -translate-y-1/2'>
-        <p className='/ font-fivo z-10 font-medium text-center'>
+        <p className='font-fivo z-10 font-medium text-center'>
           Click the Ticket above! <br /> and reveal yours
         </p>
         <TicketCircle className='absolute left-1/2 max-w-xs -translate-x-1/2' />
