@@ -12,6 +12,13 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      backgroundImage: {
+        home: 'url(/images/home-bg.svg)',
+        story: 'url(/images/story-bg.svg)',
+        1: "url('/images/bg-01.png')",
+        2: "url('/images/bg-02.png')",
+        3: "url('/images/bg-03.svg')",
+      },
       fontFamily: {
         fivo: ['Fivo Sans Modern'],
         lucki: ['Luckiest Guy'],
@@ -43,6 +50,8 @@ module.exports = {
         cyellow: '#e7fa51',
         cpurple: '#780ae7',
         cpink: '#ffbcf0',
+        //text color
+        cgray: '#efedea',
       },
       fill: {
         primary: {
@@ -58,6 +67,12 @@ module.exports = {
           900: withOpacity('--tw-clr-primary-900'),
         },
       },
+      animation: {
+        flicker: 'flicker 3s linear infinite',
+        'gradient-x': 'gradient-x 15s ease infinite',
+        'gradient-y': 'gradient-y 15s ease infinite',
+        'gradient-xy': 'gradient-xy 15s ease infinite',
+      },
       keyframes: {
         flicker: {
           '0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%': {
@@ -70,9 +85,36 @@ module.exports = {
             filter: 'none',
           },
         },
-      },
-      animation: {
-        flicker: 'flicker 3s linear infinite',
+        'gradient-y': {
+          '0%, 100%': {
+            'background-size': '400% 400%',
+            'background-position': 'center top',
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'center center',
+          },
+        },
+        'gradient-x': {
+          '0%, 100%': {
+            'background-size': '100% 200%',
+            'background-position': 'left center',
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center',
+          },
+        },
+        'gradient-xy': {
+          '0%, 100%': {
+            'background-size': '400% 400%',
+            'background-position': 'left center',
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center',
+          },
+        },
       },
     },
   },
