@@ -8,10 +8,10 @@ import NextImage from '@/components/NextImage';
 //#region  //*=========== Image Data ===========
 //change this according to your data
 const homePageImage = [
-  '/sample/sample-home-1.png',
-  '/images/socialExperiment.jpg',
-  '/images/guidingYourPassion.jpg',
-  '/images/spaceOfMind.jpg',
+  /* '/sample/sample-home-1.png', */
+  '/images/socialExperiment.png',
+  '/images/guidingYourPassion.png',
+  '/images/spaceOfMind.png',
 ];
 const homePageStyle = [
   'top-0 left-0 z-[4]',

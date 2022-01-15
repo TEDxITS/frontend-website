@@ -32,6 +32,7 @@
     "react-hook-form": "^7.24.0",
     "react-icons": "^4.3.1",
     "react-scroll-parallax": "^2.4.3",
+    "react-spring": "^9.4.2",
     "react-spring-3d-carousel": "^1.2.1",
     "tailwind-merge": "^1.1.1",
     "uuid": "^8.3.2"

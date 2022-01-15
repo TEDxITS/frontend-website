@@ -5,9 +5,9 @@ import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
 import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
+import DynamicCarousel from '@/container/about/DynamicCarousel';
 import PastEventsSection from '@/container/about/PastEventsSection';
 import TextSection from '@/container/about/TextSection';
-import DynamicCarousel from '@/container/home/DynamicCarousel';
 
 export default function AboutPage() {
   return (
