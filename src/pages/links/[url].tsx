@@ -38,7 +38,7 @@ export default function LinksPage({ url }: { url: string }) {
                 <span className='font-normal'> Link Shortener</span>
               </h2>
               <p className='mt-8 text-justify'>
-                Redirecting to your desired URL, please take a sip and relax
+                Redirecting to your desired URL
               </p>
             </div>
             <LoaderIllustration className='mt-4 w-16' />
