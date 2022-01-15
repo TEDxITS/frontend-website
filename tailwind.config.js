@@ -20,6 +20,7 @@ module.exports = {
         footer: 'url(/images/footer-bg.svg)',
         about: "url('/images/bg-about.png')",
         blob: 'url(/images/blob.svg)',
+        committee: 'url(/images/bg-committee.png)',
       },
       dropShadow: {
         'solid-sm': '-1px 1px rgb(33 33 33)',
