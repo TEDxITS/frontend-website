@@ -1,7 +1,6 @@
 import InstagramLogoIllustration from '@/assets/svg/InstagramLogoIllustration';
 import LinkedinLogoIllustration from '@/assets/svg/LinkedinLogoIllustration';
 import TwitterLogoIllustration from '@/assets/svg/TwitterLogoIllustration';
-import YoutubeLogoIllustration from '@/assets/svg/YoutubeLogoIllustration';
 
 //#region  //*=========== Type ===========
 type LinkType = {
@@ -23,7 +22,7 @@ export const pageLinks: LinkType[] = [
 
 export const socialMediaLinks: SoialMediaLinkType[] = [
   {
-    href: '/',
+    href: 'https://www.instagram.com/tedxits/',
     label: 'Instagram',
     logo: (
       <InstagramLogoIllustration
@@ -33,7 +32,7 @@ export const socialMediaLinks: SoialMediaLinkType[] = [
     ),
   },
   {
-    href: '/',
+    href: 'https://twitter.com/TEDxITS',
     label: 'Twitter',
     logo: (
       <TwitterLogoIllustration
@@ -43,20 +42,10 @@ export const socialMediaLinks: SoialMediaLinkType[] = [
     ),
   },
   {
-    href: '/',
+    href: 'https://www.linkedin.com/company/tedxits/',
     label: 'LinkedIn',
     logo: (
       <LinkedinLogoIllustration
-        className='/ h-10 md:h-7 hover:cursor-pointer'
-        pathClassName='duration-150 transition-all'
-      />
-    ),
-  },
-  {
-    href: '/',
-    label: 'Youtube',
-    logo: (
-      <YoutubeLogoIllustration
         className='/ h-10 md:h-7 hover:cursor-pointer'
         pathClassName='duration-150 transition-all'
       />

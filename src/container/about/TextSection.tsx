@@ -27,16 +27,27 @@ export default function TextSection() {
                 <span className='font-normal'>About</span> TED
               </h2>
               <p className='mt-14 text-justify'>
-                TED is a nonprofit devoted to spreading ideas, usually in the
-                form of short, powerful talks (18 minutes or less). TED began in
-                1984 as a conference where Technology, Entertainment and Design
-                converged, and today covers almost all topics — from science to
-                business to global issues — in more than 100 languages.
-                Meanwhile, independently run TEDx events help share ideas in
-                communities around the world.
+                TED is a nonprofit organization devoted to Ideas Worth
+                Spreading. The two annual TED Conferences invite the
+                world&apos;s leading thinkers and doers to speak for 18 minutes
+                or less. TED speakers have included Bill Gates, Jane Goodall,
+                Elizabeth Gilbert, and many more. The annual TED Conference
+                takes place each spring in Vancouver, British Columbia.
+                TED&apos;s media initiatives include TED.com, where new TED
+                Talks are posted daily which provides subtitles and interactive
+                transcripts from volunteers worldwide; the educational
+                initiative TED-Ed. TED has established The Audacious Project
+                that takes a collaborative approach to funding ideas with the
+                potential to create change at thrilling scale; TEDx, which
+                supports individuals or groups in hosting local, self- organized
+                TED-style events around the world, and the TED Fellows program,
+                helping world-changing innovators from around the globe to
+                amplify the impact of their remarkable projects and activities.
               </p>
               <div className='flex flex-row gap-4 items-end pt-5'>
-                <p className='pt-2'>For more information, visit</p>
+                <p className='pt-2'>
+                  Click here to find out more about TEDxITS
+                </p>
 
                 <div>
                   <UnderlineLink href='https://www.ted.com/'>
@@ -61,18 +72,18 @@ export default function TextSection() {
               <p className='mt-9 text-justify'>
                 In the spirit of ideas worth spreading, TEDx is a program of
                 local, self-organized events that bring people together to share
-                a TED-like experience. At a TEDx event, TEDTalks video and live
-                speakers combine to spark deep discussion and connection in a
-                small group. These local, self-organized events are branded
-                TEDx, where x=independently organized TED event. The TED
-                Conference provides general guidance for the TEDx program, but
-                individual TEDx events are self-organized.
+                a TED-like experience. At a TEDx event, TED Talks video and live
+                speakers combine to spark deep discussion and connection. These
+                local, self-organized events are branded TEDx, where x =
+                independently organized TED event. The TED Conference provides
+                general guidance for the TEDx program, but individual TEDx
+                events are self-organized.
               </p>
               <div className='flex gap-4 items-end pt-5'>
                 <p className='pt-2'>Find out more about TEDx at</p>
 
                 <div>
-                  <UnderlineLink href='www.ted.com'>
+                  <UnderlineLink href='https://www.ted.com/about/programs-initiatives/tedx-program'>
                     www.ted.com/tedx
                   </UnderlineLink>
                 </div>
@@ -87,14 +98,14 @@ export default function TextSection() {
               <span className='font-normal'>ITS</span>
             </h2>
             <p className='mt-16 text-justify'>
-              In the spirit of ideas worth spreading, TEDx is a program of
-              local, self-organized events that bring people together to share a
-              TED-like experience. At a TEDx event, TEDTalks video and live
-              speakers combine to spark deep discussion and connection in a
-              small group. These local, self-organized events are branded TEDx,
-              where x=independently organized TED event. The TED Conference
-              provides general guidance for the TEDx program, but individual
-              TEDx events are self-organized.
+              After realizing the many global issues in this era, we come across
+              a wide range of problems stretching from social, political to
+              environmental issues. TEDxITS has an intention to provide an
+              impact on resolving the current problems that are affecting
+              Indonesia and especially the youth. Established in 2020, TEDxITS
+              is a self-organized event driven by compassion and a strong
+              foundation of goodwill with the goal of providing a community that
+              can help everyone develop themselves.
             </p>
           </div>
         </li>

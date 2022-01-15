@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { openGraph } from '@/lib/helper';
 
 const defaultMeta = {
-  title: 'TEDxITB 2022',
+  title: 'TEDxITS 2022',
   siteName: 'Elephants in The Room',
   description: 'Independent TEDx event operated under license from TED',
   url: 'tedxits.vercel.app',
