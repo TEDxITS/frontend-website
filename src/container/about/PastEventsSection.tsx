@@ -16,8 +16,10 @@ export default function PastEventsSection() {
             <span className='font-sympath font-normal'>E</span>VE
             <span className='font-sympath font-normal'>NT</span>S
           </h1>
-          <h4 className='font-fivo text-cdark relative z-10 pt-8 mb-3 font-medium'>
-            “Castle of Your Own”
+          <div className='flex relative flex-col pt-8 mb-3'>
+            <h4 className='font-fivo text-cdark z-10 font-medium'>
+              “Castle of Your Own”
+            </h4>
             <NextImage
               className='absolute top-0 left-1/2 -translate-x-1/2 translate-y-4 sm:translate-y-2'
               src='/images/Asset 4.svg'
@@ -25,8 +27,8 @@ export default function PastEventsSection() {
               width={285}
               height={71}
             />
-          </h4>
-          <p className='mt-8 text-justify md:mt-8'>
+          </div>
+          <p className='z-10 mt-8 text-justify md:mt-8'>
             “Castle of your own” as the grand theme of TEDxITS 2021 brought the
             most talked-about issue especially for youth regarding
             self-development. Amid COVID-19 where the information is rushed,
@@ -131,9 +133,9 @@ export default function PastEventsSection() {
         </li>
         {/* Video */}
         <li className='layout'>
-          <div className='mt-36'>
+          <div className='flex flex-col mt-36'>
             <div className='-rotate-[45deg] bg-blob h-[47rem] w-[50rem] absolute -right-96 bg-no-repeat transform -translate-y-72'></div>
-            <h1 className='font-fivo font-outline-900-sm text-cdark tracking-wide md:font-outline-900-md'>
+            <h1 className='font-fivo font-outline-900-sm text-cdark z-10 tracking-wide md:font-outline-900-md'>
               “Castle of Your Own”
             </h1>
             <div className='flex flex-col mt-9 mb-16'>

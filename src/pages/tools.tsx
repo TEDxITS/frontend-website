@@ -73,22 +73,20 @@ export default function ToolsPage() {
                 >
                   <Input
                     id={'url'}
-                    placeholder={'ex: www.google.com'}
+                    placeholder={'ex: https://www.google.com/'}
                     label={'Original URL'}
-                    helperText='website harus berupa link/domain'
+                    helperText='pastikan website diawali dengan https://'
                     validation={{
                       required: true,
                       pattern:
                         /[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)?/gi,
                     }}
                   />
-
                   <InputGhost
                     id={'shortened'}
                     label={'tedxits.org/link/'}
                     validation={{ required: true, pattern: /^\S+$/ }}
                   />
-
                   <div className='ml-auto'>
                     <Button
                       type='submit'
