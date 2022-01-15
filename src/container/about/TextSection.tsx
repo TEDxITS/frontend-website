@@ -91,12 +91,14 @@ export default function TextSection() {
             </div>
           </div>
           <div className='flex flex-col'>
-            <h2 className='relative z-10 mb-1 font-extrabold'>
+            <div className='flex relative flex-col mb-1'>
               <AboutCircle className='absolute w-48 translate-x-4 -translate-y-4 md:translate-x-16' />
-              <span className='font-normal'>About</span> TED
-              <span className='ordinal'>x</span>
-              <span className='font-normal'>ITS</span>
-            </h2>
+              <h2 className='z-10 font-extrabold'>
+                <span className='font-normal'>About</span> TED
+                <span className='ordinal'>x</span>
+                <span className='font-normal'>ITS</span>
+              </h2>
+            </div>
             <p className='mt-16 text-justify'>
               After realizing the many global issues in this era, we come across
               a wide range of problems stretching from social, political to

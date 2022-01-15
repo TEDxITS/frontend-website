@@ -5,7 +5,6 @@ import clsxm from '@/lib/clsxm';
 
 import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
-import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 import CoverSection from '@/container/home/CoverSection';
 import MissionSection from '@/container/home/MissionSection';
@@ -16,11 +15,10 @@ export default function HomePage() {
     <Layout>
       <Seo />
       <main className='bg-cgray flex flex-col'>
-        <section className='bg-cdark bg-home text-clight relative z-20 pt-8 h-full bg-top bg-no-repeat bg-cover md:pt-16'>
+        <section className='bg-cdark bg-home text-clight relative z-20 pt-8 h-full bg-bottom bg-no-repeat bg-cover md:pt-16'>
           <Header />
           <CoverSection />
-          <NextImage
-            priority={true}
+          <img
             src='/images/bg-home-bottom.png'
             width={6003}
             height={756}
