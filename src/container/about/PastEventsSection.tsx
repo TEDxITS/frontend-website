@@ -40,7 +40,7 @@ export default function PastEventsSection() {
         <li className='layout flex flex-col gap-y-8 gap-x-12 md:flex-row'>
           <div className='bg-blob h-[47rem] rotate-[120deg] w-[50rem] absolute -left-80 bg-no-repeat transform -translate-y-32'></div>
           <NextImage
-            src='/images/socialExperiment.jpg'
+            src='/images/socialExperiment.png'
             alt=''
             width='100%'
             height={102}
@@ -86,7 +86,7 @@ export default function PastEventsSection() {
             </div>
           </div>
           <NextImage
-            src='/images/guidingYourPassion.jpg'
+            src='/images/guidingYourPassion.png'
             alt=''
             width='100%'
             height={102}
@@ -101,7 +101,7 @@ export default function PastEventsSection() {
         <li className='layout flex flex-col gap-y-8 gap-x-12 md:flex-row'>
           <div className='bg-blob h-[47rem] rotate-[40deg] w-[50rem] absolute -left-48 bg-no-repeat transform -translate-y-20'></div>
           <NextImage
-            src='/images/spaceOfMind.jpg'
+            src='/images/spaceOfMind.png'
             alt=''
             width='100%'
             height={102}

@@ -28,7 +28,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
   });
 
   const slides = [
-    {
+    /* {
       key: uuidv4(),
       content: (
         <NextImage
@@ -42,13 +42,13 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
           className='h-fit max-w-[18rem] w-[65vw] overflow-hidden mx-auto rounded-2xl md:mx-0'
         />
       ),
-    },
+    }, */
     {
       key: uuidv4(),
       content: (
         <NextImage
           useSkeleton={true}
-          src='/images/socialExperiment.jpg'
+          src='/images/socialExperiment.png'
           alt=''
           width={1980}
           height={1980}
@@ -63,7 +63,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='/images/socialExperiment.jpg'
+          src='/images/socialExperiment.png'
           alt=''
           width={1980}
           height={1980}
@@ -78,7 +78,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='/images/socialExperiment.jpg'
+          src='/images/socialExperiment.png'
           alt=''
           width={1980}
           height={1980}
@@ -93,7 +93,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='/images/socialExperiment.jpg'
+          src='/images/socialExperiment.png'
           alt=''
           width={1980}
           height={1980}
@@ -108,7 +108,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='/images/socialExperiment.jpg'
+          src='/images/socialExperiment.png'
           alt=''
           width={1980}
           height={1980}
@@ -123,7 +123,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='/images/socialExperiment.jpg'
+          src='/images/socialExperiment.png'
           alt=''
           width={1980}
           height={1980}
@@ -138,7 +138,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='/images/socialExperiment.jpg'
+          src='/images/socialExperiment.png'
           alt=''
           width={1980}
           height={1980}
@@ -153,7 +153,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='/images/socialExperiment.jpg'
+          src='/images/socialExperiment.png'
           alt=''
           width={1980}
           height={1980}
@@ -168,7 +168,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='/images/socialExperiment.jpg'
+          src='/images/socialExperiment.png'
           alt=''
           width={1980}
           height={1980}
