@@ -3,6 +3,7 @@ import React from 'react';
 import { socialMediaLinks } from '@/data/links';
 
 import UnderlineLink from '../links/UnderlineLink';
+import UnstyledLink from '../links/UnstyledLink';
 
 export default function Footer() {
   return (
@@ -10,7 +11,9 @@ export default function Footer() {
       <footer className='layout flex flex-col gap-8 justify-center items-center py-16'>
         <ul className='flex gap-4 items-center'>
           {socialMediaLinks.map(({ href, label, logo }) => (
-            <li key={`${href}${label}`}>{logo}</li>
+            <UnstyledLink key={`${href}${label}`} href={href}>
+              {logo}
+            </UnstyledLink>
           ))}
         </ul>
         <p className='text-center'>

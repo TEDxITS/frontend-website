@@ -9,6 +9,7 @@ import clsxm from '@/lib/clsxm';
 import { pageLinks, socialMediaLinks } from '@/data/links';
 
 import HeaderLink from '../links/HeaderLink';
+import UnstyledLink from '../links/UnstyledLink';
 
 //#region  //*=========== Type ===========
 type HeaderProps = {
@@ -46,11 +47,14 @@ export default function Header({ topBreakpoint }: HeaderProps) {
           {/* Desktop View Navbar */}
           <div className='hidden w-full md:block'>
             <div className='flex justify-between items-center w-full h-full'>
-              <img
-                src='/images/tedxits.png'
-                alt='TedxITS logo'
-                className='h-12'
-              />
+              <UnstyledLink href='/'>
+                <img
+                  src='/images/tedxits.png'
+                  alt='TedxITS logo'
+                  className='h-12'
+                />
+              </UnstyledLink>
+
               <ul className='flex gap-8 items-center lg:gap-16'>
                 {pageLinks.map(({ href, label }) => (
                   <li key={`${href}${label}`}>
@@ -62,7 +66,9 @@ export default function Header({ topBreakpoint }: HeaderProps) {
               </ul>
               <ul className='flex gap-4 items-center'>
                 {socialMediaLinks.map(({ href, label, logo }) => (
-                  <li key={`${href}${label}`}>{logo}</li>
+                  <UnstyledLink key={`${href}${label}`} href={href}>
+                    {logo}
+                  </UnstyledLink>
                 ))}
               </ul>
             </div>
