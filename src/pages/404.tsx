@@ -18,6 +18,7 @@ export default function NotFoundPage() {
         <Header />
         <section className='min-h-[calc(100vh-64px-32px)] flex relative z-10 flex-col justify-center items-center lg:min-h-[calc(100vh-64px-64px)]'>
           <div className='layout flex flex-col justify-center items-center'>
+            <h1 className='font-fivo shadow-lg'>Oops!</h1>
             <NextImage
               src='/svg/404.svg'
               width={895.59}
