@@ -29,92 +29,108 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding: 95px;
+  }
+
+  @media (min-width: 768px) {
+    html {
+      scroll-padding: 110px;
+    }
+  }
   /* #region  /**=========== Fivo Sans Modern =========== */
   @font-face {
-    font-family: 'Fivo Sans Modern';
+    font-family: "Fivo Sans Modern";
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('/fonts/FivoSansModern/FivoSansModern-Regular.otf');
+    src: url("/fonts/FivoSansModern/FivoSansModern-Regular.otf");
   }
   @font-face {
-    font-family: 'Fivo Sans Modern';
+    font-family: "Fivo Sans Modern";
     font-style: normal;
     font-weight: 500;
     font-display: swap;
-    src: url('/fonts/FivoSansModern/FivoSansModern-Medium.otf');
+    src: url("/fonts/FivoSansModern/FivoSansModern-Medium.otf");
   }
   @font-face {
-    font-family: 'Fivo Sans Modern';
+    font-family: "Fivo Sans Modern";
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url('/fonts/FivoSansModern/FivoSansModern-Bold.otf');
+    src: url("/fonts/FivoSansModern/FivoSansModern-Bold.otf");
   }
   @font-face {
-    font-family: 'Fivo Sans Modern';
+    font-family: "Fivo Sans Modern";
     font-style: normal;
     font-weight: 800;
     font-display: swap;
-    src: url('/fonts/FivoSansModern/FivoSansModern-Heavy.otf');
+    src: url("/fonts/FivoSansModern/FivoSansModern-Heavy.otf");
   }
   @font-face {
-    font-family: 'Fivo Sans Modern';
+    font-family: "Fivo Sans Modern";
     font-style: normal;
     font-weight: 900;
     font-display: swap;
-    src: url('/fonts/FivoSansModern/FivoSansModern-ExtraBlack.otf');
+    src: url("/fonts/FivoSansModern/FivoSansModern-ExtBlack.otf");
   }
   /* #endregion  /**======== Fivo Sans Modern =========== */
 
   /* #region  /**=========== Additional Font =========== */
   @font-face {
-    font-family: 'Luckiest Guy';
+    font-family: "Luckiest Guy";
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('/fonts/LuckiestGuy/LuckiestGuy-Regular.ttf');
+    src: url("/fonts/LuckiestGuy/LuckiestGuy-Regular.ttf");
   }
 
   @font-face {
-    font-family: 'Pilowlava';
+    font-family: "Pilowlava";
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('/fonts/PilowLava/Pilowlava-Regular.otf');
+    src: url("/fonts/PilowLava/Pilowlava-Regular.otf");
   }
   @font-face {
-    font-family: 'Sympathizing';
+    font-family: "Sympathizing";
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('/fonts/Sympathizing/Sympathizing.ttf');
+    src: url("/fonts/Sympathizing/Sympathizing.ttf");
   }
   /* #endregion  /**======== Additional Font =========== */
 
   .cursor-newtab {
-    cursor: url('/images/new-tab.png') 10 10, pointer;
+    cursor: url("/images/new-tab.png") 10 10, pointer;
+  }
+  .cursor-register {
+    cursor: url("/images/register-now.png") 10 10, pointer;
+  }
+  .cursor-click {
+    cursor: url("/images/click-me.png") 10 10, pointer;
   }
 
   /* #region  /**=========== Typography =========== */
   h1 {
-    @apply text-2xl font-black md:text-4xl;
+    @apply font-black font-fivo text-4xl text-cgray md:text-5xl;
   }
 
   h2 {
-    @apply text-xl font-bold md:text-3xl;
+    @apply text-cgray text-xl md:text-3xl;
   }
 
   h3 {
-    @apply text-lg font-bold md:text-2xl;
+    @apply text-cgray text-lg md:text-2xl;
   }
 
   h4 {
-    @apply text-base font-bold md:text-lg;
+    @apply text-base text-cgray md:text-lg;
   }
 
   body {
-    @apply text-sm md:text-base;
+    @apply text-cgray text-sm md:text-base;
   }
   /* #endregion  /**======== Typography =========== */
 
@@ -130,7 +146,7 @@
 
   /* Class to adjust with sticky footer */
   .min-h-main {
-    @apply min-h-[calc(100vh-56px)];
+    @apply min-h-[calc(100vh-64px)];
   }
 }
 
@@ -157,16 +173,16 @@
 
 /* #region  /**=========== Custom Scrollbar =========== */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 4px;
+  height: 4px;
 }
 ::-webkit-scrollbar-track {
-  background-color: var(--tw-clr-primary-100);
+  background-color: #212121;
 }
 ::-webkit-scrollbar-thumb {
   background: #eb5d37;
   opacity: 0.5;
-  border: 1px solid #fdeeeb;
+
   border-radius: 4px;
 }
 /* #endregion  /**======== Custom Scrollbar =========== */

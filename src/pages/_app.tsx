@@ -1,14 +1,16 @@
+import { AnimatePresence } from 'framer-motion';
 import { AppProps } from 'next/app';
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 import '@/styles/globals.css';
 
-import Layout from '@/components/layout/Layout';
-
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <ParallaxProvider>
+      <AnimatePresence exitBeforeEnter>
+        <Component {...pageProps} key={router.route} />
+      </AnimatePresence>
+    </ParallaxProvider>
   );
 }
 
