@@ -19,15 +19,17 @@ export default function NotFoundPage() {
               height={140.29}
               alt='Committee Illustration'
               priority={true}
-              className='w-full max-w-lg drop-shadow-md'
+              className='w-full max-w-2xl drop-shadow-md'
             />
             <h2 className='font-fivo mt-8 text-3xl font-bold md:text-4xl'>
               C<span className='font-sympath font-normal'>O</span>MI
               <span className='font-sympath font-normal'>N</span>G SO
-              <span className='font-sympath font-normal'>O</span>N
+              <span className='font-sympath font-normal'>O</span>N...
             </h2>
             <p className='font-fivo max-w-md text-center'>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+              Ready to actualize your vision?
+              <br />
+              Stay tuned because we&apos;re recruiting soon.
             </p>
           </div>
           <small className='font-fivo absolute bottom-0 left-0 text-sm'>

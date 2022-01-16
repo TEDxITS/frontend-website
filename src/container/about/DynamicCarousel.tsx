@@ -28,21 +28,6 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
   });
 
   const slides = [
-    /* {
-      key: uuidv4(),
-      content: (
-        <NextImage
-          useSkeleton={true}
-          src='/sample/sample-home-1.png'
-          alt=''
-          width={1980}
-          height={1980}
-          layout='responsive'
-          objectFit='cover'
-          className='h-fit max-w-[18rem] w-[65vw] overflow-hidden mx-auto rounded-2xl md:mx-0'
-        />
-      ),
-    }, */
     {
       key: uuidv4(),
       content: (
@@ -246,7 +231,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
 
   return (
     <div
-      style={{ width: '100%' }}
+      style={{ width: '100%', overflow: 'hidden' }}
       onTouchStart={handleTouchStart}
       // @ts-ignore
       onTouchMove={handleTouchMove}

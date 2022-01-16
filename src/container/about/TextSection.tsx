@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactPlayer from 'react-player';
 
 import UnderlineLink from '@/components/links/UnderlineLink';
 import NextImage from '@/components/NextImage';
@@ -9,9 +10,16 @@ export default function TextSection() {
   return (
     <div className='layout flex flex-col justify-center items-center min-h-screen text-center'>
       <ul className='font-fivo grid gap-8 mt-8 w-full'>
-        <p className='bg-cgreen flex z-10 justify-center items-center h-96 rounded-3xl'>
-          placeholder for videos
-        </p>
+        <div className='aspect-h-9 aspect-w-16 bg-cdark overflow-hidden z-10 rounded-2xl md:rounded-3xl'>
+          <ReactPlayer
+            url='https://www.youtube.com/embed/VinuTH1_4YI'
+            width={'100%'}
+            height={'100%'}
+            playing={true}
+            muted={true}
+            controls={true}
+          />
+        </div>
         {/* Text Section */}
         <li className='flex flex-col gap-16 mt-8 text-left'>
           <div className='gap-x-[calc(100%/12)] flex flex-col gap-y-16 md:flex-row'>
