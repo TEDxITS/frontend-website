@@ -78,10 +78,8 @@ export default function Ticket({
 
             <div id='register'>
               <p className='font-fivo text-cdark font-medium leading-tight text-center'>
-                The wait is over.
-                <br />
-                TEDxITS is opening volunteer applications for passionate and
-                open-minded individuals who are full of ideas.
+                TEDxITS will open volunteer application for passionate and
+                open-minded individuals who are full of ideas
               </p>
             </div>
             <svg viewBox='0 0 498.33 2.18'>

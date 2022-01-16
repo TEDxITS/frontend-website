@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ArrowDownButton from '@/components/buttons/ArrowDownButton';
-import Button from '@/components/buttons/Button';
+import ButtonLink from '@/components/links/ButtonLink';
 
 import DynamicCarousel from './DynamicCarousel';
 import HomePageCarousel from './HomePageCarousel';
@@ -24,9 +24,13 @@ export default function CoverSection() {
             perspectives through meaningful interaction.
           </h2>
           <div className='mt-4 lg:mt-2'>
-            <Button variant='primary' className='text-md md:text-xl'>
+            <ButtonLink
+              variant='primary'
+              className='text-md md:text-xl'
+              href='/about'
+            >
               TEDxITS 2021 story
-            </Button>
+            </ButtonLink>
           </div>
         </div>
         <HomePageCarousel className='hidden lg:block' />
