@@ -2,9 +2,10 @@ import React from 'react';
 import ReactPlayer from 'react-player';
 
 import UnderlineLink from '@/components/links/UnderlineLink';
-import NextImage from '@/components/NextImage';
 
 import AboutCircle from '@/assets/svg/AboutCircle';
+import AboutCircleSecond from '@/assets/svg/AboutCircleSecond';
+import AboutCircleThird from '@/assets/svg/AboutCircleThird';
 
 export default function TextSection() {
   return (
@@ -24,16 +25,12 @@ export default function TextSection() {
         <li className='flex flex-col gap-16 mt-8 text-left'>
           <div className='gap-x-[calc(100%/12)] flex flex-col gap-y-16 md:flex-row'>
             <div className='basis-1/2 flex flex-col'>
-              <NextImage
-                className='absolute translate-x-4 -translate-y-4 md:translate-x-12 md:-translate-y-4'
-                src='/images/Asset 3.svg'
-                alt='Circle Drawing'
-                width={154}
-                height={69}
-              />
-              <h2 className='z-10 pb-1 font-bold'>
-                <span className='font-normal'>About</span> TED
-              </h2>
+              <div className='flex relative flex-col mb-1'>
+                <AboutCircleSecond className='absolute w-36 translate-x-4 -translate-y-4 md:translate-x-12 md:-translate-y-4' />
+                <h2 className='z-10 font-extrabold'>
+                  <span className='font-normal'>About</span> TED
+                </h2>
+              </div>
               <p className='mt-14 text-justify'>
                 TED is a nonprofit organization devoted to Ideas Worth
                 Spreading. The two annual TED Conferences invite the
@@ -65,17 +62,13 @@ export default function TextSection() {
               </div>
             </div>
             <div className='basis-1/2 flex flex-col'>
-              <NextImage
-                className='absolute z-10 translate-x-4 -translate-y-4 md:translate-x-12 md:-translate-y-4'
-                src='/images/Asset 1.svg'
-                alt='Circle Drawing'
-                width={161}
-                height={61}
-              />
-              <h2 className='z-10 font-extrabold'>
-                <span className='font-normal'>About</span> TED
-                <span className='ordinal'>x</span>
-              </h2>
+              <div className='flex relative flex-col mb-1'>
+                <AboutCircleThird className='absolute z-10 w-36 translate-x-4 -translate-y-4 md:translate-x-12 md:-translate-y-4' />
+                <h2 className='z-10 font-extrabold'>
+                  <span className='font-normal'>About</span> TED
+                  <span className='ordinal'>x</span>
+                </h2>
+              </div>
               <h4 className='text-sm'>x = independently organized TED event</h4>
               <p className='mt-9 text-justify'>
                 In the spirit of ideas worth spreading, TEDx is a program of

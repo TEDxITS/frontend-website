@@ -76,11 +76,13 @@ export default function Header({ topBreakpoint }: HeaderProps) {
           {/* Mobile View Navbar */}
           <div className='block relative items-center h-16 md:hidden'>
             <div className='flex absolute inset-0 z-40 justify-between items-center w-full'>
-              <img
-                src='/images/tedxits.png'
-                alt='TedxITS logo'
-                className='h-12'
-              />
+              <UnstyledLink href='/'>
+                <img
+                  src='/images/tedxits.png'
+                  alt='TedxITS logo'
+                  className='h-12'
+                />
+              </UnstyledLink>
               <ul className='flex justify-between items-center space-x-4'>
                 <button
                   onClick={() => setIsNavOpen(!isNavOpen)}
