@@ -8,53 +8,95 @@ export default function TicketText({
       id='Layer_1'
       data-name='Layer 1'
       xmlns='http://www.w3.org/2000/svg'
-      viewBox='0 0 612.74 237.07'
+      viewBox='0 0 413.54 184.78'
       {...rest}
     >
       <defs>
-        <style>{'.cls-2{font-family:Pilowlava-Regular,Pilowlava}'}</style>
+        <style>
+          {
+            '.cls-2,.cls-3,.cls-4,.cls-5{isolation:isolate;font-size:60px}.cls-2,.cls-4{fill:#2561e7}.cls-2,.cls-3{font-family:LuckiestGuy-Regular,Luckiest Guy}.cls-3,.cls-5{fill:none;stroke:#212121;stroke-miterlimit:10}.cls-4,.cls-5{font-family:Pilowlava-Regular,Pilowlava}'
+          }
+        </style>
       </defs>
-      <text
-        transform='translate(178.99 68.32)'
+      <g
         style={{
-          fontFamily: 'LuckiestGuy-Regular,Luckiest Guy',
-          fontSize: '77.07px',
-          fill: '#2561e7',
-          stroke: '#212121',
-          strokeMiterlimit: 10,
+          isolation: 'isolate',
         }}
+        id='heading'
       >
-        {'LOR'}
-        <tspan className='cls-2' x={130.7} y={0}>
-          {'E'}
-        </tspan>
-        <tspan x={193.82} y={0}>
-          {'M '}
-        </tspan>
-        <tspan className='cls-2'>
-          <tspan x={-47.41} y={70.65}>
-            {'I'}
-          </tspan>
-          <tspan
-            x={-14.34}
-            y={70.65}
-            style={{
-              fontFamily: 'LuckiestGuy-Regular,Luckiest Guy',
-            }}
-          >
-            {'PSUM SIT '}
-          </tspan>
-        </tspan>
-        <tspan x={9.69} y={141.3}>
-          {'DO'}
-        </tspan>
-        <tspan className='cls-2' x={103.74} y={141.3}>
+        <text className='cls-2' transform='translate(141.32 53.3)'>
+          {'CA'}
+        </text>
+        <text className='cls-3' transform='translate(141.32 53.3)'>
+          {'CA'}
+        </text>
+        <text className='cls-4' transform='translate(209.76 53.3)'>
           {'L'}
-        </tspan>
-        <tspan x={149.21} y={141.3}>
-          {'OR'}
-        </tspan>
-      </text>
+        </text>
+        <text className='cls-5' transform='translate(209.76 53.3)'>
+          {'L'}
+        </text>
+        <text className='cls-2' transform='translate(245.16 53.3)'>
+          {'l'}
+        </text>
+        <text className='cls-3' transform='translate(245.16 53.3)'>
+          {'l'}
+        </text>
+        <text className='cls-4' transform='translate(146.78 108.3)'>
+          {'f'}
+        </text>
+        <text className='cls-5' transform='translate(146.78 108.3)'>
+          {'f'}
+        </text>
+        <text className='cls-2' transform='translate(192.14 108.3)'>
+          {'or '}
+        </text>
+        <text className='cls-3' transform='translate(192.14 108.3)'>
+          {'or '}
+        </text>
+        <text className='cls-4' transform='translate(.5 163.3)'>
+          {'v'}
+        </text>
+        <text className='cls-5' transform='translate(.5 163.3)'>
+          {'v'}
+        </text>
+        <text className='cls-2' transform='translate(46.22 163.3)'>
+          {'O'}
+        </text>
+        <text className='cls-3' transform='translate(46.22 163.3)'>
+          {'O'}
+        </text>
+        <text className='cls-4' transform='translate(84.48 163.3)'>
+          {'L'}
+        </text>
+        <text className='cls-5' transform='translate(84.48 163.3)'>
+          {'L'}
+        </text>
+        <text className='cls-2' transform='translate(119.88 163.3)'>
+          {'unt'}
+        </text>
+        <text className='cls-3' transform='translate(119.88 163.3)'>
+          {'unt'}
+        </text>
+        <text className='cls-4' transform='translate(228.37 163.3)'>
+          {'ee'}
+        </text>
+        <text className='cls-5' transform='translate(228.37 163.3)'>
+          {'ee'}
+        </text>
+        <text className='cls-2' transform='translate(326.65 163.3)'>
+          {'r'}
+        </text>
+        <text className='cls-3' transform='translate(326.65 163.3)'>
+          {'r'}
+        </text>
+        <text className='cls-4' transform='translate(363 163.3)'>
+          {'s'}
+        </text>
+        <text className='cls-5' transform='translate(363 163.3)'>
+          {'s'}
+        </text>
+      </g>
     </svg>
   );
 }

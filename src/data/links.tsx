@@ -17,7 +17,7 @@ type SoialMediaLinkType = LinkType & {
 export const pageLinks: LinkType[] = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
-  { href: '/committee', label: 'Our Committee' },
+  { href: '/committee', label: 'Be Part of Us!' },
 ];
 
 export const socialMediaLinks: SoialMediaLinkType[] = [

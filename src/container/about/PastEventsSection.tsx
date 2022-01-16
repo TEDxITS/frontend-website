@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactPlayer from 'react-player';
 
 import Button from '@/components/buttons/Button';
 import NextImage from '@/components/NextImage';
@@ -6,12 +7,25 @@ import NextImage from '@/components/NextImage';
 import AboutDivider1 from '@/assets/svg/AboutDivider1';
 import AboutDivider2 from '@/assets/svg/AboutDivider2';
 
+import VideoModal from '../modal/VideoModal';
+
 export default function PastEventsSection() {
+  const [isVideoOpen, setIsVideoOpen] = React.useState<boolean>(false);
+  const [videoUrl, setVideoUrl] = React.useState<string>('');
+  const openVideo = (url: string) => {
+    setVideoUrl(url);
+    setIsVideoOpen(true);
+  };
   return (
     <div className='flex flex-col min-h-screen text-center'>
+      <VideoModal
+        url={videoUrl}
+        isOpen={isVideoOpen}
+        setIsOpen={setIsVideoOpen}
+      />
       <ul className='font-fivo flex relative flex-col gap-8'>
         <li className='layout flex flex-col mt-32 mb-8 md:mt-80'>
-          <h1 className='font-fivo text-cdark tracking-wide'>
+          <h1 className='font-fivo text-cdark font-bold tracking-wide'>
             PA<span className='font-sympath font-normal'>S</span>T{' '}
             <span className='font-sympath font-normal'>E</span>VE
             <span className='font-sympath font-normal'>NT</span>S
@@ -59,7 +73,12 @@ export default function PastEventsSection() {
               but games are also played to spark laughter.
             </p>
             <div className='mt-auto ml-auto'>
-              <Button className='mt-8 ml-auto'>Watch Recap</Button>
+              <Button
+                className='mt-8 ml-auto'
+                onClick={() => openVideo('https://youtu.be/fNVcSQ3AR6k')}
+              >
+                Watch Recap
+              </Button>
             </div>
           </div>
         </li>
@@ -84,7 +103,12 @@ export default function PastEventsSection() {
               made.
             </p>
             <div className='mt-auto'>
-              <Button className='mt-8'>Watch Recap</Button>
+              <Button
+                className='mt-8'
+                onClick={() => openVideo('https://youtu.be/BP5XF-Q4edI')}
+              >
+                Watch Recap
+              </Button>
             </div>
           </div>
           <NextImage
@@ -127,7 +151,12 @@ export default function PastEventsSection() {
               experiences toward the impacts they have made.
             </p>
             <div className='mt-auto ml-auto'>
-              <Button className='mt-8 ml-auto'>Watch Recap</Button>
+              <Button
+                className='mt-8 ml-auto'
+                onClick={() => openVideo('https://youtu.be/df2yfDGUdEI')}
+              >
+                Watch Recap
+              </Button>
             </div>
           </div>
         </li>
@@ -139,9 +168,14 @@ export default function PastEventsSection() {
               “Castle of Your Own”
             </h1>
             <div className='flex flex-col mt-9 mb-16'>
-              <p className='bg-cgreen flex z-10 justify-center items-center h-96 rounded-3xl'>
-                placeholder for videos
-              </p>
+              <div className='aspect-h-9 aspect-w-16 bg-cdark overflow-hidden z-10 rounded-2xl md:rounded-3xl'>
+                <ReactPlayer
+                  url='https://youtu.be/uvtHzXPzydU'
+                  width={'100%'}
+                  height={'100%'}
+                  controls={true}
+                />
+              </div>
               <div className='bg-blob h-[47rem] w-[50rem] absolute -left-48 -bottom-64 bg-no-repeat transform'></div>
               <p className='z-10 mt-16 text-justify'>
                 Finally! The main event of TEDxITS 2021. This event successfully

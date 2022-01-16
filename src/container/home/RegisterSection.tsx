@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 
-import Button from '@/components/buttons/Button';
+import ButtonLink from '@/components/links/ButtonLink';
 
 import Ticket from './Ticket';
 
@@ -68,9 +68,9 @@ export default function RegisterSection() {
           }}
           className='flex flex-col mt-4'
         >
-          <Button variant='secondary' className='z-10'>
-            Register Now
-          </Button>
+          <ButtonLink variant='secondary' className='z-10' href='/committee'>
+            Coming Soon
+          </ButtonLink>
         </motion.div>
       )}
       {isTicketClick && (

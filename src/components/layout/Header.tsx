@@ -143,7 +143,9 @@ export default function Header({ topBreakpoint }: HeaderProps) {
                     }}
                   >
                     {socialMediaLinks.map(({ href, label, logo }) => (
-                      <li key={`${href}${label}`}>{logo}</li>
+                      <UnstyledLink key={`${href}${label}`} href={href}>
+                        {logo}
+                      </UnstyledLink>
                     ))}
                   </motion.ul>
                 </div>
