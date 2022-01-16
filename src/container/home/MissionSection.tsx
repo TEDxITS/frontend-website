@@ -19,19 +19,19 @@ export default function MissionSection() {
       <div className='bg-story-mobile flex overflow-hidden z-20 pt-20 w-full bg-bottom bg-no-repeat bg-cover md:bg-story lg:pt-44'>
         <div className='layout min-h-main flex flex-col justify-center items-center h-full text-center lg:min-h-[50vh] lg:px-32'>
           <h1 className='font-bold text-black' id='about'>
-            O<span className='font-sympath font-normal'>U</span>R MISSI
-            <span className='font-sympath font-normal'>O</span>N
+            WH<span className='font-sympath font-normal'>A</span>TS ON TED
+            <span className='font-sympath font-normal'>x</span>ITS 2022?{' '}
+            <span className='font-sympath font-normal'>?</span>
           </h1>
           <p className='text-cdark mt-4 text-sm md:text-lg'>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-            volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-            consequat. Duis autem vel eum iriure dolor i odio dignissim qui
-            blandit praesent luptatum zzril delenit augue duis Lorem ipsum dolor
-            sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh
-            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat Ut
-            iam quis.
+            This year’s mission is to give something fresh, wild, and out-of-the
+            box through eye-opening storytelling. We value everyone’s ideas and
+            story. It’s been years, we stay quiet because we fear visibility and
+            vulnerability that brings. But now, we’ll find strength in words,
+            impacting not only students and youths, but also the community in
+            ITS and Surabaya. We aim to bloom intrinsic motivation and immense
+            sense of pride in its members for being a part of TEDxITS 2022 and
+            sharing its value.
           </p>
         </div>
       </div>
