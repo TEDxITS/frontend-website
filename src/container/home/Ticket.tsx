@@ -64,16 +64,16 @@ export default function Ticket({
               />
             </svg>
             <div className='relative p-2 w-full'>
-              <DrawBottomLeft className='left-[5%] absolute bottom-0 w-8' />
-              <DrawBottomRight className='right-[5%] absolute bottom-0 w-8' />
-              <DrawTopLeft className='left-[5%] absolute top-0 w-8' />
-              <DrawTopRight className='right-[5%] absolute top-0 w-8' />
+              <DrawBottomLeft className='absolute bottom-0 left-0 w-8' />
+              <DrawBottomRight className='absolute right-0 bottom-0 w-8' />
+              <DrawTopLeft className='absolute top-0 left-0 w-8' />
+              <DrawTopRight className='absolute top-0 right-0 w-8' />
               <img
                 src='/svg/bottom-center.svg'
                 alt=''
                 className='absolute bottom-0 left-1/2 w-10 -translate-x-1/2'
               />
-              <TicketText className='drop-shadow-solid-md z-10 w-full' />
+              <TicketText className='drop-shadow-solid-md z-10 mx-auto w-5/6' />
             </div>
 
             <div id='register'>
