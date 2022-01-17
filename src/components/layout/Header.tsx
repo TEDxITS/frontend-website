@@ -6,78 +6,16 @@ import * as React from 'react';
 
 import clsxm from '@/lib/clsxm';
 
-import InstagramLogoIllustration from '@/assets/svg/InstagramLogoIllustration';
-import LinkedinLogoIllustration from '@/assets/svg/LinkedinLogoIllustration';
-import TwitterLogoIllustration from '@/assets/svg/TwitterLogoIllustration';
-import YoutubeLogoIllustration from '@/assets/svg/YoutubeLogoIllustration';
+import { pageLinks, socialMediaLinks } from '@/data/links';
 
 import HeaderLink from '../links/HeaderLink';
+import UnstyledLink from '../links/UnstyledLink';
 
 //#region  //*=========== Type ===========
-type LinkType = {
-  href: string;
-  label: string;
-};
-
-type SoialMediaLinkType = LinkType & {
-  logo: React.ReactNode;
-};
-
 type HeaderProps = {
   topBreakpoint?: number;
 };
 //#endregion  //*======== Type ===========
-
-//#region  //*=========== Link Data ===========
-const pageLinks: LinkType[] = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/committee', label: 'Our Committee' },
-];
-
-const socialMediaLinks: SoialMediaLinkType[] = [
-  {
-    href: '/',
-    label: 'Instagram',
-    logo: (
-      <InstagramLogoIllustration
-        className='h-10 md:h-7 hover:cursor-pointer'
-        pathClassName='duration-150 transition-all'
-      />
-    ),
-  },
-  {
-    href: '/',
-    label: 'Twitter',
-    logo: (
-      <TwitterLogoIllustration
-        className='h-10 md:h-7 hover:cursor-pointer'
-        pathClassName='duration-150 transition-all'
-      />
-    ),
-  },
-  {
-    href: '/',
-    label: 'LinkedIn',
-    logo: (
-      <LinkedinLogoIllustration
-        className='h-10 md:h-7 hover:cursor-pointer'
-        pathClassName='duration-150 transition-all'
-      />
-    ),
-  },
-  {
-    href: '/',
-    label: 'Youtube',
-    logo: (
-      <YoutubeLogoIllustration
-        className='h-10 md:h-7 hover:cursor-pointer'
-        pathClassName='duration-150 transition-all'
-      />
-    ),
-  },
-];
-//#endregion  //*======== Link Data ===========
 
 export default function Header({ topBreakpoint }: HeaderProps) {
   //#region  //*=========== Navigation Mobile State ===========
@@ -104,28 +42,33 @@ export default function Header({ topBreakpoint }: HeaderProps) {
         'backdrop-blur-sm': isNavbarScrolled,
       })}
     >
-      <div className='layout flex items-center h-16'>
+      <div className='/ layout flex items-center h-16'>
         <nav className='w-full'>
           {/* Desktop View Navbar */}
           <div className='hidden w-full md:block'>
             <div className='flex justify-between items-center w-full h-full'>
-              <img
-                src='/images/tedxits.png'
-                alt='TedxITS logo'
-                className='h-12'
-              />
-              <ul className='flex gap-16 items-center'>
+              <UnstyledLink href='/'>
+                <img
+                  src='/images/tedxits.png'
+                  alt='TedxITS logo'
+                  className='h-12'
+                />
+              </UnstyledLink>
+
+              <ul className='flex gap-8 items-center lg:gap-16'>
                 {pageLinks.map(({ href, label }) => (
                   <li key={`${href}${label}`}>
-                    <HeaderLink href={href} className='font-fivo text-lg'>
+                    <HeaderLink href={href} className='/ font-fivo text-lg'>
                       {label}
                     </HeaderLink>
                   </li>
                 ))}
               </ul>
-              <ul className='flex gap-2 items-center'>
+              <ul className='flex gap-4 items-center'>
                 {socialMediaLinks.map(({ href, label, logo }) => (
-                  <li key={`${href}${label}`}>{logo}</li>
+                  <UnstyledLink key={`${href}${label}`} href={href}>
+                    {logo}
+                  </UnstyledLink>
                 ))}
               </ul>
             </div>
@@ -133,11 +76,13 @@ export default function Header({ topBreakpoint }: HeaderProps) {
           {/* Mobile View Navbar */}
           <div className='block relative items-center h-16 md:hidden'>
             <div className='flex absolute inset-0 z-40 justify-between items-center w-full'>
-              <img
-                src='/images/tedxits.png'
-                alt='TedxITS logo'
-                className='h-12'
-              />
+              <UnstyledLink href='/'>
+                <img
+                  src='/images/tedxits.png'
+                  alt='TedxITS logo'
+                  className='h-12'
+                />
+              </UnstyledLink>
               <ul className='flex justify-between items-center space-x-4'>
                 <button
                   onClick={() => setIsNavOpen(!isNavOpen)}
@@ -157,9 +102,9 @@ export default function Header({ topBreakpoint }: HeaderProps) {
                     duration: 0.05,
                   },
                 }}
-                className='bg-cdark/90 fixed inset-0 z-30 h-screen transition-all'
+                className='/ bg-cdark/90 fixed inset-0 z-30 h-screen transition-all'
               >
-                <div className='layout min-h-main flex flex-col justify-center items-end pt-16'>
+                <div className='/ layout min-h-main flex flex-col justify-center items-end pt-16'>
                   <motion.ul
                     className='flex flex-col gap-8'
                     initial={{
@@ -177,7 +122,7 @@ export default function Header({ topBreakpoint }: HeaderProps) {
                       <li key={`${href}${label}`}>
                         <p className='text-right'>
                           <HeaderLink href={href} className='text-2xl'>
-                            <p className='font-fivo text-2xl text-right'>
+                            <p className='/ font-fivo text-2xl text-right'>
                               {label}
                             </p>
                           </HeaderLink>
@@ -200,7 +145,9 @@ export default function Header({ topBreakpoint }: HeaderProps) {
                     }}
                   >
                     {socialMediaLinks.map(({ href, label, logo }) => (
-                      <li key={`${href}${label}`}>{logo}</li>
+                      <UnstyledLink key={`${href}${label}`} href={href}>
+                        {logo}
+                      </UnstyledLink>
                     ))}
                   </motion.ul>
                 </div>

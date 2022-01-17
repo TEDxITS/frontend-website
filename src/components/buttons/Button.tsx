@@ -5,10 +5,7 @@ import clsxm from '@/lib/clsxm';
 
 enum ButtonVariant {
   'primary',
-  'outline',
-  'ghost',
-  'light',
-  'dark',
+  'secondary',
 }
 
 type ButtonProps = {
@@ -25,7 +22,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       disabled: buttonDisabled,
       isLoading,
       variant = 'primary',
-      isDarkBg = false,
       ...rest
     },
     ref
@@ -38,45 +34,31 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         type='button'
         disabled={disabled}
         className={clsxm(
-          'inline-flex items-center px-4 py-2 font-semibold rounded',
+          'font-fivo text-xl font-extrabold',
+          'inline-flex items-center px-8 py-3 rounded-full',
           'focus:outline-none focus-visible:ring focus-visible:ring-primary-500',
           'shadow-sm',
-          'transition-colors duration-75',
+          'transition-all duration-150 ease-in-out',
           //#region  //*=========== Variants ===========
           [
             variant === 'primary' && [
-              'bg-primary-500 text-white',
-              'border border-primary-600',
-              'hover:bg-primary-600 hover:text-white',
-              'active:bg-primary-500',
-              'disabled:bg-primary-400 disabled:hover:bg-primary-400',
-            ],
-            variant === 'outline' && [
-              'text-primary-500',
-              'border border-primary-500',
-              'hover:bg-primary-50 active:bg-primary-100 disabled:bg-primary-100',
-              isDarkBg &&
-                'hover:bg-gray-900 active:bg-gray-800 disabled:bg-gray-800',
-            ],
-            variant === 'ghost' && [
-              'text-primary-500',
-              'shadow-none',
-              'hover:bg-primary-50 active:bg-primary-100 disabled:bg-primary-100',
-              isDarkBg &&
-                'hover:bg-gray-900 active:bg-gray-800 disabled:bg-gray-800',
-            ],
-            variant === 'light' && [
-              'bg-white text-dark ',
-              'border border-gray-300',
-              'hover:text-dark hover:bg-gray-100',
-              'active:bg-white/80 disabled:bg-gray-200',
-            ],
-            variant === 'dark' && [
-              'bg-gray-900 text-white',
-              'border border-gray-600',
-              'hover:bg-gray-800 active:bg-gray-700 disabled:bg-gray-700',
+              'text-white animate-gradient-x border border-transparent',
+              'bg-gradient-to-r from-cgreen to-cblue',
+              'hover:bg-gradient-to-r hover:from-cred hover:to-cgreen hover:shadow-primary-50/20 hover:scale-105 hover:shadow-md',
+              'disabled:hover:bg-none disabled:bg-cgray/30 disabled:bg-none disabled:border-cgray',
+              'disabled:hover:scale-100 disabled:text-gray-300 disabled:hover:shadow-none',
             ],
           ],
+          [
+            variant === 'secondary' && [
+              'text-white animate-gradient-x border border-transparent',
+              'bg-gradient-to-r from-cpurple to-cblue',
+              'hover:bg-gradient-to-r hover:from-cpurple hover:to-cred hover:shadow-primary-50/20 hover:scale-105 hover:shadow-md',
+              'disabled:hover:bg-none disabled:bg-cgray/30 disabled:bg-none disabled:border-cgray',
+              'disabled:hover:scale-100 disabled:text-gray-300 disabled:hover:shadow-none',
+            ],
+          ],
+
           //#endregion  //*======== Variants ===========
           'disabled:cursor-not-allowed',
           isLoading &&

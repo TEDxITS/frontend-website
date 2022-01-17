@@ -13,11 +13,23 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        home: 'url(/images/home-bg.svg)',
-        story: 'url(/images/story-bg.svg)',
-        1: "url('/images/bg-01.png')",
-        2: "url('/images/bg-02.png')",
-        3: "url('/images/bg-03.svg')",
+        home: 'url(/images/bg-home.png)',
+        story: 'url(/images/bg-story.png)',
+        'story-mobile': 'url(/images/bg-story-mobile.png)',
+        volunteer: 'url(/images/volunteer-bg-plain.png)',
+        footer: 'url(/images/footer-bg.svg)',
+        about: "url('/images/bg-about.png')",
+        blob: 'url(/images/blob.svg)',
+        committee: 'url(/images/bg-committee.png)',
+        positionOpen: 'url(/images/bg-positionOpenCover.svg)',
+      },
+      dropShadow: {
+        'solid-sm': '-1px 1px rgb(33 33 33)',
+        'solid-md': '-2px 2px rgb(33 33 33)',
+        'solid-lg': '-5px 5px rgb(33 33 33)',
+        'solid-xl': '-8px 8px rgb(33 33 33)',
+        'solid-2xl': '-10px 10px rgb(33 33 33)',
+        'solid-3xl': '-12px 12px rgb(33 33 33)',
       },
       fontFamily: {
         fivo: ['Fivo Sans Modern'],
@@ -69,6 +81,7 @@ module.exports = {
       },
       animation: {
         flicker: 'flicker 3s linear infinite',
+        draw: 'draw 25s linear infinite',
         'gradient-x': 'gradient-x 15s ease infinite',
         'gradient-y': 'gradient-y 15s ease infinite',
         'gradient-xy': 'gradient-xy 15s ease infinite',
@@ -83,6 +96,22 @@ module.exports = {
           '20%, 21.999%, 63%, 63.999%, 65%, 69.999%': {
             opacity: 0.4,
             filter: 'none',
+          },
+        },
+        draw: {
+          '0%, 100%': {
+            'stroke-dashoffset': '3000',
+          },
+          '50%': {
+            'stroke-dashoffset': '0',
+          },
+        },
+        'draw-reverse': {
+          '0%, 100%': {
+            'stroke-dashoffset': '0',
+          },
+          '50%': {
+            'stroke-dashoffset': '30000',
           },
         },
         'gradient-y': {
@@ -118,5 +147,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
 };
