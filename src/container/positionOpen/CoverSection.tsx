@@ -1,25 +1,26 @@
-import Image from 'next/image';
 import React from 'react';
 
 import ArrowDownButton from '@/components/buttons/ArrowDownButton';
+
+import PositionCircle from '@/assets/svg/PositionCircle';
 
 export default function CoverSection() {
   return (
     <div className='overflow-hidden relative md:min-h-main'>
       <div className='grid-cols layout min-h-[calc(100vh-64px)] grid relative lg:min-h-main'>
         <div className='flex gap-4 justify-center items-center mt-8 text-center lg:items-center lg:mt-0'>
-          <div className='absolute z-10 -translate-y-20'>
-            <Image src='/images/Asset 7.svg' alt='' width={605} height={159} />
-          </div>
           <div>
-            <h1>
-              <span className='font-sympath'>P</span>O
-              <span className='font-sympath'>S</span>ITI
-              <span className='font-sympath'>O</span>N{' '}
-              <span className='font-sympath'>O</span>P
-              <span className='font-sympath'>E</span>N
-            </h1>
-            <p className='content mt-20 md:w-[36rem]'>
+            <div className='flex relative justify-center'>
+              <PositionCircle className='absolute -translate-y-1/2' />
+              <h1 className='z-10'>
+                <span className='font-sympath font-normal'>P</span>O
+                <span className='font-sympath font-normal'>S</span>ITI
+                <span className='font-sympath font-normal'>O</span>N{' '}
+                <span className='font-sympath font-normal'>O</span>P
+                <span className='font-sympath font-normal'>E</span>N
+              </h1>
+            </div>
+            <p className='mt-16 max-w-lg'>
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
               nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
               erat volut.
@@ -37,7 +38,7 @@ export default function CoverSection() {
         </small>
         <ArrowDownButton
           className='absolute bottom-20 left-1/2 -translate-x-1/2 md:bottom-32'
-          href={'#about'}
+          href={'#position'}
         />
       </div>
     </div>

@@ -1,11 +1,52 @@
 import * as React from 'react';
 
+import clsxm from '@/lib/clsxm';
+
+import { googleFormUrl } from '@/data/url';
+
 import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
+import ButtonLink from '@/components/links/ButtonLink';
 import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
+import CoverSection from '@/container/positionOpen/CoverSection';
+import PositionsSection from '@/container/positionOpen/PositionsSection';
 
-export default function NotFoundPage() {
+export default function HomePage() {
+  return (
+    <Layout>
+      <Seo templateTitle='Open Volunteer!' />
+      <main className='bg-cgray flex flex-col'>
+        <section className='bg-cdark bg-home text-clight relative z-20 pt-8 h-full bg-bottom bg-no-repeat bg-cover md:pt-16'>
+          <Header />
+          <CoverSection />
+          <NextImage
+            src='/images/bg-positionOpen-bottom.png'
+            width={6003}
+            height={756}
+            alt='bottom'
+            className='translate-y-[99%] absolute bottom-0 w-full drop-shadow-md'
+          />
+        </section>
+        <section className={clsxm('flex relative z-10 flex-col')} id='position'>
+          <PositionsSection />
+          {/* Only show on Mobile and Tablet */}
+          <div className='block fixed bottom-4 left-1/2 z-40 animate-bounce lg:hidden'>
+            <ButtonLink
+              className='z-20 whitespace-nowrap shadow-2xl -translate-x-1/2'
+              href={googleFormUrl}
+            >
+              Register Now
+            </ButtonLink>
+          </div>
+        </section>
+      </main>
+    </Layout>
+  );
+}
+
+// eslint-disable-next-line unused-imports/no-unused-vars
+const LoadingPositionPage = () => {
   return (
     <Layout showFooter={false}>
       <Seo templateTitle='Our Committee' />
@@ -44,4 +85,4 @@ export default function NotFoundPage() {
       </main>
     </Layout>
   );
-}
+};
