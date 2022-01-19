@@ -19,31 +19,31 @@ class MyDocument extends Document {
         <Head>
           <link
             rel='preload'
-            href='/fonts/FivoSansModern/FivoSansModern-Regular.ttf'
+            href='/fonts/FivoSansModern/FivoSansModern-Regular.otf'
             as='font'
             crossOrigin=''
           />
           <link
             rel='preload'
-            href='/fonts/FivoSansModern/FivoSansModern-Medium.ttf'
+            href='/fonts/FivoSansModern/FivoSansModern-Medium.otf'
             as='font'
             crossOrigin=''
           />
           <link
             rel='preload'
-            href='/fonts/FivoSansModern/FivoSansModern-Bold.ttf'
+            href='/fonts/FivoSansModern/FivoSansModern-Bold.otf'
             as='font'
             crossOrigin=''
           />
           <link
             rel='preload'
-            href='/fonts/FivoSansModern/FivoSansModern-Heavy.ttf'
+            href='/fonts/FivoSansModern/FivoSansModern-Heavy.otf'
             as='font'
             crossOrigin=''
           />
           <link
             rel='preload'
-            href='/fonts/FivoSansModern/FivoSansModern-ExtraBlack.ttf'
+            href='/fonts/FivoSansModern/FivoSansModern-ExtBlack.otf'
             as='font'
             crossOrigin=''
           />
