@@ -95,12 +95,7 @@ export default function PastEventsSection() {
               Tita Oxa Anggrea as the stereotype breaker succeeds in being a
               dashing student, excelling in academics and the catwalk stage.
               Through instagram live, Tita guides the audience and shares tips
-              on how to find our true selves. Pre-event 3: Space of Mind:
-              Designing Your Castle After being self-aware, it’s time to step up
-              the game by impacting the community. Three insightful speakers,
-              Radifan Athallah Rizky, Florence Fedora, and Ibrahim Arsy were
-              invited to share their experiences toward the impacts they have
-              made.
+              on how to find our true selves.
             </p>
             <div className='mt-auto'>
               <Button
@@ -179,7 +174,7 @@ export default function PastEventsSection() {
               <div className='bg-blob h-[47rem] w-[50rem] absolute -left-48 -bottom-64 bg-no-repeat transform'></div>
               <p className='z-10 mt-16 text-justify'>
                 Finally! The main event of TEDxITS 2021. This event successfully
-                invited 6 professional passion shapers from various fields and 1
+                invited 5 professional passion shapers from various fields and 2
                 student speaker to impact 80.000+ audiences and still growing!
                 <br />
                 <br />
