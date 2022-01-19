@@ -29,9 +29,9 @@ export default function MobileDropdown({
     >
       <Menu as='div'>
         <div className='flex relative gap-4 justify-end items-center'>
-          <Menu.Button className='bg-cgreen font-fivo text-cdark flex items-center p-1 w-16 h-16 text-sm font-medium rounded-full shadow-md hover:bg-cgray hover:text-cgray focus:outline-none'>
+          <Menu.Button className='bg-cgreen font-fivo text-cdark flex items-center p-1 w-12 h-12 text-sm font-medium rounded-full shadow-md hover:bg-cgray hover:text-cgray focus:outline-none'>
             <IoIosArrowDropdown
-              className='text-cgray w-14 h-14 hover:text-cdark'
+              className='text-cgray w-full h-full hover:text-cdark'
               aria-hidden='true'
             />
           </Menu.Button>
