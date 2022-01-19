@@ -8,8 +8,8 @@ import HomePageCarousel from './HomePageCarousel';
 
 export default function CoverSection() {
   return (
-    <div className='overflow-hidden relative md:min-h-main'>
-      <div className='grid-cols layout min-h-[calc(100vh-64px-40px)] grid relative lg:min-h-main lg:grid-cols-2'>
+    <div className='overflow-hidden relative'>
+      <div className='grid-cols layout min-h-[calc(100vh-64px-32px)] grid relative lg:min-h-[calc(100vh-64px-64px)] lg:grid-cols-2'>
         <DynamicCarousel className='min-h-[30vh] block h-full lg:hidden' />
         <div className='flex flex-col gap-4 items-center mt-8 text-center lg:justify-center lg:items-start lg:mt-0 lg:text-left'>
           <h1>
@@ -33,7 +33,9 @@ export default function CoverSection() {
             </ButtonLink>
           </div>
         </div>
-        <HomePageCarousel className='hidden lg:block' />
+        <div className='hidden my-auto lg:block'>
+          <HomePageCarousel />
+        </div>
         {/* Absolute item */}
         <small className='font-fivo absolute bottom-0 left-0 text-sm'>
           <span className='font-black'>TED</span>

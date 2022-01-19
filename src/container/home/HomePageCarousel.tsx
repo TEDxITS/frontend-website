@@ -8,16 +8,14 @@ import NextImage from '@/components/NextImage';
 //#region  //*=========== Image Data ===========
 //change this according to your data
 const homePageImage = [
-  /* '/sample/sample-home-1.png', */
   '/images/socialExperiment.png',
   '/images/guidingYourPassion.png',
   '/images/spaceOfMind.png',
 ];
 const homePageStyle = [
-  'top-0 left-0 z-[4]',
-  '-top-[2rem] left-[10rem] z-[3] opacity-95',
-  '-top-[4rem] left-[20rem] z-[2] blur-sm opacity-95',
-  '-top-[6rem] left-[30rem] z-[1] blur-sm opacity-95',
+  'relative -top-0 left-0 z-[4]',
+  'absolute -top-[2rem] left-[10rem] z-[3] opacity-95',
+  'absolute -top-[4rem] left-[20rem] z-[2] blur-sm opacity-95',
 ];
 const TOTAL_PHOTO = homePageImage.length;
 //#endregion  //*======== Image Data ===========
@@ -29,14 +27,20 @@ export default function HomePageCarousel({
   const [active, setActive] = React.useState<number>(0);
 
   return (
-    <div className={clsxm('relative p-8 lg:p-16', className)} {...rest}>
-      <div className='flex relative flex-col gap-4 md:mt-32 lg:mt-0'>
+    <div
+      className={clsxm(
+        '  relative justify-center items-center p-8 w-full h-full lg:p-16',
+        className
+      )}
+      {...rest}
+    >
+      <div className='flex relative flex-col gap-4 p-2 w-full md:mt-32 lg:mt-0'>
         {homePageImage.map((image, i) => (
           <div
             onClick={() => setActive(i)}
             key={i}
             className={clsxm(
-              'absolute w-full rounded-lg shadow-md transition-all ease-in-out cursor-pointer',
+              ' w-full rounded-lg shadow-md transition-all ease-in-out cursor-pointer',
               'hover:-translate-y-2',
               [i === active && homePageStyle[0]],
               [
@@ -66,7 +70,7 @@ export default function HomePageCarousel({
         ))}
       </div>
 
-      <div className='flex absolute bottom-4 left-1/2 gap-2 justify-center mb-8 -translate-x-1/2 lg:bottom-0'>
+      <div className='flex gap-2 justify-center my-8 lg:bottom-0'>
         {[...Array(TOTAL_PHOTO)].map((_, idx) => (
           <button
             onClick={() => setActive(idx)}
