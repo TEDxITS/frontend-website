@@ -3,7 +3,7 @@ export enum PositionType {
   'Finance' = 'finance',
   'Marketing & Branding' = 'marketing',
   'Human Resources & Administrative (HRA)' = 'human',
-  'Curating' = 'curating',
+  'Curator' = 'curator',
 }
 
 export type PositionLinkType = {
@@ -43,8 +43,8 @@ export const menuSection: PositionLinkType[] = [
     href: PositionType['Human Resources & Administrative (HRA)'],
   },
   {
-    title: 'Curating',
-    href: PositionType.Curating,
+    title: 'Curator',
+    href: PositionType.Curator,
   },
 ];
 
@@ -224,7 +224,7 @@ export const positionData: PositionData[] = [
     image: '/images/hra-volunteers.jpg',
   },
   {
-    title: 'Curating',
+    title: 'Curator',
     description: (
       <>
         Responsible for the essence of TEDxITS 2022; oversees the process of
@@ -233,7 +233,7 @@ export const positionData: PositionData[] = [
         speakers throughout the event.
       </>
     ),
-    href: PositionType.Curating,
+    href: PositionType.Curator,
     data: [],
     image: '/images/curating-volunteers.jpg',
   },
