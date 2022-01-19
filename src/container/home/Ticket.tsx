@@ -78,7 +78,9 @@ export default function Ticket({
 
             <div id='register'>
               <p className='font-fivo text-cdark font-medium leading-tight text-center'>
-                TEDxITS will open volunteer application for passionate and
+                The wait is over.
+                <br />
+                TEDxITS is opening volunteer application for passionate and
                 open-minded individuals who are full of ideas
               </p>
             </div>
