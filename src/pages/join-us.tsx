@@ -22,10 +22,10 @@ export default function HomePage() {
           <CoverSection />
           <NextImage
             src='/images/bg-positionOpen-bottom.png'
-            width={6003}
-            height={756}
+            width={1275}
+            height={108}
             alt='bottom'
-            className='translate-y-[99%] absolute bottom-0 w-full drop-shadow-md'
+            className='translate-y-[95%] absolute bottom-0 w-full drop-shadow-md'
           />
         </section>
         <section className={clsxm('flex relative z-10 flex-col')} id='position'>

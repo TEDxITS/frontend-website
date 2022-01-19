@@ -37,8 +37,8 @@ export default function MissionSection() {
       </div>
       <NextImage
         src='/images/bg-story-bottom.png'
-        width={2550}
-        height={189}
+        width={1275}
+        height={95}
         alt='bottom'
         priority={true}
         className='translate-y-[99%] hidden absolute bottom-0 z-0 w-full lg:block'

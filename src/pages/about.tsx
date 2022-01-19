@@ -27,8 +27,8 @@ export default function AboutPage() {
           />
           <NextImage
             src='/images/bg-about-bottom.png'
-            width={1217}
-            height={222}
+            width={1276}
+            height={234}
             alt='bottom'
             priority={true}
             className='translate-y-[99%] absolute bottom-0 z-10 w-full'
