@@ -21,9 +21,7 @@ export default function CoverSection() {
               </h1>
             </div>
             <p className='mt-16 max-w-lg'>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-              nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-              erat volut.
+              Get to know the suited position for you!
             </p>
           </div>
         </div>

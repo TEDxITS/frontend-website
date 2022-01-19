@@ -68,8 +68,8 @@ export default function RegisterSection() {
           }}
           className='flex flex-col mt-4'
         >
-          <ButtonLink variant='secondary' className='z-10' href='/committee'>
-            Coming Soon
+          <ButtonLink variant='secondary' className='z-10' href='/join-us'>
+            Register Now
           </ButtonLink>
         </motion.div>
       )}

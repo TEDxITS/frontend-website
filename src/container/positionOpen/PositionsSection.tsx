@@ -28,7 +28,7 @@ export default function MissionSection() {
         <div className='layout flex justify-center items-center min-h-screen'>
           <div className='flex flex-col gap-4'>
             <h1 className='text-cdark px-4 mr-auto md:text-2xl lg:text-4xl'>
-              POSITION OPEN
+              AVAILABLE POSITIONS
             </h1>
             <div className='flex flex-col gap-2 mt-8'>
               {menuSection.map(({ title, href }) => (
@@ -48,7 +48,7 @@ export default function MissionSection() {
                 </a>
               ))}
             </div>
-            <div className='hidden mx-auto mt-4 lg:block'>
+            <div className='hidden mx-auto mt-4 animate-bounce lg:block'>
               <ButtonLink className='shadow-2xl' href={googleFormUrl}>
                 Register Now
               </ButtonLink>
@@ -60,7 +60,7 @@ export default function MissionSection() {
       <MobileDropdown
         setActive={setActive}
         linkActive={active}
-        className='block mt-32 md:hidden'
+        className='block mt-8 md:hidden'
       />
       {/* Content */}
       <div

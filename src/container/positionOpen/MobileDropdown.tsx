@@ -1,13 +1,12 @@
 import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import * as React from 'react';
-import { FaChevronDown } from 'react-icons/fa';
+import { IoIosArrowDropdown } from 'react-icons/io';
 
 import clsxm from '@/lib/clsxm';
 
 import { menuSection } from '@/data/position';
 
-import Button from '@/components/buttons/Button';
 import UnstyledLink from '@/components/links/UnstyledLink';
 
 type MobileDropdownProps = {
@@ -23,20 +22,16 @@ export default function MobileDropdown({
   return (
     <div
       className={clsxm(
-        'bg-cdark sticky top-4 z-30 p-2 mx-4 w-full text-right rounded-lg shadow-md backdrop-blur-lg',
+        'sticky top-4 z-30 p-2 mx-4 w-full text-right rounded-lg',
 
         className
       )}
     >
       <Menu as='div'>
-        <div className='flex relative gap-4 justify-between items-center'>
-          <Button className='px-4 py-2 text-sm font-medium rounded-md'>
-            Register
-          </Button>
-          <Menu.Button className='bg-cgray font-fivo text-cdark inline-flex justify-center px-4 py-2 w-full text-sm font-medium rounded-md hover:bg-cgreen hover:text-cgray focus:outline-none'>
-            Volunteer Options
-            <FaChevronDown
-              className='-mr-1 ml-2 w-5 h-5 text-primary-200 hover:text-cgray'
+        <div className='flex relative gap-4 justify-end items-center'>
+          <Menu.Button className='bg-cgreen font-fivo text-cdark flex items-center p-1 w-16 h-16 text-sm font-medium rounded-full shadow-md hover:bg-cgray hover:text-cgray focus:outline-none'>
+            <IoIosArrowDropdown
+              className='text-cgray w-14 h-14 hover:text-cdark'
               aria-hidden='true'
             />
           </Menu.Button>

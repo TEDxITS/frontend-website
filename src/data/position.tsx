@@ -53,18 +53,17 @@ export const positionData: PositionData[] = [
     title: 'Event',
     description: (
       <>
-        Responsible for the execution of the TEDxITS 2022 program (pre-event
-        &amp; main event) and the technicalities that come with it. The Event
-        Director ensures effective communication between managers in the
-        department and serves as a representative when coordinating with other
-        departments.
+        Responsible for organizing and coordinating all technicalities,
+        procedures, and the event&apos;s concept during the event planning
+        process to ensure everything is in order or approve all aspects before
+        the day of the event.
       </>
     ),
     href: PositionType.Event,
     dataClassName: 'grid-cols-1 lg:grid-cols-3 gap-6 ',
     data: [
       {
-        title: <>Logistics &amp; Accommodation Volunteers</>,
+        title: <>Logistics &amp; Accommodation</>,
         description: (
           <>
             Accountable for the technical execution of events in alignment with
@@ -77,7 +76,7 @@ export const positionData: PositionData[] = [
         ),
       },
       {
-        title: <>Experiential Design Volunteers</>,
+        title: <>Experiential Design</>,
         description: (
           <>
             Accountable for the creative execution of “setting the mood” at all
@@ -87,13 +86,15 @@ export const positionData: PositionData[] = [
         ),
       },
       {
-        title: <> Program Volunteers</>,
+        title: <>Program</>,
         description: (
           <>
-            Accountable for the concepting and execution of event structure and
-            format in alignment with the theme, topic, and speakers from the
-            Curating Department. Recommended for the formation of sub-divisions:
-            Pre-Event and Main Event.
+            Responsible for innovating, developing, and executing the
+            event&apos;s concepts in alignment with the theme, topic, and
+            speakers from the Curator Department. Job duties include managing
+            event set-up, tear down and follow-up processes, liaise with
+            vendors, exhibitors, stakeholders, and coordinate with the other
+            divisions.
           </>
         ),
       },
@@ -105,44 +106,45 @@ export const positionData: PositionData[] = [
     description: (
       <>
         Responsible for gathering the fund needed (inflow) to execute TEDxITS
-        2022 smoothly and successfully. The Finance Director ensures effective
-        communication between managers in the department and serves as a
-        representative when coordinating with other departments.
+        2022 smoothly and successfully through financial management and planning
+        the necessary expenditure on various assets.
       </>
     ),
     href: PositionType.Finance,
     dataClassName: 'grid-cols-1 lg:grid-cols-3 gap-6 ',
     data: [
       {
-        title: <>Fundraising Volunteers</>,
+        title: <>Fundraising</>,
         description: (
           <>
-            Accountable for initiating channels (merchandise, service, etc) of
-            income to gather the fund needed for the execution of TEDxITS 2022.
+            In charge of designing merchandise, coming up with unique and
+            out-of-the-box merchandise ideas, managing production, sales, and
+            marketing, providing sales and revenue report. Coordinates closely
+            with Curator Department to ensure alignment between merchandise
+            design and grand theme and with Marketing Department to achieve high
+            sales.
           </>
         ),
       },
       {
-        title: <>Partnership Volunteers</>,
+        title: <>Partnership</>,
         description: (
           <>
             Accountable for initiating and maintaining partnership with external
             parties with the purpose of gathering funds (sponsorship) and media
-            promotion for publication. Recommended for the formation of
-            sub-divisions: Sponsorship &amp; Public Relation.
+            promotion for publication (public relations). This department is in
+            charge of securing event sponsorship and exhibition income to
+            achieve income targets.
           </>
         ),
       },
       {
-        title: <>Ticketing Volunteers</>,
+        title: <>Ticketing</>,
         description: (
           <>
-            Accountable for ticket salesof events under the TEDxITS program
-            (pre-event &amp; main event). Job duties include group sales
-            representatives, telemarketing, and online sales, in charge of
-            establishing and maintaining an effective and efficient ticketing
-            system. Coordinates closely with the Marketing Strategist to
-            maximize the sales of tickets.
+            Manage ticket-sales, ticketing system, concepting and controlling
+            tickets and their delivery, coordinating with other departments
+            regarding ticketing matters.
           </>
         ),
       },
@@ -153,24 +155,20 @@ export const positionData: PositionData[] = [
     title: 'Marketing & Branding',
     description: (
       <>
-        Responsible for the branding (identity) and marketing (awareness,
-        promotion, and sales through adjusting with the target market) of
-        TEDxITS 2022. Specifically, the Marketing Director is expected to
-        implement an effective and efficient system of design
-        request-revision-approval-posting -archiving between the four divisions.
-        The Marketing Director ensures effective communication between managers
-        in the department and serves as a representative when coordinating with
-        other departments.
+        Responsible for creating awareness, promoting the products, adjusting
+        with the target market, and maintaining existing customers. It
+        strategizes all the activities that are concerned with branding
+        (identity) and marketing.
       </>
     ),
     href: PositionType['Marketing & Branding'],
     dataClassName: 'grid-cols-1 md:grid-cols-2 gap-6 xl:gap-12',
     data: [
       {
-        title: <>Marketing Strategist Volunteers</>,
+        title: <>Marketing Strategy</>,
         description: (
           <>
-            Accountable for the ideation and execution of marketingefforts
+            Accountable for the ideation and execution of marketing efforts
             (social media and content marketing) across all marketing channels
             (social media, e-mail, word-of-mouth, buzzer), including the content
             and copywriting.
@@ -178,38 +176,33 @@ export const positionData: PositionData[] = [
         ),
       },
       {
-        title: <>Graphic Design Volunteers</>,
+        title: <>Graphic Design</>,
         description: (
           <>
-            Accountable for the graphic design realization of
-            branding,marketing, and operational materials as requested by
-            stakeholders (Marketing Director &amp; Marketing Strategist).
-            Recommended for the formation of sub-divisions based on the category
-            of requests: Marketing (social media posts, etc) &amp; Operational
-            (guidebook, website design, etc).
+            In charge for the graphic design realization of branding, marketing,
+            and operational materials. Also, continuously maintaining the
+            company&apos;s brand aesthetics, internally and externally.
           </>
         ),
       },
       {
-        title: <>Videography Volunteers</>,
+        title: <>Media Production</>,
         description: (
           <>
-            Accountable for the videographic realization of branding, marketing,
-            and operational materials as requested by stakeholders (Marketing
-            Director, Marketing Strategist Division). Job duties include taking
-            video documentation, editing video, and creating motion pictures.
+            Accountable for the video production of branding, marketing, and
+            operational materials. Job duties include taking video
+            documentation, editing video, and creating motion pictures.
           </>
         ),
       },
       {
-        title: <>Website Volunteers</>,
+        title: <>Website</>,
         description: (
           <>
-            Accountable for the construction, management, and development of the
+            Responsible for the construction, management, and development of the
             TEDxITS official website and receives content approval from the
-            Marketing Director. Coordinates closely with the HRA in using the
-            website as a main platform for recruitment, the Ticketing Division
-            for ticketing orders, and Marketing Director for the branding and
+            Marketing Director. Coordinates closely with the Ticketing Division
+            for ticketing orders and Marketing Director for the branding and
             marketing materials and navigation.
           </>
         ),
@@ -221,12 +214,9 @@ export const positionData: PositionData[] = [
     title: 'Human Resources & Administrative (HRA)',
     description: (
       <>
-        Responsible for the organization’s knowledge management (archiving of
-        files, work platform), secretarial/administrative affairs (letters,
-        certificate, etc) and the management of human resources (recruitment,
-        maintenance, and development) of TEDxITS 2022. The HRA Director ensures
-        effective communication between managers in the department and serves as
-        a representative when coordinating with other departments.
+        Responsible for the organization&apos;s knowledge management,
+        secretarial/administrative affairs, and the management of human
+        resources of TEDxITS 2022
       </>
     ),
     href: PositionType['Human Resources & Administrative (HRA)'],
@@ -238,10 +228,9 @@ export const positionData: PositionData[] = [
     description: (
       <>
         Responsible for the essence of TEDxITS 2022; oversees the process of
-        theme, topic, and speakers ideation for the event and marketing. The
-        Curating Director ensures effective communication between managers in
-        the department and serves as a representative when coordinating with
-        other departments.
+        theme, topic, and speakers ideation for the event and marketing.
+        Curators will also invite, prepare, and become liaison officers for
+        speakers throughout the event.
       </>
     ),
     href: PositionType.Curating,
