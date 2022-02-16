@@ -53,4 +53,37 @@ export const socialMediaLinks: SoialMediaLinkType[] = [
     ),
   },
 ];
+
+export const socialMediaLinksDark: SoialMediaLinkType[] = [
+  {
+    href: 'https://www.instagram.com/tedxits/',
+    label: 'Instagram',
+    logo: (
+      <InstagramLogoIllustration
+        className='/ h-10 md:h-7 hover:cursor-pointer'
+        pathClassName='fill-cdark duration-150 transition-all'
+      />
+    ),
+  },
+  {
+    href: 'https://twitter.com/TEDxITS',
+    label: 'Twitter',
+    logo: (
+      <TwitterLogoIllustration
+        className='/ h-10 md:h-7 hover:cursor-pointer'
+        pathClassName='fill-cdark duration-150 transition-all'
+      />
+    ),
+  },
+  {
+    href: 'https://www.linkedin.com/company/tedxits/',
+    label: 'LinkedIn',
+    logo: (
+      <LinkedinLogoIllustration
+        className='/ h-10 md:h-7 hover:cursor-pointer'
+        pathClassName='fill-cdark duration-150 transition-all'
+      />
+    ),
+  },
+];
 //#endregion  //*======== Link Data ===========

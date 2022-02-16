@@ -6,7 +6,11 @@ import * as React from 'react';
 
 import clsxm from '@/lib/clsxm';
 
-import { pageLinks, socialMediaLinks } from '@/data/links';
+import {
+  pageLinks,
+  socialMediaLinks,
+  socialMediaLinksDark,
+} from '@/data/links';
 
 import HeaderLink from '../links/HeaderLink';
 import UnstyledLink from '../links/UnstyledLink';
@@ -14,10 +18,11 @@ import UnstyledLink from '../links/UnstyledLink';
 //#region  //*=========== Type ===========
 type HeaderProps = {
   topBreakpoint?: number;
+  isDark?: boolean;
 };
 //#endregion  //*======== Type ===========
 
-export default function Header({ topBreakpoint }: HeaderProps) {
+export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
   //#region  //*=========== Navigation Mobile State ===========
   const [isNavOpen, setIsNavOpen] = React.useState<boolean>(false);
   //#endregion  //*======== Navigation Mobile State ===========
@@ -65,11 +70,13 @@ export default function Header({ topBreakpoint }: HeaderProps) {
                 ))}
               </ul>
               <ul className='flex gap-4 items-center'>
-                {socialMediaLinks.map(({ href, label, logo }) => (
-                  <UnstyledLink key={`${href}${label}`} href={href}>
-                    {logo}
-                  </UnstyledLink>
-                ))}
+                {(isDark ? socialMediaLinksDark : socialMediaLinks).map(
+                  ({ href, label, logo }) => (
+                    <UnstyledLink key={`${href}${label}`} href={href}>
+                      {logo}
+                    </UnstyledLink>
+                  )
+                )}
               </ul>
             </div>
           </div>
