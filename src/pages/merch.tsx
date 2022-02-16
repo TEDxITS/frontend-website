@@ -3,22 +3,20 @@ import * as React from 'react';
 import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
-import CoverSection from '@/container/poMerch/CoverSection';
-import ImgModal from '@/container/poMerch/ImgModal';
-import ProductsSection from '@/container/poMerch/ProductsSection';
+import CoverSection from '@/container/merch/CoverSection';
+import ProductsSection from '@/container/merch/ProductsSection';
 
-export default function AboutPage() {
+export default function MerchPage() {
   return (
     <Layout>
-      <Seo templateTitle='About' />
+      <Seo templateTitle='Merch' />
       <main className='bg-cgray over text-cdark pt-8 md:pt-16'>
-        <ImgModal />
         <Header isDark={true} />
         <section className='bg-cgray text-cdark flex overflow-hidden relative flex-col'>
           <CoverSection />
-          <section id='products'>
+          <div id='products'>
             <ProductsSection />
-          </section>
+          </div>
         </section>
       </main>
     </Layout>

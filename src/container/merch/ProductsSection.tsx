@@ -40,7 +40,7 @@ export default function MissionSection() {
       <div className='block fixed bottom-12 z-20 mx-auto mt-16 animate-bounce'>
         <ButtonLink
           className='from-cdark to-cdark px-16 py-4 shadow-2xl'
-          href={'/po-merch'}
+          href='https://tedxits.org/links/OPENPOARCANE'
         >
           BUY NOW
         </ButtonLink>
