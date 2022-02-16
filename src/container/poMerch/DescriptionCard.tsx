@@ -24,7 +24,7 @@ export default function DescriptionCard({
           width='100%'
           height='100%'
           alt='merch'
-          className='mb-7 w-full'
+          className='mb-7 w-full transition-all ease-in-out cursor-pointer hover:-translate-y-2'
           imgClassName='rounded-2xl'
         />
       )}
