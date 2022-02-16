@@ -1,67 +1,106 @@
-export type PositionData = {
-  dataClassName?: string;
-  data: JobType[] | [];
-  image: string;
+import clsxm from '@/lib/clsxm';
+
+import NextImage from '@/components/NextImage';
+
+export type ProductType = {
+  image: React.ReactNode;
+  title: string;
+  price: string;
 };
 
-export type JobType = {
-  image: string;
-  title: React.ReactNode;
-  description: React.ReactNode;
-};
+const MERCH_IMAGE_STYLE =
+  ' drop-shadow-xs w-full hover:drop-shadow-xl transition-all duration-300 ease-in-out hover:scale-[200%]';
+export const positionData: ProductType[] = [
+  {
+    image: (
+      <NextImage
+        src='/images/merchandise/tshirt-white.png'
+        width={960}
+        height={906}
+        alt='White Tshirt'
+        className={clsxm(MERCH_IMAGE_STYLE)}
+      />
+    ),
+    title: 'T-Shirt',
+    price: 'Rp90.000,00',
+  },
+  {
+    image: (
+      <NextImage
+        src='/images/merchandise/tshirt-black.png'
+        width={720}
+        height={666}
+        alt='Black Tshirt'
+        className={clsxm(MERCH_IMAGE_STYLE)}
+      />
+    ),
+    title: 'Black Tshirt',
+    price: 'Rp90.000,00',
+  },
+  {
+    image: (
+      <NextImage
+        src='/images/merchandise/totebag.png'
+        width={720}
+        height={793}
+        alt='Totebag'
+        className={clsxm(MERCH_IMAGE_STYLE)}
+      />
+    ),
+    title: 'Tote Bag',
+    price: 'Rp70.000,00',
+  },
+  {
+    image: (
+      <NextImage
+        src='/images/merchandise/cap.png'
+        width={720}
+        height={716}
+        alt='Baseball Cap'
+        className={clsxm(MERCH_IMAGE_STYLE)}
+      />
+    ),
+    title: 'Baseball Cap',
+    price: 'Rp55.000,00',
+  },
+  {
+    image: (
+      <NextImage
+        src='/images/merchandise/keychain.png'
+        width={960}
+        height={797}
+        alt='Keychain'
+        className={clsxm(MERCH_IMAGE_STYLE)}
+      />
+    ),
+    title: 'STNK Holder',
+    price: 'Rp30.000,00',
+  },
+  {
+    image: (
+      <NextImage
+        src='/images/merchandise/hand-sanitizer.png'
+        width={960}
+        height={640}
+        alt='Hand Sanitizer'
+        className={clsxm(MERCH_IMAGE_STYLE)}
+      />
+    ),
+    title: 'Pocket Handsanitizer',
+    price: 'Rp20.000,00',
+  },
 
-export const positionData: PositionData[] = [
   {
-    dataClassName: 'grid-cols-1 gap-24 sm:grid-cols-3 md:gap-48',
-    data: [
-      {
-        image: '/images/t-shirt.png',
-        title: <>T-Shirt</>,
-        description: <>Rp90.000,00</>,
-      },
-      {
-        image: '/images/totebag.png',
-        title: <>Tote Bag</>,
-        description: <>Rp70.000,00</>,
-      },
-      {
-        image: '/images/baseball-cap.png',
-        title: <>Baseball Cap</>,
-        description: <>Rp55.000,00</>,
-      },
-    ],
-    image: '',
-  },
-  {
-    dataClassName: 'grid-cols-1 gap-24 sm:grid-cols-3 md:gap-48',
-    data: [
-      {
-        image: '/images/keychain.png',
-        title: <>STNK Holder</>,
-        description: <>Rp30.000,00</>,
-      },
-      {
-        image: '/images/pocket-hs.png',
-        title: <>Pocket Handsanitizer</>,
-        description: <>Rp20.000,00</>,
-      },
-      {
-        image: '/images/waterproof.png',
-        title: <>Sako Wallet</>,
-        description: <>Rp35.000,00</>,
-      },
-    ],
-    image: '',
-  },
-  {
-    dataClassName: 'grid-cols-1 gap-24 sm:grid-cols-3 md:gap-48',
-    data: [
-      {
-        image: '/images/b-t-shirt.png',
-        title: <>Black Tshirt</>,
-        description: <>Rp90.000,00</>,
-      },
-    ],
-    image: '',
+    image: (
+      <NextImage
+        src='/images/merchandise/wallet.png'
+        width={960}
+        height={614}
+        alt='Sako Wallet'
+        className={clsxm(MERCH_IMAGE_STYLE, 'origin-bottom-right')}
+      />
+    ),
+    title: 'Sako Wallet',
+    price: 'Rp35.000,00',
   },
 ];
