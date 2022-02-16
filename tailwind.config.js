@@ -22,6 +22,7 @@ module.exports = {
         blob: 'url(/images/blob.svg)',
         committee: 'url(/images/bg-committee.png)',
         positionOpen: 'url(/images/bg-positionOpenCover.svg)',
+        popup: 'url(/images/pop up.png)',
       },
       dropShadow: {
         'solid-sm': '-1px 1px rgb(33 33 33)',
