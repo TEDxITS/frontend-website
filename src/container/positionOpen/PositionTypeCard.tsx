@@ -79,7 +79,7 @@ export default function PositionTypeCard({
         <h1 className='text-cdark text-3xl uppercase md:text-4xl lg:text-5xl'>
           {title} <span className='text-primary-500'>VOLUNTEERS</span>
         </h1>
-        <p className='text-cdark text-justify'>{description}</p>
+        <p className='font-fivo text-cdark text-justify'>{description}</p>
         {data.length > 0 && (
           <div className={clsxm('grid', dataClassName)}>
             {data.map((item, i) => (

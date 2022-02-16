@@ -6,11 +6,14 @@ import { positionData } from '@/data/merch';
 import ButtonLink from '@/components/links/ButtonLink';
 import NextImage from '@/components/NextImage';
 
-import ProductTypeCard from './ProductTypeCard';
+import ProductCard from './ProductCard';
 
 export default function MissionSection() {
   return (
-    <div className='flex flex-col justify-center items-center my-16 text-center'>
+    <div
+      className='flex flex-col justify-center items-center my-16 text-center'
+      id='products'
+    >
       <NextImage
         src='/images/po-merch-bg.svg'
         width={552}
@@ -27,12 +30,12 @@ export default function MissionSection() {
         priority={true}
         className='absolute -left-48 bottom-96 rotate-180 translate-x-32 translate-y-36'
       />
-      <div className='layout flex z-10 flex-col gap-32'>
+      <div className='layout grid z-10 grid-cols-1 gap-y-24 md:grid-cols-2 md:gap-16 md:gap-y-24 lg:grid-cols-3'>
         {positionData.map((item, i) => (
-          <ProductTypeCard
-            dataClassName={item.dataClassName}
+          <ProductCard
             image={item.image}
-            data={item.data}
+            title={item.title}
+            price={item.price}
             key={i}
           />
         ))}

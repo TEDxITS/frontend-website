@@ -10,13 +10,11 @@ export default function MerchPage() {
   return (
     <Layout>
       <Seo templateTitle='Merch' />
-      <main className='bg-cgray over text-cdark pt-8 md:pt-16'>
+      <main className='bg-cgray over pt-8 md:pt-16'>
         <Header isDark={true} />
-        <section className='bg-cgray text-cdark flex overflow-hidden relative flex-col'>
+        <section className='bg-cgray flex overflow-hidden relative flex-col'>
           <CoverSection />
-          <div id='products'>
-            <ProductsSection />
-          </div>
+          <ProductsSection />
         </section>
       </main>
     </Layout>

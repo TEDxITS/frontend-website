@@ -26,7 +26,9 @@ const merchPageDesc = [
     <h1 className='text-cdark'>
       R<span className='font-pilow font-normal'>E</span>D BUNDLE
     </h1>
-    <h4 className='text-cdark max-w-lg sm:mt-2'>Health Protocol is a Must!</h4>
+    <h4 className='font-fivo text-cdark max-w-lg sm:mt-2'>
+      Health Protocol is a Must!
+    </h4>
   </>,
   <>
     <NextImage
@@ -40,7 +42,7 @@ const merchPageDesc = [
     <h1 className='text-cdark'>
       BL<span className='font-pilow font-normal'>A</span>CK BUNDLE
     </h1>
-    <h4 className='text-cdark max-w-lg sm:mt-2'>
+    <h4 className='font-fivo text-cdark max-w-lg sm:mt-2'>
       Keeping up with the heat of Surabaya
     </h4>
   </>,
@@ -56,7 +58,7 @@ const merchPageDesc = [
     <h1 className='text-cdark'>
       W<span className='font-pilow font-normal'>H</span>ITE BUNDLE
     </h1>
-    <h4 className='text-cdark max-w-lg sm:mt-2'>
+    <h4 className='font-fivo text-cdark max-w-lg sm:mt-2'>
       Can&apos;t get mixed up with others
     </h4>
   </>,
