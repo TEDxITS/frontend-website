@@ -60,7 +60,11 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                 />
               </UnstyledLink>
 
-              <ul className='flex gap-8 items-center lg:gap-16'>
+              <ul
+                className={clsxm('flex gap-8 items-center lg:gap-16', {
+                  'text-cdark': isDark,
+                })}
+              >
                 {pageLinks.map(({ href, label }) => (
                   <li key={`${href}${label}`}>
                     <HeaderLink href={href} className='/ font-fivo text-lg'>
@@ -85,7 +89,11 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
             <div className='flex absolute inset-0 z-40 justify-between items-center w-full'>
               <UnstyledLink href='/'>
                 <img
-                  src='/images/tedxits.png'
+                  src={
+                    isDark && !isNavOpen
+                      ? '/images/tedxits2.png'
+                      : '/images/tedxits.png'
+                  }
                   alt='TedxITS logo'
                   className='h-12'
                 />
@@ -93,7 +101,9 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
               <ul className='flex justify-between items-center space-x-4'>
                 <button
                   onClick={() => setIsNavOpen(!isNavOpen)}
-                  className='cursor-pointer'
+                  className={clsxm('cursor-pointer', {
+                    'text-cdark': isDark && !isNavOpen,
+                  })}
                 >
                   <Hamburger />
                 </button>
