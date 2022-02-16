@@ -13,6 +13,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
+        paper: 'url(/images/texture.png)',
         home: 'url(/images/bg-home.png)',
         story: 'url(/images/bg-story.png)',
         'story-mobile': 'url(/images/bg-story-mobile.png)',
@@ -22,6 +23,9 @@ module.exports = {
         blob: 'url(/images/blob.svg)',
         committee: 'url(/images/bg-committee.png)',
         positionOpen: 'url(/images/bg-positionOpenCover.svg)',
+        newspaper: 'url(/images/bg-newspaper.png)',
+        'newspaper-content': 'url(/images/bg-newspaper-content.png)',
+        'book-cover': 'url(/svg/book-bg.svg)',
       },
       dropShadow: {
         'solid-sm': '-1px 1px rgb(33 33 33)',
