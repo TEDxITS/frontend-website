@@ -54,7 +54,7 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
             <div className='flex justify-between items-center w-full h-full'>
               <UnstyledLink href='/'>
                 <img
-                  src='/images/tedxits.png'
+                  src={isDark ? '/images/tedxits2.png' : '/images/tedxits.png'}
                   alt='TedxITS logo'
                   className='h-12'
                 />
