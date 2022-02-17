@@ -11,7 +11,7 @@ export default function ProductCard({
   className,
 }: ProductType & React.ComponentPropsWithoutRef<'div'>) {
   return (
-    <div className={clsxm('flex flex-col', className)}>
+    <div className={clsxm('flex flex-col w-80', className)}>
       <div className='flex overflow-hidden items-center h-full'>{image}</div>
       <div className='pt-4 mt-auto'>
         <h1 className='text-cred text-2xl'>{title}</h1>

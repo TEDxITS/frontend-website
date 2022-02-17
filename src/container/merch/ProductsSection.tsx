@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
 
-import { positionData } from '@/data/merch';
+import { merchData } from '@/data/merch';
 
 import ButtonLink from '@/components/links/ButtonLink';
 import NextImage from '@/components/NextImage';
@@ -30,15 +30,17 @@ export default function MissionSection() {
         priority={true}
         className='absolute -left-48 bottom-96 rotate-180 translate-x-32 translate-y-36'
       />
-      <div className='layout grid z-10 grid-cols-1 gap-y-24 md:grid-cols-2 md:gap-y-8 md:gap-16 lg:grid-cols-3'>
-        {positionData.map((item, i) => (
-          <ProductCard
-            image={item.image}
-            title={item.title}
-            price={item.price}
-            key={i}
-          />
-        ))}
+      <div className='layout flex z-10 flex-col justify-center items-center'>
+        <div className='flex flex-wrap gap-24 justify-center items-center w-full'>
+          {merchData.map((item, i) => (
+            <ProductCard
+              image={item.image}
+              title={item.title}
+              price={item.price}
+              key={i}
+            />
+          ))}
+        </div>
       </div>
       <div className='block fixed bottom-12 z-20 mx-auto mt-16 animate-bounce'>
         <ButtonLink
