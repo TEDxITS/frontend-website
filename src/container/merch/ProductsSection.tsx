@@ -11,7 +11,7 @@ import ProductCard from './ProductCard';
 export default function MissionSection() {
   return (
     <div
-      className='flex flex-col justify-center items-center my-16 text-center'
+      className='flex flex-col justify-center items-center mb-16 text-center'
       id='products'
     >
       <NextImage
