@@ -31,7 +31,7 @@ const merchPageDesc = [
       D BUNDLE
     </h1>
     <h4 className='font-fivo text-cdark max-w-lg sm:mt-2'>
-      Health Protocol is a Must!
+      Nothing but darkness
     </h4>
   </>,
   <>
@@ -74,9 +74,9 @@ const merchPageDesc = [
 ];
 
 const merchPageStyle = [
-  'relative -top-0 left-0 z-[4] scale-125',
-  'absolute -top-0 -left-[8rem] sm:-left-[12rem] lg:-left-[20rem] z-[2] opacity-80 scale-75',
-  'absolute -top-0 left-[8rem] sm:left-[12rem] lg:left-[20rem] z-[2] opacity-80 scale-75',
+  'relative -top-0 left-0 z-[4] scale-150',
+  'absolute -top-0 -left-[8rem] sm:-left-[12rem] lg:-left-[20rem] z-[2] opacity-80 scale-100',
+  'absolute -top-0 left-[8rem] sm:left-[12rem] lg:left-[20rem] z-[2] opacity-80 scale-100',
 ];
 
 const TOTAL_PHOTO = merchPageImage.length;
@@ -125,7 +125,7 @@ export default function HomePageCarousel({
             />
           </div>
         ))}
-        <div className='w-[30rem] left-0 mt-4 -translate-x-1/4 sm:-translate-x-[17%]'>
+        <div className='w-[30rem] left-0 mt-16 -translate-x-1/4 sm:-translate-x-[17%]'>
           {merchPageDesc[active]}
         </div>
       </div>
