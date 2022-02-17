@@ -10,7 +10,7 @@ export type ProductType = {
 
 const MERCH_IMAGE_STYLE =
   ' drop-shadow-xs w-full hover:drop-shadow-xl transition-all duration-300 ease-in-out hover:scale-[200%]';
-export const positionData: ProductType[] = [
+export const merchData: ProductType[] = [
   {
     image: (
       <NextImage
@@ -89,7 +89,6 @@ export const positionData: ProductType[] = [
     title: 'Pocket Handsanitizer',
     price: 'Rp20.000,00',
   },
-
   {
     image: (
       <NextImage
