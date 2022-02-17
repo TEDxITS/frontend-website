@@ -30,7 +30,7 @@ export default function MissionSection() {
         priority={true}
         className='absolute -left-48 bottom-96 rotate-180 translate-x-32 translate-y-36'
       />
-      <div className='layout grid z-10 grid-cols-1 gap-y-24 md:grid-cols-2 md:gap-16 md:gap-y-24 lg:grid-cols-3'>
+      <div className='layout grid z-10 grid-cols-1 gap-y-24 md:grid-cols-2 md:gap-y-8 md:gap-16 lg:grid-cols-3'>
         {positionData.map((item, i) => (
           <ProductCard
             image={item.image}

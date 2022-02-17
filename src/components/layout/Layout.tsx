@@ -24,7 +24,6 @@ export default function Layout({
       >
         {children}
       </motion.div>
-
       {showFooter && <Footer />}
     </div>
   );
