@@ -7,7 +7,9 @@ import MerchPageCarousel from './MerchPageCarousel';
 
 export default function CoverSection() {
   return (
+
     <div className='bg-cgray overflow-hidden relative z-40 min-h-screen'>
+
       <NextImage
         src='/images/po-merch-bg.svg'
         width={800}
