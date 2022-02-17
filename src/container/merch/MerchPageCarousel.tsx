@@ -8,9 +8,9 @@ import NextImage from '@/components/NextImage';
 //#region  //*=========== Image Data ===========
 //change this according to your data
 const merchPageImage = [
-  '/images/po-merch-bundle1.png',
-  '/images/po-merch-bundle2.png',
-  '/images/po-merch-bundle2.png',
+  '/images/merchandise/bundle-red.png',
+  '/images/merchandise/bundle-black.png',
+  '/images/merchandise/bundle-white.png',
 ];
 
 const merchPageDesc = [
@@ -24,7 +24,11 @@ const merchPageDesc = [
       className='-translate-x-[10rem] -translate-y-[1rem] bottom-[50%] left-[50%] absolute sm:-translate-y-[1.5rem] md:-translate-x-[12.5rem] md:-translate-y-[2rem]'
     />
     <h1 className='text-cdark'>
-      R<span className='font-pilow font-normal'>E</span>D BUNDLE
+      R
+      <span className='animate-flicker font-pilow text-cred font-normal'>
+        E
+      </span>
+      D BUNDLE
     </h1>
     <h4 className='font-fivo text-cdark max-w-lg sm:mt-2'>
       Health Protocol is a Must!
@@ -40,7 +44,8 @@ const merchPageDesc = [
       className='-translate-x-[11.5rem] -translate-y-[1rem] bottom-[50%] left-[50%] absolute sm:-translate-y-[1.5rem] md:-translate-x-[14.5rem] md:-translate-y-[2rem]'
     />
     <h1 className='text-cdark'>
-      BL<span className='font-pilow font-normal'>A</span>CK BUNDLE
+      BL<span className='animate-flicker font-pilow font-normal'>A</span>CK
+      BUNDLE
     </h1>
     <h4 className='font-fivo text-cdark max-w-lg sm:mt-2'>
       Keeping up with the heat of Surabaya
@@ -56,7 +61,11 @@ const merchPageDesc = [
       className='-translate-x-[11.5rem] -translate-y-[1rem] bottom-[50%] left-[50%] absolute sm:-translate-y-[1.5rem] md:-translate-x-[14.5rem] md:-translate-y-[2rem]'
     />
     <h1 className='text-cdark'>
-      W<span className='font-pilow font-normal'>H</span>ITE BUNDLE
+      W
+      <span className='animate-flicker drop-shadow-solid-sm font-pilow text-clight font-normal'>
+        H
+      </span>
+      ITE BUNDLE
     </h1>
     <h4 className='font-fivo text-cdark max-w-lg sm:mt-2'>
       Can&apos;t get mixed up with others
@@ -108,8 +117,8 @@ export default function HomePageCarousel({
               useSkeleton={true}
               src={image}
               alt=''
-              width={1980}
-              height={1980}
+              width={960}
+              height={753}
               layout='responsive'
               objectFit='cover'
               className='h-fit overflow-hidden mx-auto w-full rounded-2xl md:mx-0'
