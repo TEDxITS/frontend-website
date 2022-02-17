@@ -10,10 +10,11 @@ export type ProductType = {
 
 const MERCH_IMAGE_STYLE =
   ' drop-shadow-xs w-full hover:drop-shadow-xl transition-all duration-300 ease-in-out hover:scale-[200%]';
-export const positionData: ProductType[] = [
+export const merchData: ProductType[] = [
   {
     image: (
       <NextImage
+        useSkeleton={true}
         src='/images/merchandise/tshirt-white.png'
         width={960}
         height={906}
@@ -21,12 +22,13 @@ export const positionData: ProductType[] = [
         className={clsxm(MERCH_IMAGE_STYLE)}
       />
     ),
-    title: 'T-Shirt',
+    title: 'White T-Shirt',
     price: 'Rp90.000,00',
   },
   {
     image: (
       <NextImage
+        useSkeleton={true}
         src='/images/merchandise/tshirt-black.png'
         width={720}
         height={666}
@@ -34,12 +36,13 @@ export const positionData: ProductType[] = [
         className={clsxm(MERCH_IMAGE_STYLE)}
       />
     ),
-    title: 'Black Tshirt',
+    title: 'Black T-Shirt',
     price: 'Rp90.000,00',
   },
   {
     image: (
       <NextImage
+        useSkeleton={true}
         src='/images/merchandise/totebag.png'
         width={720}
         height={793}
@@ -53,6 +56,7 @@ export const positionData: ProductType[] = [
   {
     image: (
       <NextImage
+        useSkeleton={true}
         src='/images/merchandise/cap.png'
         width={720}
         height={716}
@@ -66,6 +70,7 @@ export const positionData: ProductType[] = [
   {
     image: (
       <NextImage
+        useSkeleton={true}
         src='/images/merchandise/keychain.png'
         width={960}
         height={797}
@@ -79,6 +84,7 @@ export const positionData: ProductType[] = [
   {
     image: (
       <NextImage
+        useSkeleton={true}
         src='/images/merchandise/hand-sanitizer.png'
         width={960}
         height={640}
@@ -89,7 +95,6 @@ export const positionData: ProductType[] = [
     title: 'Pocket Handsanitizer',
     price: 'Rp20.000,00',
   },
-
   {
     image: (
       <NextImage
