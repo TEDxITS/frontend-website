@@ -21,16 +21,16 @@ const merchPageDesc = [
       height={30}
       alt='bg'
       priority={true}
-      className='-translate-x-[10rem] -translate-y-[1rem] bottom-[50%] left-[50%] absolute sm:-translate-y-[1.5rem] md:-translate-x-[12.5rem] md:-translate-y-[2rem]'
+      className='-translate-x-[10rem] -translate-y-[1rem] absolute bottom-[50%] left-[50%] sm:-translate-y-[1.5rem] md:-translate-x-[12.5rem] md:-translate-y-[2rem]'
     />
     <h1 className='text-cdark'>
       R
-      <span className='animate-flicker font-pilow text-cred font-normal'>
+      <span className='animate-flicker font-normal font-pilow text-cred'>
         E
       </span>
       D BUNDLE
     </h1>
-    <h4 className='font-fivo text-cdark max-w-lg sm:mt-2'>
+    <h4 className='font-fivo max-w-lg text-cdark sm:mt-2'>
       Health Protocol is a Must!
     </h4>
   </>,
@@ -41,13 +41,13 @@ const merchPageDesc = [
       height={30}
       alt='bg'
       priority={true}
-      className='-translate-x-[11.5rem] -translate-y-[1rem] bottom-[50%] left-[50%] absolute sm:-translate-y-[1.5rem] md:-translate-x-[14.5rem] md:-translate-y-[2rem]'
+      className='-translate-x-[11.5rem] -translate-y-[1rem] absolute bottom-[50%] left-[50%] sm:-translate-y-[1.5rem] md:-translate-x-[14.5rem] md:-translate-y-[2rem]'
     />
     <h1 className='text-cdark'>
-      BL<span className='animate-flicker font-pilow font-normal'>A</span>CK
+      BL<span className='animate-flicker font-normal font-pilow'>A</span>CK
       BUNDLE
     </h1>
-    <h4 className='font-fivo text-cdark max-w-lg sm:mt-2'>
+    <h4 className='font-fivo max-w-lg text-cdark sm:mt-2'>
       Keeping up with the heat of Surabaya
     </h4>
   </>,
@@ -58,16 +58,16 @@ const merchPageDesc = [
       height={30}
       alt='bg'
       priority={true}
-      className='-translate-x-[11.5rem] -translate-y-[1rem] bottom-[50%] left-[50%] absolute sm:-translate-y-[1.5rem] md:-translate-x-[14.5rem] md:-translate-y-[2rem]'
+      className='-translate-x-[11.5rem] -translate-y-[1rem] absolute bottom-[50%] left-[50%] sm:-translate-y-[1.5rem] md:-translate-x-[14.5rem] md:-translate-y-[2rem]'
     />
     <h1 className='text-cdark'>
       W
-      <span className='animate-flicker drop-shadow-solid-sm font-pilow text-clight font-normal'>
+      <span className='animate-flicker drop-shadow-solid-sm font-normal font-pilow text-clight'>
         H
       </span>
       ITE BUNDLE
     </h1>
-    <h4 className='font-fivo text-cdark max-w-lg sm:mt-2'>
+    <h4 className='font-fivo max-w-lg text-cdark sm:mt-2'>
       Can&apos;t get mixed up with others
     </h4>
   </>,
@@ -91,18 +91,18 @@ export default function HomePageCarousel({
   return (
     <div
       className={clsxm(
-        'flex relative justify-center items-center w-full',
+        'flex items-center justify-center relative w-full',
         className
       )}
       {...rest}
     >
-      <div className='flex relative flex-col gap-4 w-full lg:mt-0'>
+      <div className='flex flex-col gap-4 relative w-full lg:mt-0'>
         {merchPageImage.map((image, i) => (
           <div
             onClick={() => setActive(i)}
             key={i}
             className={clsxm(
-              'w-full rounded-lg transition-all ease-in-out cursor-pointer',
+              'cursor-pointer ease-in-out rounded-lg transition-all w-full',
               'hover:-translate-y-2',
               [i === active && merchPageStyle[0]],
               [
@@ -121,11 +121,11 @@ export default function HomePageCarousel({
               height={753}
               layout='responsive'
               objectFit='cover'
-              className='h-fit overflow-hidden mx-auto w-full rounded-2xl md:mx-0'
+              className='h-fit mx-auto overflow-hidden rounded-2xl w-full md:mx-0'
             />
           </div>
         ))}
-        <div className='w-[30rem] left-0 mt-4 -translate-x-1/4 sm:-translate-x-[17%]'>
+        <div className='-translate-x-1/4 left-0 mt-4 w-[30rem] sm:-translate-x-[17%]'>
           {merchPageDesc[active]}
         </div>
       </div>
