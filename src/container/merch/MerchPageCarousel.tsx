@@ -74,9 +74,9 @@ const merchPageDesc = [
 ];
 
 const merchPageStyle = [
-  'relative -top-0 left-0 z-[4] scale-125',
-  'absolute -top-0 -left-[8rem] sm:-left-[12rem] lg:-left-[20rem] z-[2] opacity-80 scale-75',
-  'absolute -top-0 left-[8rem] sm:left-[12rem] lg:left-[20rem] z-[2] opacity-80 scale-75',
+  'relative -top-0 left-0 z-[4] scale-150',
+  'absolute -top-0 -left-[8rem] sm:-left-[12rem] lg:-left-[20rem] z-[2] opacity-80 scale-100',
+  'absolute -top-0 left-[8rem] sm:left-[12rem] lg:left-[20rem] z-[2] opacity-80 scale-100',
 ];
 
 const TOTAL_PHOTO = merchPageImage.length;

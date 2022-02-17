@@ -40,7 +40,7 @@ export default function CoverSection() {
             </h1>
             <h1 className='italic ml-6 text-3xl text-cblue sm:ml-11'>Secret</h1>
           </div>
-          <MerchPageCarousel className='w-[14rem] sm:w-[20rem]' />
+          <MerchPageCarousel className='mt-16 w-[14rem] sm:w-[20rem]' />
           <ArrowDownButton
             iconClassName='text-cdark hover:border-cdark mt-4'
             href={'#products'}
