@@ -21,7 +21,7 @@ export const positionData: ProductType[] = [
         className={clsxm(MERCH_IMAGE_STYLE)}
       />
     ),
-    title: 'T-Shirt',
+    title: 'White T-Shirt',
     price: 'Rp90.000,00',
   },
   {
@@ -34,7 +34,7 @@ export const positionData: ProductType[] = [
         className={clsxm(MERCH_IMAGE_STYLE)}
       />
     ),
-    title: 'Black Tshirt',
+    title: 'Black T-Shirt',
     price: 'Rp90.000,00',
   },
   {
