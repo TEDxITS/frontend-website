@@ -13,19 +13,22 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        paper: 'url(/images/texture.png)',
-        home: 'url(/images/bg-home.png)',
-        story: 'url(/images/bg-story.png)',
-        'story-mobile': 'url(/images/bg-story-mobile.png)',
-        volunteer: 'url(/images/volunteer-bg-plain.png)',
-        footer: 'url(/images/footer-bg.svg)',
-        about: "url('/images/bg-about.png')",
-        blob: 'url(/images/blob.svg)',
-        committee: 'url(/images/bg-committee.png)',
-        positionOpen: 'url(/images/bg-positionOpenCover.svg)',
-        newspaper: 'url(/images/bg-newspaper.png)',
-        'newspaper-content': 'url(/images/bg-newspaper-content-new.jpg)',
-        'book-cover': 'url(/svg/book-bg.svg)',
+        /**
+         * When naming background object, please use kebab-case
+         * and put it in the '/images/background'
+         *
+         * Try to naming it based on the shape
+         */
+        'blob-1': 'url(/images/background/bg-blob-1.png)',
+        'blob-2': 'url(/images/background/bg-blob-2.png)',
+        'blob-3': 'url(/images/background/bg-blob-3.png)',
+        'blob-outline': 'url(/images/background/bg-blob-outline.png)',
+        'blob-green': 'url(/images/background/bg-blob-green.jpg)',
+        'story-desktop': 'url(/images/background/bg-story-desktop.jpg)',
+        'story-mobile': 'url(/images/background/bg-story-mobile.jpg)',
+        footer: 'url(/images/background/bg-footer.jpg)',
+        texture: 'url(/images/background/bg-texture.png)',
+        newspaper: 'url(/images/background/bg-newspaper.jpg)',
       },
       dropShadow: {
         'solid-sm': '-1px 1px rgb(33 33 33)',
@@ -56,18 +59,18 @@ module.exports = {
           900: withOpacity('--tw-clr-primary-900'),
         },
         //#endregion  //*======== Primary ===========
-        //used for primary colors
-        cred: '#eb5d37',
-        //accent color
+
+        cred: '#EB5D37',
         cdark: '#212121',
         clight: '#f7f5f2',
         cgreen: '#009F4F',
-        cblue: '#2f65e7',
-        cyellow: '#e7fa51',
-        cpurple: '#780ae7',
-        cpink: '#ffbcf0',
+        cblue: '#2F65E7',
+        cyellow: '#E7FA51',
+        cpurple: '#780AE7',
+        cpink: '#FFBCF0',
+
         //text color
-        cgray: '#efedea',
+        cgray: '#EFEDEA',
       },
       fill: {
         primary: {

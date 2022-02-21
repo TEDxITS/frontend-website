@@ -102,15 +102,17 @@
   }
   /* #endregion  /**======== Additional Font =========== */
 
+  /* #region  /**=========== Cursor =========== */
   .cursor-newtab {
-    cursor: url("/images/new-tab.png") 10 10, pointer;
+    cursor: url("/images/cursor/new-tab.png") 10 10, pointer;
   }
   .cursor-register {
-    cursor: url("/images/register-now.png") 10 10, pointer;
+    cursor: url("/images/cursor/register-now.png") 10 10, pointer;
   }
   .cursor-click {
-    cursor: url("/images/click-me.png") 10 10, pointer;
+    cursor: url("/images/cursor/click-me.png") 10 10, pointer;
   }
+  /* #endregion  /**======== Cursor =========== */
 
   /* #region  /**=========== Typography =========== */
   h1 {

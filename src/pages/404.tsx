@@ -39,31 +39,31 @@ export default function NotFoundPage() {
           <LeftLine className='absolute bottom-0 left-0 z-10 h-1/4 lg:h-1/2' />
           <RightLine className='absolute bottom-0 -right-4 h-1/5 lg:h-1/3' />
           <NextImage
-            src='/svg/t-letter.svg'
-            width={892}
-            height={892}
+            src='/svg/letter/t-letter.png'
+            width={547}
+            height={602}
             alt='t letter'
             className='animate-[pulse_8s__ease_infinite] max-w-[50vw] absolute left-0 -top-16 w-full -translate-x-1/2'
           />
           <NextImage
-            src='/svg/e-letter.svg'
-            width={822}
-            height={881}
-            alt='t letter'
+            src='/svg/letter/e-letter.png'
+            width={543}
+            height={576}
+            alt='e letter'
             className='max-w-[50vw] absolute bottom-0 left-1/4 w-full -translate-x-1/3 translate-y-1/2'
           />
           <NextImage
-            src='/svg/d-letter.svg'
-            width={495.36}
-            height={467.52}
-            alt='t letter'
+            src='/svg/letter/d-letter.png'
+            width={495}
+            height={468}
+            alt='d letter'
             className='max-w-[30vw] absolute top-0 right-1/4 w-full blur-xl -translate-y-1/2'
           />
           <NextImage
-            src='/svg/x-letter.svg'
-            width={1309}
-            height={1270}
-            alt='t letter'
+            src='/svg/letter/x-letter.png'
+            width={400}
+            height={415}
+            alt='x letter'
             className='animate-[pulse_15s__ease_infinite] max-w-[40vw] absolute right-0 bottom-0 w-full translate-x-1/4 translate-y-1/4'
           />
         </div>

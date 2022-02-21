@@ -33,7 +33,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='/images/socialExperiment.png'
+          src='/images/past-events/social-experiment.jpg'
           alt=''
           width={1980}
           height={1980}
@@ -48,7 +48,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='/images/guidingYourPassion.png'
+          src='/images/past-events/guiding-passion.jpg'
           alt=''
           width={1980}
           height={1980}
@@ -63,7 +63,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='/images/spaceOfMind.png'
+          src='/images/past-events/space-mind.jpg'
           alt=''
           width={1980}
           height={1980}
@@ -78,7 +78,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='/images/socialExperiment.png'
+          src='/images/past-events/social-experiment.jpg'
           alt=''
           width={1980}
           height={1980}
@@ -93,7 +93,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='/images/guidingYourPassion.png'
+          src='/images/past-events/guiding-passion.jpg'
           alt=''
           width={1980}
           height={1980}
@@ -108,7 +108,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='/images/spaceOfMind.png'
+          src='/images/past-events/space-mind.jpg'
           alt=''
           width={1980}
           height={1980}
@@ -123,7 +123,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='/images/socialExperiment.png'
+          src='/images/past-events/social-experiment.jpg'
           alt=''
           width={1980}
           height={1980}
@@ -138,7 +138,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='/images/guidingYourPassion.png'
+          src='/images/past-events/guiding-passion.jpg'
           alt=''
           width={1980}
           height={1980}
@@ -153,7 +153,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='/images/spaceOfMind.png'
+          src='/images/past-events/space-mind.jpg'
           alt=''
           width={1980}
           height={1980}

@@ -48,7 +48,7 @@ export default function ToolsPage() {
         shortened={shortened}
       />
       <main>
-        <section className='bg-cdark bg-home bg-cover'>
+        <section className='bg-blob-1 bg-cdark bg-cover'>
           <div className='layout flex justify-center items-center py-20 min-h-screen'>
             <div className='gap-x-[calc(100%/12)] grid gap-y-16 md:grid-cols-2'>
               <div className='flex flex-col'>

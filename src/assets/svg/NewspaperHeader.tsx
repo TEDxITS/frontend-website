@@ -3,6 +3,9 @@ import * as React from 'react';
 export default function NewspaperHeader({
   ...rest
 }: React.ComponentPropsWithoutRef<'svg'>) {
+  const getTodayDate = () => {
+    return new Date(Date.now()).toLocaleString().split(',')[0];
+  };
   return (
     <svg
       id='Layer_1'
@@ -118,6 +121,7 @@ export default function NewspaperHeader({
           {'22'}
         </tspan>
       </text>
+
       <text
         transform='translate(0 75.62)'
         style={{
@@ -126,7 +130,7 @@ export default function NewspaperHeader({
           fill: '#010101',
         }}
       >
-        {'10/12/2022'}
+        {getTodayDate()}
         <tspan style={{ fontSize: '18.59px' }}>
           <tspan x={0} y={17.55} style={{ letterSpacing: '-.04em' }}>
             {'W'}

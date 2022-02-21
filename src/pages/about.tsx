@@ -13,7 +13,7 @@ export default function AboutPage() {
   return (
     <Layout>
       <Seo templateTitle='About' />
-      <main className='bg-[length:100vw_40rem] bg-about bg-cdark text-clight pt-8 bg-top bg-no-repeat md:pt-16'>
+      <main className='bg-[length:100vw_40rem] bg-blob-2 bg-cdark text-clight pt-8 bg-top bg-no-repeat md:pt-16'>
         <Header />
         <section className='flex relative flex-col'>
           <TextSection />
@@ -26,7 +26,7 @@ export default function AboutPage() {
             href={'#events'}
           />
           <NextImage
-            src='/images/bg-about-bottom.png'
+            src='/images/background/bg-bottom-2.png'
             width={1276}
             height={234}
             alt='bottom'

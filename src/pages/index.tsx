@@ -5,6 +5,7 @@ import clsxm from '@/lib/clsxm';
 
 import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
+import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 import CoverSection from '@/container/home/CoverSection';
 import MissionSection from '@/container/home/MissionSection';
@@ -15,21 +16,22 @@ export default function HomePage() {
     <Layout>
       <Seo />
       <main className='bg-cgray flex flex-col'>
-        <section className='bg-cdark bg-home text-clight relative z-20 pt-8 h-full bg-bottom bg-no-repeat bg-cover md:pt-16'>
+        <section className='bg-blob-1 bg-cdark text-clight relative z-20 pt-8 h-full bg-bottom bg-no-repeat bg-cover md:pt-16'>
           <Header />
           <CoverSection />
-          <img
-            src='/images/bg-home-bottom.png'
-            width={6003}
-            height={756}
+          <NextImage
+            priority={true}
+            src='/images/background/bg-bottom-1.png'
+            width={1276}
+            height={178}
             alt='bottom'
-            className='translate-y-[99%] absolute bottom-0 w-full drop-shadow-md'
+            className='translate-y-[98%] absolute bottom-0 w-full drop-shadow-md'
           />
         </section>
         <section className={clsxm('flex relative z-10 flex-col')}>
           <MissionSection />
         </section>
-        <section className='bg-volunteer flex overflow-hidden relative flex-col justify-center items-center pt-80 pb-32 bg-bottom bg-no-repeat bg-cover'>
+        <section className='bg-blob-green flex overflow-hidden relative flex-col justify-center items-center pt-80 pb-32 bg-bottom bg-no-repeat bg-cover'>
           <RegisterSection />
         </section>
       </main>

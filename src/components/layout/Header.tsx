@@ -43,23 +43,22 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
 
   return (
     <header
-      className={clsxm('sticky top-0 z-50 bg-transparent transition-all', {
-        'backdrop-blur-sm': isNavbarScrolled,
-      })}
+      className={clsxm(
+        'sticky top-0 z-50 bg-gradient-to-b from-transparent to-transparent transition-all duration-700 ease-in',
+        {
+          'from-cdark/60 backdrop-blur-sm ': isNavbarScrolled && !isDark,
+          ' backdrop-blur-sm ': isNavbarScrolled && isDark,
+        }
+      )}
     >
-      <div className='/ layout flex items-center h-16'>
+      <div className='layout flex items-center h-16'>
         <nav className='w-full'>
           {/* Desktop View Navbar */}
           <div className='hidden w-full md:block'>
             <div className='flex justify-between items-center w-full h-full'>
               <UnstyledLink href='/'>
-                <img
-                  src={isDark ? '/images/tedxits2.png' : '/images/tedxits.png'}
-                  alt='TedxITS logo'
-                  className='h-12'
-                />
+                <NavigationLogo isDark={isDark} isNavOpen={isNavOpen} />
               </UnstyledLink>
-
               <ul
                 className={clsxm('flex gap-8 items-center lg:gap-16', {
                   'text-cdark': isDark,
@@ -88,15 +87,7 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
           <div className='block relative items-center h-16 md:hidden'>
             <div className='flex absolute inset-0 z-40 justify-between items-center w-full'>
               <UnstyledLink href='/'>
-                <img
-                  src={
-                    isDark && !isNavOpen
-                      ? '/images/tedxits2.png'
-                      : '/images/tedxits.png'
-                  }
-                  alt='TedxITS logo'
-                  className='h-12'
-                />
+                <NavigationLogo isDark={isDark} isNavOpen={isNavOpen} />
               </UnstyledLink>
               <ul className='flex justify-between items-center space-x-4'>
                 <button
@@ -109,7 +100,6 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                 </button>
               </ul>
             </div>
-
             {isNavOpen && (
               <motion.div
                 initial={{ opacity: 0 }}
@@ -139,9 +129,9 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                       <li key={`${href}${label}`}>
                         <p className='text-right'>
                           <HeaderLink href={href} className='text-2xl'>
-                            <p className='/ font-fivo text-2xl text-right'>
+                            <span className='font-fivo text-2xl text-right'>
                               {label}
-                            </p>
+                            </span>
                           </HeaderLink>
                         </p>
                       </li>
@@ -174,5 +164,25 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
         </nav>
       </div>
     </header>
+  );
+}
+
+function NavigationLogo({
+  isDark,
+  isNavOpen,
+}: {
+  isDark: boolean;
+  isNavOpen: boolean;
+}) {
+  return (
+    <img
+      src={
+        isDark && !isNavOpen
+          ? '/images/logo/tedxits-black.png'
+          : '/images/logo/tedxits-white.png'
+      }
+      alt='TedxITS logo'
+      className='h-12'
+    />
   );
 }

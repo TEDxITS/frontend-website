@@ -20,9 +20,9 @@ export const pageLinks: LinkType[] = [
   // { href: '/join-us', label: 'Be Part of Us!' },
   {
     href: '/merch',
-    label: <>Merchandise ⭐</>,
+    label: <>Merchandise</>,
   },
-  { href: '/grand-theme', label: <>Grand Theme ✨</> },
+  { href: '/grand-theme', label: <>Grand Theme</> },
 ];
 
 export const socialMediaLinks: SoialMediaLinkType[] = [
@@ -31,7 +31,7 @@ export const socialMediaLinks: SoialMediaLinkType[] = [
     label: 'Instagram',
     logo: (
       <InstagramLogoIllustration
-        className='/ h-10 md:h-7 hover:cursor-pointer'
+        className='h-10 md:h-7 hover:cursor-pointer'
         pathClassName='duration-150 transition-all'
       />
     ),
@@ -41,7 +41,7 @@ export const socialMediaLinks: SoialMediaLinkType[] = [
     label: 'Twitter',
     logo: (
       <TwitterLogoIllustration
-        className='/ h-10 md:h-7 hover:cursor-pointer'
+        className='h-10 md:h-7 hover:cursor-pointer'
         pathClassName='duration-150 transition-all'
       />
     ),
@@ -51,7 +51,7 @@ export const socialMediaLinks: SoialMediaLinkType[] = [
     label: 'LinkedIn',
     logo: (
       <LinkedinLogoIllustration
-        className='/ h-10 md:h-7 hover:cursor-pointer'
+        className='h-10 md:h-7 hover:cursor-pointer'
         pathClassName='duration-150 transition-all'
       />
     ),
@@ -64,7 +64,7 @@ export const socialMediaLinksDark: SoialMediaLinkType[] = [
     label: 'Instagram',
     logo: (
       <InstagramLogoIllustration
-        className='/ h-10 md:h-7 hover:cursor-pointer'
+        className='h-10 md:h-7 hover:cursor-pointer'
         pathClassName='fill-cdark duration-150 transition-all'
       />
     ),
@@ -74,7 +74,7 @@ export const socialMediaLinksDark: SoialMediaLinkType[] = [
     label: 'Twitter',
     logo: (
       <TwitterLogoIllustration
-        className='/ h-10 md:h-7 hover:cursor-pointer'
+        className='h-10 md:h-7 hover:cursor-pointer'
         pathClassName='fill-cdark duration-150 transition-all'
       />
     ),
@@ -84,7 +84,7 @@ export const socialMediaLinksDark: SoialMediaLinkType[] = [
     label: 'LinkedIn',
     logo: (
       <LinkedinLogoIllustration
-        className='/ h-10 md:h-7 hover:cursor-pointer'
+        className='h-10 md:h-7 hover:cursor-pointer'
         pathClassName='fill-cdark duration-150 transition-all'
       />
     ),

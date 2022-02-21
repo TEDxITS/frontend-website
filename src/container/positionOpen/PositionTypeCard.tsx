@@ -42,29 +42,22 @@ export default function PositionTypeCard({
       id={href}
     >
       <NextImage
-        src='/images/bolder-blob.svg'
+        src='/images/background/bg-blob-fill.png'
         width={546}
-        height={546}
+        height={563}
         alt='bg'
         priority={true}
         className='absolute top-0 left-1/2 translate-x-32 translate-y-36'
       />
       <NextImage
-        src='/images/bg-positionopen.svg'
-        width={681}
-        height={808}
+        src='/images/background/bg-blob-outline.png'
+        width={710}
+        height={815}
         alt='bg'
         priority={true}
         className='absolute top-0 right-1/2 translate-x-12 translate-y-10'
       />
-      <NextImage
-        src='/images/bolder-blob.svg'
-        width={546}
-        height={546}
-        alt='bg'
-        priority={true}
-        className='absolute bottom-0 left-1/2 rotate-180 -translate-x-72 translate-y-56'
-      />
+
       <div className='layout flex z-10 flex-col gap-8' ref={observe}>
         {image && (
           <NextImage

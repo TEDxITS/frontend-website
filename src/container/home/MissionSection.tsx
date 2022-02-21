@@ -16,7 +16,7 @@ export default function MissionSection() {
     >
       <StoryBlobIllustration className='hidden absolute inset-0 z-10 w-full lg:block' />
       <StoryBlobIllustrationMobile className='block absolute inset-0 z-10 w-full lg:hidden' />
-      <div className='bg-story-mobile flex overflow-hidden z-20 pt-20 w-full bg-bottom bg-no-repeat bg-cover md:bg-story lg:pt-44'>
+      <div className='bg-story-mobile flex overflow-hidden z-20 pt-20 w-full bg-bottom bg-no-repeat bg-cover md:bg-story-desktop lg:pt-44'>
         <div className='layout min-h-main flex flex-col justify-center items-center h-full text-center lg:min-h-[50vh] lg:px-32'>
           <h1 className='font-bold text-black' id='about'>
             WH<span className='font-sympath font-normal'>A</span>TS ON TED
@@ -36,7 +36,7 @@ export default function MissionSection() {
         </div>
       </div>
       <NextImage
-        src='/images/bg-story-bottom.png'
+        src='/images/background/bg-story-bottom-desktop.png'
         width={1275}
         height={95}
         alt='bottom'
@@ -44,7 +44,7 @@ export default function MissionSection() {
         className='translate-y-[99%] hidden absolute bottom-0 z-0 w-full lg:block'
       />
       <NextImage
-        src='/images/bg-story-mobile-bottom.png'
+        src='/images/background/bg-story-bottom-mobile.png'
         width={2549}
         height={452}
         alt='bottom'
