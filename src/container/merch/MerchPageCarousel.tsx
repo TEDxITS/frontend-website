@@ -31,7 +31,7 @@ const merchPageDesc = [
       D BUNDLE
     </h1>
     <h4 className='font-fivo text-cdark max-w-lg sm:mt-2'>
-      Health Protocol is a Must!
+      Nothing but darkness
     </h4>
   </>,
   <>
@@ -125,7 +125,7 @@ export default function HomePageCarousel({
             />
           </div>
         ))}
-        <div className='w-[30rem] left-0 mt-4 -translate-x-1/4 sm:-translate-x-[17%]'>
+        <div className='w-[30rem] left-0 mt-16 -translate-x-1/4 sm:-translate-x-[17%]'>
           {merchPageDesc[active]}
         </div>
       </div>

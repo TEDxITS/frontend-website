@@ -33,7 +33,7 @@ export default function CoverSection() {
         <small className='font-fivo absolute right-0 top-8 text-sm md:top-16'>
           Merch 1.0
         </small>
-        <div className='flex flex-col gap-4 justify-center items-center text-center lg:mt-0'>
+        <div className='flex flex-col justify-center items-center text-center lg:mt-0'>
           <div className='flex flex-row'>
             <h1 className='text-cdark'>
               ARC<span className='font-pilow font-normal'>A</span>NE
