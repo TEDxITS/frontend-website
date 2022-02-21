@@ -57,7 +57,7 @@ export const bookData: BookDataType[] = [
     backCover: '/images/book-3.jpg',
     elephant: 'Red Elephant',
     title: 'The Unseen of Great Importance',
-    subTitle: 'There is so much silence to be destroyed.',
+    subTitle: 'The truth that we want, but not really happened.',
     heading: (
       <>
         The Unseen

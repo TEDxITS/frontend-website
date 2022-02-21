@@ -60,6 +60,7 @@ export default function CampaignSection() {
       >
         <CampaignDoodle1 className={clsxm(DOODLE_STYLE)} />
         <NextImage
+          priority={true}
           width={985}
           height={788}
           src='/images/campaign-1.jpg'
@@ -74,8 +75,8 @@ export default function CampaignSection() {
         })}
       >
         <CampaignDoodle2 className={clsxm(DOODLE_STYLE)} />
-
         <NextImage
+          priority={true}
           width={985}
           height={788}
           src='/images/campaign-2.jpg'
@@ -91,6 +92,7 @@ export default function CampaignSection() {
       >
         <CampaignDoodle3 className={clsxm(DOODLE_STYLE)} />
         <NextImage
+          priority={true}
           width={985}
           height={788}
           src='/images/campaign-3.jpg'

@@ -14,7 +14,6 @@ export default function GrandThemePage() {
   return (
     <Layout>
       <Seo templateTitle='Grand Theme Reveal' />
-
       <main className='bg-newspaper-content flex overflow-hidden flex-col pt-8 bg-center bg-cover md:pt-16'>
         <Header isDark={true} />
         <section className='flex relative flex-col p-4 -mb-16 min-h-screen md:p-8 lg:p-16'>
