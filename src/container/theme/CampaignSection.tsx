@@ -63,7 +63,7 @@ export default function CampaignSection() {
           priority={true}
           width={985}
           height={788}
-          src='/images/campaign-1.jpg'
+          src='/images/grand-theme/campaign-1.jpg'
           alt='Listen'
           className='w-full'
         />
@@ -79,7 +79,7 @@ export default function CampaignSection() {
           priority={true}
           width={985}
           height={788}
-          src='/images/campaign-2.jpg'
+          src='/images/grand-theme/campaign-2.jpg'
           alt='See'
           className='w-full'
         />
@@ -95,7 +95,7 @@ export default function CampaignSection() {
           priority={true}
           width={985}
           height={788}
-          src='/images/campaign-3.jpg'
+          src='/images/grand-theme/campaign-3.jpg'
           alt='Speak'
           className='w-full'
         />

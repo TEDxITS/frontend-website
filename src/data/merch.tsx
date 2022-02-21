@@ -15,7 +15,7 @@ export const merchData: ProductType[] = [
     image: (
       <NextImage
         useSkeleton={true}
-        src='/images/merchandise/tshirt-white.png'
+        src='/images/merch/tshirt-white.png'
         width={960}
         height={906}
         alt='White Tshirt'
@@ -29,7 +29,7 @@ export const merchData: ProductType[] = [
     image: (
       <NextImage
         useSkeleton={true}
-        src='/images/merchandise/tshirt-black.png'
+        src='/images/merch/tshirt-black.png'
         width={720}
         height={666}
         alt='Black Tshirt'
@@ -43,7 +43,7 @@ export const merchData: ProductType[] = [
     image: (
       <NextImage
         useSkeleton={true}
-        src='/images/merchandise/totebag.png'
+        src='/images/merch/totebag.png'
         width={720}
         height={793}
         alt='Totebag'
@@ -57,7 +57,7 @@ export const merchData: ProductType[] = [
     image: (
       <NextImage
         useSkeleton={true}
-        src='/images/merchandise/cap.png'
+        src='/images/merch/cap.png'
         width={720}
         height={716}
         alt='Baseball Cap'
@@ -71,7 +71,7 @@ export const merchData: ProductType[] = [
     image: (
       <NextImage
         useSkeleton={true}
-        src='/images/merchandise/keychain.png'
+        src='/images/merch/keychain.png'
         width={960}
         height={797}
         alt='Keychain'
@@ -85,7 +85,7 @@ export const merchData: ProductType[] = [
     image: (
       <NextImage
         useSkeleton={true}
-        src='/images/merchandise/hand-sanitizer.png'
+        src='/images/merch/hand-sanitizer.png'
         width={960}
         height={640}
         alt='Hand Sanitizer'
@@ -98,7 +98,7 @@ export const merchData: ProductType[] = [
   {
     image: (
       <NextImage
-        src='/images/merchandise/wallet.png'
+        src='/images/merch/wallet.png'
         width={960}
         height={614}
         alt='Sako Wallet'

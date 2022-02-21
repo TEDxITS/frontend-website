@@ -54,9 +54,9 @@ export default function PastEventsSection() {
         </li>
         {/* Event 01 */}
         <li className='layout flex flex-col gap-y-8 gap-x-12 md:flex-row'>
-          <div className='bg-blob h-[47rem] rotate-[120deg] w-[50rem] absolute -left-80 bg-no-repeat transform -translate-y-32'></div>
+          <div className='bg-blob-outline h-[47rem] rotate-[120deg] w-[50rem] absolute -left-80 bg-no-repeat transform -translate-y-32'></div>
           <NextImage
-            src='/images/socialExperiment.png'
+            src='/images/past-events/social-experiment.jpg'
             alt=''
             width='100%'
             height={102}
@@ -85,7 +85,7 @@ export default function PastEventsSection() {
         <AboutDivider1 className='my-4 w-full' />
         {/* Event 02 */}
         <li className='layout flex flex-col-reverse gap-y-8 gap-x-12 md:flex-row'>
-          <div className='-rotate-[140deg] bg-blob h-[47rem] w-[50rem] absolute -right-80 bg-no-repeat transform -translate-y-56'></div>
+          <div className='-rotate-[140deg] bg-blob-outline h-[47rem] w-[50rem] absolute -right-80 bg-no-repeat transform -translate-y-56'></div>
           <div className='flex z-10 flex-col w-full text-left'>
             <h2 className='font-outline-900-sm mb-2.5 font-bold text-primary-500 md:font-outline-900-md'>
               “Guiding Your Passion to Find Your True Self”
@@ -107,7 +107,7 @@ export default function PastEventsSection() {
             </div>
           </div>
           <NextImage
-            src='/images/guidingYourPassion.png'
+            src='/images/past-events/guiding-passion.jpg'
             alt=''
             width='100%'
             height={102}
@@ -120,9 +120,9 @@ export default function PastEventsSection() {
         <AboutDivider2 className='my-4 w-full' />
         {/* Event 03 */}
         <li className='layout flex flex-col gap-y-8 gap-x-12 md:flex-row'>
-          <div className='bg-blob h-[47rem] rotate-[40deg] w-[50rem] absolute -left-48 bg-no-repeat transform -translate-y-20'></div>
+          <div className='bg-blob-outline h-[47rem] rotate-[40deg] w-[50rem] absolute -left-48 bg-no-repeat transform -translate-y-20'></div>
           <NextImage
-            src='/images/spaceOfMind.png'
+            src='/images/past-events/space-mind.jpg'
             alt=''
             width='100%'
             height={102}
@@ -158,7 +158,7 @@ export default function PastEventsSection() {
         {/* Video */}
         <li className='layout'>
           <div className='flex flex-col mt-36'>
-            <div className='-rotate-[45deg] bg-blob h-[47rem] w-[50rem] absolute -right-96 bg-no-repeat transform -translate-y-72'></div>
+            <div className='-rotate-[45deg] bg-blob-outline h-[47rem] w-[50rem] absolute -right-96 bg-no-repeat transform -translate-y-72'></div>
             <h1 className='font-fivo font-outline-900-sm text-cdark z-10 tracking-wide md:font-outline-900-md'>
               “Castle of Your Own”
             </h1>
@@ -171,7 +171,7 @@ export default function PastEventsSection() {
                   controls={true}
                 />
               </div>
-              <div className='bg-blob h-[47rem] w-[50rem] absolute -left-48 -bottom-64 bg-no-repeat transform'></div>
+              <div className='bg-blob-outline h-[47rem] w-[50rem] absolute -left-48 -bottom-64 bg-no-repeat transform'></div>
               <p className='z-10 mt-16 text-justify'>
                 Finally! The main event of TEDxITS 2021. This event successfully
                 invited 5 professional passion shapers from various fields and 2

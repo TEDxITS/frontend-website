@@ -36,7 +36,7 @@ export default function NewsPaperSection() {
       <div className={clsxm('absolute inset-0 min-h-screen blur-md ')}>
         <div className='grid grid-cols-1 -m-20 md:grid-cols-2'>
           <NextImage
-            src='/images/newspaper-1.jpg'
+            src='/images/grand-theme/newspaper-1.jpg'
             alt='taboo issues'
             width={817}
             height={818}
@@ -45,7 +45,7 @@ export default function NewsPaperSection() {
             })}
           />
           <NextImage
-            src='/images/newspaper-2.jpg'
+            src='/images/grand-theme/newspaper-2.jpg'
             alt='crucial matters'
             width={907}
             height={806}
@@ -58,7 +58,7 @@ export default function NewsPaperSection() {
             )}
           />
           <NextImage
-            src='/images/newspaper-3.jpg'
+            src='/images/grand-theme/newspaper-3.jpg'
             alt='failed delivered message'
             width={726}
             height={721}
@@ -67,7 +67,7 @@ export default function NewsPaperSection() {
             })}
           />
           <NextImage
-            src='/images/newspaper-3.jpg'
+            src='/images/grand-theme/newspaper-3.jpg'
             alt='elephant in the room'
             width={871}
             height={701}
@@ -79,7 +79,7 @@ export default function NewsPaperSection() {
       </div>
       {/* Main Newspaper */}
       <div className='border-cdark/30 z-10 border shadow-2xl lg:layout lg:-rotate-2'>
-        <div className='bg-newspaper-content font-fivo min-h-main text-cdark flex flex-col gap-8 p-8 pt-4 bg-no-repeat bg-cover lg:p-16 lg:pt-16'>
+        <div className='bg-newspaper font-fivo min-h-main text-cdark flex flex-col gap-8 p-8 pt-4 bg-no-repeat bg-cover lg:p-16 lg:pt-16'>
           <NewspaperHeader />
           <div className='flex justify-between items-baseline md:mt-8'>
             <p className='text-lg lg:text-2xl'>GRAND THEME RELEASE!</p>
@@ -120,7 +120,7 @@ export default function NewsPaperSection() {
               />
             </div>
             <NextImage
-              src='/images/sticker-1.png'
+              src='/images/sticker/sticker-1.png'
               width={478}
               height={110}
               alt='Sticker TedxITS'

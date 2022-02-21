@@ -11,7 +11,7 @@ export type BookDataType = {
 export const bookData: BookDataType[] = [
   {
     logo: '/svg/elephant-black.svg',
-    backCover: '/images/book-1.jpg',
+    backCover: '/images/grand-theme/book-1.jpg',
     elephant: 'Black Elephant',
     title: 'The Unspoken Taboo Words',
     subTitle: 'There is so much silence to be destroyed.',
@@ -31,7 +31,7 @@ export const bookData: BookDataType[] = [
   },
   {
     logo: '/svg/elephant-white.svg',
-    backCover: '/images/book-2.jpg',
+    backCover: '/images/grand-theme/book-2.jpg',
     elephant: 'White Elephant',
     title: 'The Unheard Voices',
     subTitle: 'The message that are left undelivered.',
@@ -54,7 +54,7 @@ export const bookData: BookDataType[] = [
   },
   {
     logo: '/svg/elephant-red.svg',
-    backCover: '/images/book-3.jpg',
+    backCover: '/images/grand-theme/book-3.jpg',
     elephant: 'Red Elephant',
     title: 'The Unseen of Great Importance',
     subTitle: 'The truth that we want, but not really happened.',

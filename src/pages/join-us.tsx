@@ -17,11 +17,12 @@ export default function HomePage() {
     <Layout>
       <Seo templateTitle='Open Volunteer!' />
       <main className='bg-cgray flex flex-col'>
-        <section className='bg-cdark bg-home text-clight relative z-20 pt-8 h-full bg-bottom bg-no-repeat bg-cover md:pt-16'>
+        <section className='bg-blob-3 bg-cdark text-clight relative z-20 pt-8 h-full bg-bottom bg-no-repeat bg-cover md:pt-16'>
           <Header />
           <CoverSection />
           <NextImage
-            src='/images/bg-positionOpen-bottom.png'
+            priority={true}
+            src='/images/background/bg-bottom-3.png'
             width={1275}
             height={108}
             alt='bottom'
@@ -50,7 +51,7 @@ const LoadingPositionPage = () => {
   return (
     <Layout showFooter={false}>
       <Seo templateTitle='Our Committee' />
-      <main className='bg-cdark bg-committee text-clight flex relative flex-col py-8 bg-no-repeat bg-cover md:py-16'>
+      <main className='bg-blob-3 bg-cdark text-clight flex relative flex-col py-8 bg-no-repeat bg-cover md:py-16'>
         <Header />
         <section className='layout min-h-[calc(100vh-64px-64px)] flex relative z-10 flex-col justify-center items-center lg:min-h-[calc(100vh-64px-128px)]'>
           <div className='flex flex-col gap-4 justify-center items-center w-full'>

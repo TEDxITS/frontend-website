@@ -139,7 +139,7 @@ function BookCover({ isOpen, data }: { isOpen: boolean; data: BookDataType }) {
 function BookContent({ data }: { data: BookDataType }) {
   return (
     <div
-      className='bg-clight bg-paper campaign-bk-page block absolute bg-repeat rounded-r-lg'
+      className='bg-clight bg-texture campaign-bk-page block absolute bg-repeat rounded-r-lg'
       style={{
         transform: 'translate3d(0, 0, 19px)',
         width: 'calc((var(--book-width) * 1px) - 5px)',

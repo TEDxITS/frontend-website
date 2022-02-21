@@ -10,7 +10,7 @@ export default function MerchPage() {
   return (
     <Layout>
       <Seo templateTitle='Merch' />
-      <main className='bg-cgray over pt-8 md:pt-16'>
+      <main className='bg-cgray pt-8 md:pt-16'>
         <Header isDark={true} />
         <section className='bg-cgray flex overflow-hidden relative flex-col'>
           <CoverSection />

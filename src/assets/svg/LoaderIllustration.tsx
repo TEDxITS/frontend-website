@@ -10,7 +10,7 @@ export default function LoaderIllustration({
       xmlSpace='preserve'
       {...rest}
     >
-      <circle fill='#fff' cx={6} cy={10} r={6}>
+      <circle fill='#212121' cx={6} cy={10} r={6}>
         <animate
           attributeName='opacity'
           dur='1s'
@@ -19,7 +19,7 @@ export default function LoaderIllustration({
           begin={0.1}
         />
       </circle>
-      <circle fill='#fff' cx={26} cy={10} r={6}>
+      <circle fill='#212121' cx={26} cy={10} r={6}>
         <animate
           attributeName='opacity'
           dur='1s'
@@ -28,7 +28,7 @@ export default function LoaderIllustration({
           begin={0.2}
         />
       </circle>
-      <circle fill='#fff' cx={46} cy={10} r={6}>
+      <circle fill='#212121' cx={46} cy={10} r={6}>
         <animate
           attributeName='opacity'
           dur='1s'

@@ -221,7 +221,7 @@ export const positionData: PositionData[] = [
     ),
     href: PositionType['Human Resources & Administrative (HRA)'],
     data: [],
-    image: '/images/hra-volunteers.jpg',
+    image: '/images/position/hra-volunteers.jpg',
   },
   {
     title: 'Curator',
@@ -235,6 +235,6 @@ export const positionData: PositionData[] = [
     ),
     href: PositionType.Curator,
     data: [],
-    image: '/images/curating-volunteers.jpg',
+    image: '/images/position/curating-volunteers.jpg',
   },
 ];

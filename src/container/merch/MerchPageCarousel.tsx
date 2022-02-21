@@ -8,20 +8,20 @@ import NextImage from '@/components/NextImage';
 //#region  //*=========== Image Data ===========
 //change this according to your data
 const merchPageImage = [
-  '/images/merchandise/bundle-red.png',
-  '/images/merchandise/bundle-black.png',
-  '/images/merchandise/bundle-white.png',
+  '/images/merch/bundle-red.png',
+  '/images/merch/bundle-black.png',
+  '/images/merch/bundle-white.png',
 ];
 
 const merchPageDesc = [
   <>
     <NextImage
-      src='/images/po-merch-cover.svg'
+      src='/svg/top-right.svg'
       width={32}
       height={30}
       alt='bg'
       priority={true}
-      className='-translate-x-[10rem] -translate-y-[1rem] bottom-[50%] left-[50%] absolute sm:-translate-y-[1.5rem] md:-translate-x-[12.5rem] md:-translate-y-[2rem]'
+      className='-translate-x-[10rem] -translate-y-[1rem] bottom-[50%] left-[50%] scale-[-1] absolute rotate-45 sm:-translate-y-[1.5rem] md:-translate-x-[12.5rem] md:-translate-y-[2rem]'
     />
     <h1 className='text-cdark'>
       R
@@ -36,12 +36,12 @@ const merchPageDesc = [
   </>,
   <>
     <NextImage
-      src='/images/po-merch-cover.svg'
+      src='/svg/top-right.svg'
       width={32}
       height={30}
       alt='bg'
       priority={true}
-      className='-translate-x-[11.5rem] -translate-y-[1rem] bottom-[50%] left-[50%] absolute sm:-translate-y-[1.5rem] md:-translate-x-[14.5rem] md:-translate-y-[2rem]'
+      className='-translate-x-[11.5rem] -translate-y-[1rem] bottom-[50%] left-[50%] scale-[-1] absolute rotate-45 sm:-translate-y-[1.5rem] md:-translate-x-[14.5rem] md:-translate-y-[2rem]'
     />
     <h1 className='text-cdark'>
       BL<span className='animate-flicker font-pilow font-normal'>A</span>CK
@@ -53,7 +53,7 @@ const merchPageDesc = [
   </>,
   <>
     <NextImage
-      src='/images/po-merch-cover.svg'
+      src='/svg/top-left.svg'
       width={32}
       height={30}
       alt='bg'
