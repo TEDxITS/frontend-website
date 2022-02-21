@@ -132,6 +132,10 @@
   body {
     @apply text-cgray text-sm md:text-base;
   }
+
+  p {
+    @apply font-fivo
+  }
   /* #endregion  /**======== Typography =========== */
 
   .layout {

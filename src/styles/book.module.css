@@ -1,0 +1,46 @@
+.campaignBkContainer {
+  --book-width: 400;
+  --book-height: 600;
+}
+.campaignBkBookdefault:hover {
+  transform: rotate3d(0, 1, 0, 35deg);
+}
+.campaignBkViewinside {
+  transform: translate3d(0, 0, 150px) rotate3d(0, 1, 0, 0deg);
+}
+.campaignBkViewback {
+  transform: translate3d(0, 0, 0px) rotate3d(0, 1, 0, 180deg);
+}
+.campaignBkFront {
+  transform: translate3d(0, 0, 20px);
+}
+.campaignBkFrontViewInside {
+  transform: translate3d(0, 0, 20px) rotate3d(0, 1, 0, -160deg);
+}
+.campaignBkCover:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 13px;
+  bottom: 0;
+  width: 3px;
+  background: rgba(0, 0, 0, 0.06);
+  box-shadow: 1px 0 3px rgba(255, 255, 255, 0.1);
+}
+.campaignBkBack:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: auto;
+  right: 10px;
+  bottom: 0;
+  width: 3px;
+  background: rgba(0, 0, 0, 0.06);
+  box-shadow: 1px 0 3px rgba(255, 255, 255, 0.1);
+}
+@media only screen and (max-width: 1280px) {
+  .campaignBkContainer {
+    --book-width: 300;
+    --book-height: 450;
+  }
+}
