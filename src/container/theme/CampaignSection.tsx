@@ -1,8 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import React from 'react';
 
 import clsxm from '@/lib/clsxm';
+
+import NextImage from '@/components/NextImage';
 
 import CampaignDoodle1 from '@/assets/svg/CampaignDoodle1';
 import CampaignDoodle2 from '@/assets/svg/CampaignDoodle2';
@@ -11,7 +12,7 @@ import CampaignDoodle3 from '@/assets/svg/CampaignDoodle3';
 type CampaignImageStateType = [boolean, boolean, boolean];
 
 //#region  //*=========== Constant ===========
-const DOODLE_STYLE = 'absolute inset-0 w-full';
+const DOODLE_STYLE = 'absolute inset-0 w-full z-10';
 const IMAGE_HIDDEN_STYLE =
   'opacity-0 shadow-2xl  duration-700 transition-all rotate-0 md:w-full w-9/12 sm:w-11/12';
 //#endregion  //*======== Constant ===========
@@ -58,7 +59,13 @@ export default function CampaignSection() {
         })}
       >
         <CampaignDoodle1 className={clsxm(DOODLE_STYLE)} />
-        <img src='/images/campaign-1.jpg' alt='Listen' className='w-full' />
+        <NextImage
+          width={985}
+          height={788}
+          src='/images/campaign-1.jpg'
+          alt='Listen'
+          className='w-full'
+        />
       </div>
       <div
         className={clsxm(IMAGE_HIDDEN_STYLE, 'translate-y-1/2', {
@@ -67,7 +74,14 @@ export default function CampaignSection() {
         })}
       >
         <CampaignDoodle2 className={clsxm(DOODLE_STYLE)} />
-        <img src='/images/campaign-2.jpg' alt='See' className='w-full' />
+
+        <NextImage
+          width={985}
+          height={788}
+          src='/images/campaign-2.jpg'
+          alt='See'
+          className='w-full'
+        />
       </div>
       <div
         className={clsxm(IMAGE_HIDDEN_STYLE, 'translate-x-1/2', {
@@ -76,7 +90,13 @@ export default function CampaignSection() {
         })}
       >
         <CampaignDoodle3 className={clsxm(DOODLE_STYLE)} />
-        <img src='/images/campaign-3.jpg' alt='Speak' className='w-full' />
+        <NextImage
+          width={985}
+          height={788}
+          src='/images/campaign-3.jpg'
+          alt='Speak'
+          className='w-full'
+        />
       </div>
     </div>
   );

@@ -24,7 +24,7 @@ module.exports = {
         committee: 'url(/images/bg-committee.png)',
         positionOpen: 'url(/images/bg-positionOpenCover.svg)',
         newspaper: 'url(/images/bg-newspaper.png)',
-        'newspaper-content': 'url(/images/bg-newspaper-content.png)',
+        'newspaper-content': 'url(/images/bg-newspaper-content-new.jpg)',
         'book-cover': 'url(/svg/book-bg.svg)',
       },
       dropShadow: {

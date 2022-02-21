@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import * as React from 'react';
 
 import styles from '@/styles/book.module.css';
@@ -6,6 +5,8 @@ import styles from '@/styles/book.module.css';
 import clsxm from '@/lib/clsxm';
 
 import { BookDataType } from '@/data/book';
+
+import NextImage from '@/components/NextImage';
 
 export default function Book({ data }: { data: BookDataType }) {
   //#region  //*=========== Book State ===========
@@ -117,7 +118,9 @@ function BookCover({ isOpen, data }: { isOpen: boolean; data: BookDataType }) {
             }
           )}
         >
-          <img
+          <NextImage
+            width={287.63}
+            height={275.9}
             src={data.logo}
             alt={`${data.elephant} logo`}
             className='w-full'
@@ -182,7 +185,13 @@ function BookBack({ data }: { data: BookDataType }) {
       }}
     >
       <div className='flex items-center w-full h-full'>
-        <img src={data.backCover} alt='The Unspoken' className='w-full' />
+        <NextImage
+          src={data.backCover}
+          alt='The Unspoken'
+          className='w-full'
+          width={417}
+          height={626}
+        />
       </div>
     </div>
   );

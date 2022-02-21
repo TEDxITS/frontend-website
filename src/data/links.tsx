@@ -5,7 +5,7 @@ import TwitterLogoIllustration from '@/assets/svg/TwitterLogoIllustration';
 //#region  //*=========== Type ===========
 type LinkType = {
   href: string;
-  label: string;
+  label: React.ReactNode;
 };
 
 type SoialMediaLinkType = LinkType & {
@@ -18,7 +18,11 @@ export const pageLinks: LinkType[] = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   // { href: '/join-us', label: 'Be Part of Us!' },
-  { href: '/merch', label: 'Merchandise⭐' },
+  {
+    href: '/merch',
+    label: <>Merchandise ⭐</>,
+  },
+  { href: '/grand-theme', label: <>Grand Theme ✨</> },
 ];
 
 export const socialMediaLinks: SoialMediaLinkType[] = [

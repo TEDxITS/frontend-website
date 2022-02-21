@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import * as React from 'react';
 
+import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 import CampaignSection from '@/container/theme/CampaignSection';
@@ -13,7 +14,9 @@ export default function GrandThemePage() {
   return (
     <Layout>
       <Seo templateTitle='Grand Theme Reveal' />
-      <main className='bg-newspaper-content flex overflow-hidden flex-col bg-center bg-cover'>
+
+      <main className='bg-newspaper-content flex overflow-hidden flex-col pt-8 bg-center bg-cover md:pt-16'>
+        <Header isDark={true} />
         <section className='flex relative flex-col p-4 -mb-16 min-h-screen md:p-8 lg:p-16'>
           <NewsPaperSection />
         </section>

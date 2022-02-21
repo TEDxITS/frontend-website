@@ -1,9 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import React from 'react';
 import ReactPlayer from 'react-player';
 
 import clsxm from '@/lib/clsxm';
+
+import NextImage from '@/components/NextImage';
 
 import NewspaperHeader from '@/assets/svg/NewspaperHeader';
 
@@ -32,17 +33,22 @@ export default function NewsPaperSection() {
   return (
     <>
       {/* Background */}
-      <div className='absolute inset-0 min-h-screen'>
+      <div className={clsxm('absolute inset-0 min-h-screen blur-md ')}>
         <div className='grid grid-cols-1 -m-20 md:grid-cols-2'>
-          <img
+          <NextImage
             src='/images/newspaper-1.jpg'
+            alt='taboo issues'
+            width={817}
+            height={818}
             className={clsxm(NEWSPAPER_HIDDEN_STYLE, '-translate-x-20', {
               'opacity-100 rotate-12 translate-x-0': newsPaperState[0],
             })}
-            alt='taboo issues'
           />
-          <img
+          <NextImage
             src='/images/newspaper-2.jpg'
+            alt='crucial matters'
+            width={907}
+            height={806}
             className={clsxm(
               NEWSPAPER_HIDDEN_STYLE,
               'hidden -translate-y-20 md:block',
@@ -50,21 +56,24 @@ export default function NewsPaperSection() {
                 'opacity-100 -rotate-12 translate-y-16': newsPaperState[1],
               }
             )}
-            alt='crucial matters'
           />
-          <img
+          <NextImage
             src='/images/newspaper-3.jpg'
+            alt='failed delivered message'
+            width={726}
+            height={721}
             className={clsxm(NEWSPAPER_HIDDEN_STYLE, {
               'opacity-100 -rotate-[3deg] -translate-y-20': newsPaperState[2],
             })}
-            alt='failed delivered message'
           />
-          <img
-            src='/images/newspaper-4.jpg'
+          <NextImage
+            src='/images/newspaper-3.jpg'
+            alt='elephant in the room'
+            width={871}
+            height={701}
             className={clsxm(NEWSPAPER_HIDDEN_STYLE, 'translate-x-16', {
               'opacity-100 -rotate-[-5deg] translate-x-0': newsPaperState[3],
             })}
-            alt='elephant in the room'
           />
         </div>
       </div>
@@ -101,18 +110,20 @@ export default function NewsPaperSection() {
             </p>
           </div>
           <div>
-            <div className='aspect-h-9 aspect-w-16 bg-cdark overflow-hidden'>
+            <div className='aspect-h-9 aspect-w-16 overflow-hidden rounded-sm'>
               <ReactPlayer
-                url='https://www.youtube.com/embed/VinuTH1_4YI'
+                url='https://www.youtube.com/embed/hJAAbfABpz8'
                 width={'100%'}
                 height={'100%'}
                 muted={true}
                 controls={true}
               />
             </div>
-            <img
+            <NextImage
               src='/images/sticker-1.png'
-              alt=''
+              width={478}
+              height={110}
+              alt='Sticker TedxITS'
               className='ml-auto w-32 -translate-y-1/2 lg:w-56'
             />
           </div>
