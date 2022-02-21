@@ -11,7 +11,7 @@ import ProductCard from './ProductCard';
 export default function MissionSection() {
   return (
     <div
-      className='flex flex-col items-center justify-center mb-16 text-center'
+      className='flex flex-col justify-center items-center mb-16 text-center'
       id='products'
     >
       <NextImage
@@ -20,7 +20,7 @@ export default function MissionSection() {
         height={369}
         alt='bg'
         priority={true}
-        className='absolute bottom-[72rem] right-0 translate-x-32 translate-y-36'
+        className='bottom-[72rem] absolute right-0 translate-x-32 translate-y-36'
       />
       <NextImage
         src='/images/po-merch-bg.svg'
@@ -28,10 +28,10 @@ export default function MissionSection() {
         height={369}
         alt='bg'
         priority={true}
-        className='-left-48 absolute bottom-96 rotate-180 translate-x-32 translate-y-36'
+        className='absolute -left-48 bottom-96 rotate-180 translate-x-32 translate-y-36'
       />
-      <div className='flex flex-col items-center justify-center layout z-10'>
-        <div className='flex flex-wrap gap-24 items-center justify-center w-full'>
+      <div className='layout flex z-10 flex-col justify-center items-center'>
+        <div className='flex flex-wrap gap-24 justify-center items-center w-full'>
           {merchData.map((item, i) => (
             <ProductCard
               image={item.image}
@@ -42,9 +42,9 @@ export default function MissionSection() {
           ))}
         </div>
       </div>
-      <div className='animate-bounce block bottom-12 fixed mt-16 mx-auto z-20'>
+      <div className='block fixed bottom-12 z-20 mx-auto mt-16 animate-bounce'>
         <ButtonLink
-          className='from-cdark px-16 py-4 shadow-2xl to-cdark'
+          className='from-cdark to-cdark px-16 py-4 shadow-2xl'
           href='https://tedxits.org/links/OPENPOARCANE'
         >
           BUY NOW
