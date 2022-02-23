@@ -56,27 +56,21 @@ export default function Book({ data }: { data: BookDataType }) {
         <BookLeft data={data} />
       </div>
       <div
-        className='flex relative gap-2 justify-between items-center'
+        className='flex relative gap-2 justify-end items-center'
         style={{ marginTop: 'calc((var(--book-height) * 1px) + 40px)' }}
       >
-        <p className='text-cdark'>
-          {' '}
-          What you can do <span className='font-sympath'>?</span>{' '}
-        </p>
-        <div className='flex gap-2 items-center'>
-          <button
-            onClick={flipBook}
-            className='bg-cdark border-cdark font-fivo px-4 py-1 text-lg rounded-lg border-2'
-          >
-            Flip
-          </button>
-          <button
-            onClick={openBook}
-            className='bg-clight border-cdark font-fivo text-cdark px-4 py-1 text-lg rounded-lg border-2'
-          >
-            {isOpen ? 'Close' : 'Open'}
-          </button>
-        </div>
+        <button
+          onClick={flipBook}
+          className='bg-cdark border-cdark font-fivo px-4 py-1 text-lg rounded-lg border-2'
+        >
+          Flip
+        </button>
+        <button
+          onClick={openBook}
+          className='bg-clight border-cdark font-fivo text-cdark px-4 py-1 text-lg rounded-lg border-2'
+        >
+          {isOpen ? 'Close' : 'Open'}
+        </button>
       </div>
     </div>
   );

@@ -107,18 +107,7 @@ export default function NewspaperHeader({
             fontFamily: 'FilsonPro-Black,Filson Pro',
           }}
         >
-          {'1'}
-        </tspan>
-        <tspan
-          x={63}
-          y={0}
-          style={{
-            letterSpacing: '-.01em',
-            fontWeight: 800,
-            fontFamily: 'FilsonPro-Black,Filson Pro',
-          }}
-        >
-          {'22'}
+          {'196'}
         </tspan>
       </text>
 
