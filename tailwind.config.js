@@ -62,7 +62,7 @@ module.exports = {
 
         cred: '#EB5D37',
         cdark: '#212121',
-        clight: '#f7f5f2',
+        clight: '#F7f5F2',
         cgreen: '#009F4F',
         cblue: '#2F65E7',
         cyellow: '#E7FA51',
@@ -92,6 +92,7 @@ module.exports = {
         'gradient-x': 'gradient-x 15s ease infinite',
         'gradient-y': 'gradient-y 15s ease infinite',
         'gradient-xy': 'gradient-xy 15s ease infinite',
+        float: 'float 6s ease-in-out infinite',
       },
       keyframes: {
         flicker: {
@@ -149,6 +150,14 @@ module.exports = {
           '50%': {
             'background-size': '200% 200%',
             'background-position': 'right center',
+          },
+        },
+        float: {
+          '0%, 100%': {
+            transform: 'translateY(5px)',
+          },
+          '50%': {
+            transform: 'translateY(-5px)',
           },
         },
       },
