@@ -9,6 +9,8 @@ import '@/styles/globals.css';
 
 import * as gtag from '@/lib/gtag';
 
+import DismissableToast from '@/components/DismissableToast';
+
 function MyApp({ Component, pageProps, router }: AppProps) {
   const gtagRouter = useRouter();
   React.useEffect(() => {
@@ -43,6 +45,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       />
       <ParallaxProvider>
         <AnimatePresence exitBeforeEnter>
+          <DismissableToast />
           <Component {...pageProps} key={router.route} />
         </AnimatePresence>
       </ParallaxProvider>

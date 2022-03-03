@@ -5,8 +5,8 @@ import { postLink } from '@/lib/fetch';
 import { LinkData } from '@/lib/type/data';
 
 import Button from '@/components/buttons/Button';
-import Input from '@/components/input/Input';
 import InputGhost from '@/components/input/InputGhost';
+import LinkInput from '@/components/input/LinkInput';
 import Seo from '@/components/Seo';
 import UrlModal from '@/container/modal/UrlModal';
 
@@ -71,7 +71,7 @@ export default function ToolsPage() {
                   onSubmit={handleSubmit((data) => onSubmit(data))}
                   className='flex flex-col gap-4'
                 >
-                  <Input
+                  <LinkInput
                     id={'url'}
                     placeholder={'ex: https://www.google.com/'}
                     label={'Original URL'}

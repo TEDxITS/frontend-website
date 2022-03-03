@@ -3,7 +3,7 @@ import * as React from 'react';
 import { RegisterOptions, useFormContext } from 'react-hook-form';
 
 export type InputProps = {
-  label: React.ReactNode;
+  label: string;
   id: string;
   className?: string;
   type?: React.HTMLInputTypeAttribute;
@@ -15,7 +15,7 @@ export type InputProps = {
   dark?: boolean;
 } & React.ComponentPropsWithoutRef<'input'>;
 
-export default function Input({
+export default function LinkInput({
   id,
   label,
   className,
@@ -41,12 +41,12 @@ export default function Input({
       <label
         htmlFor={type === 'checkbox' ? `${id}${checkId}` : id}
         className={clsx(
-          'font-fivo text-clight block font-semibold',
+          'font-fivo text-cgray block ',
           {
             'text-primary-900': type === 'checkbox',
           },
           {
-            'text-cdark': dark,
+            'text-primary-900': dark,
           }
         )}
       >
@@ -56,11 +56,11 @@ export default function Input({
         {...register(id, validation)}
         {...rest}
         className={clsx(
-          'file:-ml-2 file:bg-cred file:border file:border-primary-900 file:duration-100 file:hover:bg-cgreen/50 file:mr-2 file:transition-all',
+          'file:bg-primary-300 file:border file:border-dashed file:border-primary-900 file:hover:bg-primary-500 file:hover:text-primary-100 file:mr-2 file:shadow-inner',
           {
             'cursor-not-allowed bg-primary-200/30': readOnly,
           },
-          'bg-clight font-fivo placeholder-cdark/40 text-cdark px-4 py-2 w-full border border-transparent shadow-inner focus:border-primary-900 focus:ring-0',
+          'bg-cgreen placeholder-gray-300/50 px-4 py-2 w-full rounded-full border-2 border-transparent shadow-inner focus:border-cred focus:ring-0',
           {
             'w-6 h-6  checked:bg-teal px-0 py-0 mr-2 ': type === 'checkbox',
           },
@@ -72,25 +72,26 @@ export default function Input({
         aria-describedby={id}
         placeholder={placeholder}
       />
-      <div className='mb-1'>
+      <div className='my-1'>
         {helperText && (
           <p
-            className={clsx('text-clight mt-1 text-xs', {
-              'text-cdark': dark,
+            className={clsx('font-fivo text-cgray text-xs', {
+              'text-primary-900': dark,
             })}
           >
             {helperText}
           </p>
         )}
         {errors[id] && (
-          <p
-            className={clsx('text-cred mt-1 text-xs', {
+          <span
+            className={clsx('font-fivo text-xs text-primary-500', {
               'text-red-700': dark,
             })}
           >
-            {errors[id]?.type === 'pattern' && `Please enter valid value}`}
-            {errors[id]?.type === 'required' && `This field is required`}
-          </p>
+            {errors[id]?.type === 'pattern' && `Please enter valid ${label}`}
+            {errors[id]?.type === 'required' &&
+              `${label ? label : 'field'} is required`}
+          </span>
         )}
       </div>
     </div>
