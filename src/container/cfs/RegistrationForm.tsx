@@ -54,7 +54,47 @@ const initialValueCFS: CFSDataType = {
 
 const BATCH_OPTION = ['2021', '2020', '2019', '2018'];
 
-const DEPARTMENT_OPTION = ['Physics', 'Math', 'Informatics', 'Chemistry'];
+const DEPARTMENT_OPTION = [
+  'Chemistry',
+  'Biology',
+  'Mathematics',
+  'Statistics',
+  'Physics',
+  'Actuaria',
+  'Electrical Engineering',
+  'Biomedical Engineering',
+  'Computer Engineering',
+  'Informatics',
+  'Information Systems',
+  'Information Technology',
+  'Naval Architecture and Shipbuilding Engineering',
+  'Marine Engineering',
+  'Ocean Engineering',
+  'Sea Transportation Engineering',
+  'Business Management',
+  'Technology Management',
+  'Developmental Studies',
+  'Industrial Product Design',
+  'Interior Design',
+  'Visual Communication Design',
+  'Mechanical Engineering',
+  'Physics Engineering',
+  'Systems and Industrial Engineering',
+  'Material Engineering',
+  'Chemical Engineering',
+  'Civil Engineering',
+  'Environmental Engineering',
+  'Geomatics Engineering',
+  'Geophysics Engineering',
+  'Architecture',
+  'Regional and Urban Planning',
+  'Civil Infrastructure Engineering',
+  'Industrial Mechanical Engineering',
+  'Automation Electronic Engineering',
+  'Industrial Chemical Engineering',
+  'Instrumentation Engineering',
+  'Business Statistics',
+];
 
 //#endregion  //*======== Initial Option ===========
 
