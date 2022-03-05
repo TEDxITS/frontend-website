@@ -7,6 +7,7 @@ import ReactPlayer from 'react-player';
 import clsxm from '@/lib/clsxm';
 
 import ArrowDownButton from '@/components/buttons/ArrowDownButton';
+import UnstyledLink from '@/components/links/UnstyledLink';
 
 import Guidebook8 from '@/assets/book/Guidebook8';
 import AboutCircleSecond from '@/assets/svg/AboutCircleSecond';
@@ -301,6 +302,14 @@ export default function GuidebookSection() {
                 </p>
               </>
             )}
+
+            <UnstyledLink
+              href='/call-for-local-speaker/guidebook'
+              className='font-fivo text-cdark mt-8'
+            >
+              <span className='text-cblue'>or</span> View Guidebook in full
+              screen
+            </UnstyledLink>
           </div>
         </div>
         <button

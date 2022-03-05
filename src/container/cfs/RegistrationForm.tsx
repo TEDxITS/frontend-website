@@ -78,7 +78,7 @@ const initialValueCFS: CFSDataType = {
 
 //#region  //*=========== Initial Option ===========
 
-const BATCH_OPTION = ['2021', '2020', '2019', '2018', 'Alumni'];
+const BATCH_OPTION = ['2021', '2020', '2019', '2018', '2017', 'Alumni'];
 
 const DEPARTMENT_OPTION = [
   'Actuarial Science',
@@ -346,7 +346,7 @@ export default function RegistrationForm() {
           <Input
             dark={true}
             id={InputField.CONTACT}
-            helperText='WhatsApp Number of LINE ID'
+            helperText='WhatsApp Number or ID LINE '
             label={'Contact'}
             validation={{ required: true }}
           />
@@ -360,7 +360,7 @@ export default function RegistrationForm() {
             accept='image/jpeg,image/gif,image/png,application/pdf,image/x-eps'
             label={
               <>
-                Proof of study at IT
+                Proof of study at ITS
                 <small className='text-cblue my-1 leading-none'>
                   {' '}
                   Example: KTM (PDF)

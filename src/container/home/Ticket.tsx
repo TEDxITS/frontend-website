@@ -64,10 +64,10 @@ export default function Ticket({
               />
             </svg>
             <div className='relative p-2 w-full'>
-              <DrawBottomLeft className='absolute bottom-0 left-0 w-8' />
-              <DrawBottomRight className='absolute right-0 bottom-0 w-8' />
-              <DrawTopLeft className='absolute top-0 left-0 w-8' />
-              <DrawTopRight className='absolute top-0 right-0 w-8' />
+              <DrawBottomLeft className='left-[10%] absolute bottom-0 w-8' />
+              <DrawBottomRight className='right-[10%] absolute bottom-0 w-8' />
+              <DrawTopLeft className='left-[10%] absolute top-0 w-8' />
+              <DrawTopRight className='right-[10%] absolute top-0 w-8' />
               <img
                 src='/svg/bottom-center.svg'
                 alt=''
@@ -78,10 +78,9 @@ export default function Ticket({
 
             <div id='register'>
               <p className='font-fivo text-cdark font-medium leading-tight text-center'>
-                The wait is over.
+                The time has begun!
                 <br />
-                TEDxITS is opening volunteer application for passionate and
-                open-minded individuals who are full of ideas
+                Voice your outlandish ideas and let the world listen.
               </p>
             </div>
             <svg viewBox='0 0 498.33 2.18'>

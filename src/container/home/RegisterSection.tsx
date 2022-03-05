@@ -68,7 +68,11 @@ export default function RegisterSection() {
           }}
           className='flex flex-col mt-4'
         >
-          <ButtonLink variant='secondary' className='z-10' href='/join-us'>
+          <ButtonLink
+            variant='secondary'
+            className='z-10'
+            href='/call-for-local-speaker'
+          >
             Register Now
           </ButtonLink>
         </motion.div>
