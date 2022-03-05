@@ -41,7 +41,7 @@ export default function Input({
       <label
         htmlFor={type === 'checkbox' ? `${id}${checkId}` : id}
         className={clsx(
-          'font-fivo text-clight block font-semibold',
+          'font-fivo text-clight block ',
           {
             'text-primary-900': type === 'checkbox',
           },
@@ -56,7 +56,7 @@ export default function Input({
         {...register(id, validation)}
         {...rest}
         className={clsx(
-          'file:-ml-2 file:bg-cred file:border file:border-primary-900 file:duration-100 file:hover:bg-cgreen/50 file:mr-2 file:transition-all',
+          'file:-ml-2 file:bg-cdark file:border-0 file:duration-100 file:hover:bg-cred file:mr-2 file:text-clight file:transition-all',
           {
             'cursor-not-allowed bg-primary-200/30': readOnly,
           },
@@ -90,6 +90,8 @@ export default function Input({
           >
             {errors[id]?.type === 'pattern' && `Please enter valid value}`}
             {errors[id]?.type === 'required' && `This field is required`}
+            {errors[id]?.type === 'size' &&
+              `File exceeded maximum size of 2 MB`}
           </p>
         )}
       </div>

@@ -41,7 +41,7 @@ export default function TextAreaInput({
       <label
         htmlFor={type === 'checkbox' ? `${id}${checkId}` : id}
         className={clsx(
-          'font-fivo text-clight block font-semibold',
+          'font-fivo text-clight block ',
           {
             'text-primary-900': type === 'checkbox',
           },
