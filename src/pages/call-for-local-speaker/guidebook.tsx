@@ -12,7 +12,7 @@ import TitleCfsRegistration from '@/assets/svg/TitleCfsRegistration';
 export default function TestPage() {
   return (
     <Layout>
-      <Seo templateTitle='CGuidebook' />
+      <Seo templateTitle='Guidebook' />
       <main className=''>
         <section className='bg-[#d8d6d3] item-center flex flex-col pt-8 md:pt-16'>
           <div className='flex sticky top-0 flex-col justify-center min-h-screen'>
