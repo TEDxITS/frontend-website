@@ -56,8 +56,8 @@ export default function TestPage() {
               alt=''
               className='absolute top-0 left-0'
             />
-            <div className='layout max-h-[70vh] flex justify-center'>
-              <img src='/svg/title-cfs.svg' alt='' className='' />
+            <div className='layout flex justify-center'>
+              <img src='/images/cfs/title-cfs.png' alt='' className='' />
             </div>
             <img
               src='/images/cfs/book-text.png'
