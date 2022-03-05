@@ -6,15 +6,16 @@ import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 import GuidebookSection from '@/container/cfs/GuidebookSection';
 import RegistrationForm from '@/container/cfs/RegistrationForm';
-import RegistrationSection from '@/container/cfs/RegistrationSection';
+
+import TitleCfsRegistration from '@/assets/svg/TitleCfsRegistration';
 
 export default function CfsPage() {
   return (
     <Layout>
       <Seo templateTitle='Call For Speakers' />
-      <main className='bg-[#E6E6E6] bg-texture flex flex-col gap-8'>
+      <main className='bg-[#E6E6E6] bg-texture flex overflow-hidden flex-col gap-8 pt-8 md:pt-16'>
         <Header isDark={true} />
-        <section className='layout min-h-main grid sticky -top-14'>
+        <section className='layout min-h-main grid'>
           <GuidebookSection />
         </section>
         <section className='relative'>
@@ -26,8 +27,11 @@ export default function CfsPage() {
           <div className='relative drop-shadow-2xl'>
             <BackgroundPath />
             <div className='bg-[#d7d5d2]'>
-              <div className='layout flex flex-col gap-16 pb-32'>
-                <RegistrationSection />
+              <div
+                id='registration'
+                className='layout flex flex-col gap-16 items-center pb-32'
+              >
+                <TitleCfsRegistration className='w-3/4 md:w-1/2 lg:w-1/3' />
                 <RegistrationForm />
               </div>
             </div>

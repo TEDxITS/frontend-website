@@ -54,7 +54,7 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
       <div className='layout flex items-center h-16'>
         <nav className='w-full'>
           {/* Desktop View Navbar */}
-          <div className='hidden w-full md:block'>
+          <div className='hidden w-full lg:block'>
             <div className='flex justify-between items-center w-full h-full'>
               <UnstyledLink href='/'>
                 <NavigationLogo isDark={isDark} isNavOpen={isNavOpen} />
@@ -84,7 +84,7 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
             </div>
           </div>
           {/* Mobile View Navbar */}
-          <div className='block relative items-center h-16 md:hidden'>
+          <div className='block relative items-center h-16 lg:hidden'>
             <div className='flex absolute inset-0 z-40 justify-between items-center w-full'>
               <UnstyledLink href='/'>
                 <NavigationLogo isDark={isDark} isNavOpen={isNavOpen} />

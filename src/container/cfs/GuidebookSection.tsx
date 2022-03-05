@@ -2,13 +2,14 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import HTMLFlipBook from 'react-pageflip';
+import ReactPlayer from 'react-player';
 
 import clsxm from '@/lib/clsxm';
 
 import ArrowDownButton from '@/components/buttons/ArrowDownButton';
 
+import Guidebook8 from '@/assets/book/Guidebook8';
 import AboutCircleSecond from '@/assets/svg/AboutCircleSecond';
-import TitleCfsGuidebook from '@/assets/svg/TitleCfsGuidebook';
 import TitleCfsRegistration from '@/assets/svg/TitleCfsRegistration';
 
 import ArrowNext from '~/images/cfs/arrow-next.svg';
@@ -19,7 +20,10 @@ type BookStateType = 'user_fold' | 'fold_corner' | 'flipping' | 'read';
 
 //#region  //*=========== Constant ===========
 const GUIDEBOOK_PAGES = [
+  'guidebook-01.jpg',
+  'guidebook-03.jpg',
   'guidebook-04.jpg',
+  'guidebook-05.jpg',
   'guidebook-06.jpg',
   'guidebook-07.jpg',
   'guidebook-08.jpg',
@@ -29,10 +33,7 @@ const GUIDEBOOK_PAGES = [
   'guidebook-12.jpg',
   'guidebook-13.jpg',
   'guidebook-14.jpg',
-  'guidebook-15.jpg',
-  'guidebook-16.jpg',
-  'guidebook-17.jpg',
-  'guidebook-05.jpg',
+  'guidebook-02.jpg',
 ];
 
 const GUIDEBOOK_TOPIC = [
@@ -80,14 +81,12 @@ export default function GuidebookSection() {
   //#endregion  //*======== Navigate pages ===========
 
   // minus one becasue last page used as register prompt
-  const totalPage = GUIDEBOOK_PAGES.length - 1;
+  const totalPage = GUIDEBOOK_PAGES.length;
 
   //boolean true determined if the book is in first cover wothout interaction
   const isCover = pageState === 0 && bookState !== 'flipping';
   return (
-    <div className='flex overflow-hidden flex-col items-center'>
-      <TitleCfsGuidebook className='w-3/4 md:w-1/2 lg:w-1/3' />
-
+    <div className='flex overflow-visible flex-col items-center'>
       <div className='flex relative justify-between items-center w-full lg:gap-x-16'>
         <button
           onClick={previousPage}
@@ -138,14 +137,86 @@ export default function GuidebookSection() {
               showPageCorners={false}
               disableFlipByClick={false}
             >
-              {GUIDEBOOK_PAGES.map((page, i) => (
+              <img
+                src={`/images/cfs/guidebook/guidebook-01.jpg`}
+                alt={`Guidebook page 1`}
+                className='w-full shadow-inner drop-shadow-2xl'
+              />
+              <img
+                src={`/images/cfs/guidebook/guidebook-03.jpg`}
+                alt={`Guidebook page 1`}
+                className='w-full shadow-inner drop-shadow-2xl'
+              />
+              <img
+                src={`/images/cfs/guidebook/guidebook-04.jpg`}
+                alt={`Guidebook page 1`}
+                className='w-full shadow-inner drop-shadow-2xl'
+              />
+              <img
+                src={`/images/cfs/guidebook/guidebook-05.jpg`}
+                alt={`Guidebook page 1`}
+                className='w-full shadow-inner drop-shadow-2xl'
+              />
+              <img
+                src={`/images/cfs/guidebook/guidebook-06.jpg`}
+                alt={`Guidebook page 1`}
+                className='w-full shadow-inner drop-shadow-2xl'
+              />
+              <img
+                src={`/images/cfs/guidebook/guidebook-07.jpg`}
+                alt={`Guidebook page 1`}
+                className='w-full shadow-inner drop-shadow-2xl'
+              />
+              <div>
+                <Guidebook8 />
+              </div>
+              <img
+                src={`/images/cfs/guidebook/guidebook-09.jpg`}
+                alt={`Guidebook page 1`}
+                className='w-full shadow-inner drop-shadow-2xl'
+              />
+              <img
+                src={`/images/cfs/guidebook/guidebook-10.jpg`}
+                alt={`Guidebook page 1`}
+                className='w-full shadow-inner drop-shadow-2xl'
+              />
+              <div className='relative'>
+                <div className='aspect-h-9 aspect-w-16 bg-cdark bottom-[18%] absolute left-1/2 z-10 w-11/12 rotate-2 -translate-x-1/2'>
+                  <ReactPlayer
+                    url='https://youtu.be/-FOCpMAww28'
+                    width={'100%'}
+                    height={'100%'}
+                    muted={true}
+                    controls={true}
+                  />
+                </div>
                 <img
-                  key={i}
-                  src={`/images/cfs/guidebook/${page}`}
-                  alt={`Guidebook page ${i + 1}`}
-                  className='w-full shadow-inner drop-shadow-2xl'
+                  src={`/images/cfs/guidebook/guidebook-11.jpg`}
+                  alt={`Guidebook page 1`}
+                  className='absolute inset-0 shadow-inner drop-shadow-2xl'
                 />
-              ))}
+              </div>
+              <img
+                src={`/images/cfs/guidebook/guidebook-12.jpg`}
+                alt={`Guidebook page 1`}
+                className='w-full shadow-inner drop-shadow-2xl'
+              />
+              <img
+                src={`/images/cfs/guidebook/guidebook-13.jpg`}
+                alt={`Guidebook page 1`}
+                className='w-full shadow-inner drop-shadow-2xl'
+              />
+              <img
+                src={`/images/cfs/guidebook/guidebook-14.jpg`}
+                alt={`Guidebook page 1`}
+                className='w-full shadow-inner drop-shadow-2xl'
+              />
+              <img
+                src={`/images/cfs/guidebook/guidebook-02.jpg`}
+                alt={`Guidebook page 1`}
+                className='w-full shadow-inner drop-shadow-2xl'
+              />
+
               {/* Last Page */}
               <div className='bg-[#E6E6E6] bg-texture pl-[1%] z-30'>
                 <div className='flex flex-col gap-8 justify-center items-center p-4 h-full rotate-2 lg:p-16'>
@@ -161,7 +232,10 @@ export default function GuidebookSection() {
                     alt=''
                     className='w-1/2'
                   />
-                  <ArrowDownButton href='/' iconClassName='text-cdark' />
+                  <ArrowDownButton
+                    href='#registration'
+                    iconClassName='text-cdark hover:border-cdark'
+                  />
                   <div className='flex flex-col w-full'>
                     <p className='text-cdark relative'>
                       to see
@@ -189,27 +263,42 @@ export default function GuidebookSection() {
             ) : (
               <>
                 <p className='text-cblue'>
-                  {GUIDEBOOK_TOPIC[Math.floor(pageState / 2)]}
+                  {
+                    GUIDEBOOK_TOPIC[
+                      Math.floor(
+                        pageState % 2 === 0
+                          ? (pageState - 1) / 2
+                          : pageState / 2
+                      )
+                    ]
+                  }
                 </p>
-                <div className='flex gap-4 items-center h-8'>
-                  {[...Array((totalPage + 1) / 2)].map((_, index) => (
-                    <React.Fragment key={index}>
-                      {pageState === 2 * index + 1 ||
-                      pageState === 2 * index + 2 ? (
-                        <div
-                          className='border-cblue w-6 h-6 rounded-full border-2 transition-all duration-200'
-                          key={index}
-                        ></div>
-                      ) : (
-                        <div
-                          onClick={() => gotoPage(2 * index + 1)}
-                          className='border-cblue w-3 h-3 rounded-full border-2 transition-all duration-200'
-                          key={index}
-                        ></div>
-                      )}
-                    </React.Fragment>
-                  ))}
+                <div className='hidden h-8 md:block'>
+                  <div className='flex gap-4 items-center h-8'>
+                    {[...Array(totalPage / 2)].map((_, index) => (
+                      <React.Fragment key={index}>
+                        {pageState === 2 * index + 1 ||
+                        pageState === 2 * index + 2 ? (
+                          <div
+                            className='border-cblue w-6 h-6 rounded-full border-2 transition-all duration-200'
+                            key={index}
+                          ></div>
+                        ) : (
+                          <div
+                            onClick={() => gotoPage(2 * index + 1)}
+                            className='border-cblue w-3 h-3 rounded-full border-2 transition-all duration-200'
+                            key={index}
+                          ></div>
+                        )}
+                      </React.Fragment>
+                    ))}
+                  </div>
                 </div>
+                <p className='text-cdark block md:hidden'>
+                  {pageState === totalPage
+                    ? 'Done!'
+                    : `Page ${pageState}/${totalPage}`}
+                </p>
               </>
             )}
           </div>

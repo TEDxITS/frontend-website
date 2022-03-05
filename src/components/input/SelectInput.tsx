@@ -51,7 +51,7 @@ export default function SelectInput({
     <div>
       <label
         htmlFor={id}
-        className={clsxm('font-fivo text-clight block font-semibold', {
+        className={clsxm('font-fivo text-clight block ', {
           'text-cdark': dark,
         })}
       >

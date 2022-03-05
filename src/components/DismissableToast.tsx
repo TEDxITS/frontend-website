@@ -7,7 +7,7 @@ export default function DismissableToast() {
     <div>
       <Toaster
         reverseOrder={false}
-        position='bottom-center'
+        position='top-center'
         toastOptions={{
           style: {
             borderRadius: '99px',
