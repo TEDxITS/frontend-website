@@ -41,7 +41,7 @@ export default function MissionSection() {
       <div className='layout flex z-10 flex-col justify-center items-center'>
         <div>
           <h1 className='text-cblue font-medium'>MEET THE</h1>
-          <MeetTheTeamTitle className='scale-[.5] sm:scale-100' />
+          <MeetTheTeamTitle />
         </div>
         <small className='font-fivo text-cblue translate-y-[1rem] absolute left-0 text-sm md:translate-y-[-1.5rem]'>
           TEDxITS
@@ -49,27 +49,27 @@ export default function MissionSection() {
         <small className='font-fivo text-cblue translate-y-[1rem] absolute right-0 text-sm md:translate-y-[-1.5rem]'>
           2022
         </small>
-        <small className='font-fivo mt-[-2.5rem] text-cblue inset-x-0 text-sm translate-y-6'>
+        <small className='font-fivo mt-[-2.5rem] text-cblue inset-x-0 z-30 text-sm translate-y-6'>
           <div className='text-xs" w-64 leading-tight'>
             Who try their best to listen to the unheard, see the unseen, and
             speak the unspeakable.
           </div>
         </small>
       </div>
-      <div className='layout flex z-10 flex-col justify-center items-center'>
+      <div className='layout flex z-0 flex-col justify-center items-center'>
         <NextImage
           src='/images/meet-the-team/blur.png'
           width={1150}
           height={469}
           alt='bg'
-          className='-z-10 mt-20 w-full xl:w-[1150px]'
+          className='mt-20 w-full xl:w-[1150px]'
         />
         <NextImage
           src='/images/meet-the-team/yellow-circle.png'
           width={190}
           height={190}
           alt='bg'
-          className='-z-10 h-[100px] w-[60px] inset-x-0 -translate-y-12 md:w-[100px] md:-translate-y-20 lg:h-[140px] lg:w-[140px] lg:-translate-y-24 xl:h-[190px] xl:w-[190px] xl:-translate-y-36'
+          className='h-[100px] w-[60px] inset-x-0 z-10 -translate-y-12 md:w-[100px] md:-translate-y-20 lg:h-[140px] lg:w-[140px] lg:-translate-y-24 xl:h-[190px] xl:w-[190px] xl:-translate-y-36'
         />
       </div>
       <div>

@@ -20,7 +20,7 @@ function Executives({ data }: MemberProps) {
   const [active, setActive] = React.useState<number>(0);
 
   return (
-    <div className='layout my-16'>
+    <div className='layout'>
       <div className='h-[39rem] py-10 space-x-4'>
         <div className='flex md:hidden'>
           <button

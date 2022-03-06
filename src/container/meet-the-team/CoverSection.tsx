@@ -45,7 +45,7 @@ export default function CoverSection() {
       >
         <Header isDark={false} />
         <div className='flex flex-wrap justify-center items-center -translate-y-20'>
-          <div className='bg-cblue overflow-hidden relative z-40 w-full'>
+          <div className='overflow-hidden relative z-40 w-full'>
             <div className='layout min-h-[calc(100vh-64px)] text-clight flex relative justify-items-center'>
               <div className='flex flex-col justify-center items-center w-full text-center lg:mt-0'>
                 <NextImage
