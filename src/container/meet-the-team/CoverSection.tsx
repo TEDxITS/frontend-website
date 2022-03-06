@@ -81,7 +81,7 @@ export default function CoverSection() {
                     url='https://www.youtube.com/embed/VinuTH1_4YI'
                     width={'100%'}
                     height={'100%'}
-                    playing={true}
+                    playing={false}
                     muted={true}
                     controls={true}
                   />

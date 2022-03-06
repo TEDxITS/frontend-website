@@ -1,3 +1,10 @@
+export interface BoardProps {
+  data: memberType[];
+  name: string;
+  description: string;
+  isManager: boolean;
+}
+
 export type memberType = {
   nama: string;
   foto: string;
