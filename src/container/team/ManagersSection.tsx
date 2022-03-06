@@ -4,8 +4,22 @@ import { finance, mnb } from '@/data/team';
 
 import NextImage from '@/components/NextImage';
 
-import ManagersBoardFive from './ManagersBoardFive';
-import ManagersBoardThree from './ManagersBoardThree';
+import ManagersBoardFour from './ManagersBoardFour';
+import ManagersBoardThreeOrFive from './ManagersBoardThreeOrFive';
+
+const mnbdata = {
+  name: 'Marketing & Branding',
+  description:
+    'Elephant flocks inside this room is working on TEDxITS 2022 publication, campaign, design, video, and website to introduce everything about TEDxITS 2022',
+  isManager: true,
+};
+
+const financedata = {
+  name: 'Finance',
+  description:
+    'Elephant flocks that responsible on TEDxITS funding, money management, and partnership',
+  isManager: true,
+};
 
 const ManagersSection = () => {
   return (
@@ -26,8 +40,8 @@ const ManagersSection = () => {
         priority={true}
         className='-left-30 bottom-[34rem] absolute brightness-0 rotate-180'
       />
-      <ManagersBoardFive data={mnb} />
-      <ManagersBoardThree data={finance} />
+      <ManagersBoardFour data={mnb} {...mnbdata} />
+      <ManagersBoardThreeOrFive data={finance} {...financedata} />
     </>
   );
 };

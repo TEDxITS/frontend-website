@@ -1,12 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import clsxm from '@/lib/clsxm';
 
 import NextImage from '@/components/NextImage';
 
+type dimensions = {
+  expertstaff: number;
+  staff: number;
+};
+
 function Staff() {
   const [active, setActive] = React.useState<number>(0);
   const [hidden, setHidden] = React.useState<boolean>(true);
+  const [circleDimensions, setCircleDimensions] = React.useState<dimensions>({
+    expertstaff: 320,
+    staff: 180,
+  });
+
+  useEffect(() => {
+    const newDimensions = () => {
+      if (window.innerWidth < 640)
+        setCircleDimensions({ expertstaff: 180, staff: 80 });
+      else setCircleDimensions({ expertstaff: 320, staff: 180 });
+    };
+    window.addEventListener('resize', newDimensions);
+    return () => window.removeEventListener('resize', newDimensions);
+  }, []);
+
   return (
     <div className='bg-cdark layout my-16'>
       <div className='grid grid-cols-3'>
@@ -24,15 +44,15 @@ function Staff() {
         </div>
       </div>
       <div className='grid grid-cols-10 py-10'>
-        <div className='flex col-span-1 justify-end items-center'>
+        <div className='hidden justify-end items-center sm:flex sm:col-span-1'>
           <p className='font-fivo whitespace-nowrap -rotate-90'>
             General Team Member
           </p>
         </div>
-        <div className='col-span-8'>
+        <div className='col-span-10 sm:col-span-8'>
           <div
             className={clsxm(
-              'flex flex-wrap justify-center items-center py-16 md:flex-nowrap',
+              'flex flex-wrap justify-center items-center py-8 sm:py-16',
               [hidden ? '' : 'hidden']
             )}
           >
@@ -41,8 +61,8 @@ function Staff() {
                 <div key={i} className='flex flex-col items-center mx-16 my-2'>
                   <NextImage
                     src='/images/merch/cap.png'
-                    width={320}
-                    height={320}
+                    width={circleDimensions.expertstaff}
+                    height={circleDimensions.expertstaff}
                     layout='responsive'
                     objectFit='cover'
                     alt='bg'
@@ -61,27 +81,33 @@ function Staff() {
           </div>
           <div
             className={clsxm(
-              'flex flex-wrap justify-center items-center py-5',
-              [hidden ? 'hidden' : '']
+              'grid flex-wrap grid-cols-2 justify-center items-center py-6 sm:flex',
+              [hidden ? 'hidden sm:hidden' : '']
             )}
           >
             {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => {
               return (
-                <div key={i} className='flex flex-col items-center my-2'>
+                <div
+                  key={i}
+                  className='flex flex-col items-center m-2 sm:mx-0 sm:my-2'
+                >
                   <NextImage
                     src='/images/merch/cap.png'
-                    width={180}
-                    height={180}
+                    width={circleDimensions.staff}
+                    height={circleDimensions.staff}
                     layout='responsive'
                     objectFit='cover'
                     alt='bg'
                     priority={true}
                     className='mx-5 rounded-full border-2'
                   />
-                  <h4 className='font-fivo mt-4 mb-2 font-medium'>
+
+                  <h4 className='font-fivo mt-4 mb-2 text-sm font-medium text-center sm:text-base'>
                     Azeva Haqqi Pradiar
                   </h4>
-                  <p className='text-xs text-center'>Staff of Program</p>
+                  <p className='text-xs text-center sm:text-xs'>
+                    Staff of Program
+                  </p>
                 </div>
               );
             })}
@@ -118,7 +144,7 @@ function Staff() {
             ))}
           </div>
         </div>
-        <div className='flex col-span-1 justify-start items-center'>
+        <div className='hidden justify-start items-center sm:flex sm:col-span-1'>
           <p className='font-fivo whitespace-nowrap -rotate-90'>
             General Team Member
           </p>
