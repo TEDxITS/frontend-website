@@ -1,16 +1,16 @@
-export interface BoardProps {
-  data: memberType[];
-  name: string;
-  description: string;
-  isManager: boolean;
-}
-
 export type memberType = {
   nama: string;
   foto: string;
   jabatan: string;
   divisi: string;
 };
+
+export interface BoardProps {
+  data: memberType[];
+  name: string;
+  description: string;
+  isManager: boolean;
+}
 
 export const executives: memberType[] = [
   {
@@ -88,6 +88,33 @@ export const event: memberType[] = [
 ];
 
 export const mnb: memberType[] = [
+  {
+    nama: 'Febrio Luqman',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646039974/team/Febrio_Luqman_Media_Production_Manager_mddgpl.jpg',
+    jabatan: 'Manager',
+    divisi: 'Media Production',
+  },
+  {
+    nama: 'Wina Tungmiharja',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646040182/team/Wina_Tungmiharja_Website_Manager_c8pmka.jpg',
+    jabatan: 'Manager',
+    divisi: 'Website',
+  },
+  {
+    nama: 'Silma Elvaretta Aska',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646040201/team/Silma_Elvaretta_Aska_Marketing_Strategist_Manager_k3tlni.jpg',
+    jabatan: 'Manager',
+    divisi: 'Marketing Strategist',
+  },
+  {
+    nama: 'Naomie Kartika Sari',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646040122/team/Naomie_Kartika_Sari_Graphic_Design_Manager-2_bgrzrf.jpg',
+    jabatan: 'Manager',
+    divisi: 'Graphic Design',
+  },
+];
+
+export const coba: memberType[] = [
   {
     nama: 'Febrio Luqman',
     foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646039974/team/Febrio_Luqman_Media_Production_Manager_mddgpl.jpg',

@@ -4,6 +4,7 @@ import { directors, event, finance, mnb } from '@/data/team';
 
 import NextImage from '@/components/NextImage';
 
+import ManagersBoardFour from './ManagersBoardFour';
 import ManagersBoardThreeOrFive from './ManagersBoardThreeOrFive';
 
 const directorsdata = {
@@ -54,7 +55,7 @@ const ManagersSection = () => {
       />
       <ManagersBoardThreeOrFive data={directors} {...directorsdata} />
       <ManagersBoardThreeOrFive data={event} {...eventdata} />
-      <ManagersBoardThreeOrFive data={mnb} {...mnbdata} />
+      <ManagersBoardFour data={mnb} {...mnbdata} />
       <ManagersBoardThreeOrFive data={finance} {...financedata} />
     </>
   );

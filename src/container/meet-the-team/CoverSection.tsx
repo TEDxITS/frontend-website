@@ -53,14 +53,14 @@ export default function CoverSection() {
                   width={42}
                   height={45}
                   alt='bg'
-                  className='-translate-x-[32.2rem] absolute z-40 -translate-y-80'
+                  className='-translate-x-[36.2rem] absolute z-40 -translate-y-80'
                 />
                 <NextImage
                   src='/images/meet-the-team/yellow-circle.png'
                   width={122}
                   height={122}
                   alt='bg'
-                  className='-translate-x-[32rem] absolute z-30 -translate-y-80'
+                  className='-translate-x-[36rem] absolute z-30 -translate-y-80'
                 />
                 <NextImage
                   src='/images/meet-the-team/yellow-circle.png'
