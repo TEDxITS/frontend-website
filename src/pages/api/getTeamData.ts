@@ -16,50 +16,11 @@ export default async function hello(req: NextApiRequest, res: NextApiResponse) {
     });
   }
   try {
-    const { teamJabatan } = JSON.parse(req.body);
+    const { jabatan, divisi } = JSON.parse(req.body);
     const resData = await client.query(
       q.Map(
-        // q.Paginate(q.Match(q.Index('get_team_data_by_jabatan'), jabatan)),
-        //   q.Lambda(
-        //     ['teamref'],
-        //     q.Get(q.Var('teamref'))
-        //   ),
-
-        q.Paginate(q.Match(q.Index('get_team_data_by_jabatan'), teamJabatan))
-        // q.Paginate(q.Match(q.Index('get_team_data'))),
-        //   q.Lambda(
-        //     ['teamref'],
-        //     q.Let(
-        //       {
-        //         user: q.Get(q.Var('teamref')),
-        //         locationrefs: q.Select(['data'], q.Paginate(q.Match(q.Index('team_data_by_jabatan'), q.Var('teamref')))),
-        //         locations: q.Map(q.Var('jabatanrefs'), q.Lambda(['lr'], q.Select(['data'], q.Get(q.Var('lr'))))),
-        //         locationsFound: q.Any(q.Map(
-        //           q.Var('jabatan'),
-        //           q.Lambda(['l'], q.ContainsStr(q.Select(['jabatan'], q.Var('l')), 'Expert Staff'))
-        //         ))
-        //       },
-        //     q.Var('jabatanFound')
-        //     )
-        //   ),
-        //           q.Paginate(q.Filter(
-        //             q.Match(q.Index('get_team_data')),
-        //               q.Lambda(
-        //                 ['teamref'],
-        //                 q.Let(
-        //                   {
-        //                     team: q.Get(q.Var('teamref')),
-        //                     jabatanrefs: q.Select(['data'], q.Paginate(q.Match(q.Index('team_data_by_jabatan'), q.Var('teamref')))),
-        //                     jabatans: q.Map(q.Var('jabatanrefs'), q.Lambda(['lr'], q.Select(['data'], q.Get(q.Var('lr'))))),
-        //                     jabatansFound: q.Any(q.Map(
-        //                       q.Var('jabatans'),
-        //                       q.Lambda(['l'], q.ContainsStr(q.Select(['jabatan'], q.Var('l')), 'Expert Staff'))
-        //                     ))
-        //                   },
-        //       q.Var('jabatansFound')
-        //     )
-        //   )
-        // ))
+        q.Paginate(q.Match(q.Index('get_team_data_filter'), [jabatan, divisi])),
+        q.Lambda('X', q.Get(q.Var('X')))
       )
     );
     const result = resData.data.map((item: { data: any }) => item.data);
