@@ -1,6 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { Dispatch, useEffect, useState } from 'react';
 
 import clsxm from '@/lib/clsxm';
+
+import { memberType } from '@/data/team';
+import { staffProps } from '@/data/team';
 
 import NextImage from '@/components/NextImage';
 
@@ -9,13 +12,35 @@ type dimensions = {
   staff: number;
 };
 
-function Staff() {
+function Staff({ name, description }: staffProps) {
   const [active, setActive] = React.useState<number>(0);
   const [hidden, setHidden] = React.useState<boolean>(true);
   const [circleDimensions, setCircleDimensions] = React.useState<dimensions>({
     expertstaff: 320,
     staff: 180,
   });
+  const [volunteer, setVolunteer] = useState<memberType[] | []>([]);
+  const [expertStaff, setExpertStaff] = useState<memberType[] | []>([]);
+
+  const getTeam = async (
+    jabatan: string,
+    divisi: string,
+    setMember: Dispatch<memberType[]>
+  ) => {
+    try {
+      const res = await fetch('api/getTeamData', {
+        method: 'POST',
+        body: JSON.stringify({
+          jabatan: jabatan,
+          divisi: divisi,
+        }),
+      });
+      const data = await res.json();
+      setMember(data.content);
+    } catch (error) {
+      return error;
+    }
+  };
 
   useEffect(() => {
     const newDimensions = () => {
@@ -27,18 +52,23 @@ function Staff() {
     return () => window.removeEventListener('resize', newDimensions);
   }, []);
 
+  useEffect(() => {
+    getTeam('Expert Staff', name, setExpertStaff);
+    getTeam('Volunteer', name, setVolunteer);
+  }, [name]);
+
   return (
     <div className='bg-cdark layout my-16'>
       <div className='grid grid-cols-3'>
         <div className='col-span-1 mr-10'>
-          <h3 className='font-fivo mb-5 font-medium'>Program</h3>
+          <h3 className='font-fivo mb-5 font-medium'>{name}</h3>
         </div>
         <div className='col-span-2 text-justify'>
           <p className='font-fivo text-sm leading-tight'>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur,
-            eaque. Amet dolor officia laboriosam labore. Ducimus debitis ut
-            praesentium minus facilis illum, laborum accusamus illo magnam
-            mollitia, libero vero adipisci? Amet dolor officia laboriosam
+            {description}Lorem ipsum dolor sit amet consectetur, adipisicing
+            elit. Pariatur, eaque. Amet dolor officia laboriosam labore. Ducimus
+            debitis ut praesentium minus facilis illum, laborum accusamus illo
+            magnam mollitia, libero vero adipisci? Amet dolor officia laboriosam
             labore.
           </p>
         </div>
@@ -56,24 +86,23 @@ function Staff() {
               [hidden ? '' : 'hidden']
             )}
           >
-            {[0, 1].map((i) => {
+            {expertStaff.map(({ nama, foto, jabatan, divisi }, i) => {
               return (
                 <div key={i} className='flex flex-col items-center mx-16 my-2'>
-                  <NextImage
-                    src='/images/merch/cap.png'
-                    width={circleDimensions.expertstaff}
-                    height={circleDimensions.expertstaff}
-                    layout='responsive'
-                    objectFit='cover'
-                    alt='bg'
-                    priority={true}
-                    className='rounded-full border-2'
-                  />
-                  <h4 className='font-fivo mt-7 mb-4 font-medium'>
-                    Azeva Haqqi Pradiar
-                  </h4>
+                  <div className='overflow-hidden rounded-full border-2'>
+                    <NextImage
+                      src={foto}
+                      width={circleDimensions.expertstaff}
+                      height={circleDimensions.expertstaff}
+                      layout='responsive'
+                      objectFit='cover'
+                      alt='bg'
+                      priority={true}
+                    />
+                  </div>
+                  <h4 className='font-fivo mt-7 mb-4 font-medium'>{nama}</h4>
                   <p className='text-xs text-center'>
-                    Expert Staff of <br /> Program
+                    {jabatan} of <br /> {divisi}
                   </p>
                 </div>
               );
@@ -85,28 +114,29 @@ function Staff() {
               [hidden ? 'hidden sm:hidden' : '']
             )}
           >
-            {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => {
+            {volunteer.map(({ nama, foto, jabatan, divisi }, i) => {
               return (
                 <div
                   key={i}
                   className='flex flex-col items-center m-2 sm:mx-0 sm:my-2'
                 >
-                  <NextImage
-                    src='/images/merch/cap.png'
-                    width={circleDimensions.staff}
-                    height={circleDimensions.staff}
-                    layout='responsive'
-                    objectFit='cover'
-                    alt='bg'
-                    priority={true}
-                    className='mx-5 rounded-full border-2'
-                  />
+                  <div className='overflow-hidden mx-5 rounded-full border-2'>
+                    <NextImage
+                      src={foto}
+                      width={circleDimensions.staff}
+                      height={circleDimensions.staff}
+                      layout='responsive'
+                      objectFit='cover'
+                      alt='bg'
+                      priority={true}
+                    />
+                  </div>
 
                   <h4 className='font-fivo mt-4 mb-2 text-sm font-medium text-center sm:text-base'>
-                    Azeva Haqqi Pradiar
+                    {nama}
                   </h4>
                   <p className='text-xs text-center sm:text-xs'>
-                    Staff of Program
+                    {jabatan} of {divisi}
                   </p>
                 </div>
               );
