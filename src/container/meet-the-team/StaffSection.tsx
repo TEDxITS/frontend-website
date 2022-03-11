@@ -6,9 +6,9 @@ import Staff from './Staff';
 
 const staffData: staffProps[] = [
   { name: 'Program', description: '' },
-  { name: 'Experiental Design', description: '' },
-  { name: 'Logistic & Accomodation', description: '' },
-  { name: 'Curator', description: '' },
+  { name: 'Exp. Design', description: '' },
+  { name: 'Logistics & Acco.', description: '' },
+  { name: 'Curating', description: '' },
   { name: 'HRA', description: '' },
   { name: 'Fundraising', description: '' },
   { name: 'Partnership', description: '' },
