@@ -20,9 +20,13 @@ export const pageLinks: LinkType[] = [
   // { href: '/join-us', label: 'Be Part of Us!' },
   {
     href: '/merch',
-    label: <>Merchandise</>,
+    label: 'Merchandise',
   },
-  { href: '/grand-theme', label: <>Grand Theme</> },
+  {
+    href: '/grand-theme',
+    label: 'Grand Theme',
+  },
+  { href: '/call-for-local-speaker', label: 'Call for Local Speakers' },
 ];
 
 export const socialMediaLinks: SoialMediaLinkType[] = [
