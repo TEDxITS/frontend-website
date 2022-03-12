@@ -1,4 +1,4 @@
-import React, { Dispatch, useEffect, useState } from 'react';
+import React from 'react';
 
 import clsxm from '@/lib/clsxm';
 
@@ -18,13 +18,13 @@ function Staff({ name, description }: staffProps) {
     expertstaff: 320,
     staff: 180,
   });
-  const [volunteer, setVolunteer] = useState<memberType[] | []>([]);
-  const [expertStaff, setExpertStaff] = useState<memberType[] | []>([]);
+  const [volunteer, setVolunteer] = React.useState<memberType[] | []>([]);
+  const [expertStaff, setExpertStaff] = React.useState<memberType[] | []>([]);
 
   const getTeam = async (
     jabatan: string,
     divisi: string,
-    setMember: Dispatch<memberType[]>
+    setMember: React.Dispatch<memberType[]>
   ) => {
     try {
       const res = await fetch('api/getTeamData', {
@@ -41,7 +41,7 @@ function Staff({ name, description }: staffProps) {
     }
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     const newDimensions = () => {
       if (window.innerWidth < 640)
         setCircleDimensions({ expertstaff: 180, staff: 80 });
@@ -51,7 +51,7 @@ function Staff({ name, description }: staffProps) {
     return () => window.removeEventListener('resize', newDimensions);
   }, []);
 
-  useEffect(() => {
+  React.useEffect(() => {
     getTeam('Expert Staff', name, setExpertStaff).then(() => {
       if (expertStaff.length === 3) {
         setCircleDimensions({ expertstaff: 230, staff: 180 });
@@ -62,27 +62,21 @@ function Staff({ name, description }: staffProps) {
 
   return (
     <div className='bg-cdark layout my-16'>
-      <div className='grid grid-cols-3'>
+      <div className='grid relative z-10 grid-cols-3'>
         <div className='col-span-1 mr-10'>
           <h3 className='font-fivo mb-5 font-medium'>{name}</h3>
         </div>
         <div className='col-span-2 text-justify'>
-          <p className='font-fivo text-sm leading-tight'>
-            {description}Lorem ipsum dolor sit amet consectetur, adipisicing
-            elit. Pariatur, eaque. Amet dolor officia laboriosam labore. Ducimus
-            debitis ut praesentium minus facilis illum, laborum accusamus illo
-            magnam mollitia, libero vero adipisci? Amet dolor officia laboriosam
-            labore.
-          </p>
+          <p className='font-fivo text-sm leading-tight'>{description}</p>
         </div>
       </div>
-      <div className='grid grid-cols-10 py-10'>
+      <div className='grid relative z-10 grid-cols-10 py-10'>
         <div className='hidden justify-end items-center sm:flex sm:col-span-1'>
-          <p className='font-fivo whitespace-nowrap -rotate-90'>
+          <p className='cursor-vertical-text font-fivo whitespace-nowrap -rotate-90'>
             General Team Member
           </p>
         </div>
-        <div className='col-span-10 sm:col-span-8'>
+        <div className='relative z-10 col-span-10 sm:col-span-8'>
           <div
             className={clsxm(
               'min-h-[41rem] flex flex-wrap justify-center items-center',
@@ -92,7 +86,7 @@ function Staff({ name, description }: staffProps) {
             {expertStaff.map(({ nama, foto, jabatan, divisi }, i) => {
               return (
                 <div key={i} className='flex flex-col items-center mx-5 my-2'>
-                  <div className='overflow-hidden rounded-full border-2'>
+                  <div className='overflow-hidden rounded-full border-0'>
                     <NextImage
                       src={foto || '/images/merch/cap.png'}
                       width={circleDimensions.expertstaff}
@@ -123,7 +117,7 @@ function Staff({ name, description }: staffProps) {
                   key={i}
                   className='flex flex-col items-center m-2 sm:h-[16rem] sm:w-[14rem] sm:mx-0 sm:my-2'
                 >
-                  <div className='overflow-hidden rounded-full border-2'>
+                  <div className='overflow-hidden rounded-full border-0'>
                     <NextImage
                       src={foto || '/images/merch/cap.png'}
                       width={circleDimensions.staff}
@@ -151,7 +145,7 @@ function Staff({ name, description }: staffProps) {
               expertStaff.length === 0 ? 'hidden' : '',
             ])}
           >
-            {[0, 1].map((_, idx) => (
+            {[...Array(2)].map((_, idx) => (
               <button
                 onClick={() => {
                   setActive(idx);
@@ -183,7 +177,7 @@ function Staff({ name, description }: staffProps) {
           </div>
         </div>
         <div className='hidden justify-start items-center sm:flex sm:col-span-1'>
-          <p className='font-fivo whitespace-nowrap -rotate-90'>
+          <p className='cursor-vertical-text font-fivo whitespace-nowrap -rotate-90'>
             General Team Member
           </p>
         </div>

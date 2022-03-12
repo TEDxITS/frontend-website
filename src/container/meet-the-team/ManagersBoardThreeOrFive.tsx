@@ -24,6 +24,21 @@ function Managers({ data, name, description, isManager }: BoardProps) {
   const [active, setActive] = React.useState<number>(0);
   const datalength = data.length;
   const teamStyle = datalength === 3 ? teamStyleThree : teamStyleFive;
+  let num: number;
+
+  function managersBoardLogic(index: number) {
+    if (active >= datalength) {
+      setActive(0);
+    } else if (active <= -datalength) {
+      setActive(0);
+    }
+    num = index + active;
+    if (num < 0) {
+      num += datalength;
+    } else if (num > datalength - 1) {
+      num -= datalength;
+    }
+  }
 
   return (
     <div className='bg-cblue bg-texture layout my-6 bg-repeat sm:my-16'>
@@ -67,6 +82,7 @@ function Managers({ data, name, description, isManager }: BoardProps) {
             objectFit='cover'
             alt='arrow'
             priority={true}
+            className='--translate-y-4 relative z-0 sm:-translate-y-2'
           />
         </div>
       </div>
@@ -79,30 +95,20 @@ function Managers({ data, name, description, isManager }: BoardProps) {
         >
           <button
             onClick={() => setActive(active + 1)}
-            className='bg-clight shdaow-lg absolute right-1 z-10 w-16 h-16 rounded-full translate-y-52 sm:right-16'
+            className='bg-clight absolute right-1 z-10 w-16 h-16 rounded-full shadow-lg translate-y-52 sm:right-16'
           >
             <h2 className='mb-2 text-5xl text-black'>&rarr;</h2>
           </button>
           <button
             onClick={() => setActive(active - 1)}
-            className='bg-clight shdaow-lg absolute left-1 z-10 w-16 h-16 rounded-full translate-y-52 sm:left-16'
+            className='bg-clight absolute left-1 z-10 w-16 h-16 rounded-full shadow-lg translate-y-52 sm:left-16'
           >
             <h2 className='mb-2 text-5xl text-black'>&larr;</h2>
           </button>
         </div>
 
         {data.map(({ nama, foto, jabatan, divisi }, index) => {
-          if (active >= datalength) {
-            setActive(0);
-          } else if (active <= -datalength) {
-            setActive(0);
-          }
-          let num = index + active;
-          if (num < 0) {
-            num += datalength;
-          } else if (num > datalength - 1) {
-            num -= datalength;
-          }
+          managersBoardLogic(index);
           return (
             <div
               key={index}
@@ -111,14 +117,14 @@ function Managers({ data, name, description, isManager }: BoardProps) {
                 [teamStyle[num]]
               )}
             >
-              <div className='rounded-md border-2 shadow-lg'>
+              <div className='overflow-hidden rounded-lg border-0 shadow-lg'>
                 <NextImage
                   src={foto}
                   width={366}
                   height={440}
                   layout='responsive'
                   objectFit='cover'
-                  alt='bg'
+                  alt='Manager Photo'
                   priority={true}
                 />
               </div>

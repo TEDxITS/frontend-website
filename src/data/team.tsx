@@ -5,6 +5,16 @@ export type memberType = {
   divisi: string;
 };
 
+export type exeType = {
+  nama: string;
+  foto: string;
+  jabatan: string;
+};
+
+export interface exeProps {
+  data: exeType[];
+}
+
 export interface staffProps {
   name: string;
   description: string;
@@ -17,24 +27,21 @@ export interface BoardProps {
   isManager: boolean;
 }
 
-export const executives: memberType[] = [
+export const executives: exeType[] = [
   {
     nama: 'Melissa Gloria',
     foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646040060/team/Melissa_Gloria_Executive_Producer-Co-Lead_Organizer_jkhs8s.jpg',
-    jabatan: 'Executive',
-    divisi: '',
+    jabatan: 'Executive Producer / Co-Lead Organizer',
   },
   {
     nama: 'Clara Lourdessa Oryza Emmanuella',
     foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646039963/team/Clara_Lourdessa_Oryza_Emmanuella_Licensee-Co-Lead_Organizer_efi3cz.jpg',
-    jabatan: 'Executive',
-    divisi: '',
+    jabatan: 'Licensee / Co-Lead Organizer',
   },
   {
     nama: 'Rachel Gracia Simatupang',
     foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646040146/team/Rachel_Gracia_Simatupang_Treasurer_hze9jx.jpg',
-    jabatan: 'Executive',
-    divisi: '',
+    jabatan: 'Treasurer',
   },
 ];
 
@@ -43,13 +50,13 @@ export const directors: memberType[] = [
     nama: 'Muhammad Aristo Widyadhana',
     foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646040074/team/Muhammad_Aristo_Widyadhana_Curator_Director_bs31sx.jpg',
     jabatan: 'Director',
-    divisi: 'Curator',
+    divisi: 'Curating',
   },
   {
     nama: 'Althavida Riris',
     foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646039913/team/Althavida_Riris_Finance_Director_xxztns.jpg',
     jabatan: 'Director',
-    divisi: 'Finance',
+    divisi: 'Fundraising',
   },
   {
     nama: 'Made Krisna Adinarayana',
@@ -59,15 +66,16 @@ export const directors: memberType[] = [
   },
   {
     nama: 'Theresa Mahardikarani',
-    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646040055/team/Made_Krisna_Adinarayana_Director_of_Event-2_smvswv.jpg',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646040164/team/Rani_Director-2_jkx94u.jpg',
     jabatan: 'Director',
-    divisi: 'Marketing and Branding',
+    divisi: 'Human Resource & Administrative',
   },
+
   {
     nama: 'Ni Putu Putri Marinda Pradnyandari',
     foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646040135/team/Ni_Putu_Putri_Marinda_Pradnyandari_HRA_Director_xocazb.jpg',
     jabatan: 'Director',
-    divisi: 'HRA',
+    divisi: 'Human Resource & Administrative',
   },
 ];
 
@@ -137,6 +145,69 @@ export const finance: memberType[] = [
     foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646039978/team/Clarisa_Puhutiana_Ticketing_Manager_mocfdx.jpg',
     jabatan: 'Manager',
     divisi: 'Ticketing',
+  },
+];
+
+export const staffData: staffProps[] = [
+  {
+    name: 'Program',
+    description:
+      "Responsible for innovating, developing, and executing the event's concepts in alignment with the theme, topic, and speakers from the Curator Department. Job duties include managing event set-up, tear down and follow-up processes, liaise with vendors, exhibitors, stakeholders, and coordinate with the other divisions.",
+  },
+  {
+    name: 'Exp. Design',
+    description:
+      'Accountable for the creative execution of “setting the mood” at all TEDxITS events (stage design, decorations, venue vendor plan, interactive booth) in alignment with the whole event.',
+  },
+  {
+    name: 'Logistics & Acco.',
+    description:
+      'Accountable for the technical execution of events in alignment with the event structure and format of the whole event by providing the necessary tools or equipment. In terms of accommodation, also responsible for individuals transportation, security, protocol, venue licensing and distribution of food & beverage for all for all activities of TEDxITS 2022.',
+  },
+  {
+    name: 'Curating',
+    description:
+      'Responsible for the essence of TEDxITS 2022; oversees the process of theme, topic, and speakers ideation for the event and marketing. Curators will also invite, prepare, and become liaison officers for speakers throughout the event.',
+  },
+  {
+    name: 'HRA',
+    description:
+      "Responsible for the organization's knowledge management, secretarial/administrative affairs, and the management of human resources of TEDxITS 2022",
+  },
+  {
+    name: 'Fundraising',
+    description:
+      'In charge of designing merchandise, coming up with unique and out-of-the-box merchandise ideas, managing production, sales, and marketing, providing sales and revenue report. Coordinates closely with Curator Department to ensure alignment between merchandise design and grand theme and with Marketing Department to achieve high sales.',
+  },
+  {
+    name: 'Partnership',
+    description:
+      'Accountable for initiating and maintaining partnership with external parties with the purpose of gathering funds (sponsorship) and media promotion for publication (public relations). This department is in charge of securing event sponsorship and exhibition income to achieve income targets.',
+  },
+  {
+    name: 'Ticketing',
+    description:
+      'Manage ticket-sales, ticketing system, concepting and controlling tickets and their delivery, coordinating with other departments regarding ticketing matters.',
+  },
+  {
+    name: 'Marketing Strategist',
+    description:
+      'Accountable for the ideation and execution of marketing efforts (social media and content marketing) across all marketing channels (social media, e-mail, word-of-mouth, buzzer), including the content and copywriting.',
+  },
+  {
+    name: 'Graphic Design',
+    description:
+      "In charge for the graphic design realization of branding, marketing, and operational materials. Also, continuously maintaining the company's brand aesthetics, internally and externally.",
+  },
+  {
+    name: 'Media Production',
+    description:
+      'Accountable for the video production of branding, marketing, and operational materials. Job duties include taking video documentation, editing video, and creating motion pictures.',
+  },
+  {
+    name: 'Website',
+    description:
+      'Responsible for the construction, management, and development of the TEDxITS official website and receives content approval from the Marketing Director. Coordinates closely with the Ticketing Division for ticketing orders and Marketing Director for the branding and marketing materials and navigation.',
   },
 ];
 

@@ -11,11 +11,11 @@ export default function CoverSection() {
   const [hidden, setHidden] = React.useState<boolean>(true);
 
   return (
-    <div className=''>
+    <>
       <div
         className={clsxm(
-          'bg-meet-the-team-cover h-[calc(100vh+64px)] pt-8 w-full bg-no-repeat bg-cover md:pt-16',
-          [hidden ? '' : 'hidden']
+          'bg-meet-the-team h-[calc(100vh+64px)] pt-8 w-full bg-no-repeat bg-cover md:pt-16',
+          [hidden ? hidden : 'hidden']
         )}
       >
         <Header isDark={false} />
@@ -40,7 +40,7 @@ export default function CoverSection() {
       <div
         className={clsxm(
           'bg-cblue h-[calc(100vh+64px)] pt-8 w-full bg-no-repeat bg-cover md:pt-16',
-          [hidden ? 'hidden' : '']
+          [hidden ? 'hidden' : hidden]
         )}
       >
         <Header isDark={false} />
@@ -86,28 +86,28 @@ export default function CoverSection() {
                     controls={true}
                   />
                 </div>
-                <small className='font-fivo translate-x-[32rem] absolute -translate-y-56'>
-                  <h1 className='text-[8rem] font-medium'>MEET</h1>
+                <small className='font-fivo text-[8rem] translate-x-[32rem] absolute font-medium -translate-y-56 select-none'>
+                  MEET
                 </small>
-                <small className='font-fivo translate-x-[36.5rem] absolute -translate-y-20'>
-                  <h1 className='text-[8rem] font-medium'>WE</h1>
+                <small className='font-fivo text-[8rem] translate-x-[36.5rem] absolute font-medium -translate-y-20 select-none'>
+                  WE
                 </small>
-                <small className='-translate-x-[31rem] font-fivo absolute text-left -translate-y-24'>
+                <small className='-translate-x-[31rem] font-fivo absolute text-left -translate-y-24 select-none'>
                   <h1 className='text-[8rem] font-medium'>OUR</h1>
                   <h1 className='text-[8rem] font-medium'>TEAM,</h1>
                 </small>
-                <small className='-translate-x-[29.5rem] font-fivo absolute text-left translate-y-64'>
+                <small className='-translate-x-[29.5rem] font-fivo absolute text-left translate-y-64 select-none'>
                   <h1 className='text-[8rem] font-medium underline'>LISTEN</h1>
                   <h1 className='text-[8rem] font-medium underline'>SEE</h1>
                 </small>
-                <small className='font-fivo absolute translate-x-0 translate-y-80'>
-                  <h1 className='text-[8rem] font-medium'>AND</h1>
+                <small className='font-fivo text-[8rem] absolute font-medium translate-x-0 translate-y-80 select-none'>
+                  AND
                 </small>
-                <small className='font-fivo text-xs" translate-x-[33rem] absolute w-20 text-sm leading-tight text-left translate-y-24'>
+                <small className='font-fivo text-xs" translate-x-[33rem] absolute w-20 text-sm leading-tight text-left translate-y-24 select-none'>
                   Meet the Executives, directors & managers of tedxits 2022
                 </small>
-                <small className='font-fivo translate-x-[30rem] absolute translate-y-80'>
-                  <h1 className='text-[8rem] font-medium underline'>SPEAK</h1>
+                <small className='font-fivo text-[8rem] translate-x-[30rem] absolute font-medium underline translate-y-80 select-none'>
+                  SPEAK
                 </small>
               </div>
             </div>
@@ -115,7 +115,7 @@ export default function CoverSection() {
         </div>
       </div>
       <div className='-translate-y-[6.5rem] flex absolute inset-x-0 z-40 justify-center'>
-        {[0, 1].map((_, idx) => (
+        {[...Array(2)].map((_, idx) => (
           <button
             onClick={() => {
               setActive(idx);
@@ -145,6 +145,6 @@ export default function CoverSection() {
           </button>
         ))}
       </div>
-    </div>
+    </>
   );
 }

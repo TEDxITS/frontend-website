@@ -9,11 +9,11 @@ export default function MissionSection() {
     <>
       <NextImage
         src='/images/meet-the-team/foot-transparent.png'
-        width={589}
-        height={589}
+        width={489}
+        height={489}
         alt='bg'
         priority={true}
-        className='absolute -right-56 z-0 -translate-y-8 sm:translate-y-56'
+        className='absolute right-0 z-0 brightness-0 translate-y-12 sm:translate-y-80'
       />
       <div
         className='layout flex relative flex-col justify-center items-center my-16 text-center'
@@ -38,17 +38,17 @@ export default function MissionSection() {
           width={12}
           height={12}
           alt='bg'
-          className='absolute left-0 z-0 -translate-y-12 sm:-translate-y-12 lg:-translate-y-16 xl:-translate-y-28'
+          className='absolute left-0 z-0 -translate-y-40 sm:-translate-y-32 lg:-translate-y-36 xl:-translate-y-48'
         />
         <NextImage
           src='/images/meet-the-team/meet-the-team-blue-rect.png'
           width={12}
           height={12}
           alt='bg'
-          className='absolute right-0 z-0 -translate-y-12 sm:-translate-y-12 lg:-translate-y-16 xl:-translate-y-28'
+          className='absolute right-0 z-0 -translate-y-40 sm:-translate-y-32 lg:-translate-y-36 xl:-translate-y-48'
         />
         <div className='layout flex z-10 flex-col justify-center items-center'>
-          <div>
+          <div className='w-full'>
             <h1 className='text-cblue font-medium'>MEET THE</h1>
             <MeetTheTeamTitle />
           </div>
@@ -83,19 +83,19 @@ export default function MissionSection() {
             className='h-[100px] w-[60px] inset-x-0 z-10 -translate-y-12 md:w-[100px] md:-translate-y-20 lg:h-[140px] lg:w-[140px] lg:-translate-y-24 xl:h-[190px] xl:w-[190px] xl:-translate-y-36'
           />
         </div>
-        <div>
-          <div className='flex flex-col justify-center items-center'>
-            <h1 className='font-fivo text-cblue translate-y-[-1.5rem] absolute left-0 font-medium'>
+        <div className='flex flex-wrap justify-start w-full sm:justify-between'>
+          <div className='flex flex-col mb-5 w-full text-center sm:mb-0 sm:w-auto sm:text-left'>
+            <h1 className='font-fivo text-cblue font-medium'>
               BO<span className='font-pilow'>A</span>RD OF
             </h1>
-            <h1 className='font-fivo text-cblue translate-y-[1.5rem] absolute left-0 font-medium'>
+            <h1 className='font-fivo text-cblue font-medium'>
               EXECUT<span className='font-pilow'>I</span>V
               <span className='font-pilow'>E</span>S
             </h1>
-            <small className='font-fivo text-cblue text-xs" width-[280px] absolute right-0 w-64 text-sm leading-tight text-right translate-y-24 sm:translate-y-0'>
-              Elephant Flocks leaders which oversees every departments, working
-              on TEDxITS 2022 license and estimating budgeting.
-            </small>
+          </div>
+          <div className='font-fivo text-cblue pt-2 w-64 text-xs leading-tight text-left sm:text-right'>
+            Elephant Flocks leaders which oversees every departments, working on
+            TEDxITS 2022 license and estimating budgeting.
           </div>
         </div>
       </div>

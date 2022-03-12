@@ -26,7 +26,7 @@ module.exports = {
         'blob-green': 'url(/images/background/bg-blob-green.jpg)',
         'story-desktop': 'url(/images/background/bg-story-desktop.jpg)',
         'story-mobile': 'url(/images/background/bg-story-mobile.jpg)',
-        'meet-the-team-cover':
+        'meet-the-team':
           'url(/images/meet-the-team/meet-the-team-cover-bg.png)',
         footer: 'url(/images/background/bg-footer.jpg)',
         texture: 'url(/images/background/bg-texture.png)',

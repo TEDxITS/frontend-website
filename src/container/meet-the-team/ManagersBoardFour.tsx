@@ -17,6 +17,21 @@ const teamStyle = [
 function ManagersBoardFive({ data, name, description, isManager }: BoardProps) {
   const [active, setActive] = React.useState<number>(0);
   const [order, setOrder] = React.useState<memberType[]>([...data, data[0]]);
+  let num: number;
+
+  function managersBoardLogic(index: number) {
+    if (active >= 4) {
+      setActive(0);
+    } else if (active <= -4) {
+      setActive(0);
+    }
+    num = index + active;
+    if (num < 0) {
+      num += 5;
+    } else if (num > 4) {
+      num -= 5;
+    }
+  }
 
   useEffect(() => {
     if (active === 0) {
@@ -52,7 +67,7 @@ function ManagersBoardFive({ data, name, description, isManager }: BoardProps) {
             objectFit='cover'
             alt='circle'
             priority={true}
-            className='--translate-y-4 absolute sm:-translate-y-2'
+            className='absolute -translate-y-6 sm:-translate-y-4 md:-translate-y-2'
           />
           <h2 className='font-fivo z-10 font-medium text-center text-white'>
             BO<span className='font-pilow font-normal'>A</span>RD OF<> </>
@@ -95,17 +110,7 @@ function ManagersBoardFive({ data, name, description, isManager }: BoardProps) {
           </button>
         </div>
         {order.map(({ nama, foto, jabatan, divisi }, index) => {
-          if (active >= 4) {
-            setActive(0);
-          } else if (active <= -4) {
-            setActive(0);
-          }
-          let num = index + active;
-          if (num < 0) {
-            num += 5;
-          } else if (num > 4) {
-            num -= 5;
-          }
+          managersBoardLogic(index);
           return (
             <div
               key={index}
@@ -114,14 +119,14 @@ function ManagersBoardFive({ data, name, description, isManager }: BoardProps) {
                 [teamStyle[num]]
               )}
             >
-              <div className='rounded-md border-2 shadow-lg'>
+              <div className='overflow-hidden rounded-lg border-0 shadow-lg'>
                 <NextImage
                   src={foto}
                   width={366}
                   height={440}
                   layout='responsive'
                   objectFit='cover'
-                  alt='bg'
+                  alt='Manager Photo'
                 />
               </div>
               <h3 className='font-fivo mt-5 mb-4 font-bold drop-shadow-lg'>
