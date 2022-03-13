@@ -18,6 +18,10 @@ export const pageLinks: LinkType[] = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   // { href: '/join-us', label: 'Be Part of Us!' },
+];
+
+// event links
+export const eventLinks: LinkType[] = [
   {
     href: '/merch',
     label: 'Merchandise',

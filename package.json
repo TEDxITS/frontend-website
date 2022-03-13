@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.4.3",
+    "@heroicons/react": "^1.0.6",
     "@n8tb1t/use-scroll-position": "^2.0.3",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "clsx": "^1.1.1",
@@ -63,7 +64,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "husky": "^7.0.4",
+    "husky": "^7.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.5",
     "lint-staged": "^11.2.6",
