@@ -20,6 +20,8 @@ import UnstyledLink from '../links/UnstyledLink';
 import { Popover, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { Fragment } from 'react';
+import { Disclosure } from '@headlessui/react';
+import { ChevronUpIcon } from '@heroicons/react/solid';
 
 //#region  //*=========== Type ===========
 type HeaderProps = {
@@ -124,23 +126,6 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                                     >
                                       {item.label}
                                     </HeaderLink>
-                                    // <a
-                                    //   key={index}
-                                    //   href={item.href}
-                                    //   className='-m-3 duration-150 ease-in-out flex items-center p-2 rounded-lg transition hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-opacity-50 focus-visible:ring-orange-500'
-                                    // >
-                                    //   {/* <div className='flex flex-shrink-0 h-10 items-center justify-center text-white w-10 sm:h-12 sm:w-12'>
-                                    //     <item.icon aria-hidden='true' />
-                                    //   </div> */}
-                                    //   <div className='ml-4'>
-                                    //     <p className='font-medium text-gray-900 text-sm'>
-                                    //       {item.label}
-                                    //     </p>
-                                    //     {/* <p className='text-gray-500 text-sm'>
-                                    //       {item.description}
-                                    //     </p> */}
-                                    //   </div>
-                                    // </a>
                                   ))}
                                 </div>
                                 <div className='bg-no-repeat bg-ticketbottom h-48 w-full'></div>
@@ -222,7 +207,7 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                 }}
                 className='/ bg-cdark/90 fixed h-screen inset-0 transition-all z-30'
               >
-                <div className='/ flex flex-col items-end justify-center layout min-h-main pt-16'>
+                <div className='/ flex flex-col justify-center layout min-h-main pt-16'>
                   {/* anchor link */}
                   <motion.ul
                     className='flex flex-col gap-8'
@@ -239,7 +224,7 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                   >
                     {pageLinks.map(({ href, label }) => (
                       <li key={`${href}${label}`}>
-                        <p className='text-right'>
+                        <p className='text-left'>
                           <HeaderLink href={href} className='text-2xl'>
                             <span className='font-fivo text-2xl text-right'>
                               {label}
@@ -248,7 +233,45 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                         </p>
                       </li>
                     ))}
+                    <li>
+                      <HeaderLink
+                        href='#'
+                        className='flex-col items-start text-2xl'
+                      >
+                        <Disclosure>
+                          {({ open }) => (
+                            <>
+                              <Disclosure.Button className='flex'>
+                                <span>Event</span>
+                              </Disclosure.Button>
+                              <Disclosure.Panel className='flex flex-col gap-5 mx-5'>
+                                <p className='text-left'></p>
+                                {eventLinks.map((item, index) => (
+                                  <HeaderLink
+                                    href={item.href}
+                                    className={clsxm('font-fivo text-lg', {
+                                      'border-b-[3px] border-white divide-y-2 space-y-2 border-dashed':
+                                        index !== eventLinks.length - 1,
+                                    })}
+                                    key={index}
+                                  >
+                                    <span className='font-fivo text-2xl'>
+                                      {item.label}
+                                    </span>
+                                  </HeaderLink>
+                                ))}
+                                {/* <a href='i' className='font-fivo text-2xl'>
+                                    {item.label}
+                                  </a> */}
+                              </Disclosure.Panel>
+                            </>
+                          )}
+                        </Disclosure>
+                      </HeaderLink>
+                    </li>
                   </motion.ul>
+                  {/* {pageLinks.map(({ href, label }) => ( */}
+                  {/* ))} */}
                   {/* <motion.ul
                     className='flex flex-col pt-8'
                     initial={{
@@ -273,7 +296,7 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                     </li>
                   </motion.ul> */}
                   <motion.ul
-                    className='flex gap-4 items-center mt-8'
+                    className='flex flex-row-reverse gap-4 mt-8'
                     initial={{
                       y: 60,
                     }}
