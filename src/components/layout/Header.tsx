@@ -1,27 +1,26 @@
+/* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable @next/next/no-img-element */
 
+// import addition from headless ui examples
+import { Popover, Transition } from '@headlessui/react';
+import { Disclosure } from '@headlessui/react';
+import { ChevronDownIcon } from '@heroicons/react/solid';
 import { motion } from 'framer-motion';
 import { Sling as Hamburger } from 'hamburger-react';
 import * as React from 'react';
+import { Fragment } from 'react';
 
 import clsxm from '@/lib/clsxm';
 
 import {
+  eventLinks,
   pageLinks,
   socialMediaLinks,
   socialMediaLinksDark,
-  eventLinks,
 } from '@/data/links';
 
 import HeaderLink from '../links/HeaderLink';
 import UnstyledLink from '../links/UnstyledLink';
-
-// import addition from headless ui examples
-import { Popover, Transition } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/solid';
-import { Fragment } from 'react';
-import { Disclosure } from '@headlessui/react';
-import { ChevronUpIcon } from '@heroicons/react/solid';
 
 //#region  //*=========== Type ===========
 type HeaderProps = {
@@ -53,18 +52,18 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
   return (
     <header
       className={clsxm(
-        'bg-gradient-to-b duration-700 ease-in from-transparent sticky to-transparent top-0 transition-all z-50',
+        'sticky top-0 z-50 bg-gradient-to-b from-transparent to-transparent transition-all duration-700 ease-in',
         {
           'from-cdark/60 backdrop-blur-sm ': isNavbarScrolled && !isDark,
           ' backdrop-blur-sm ': isNavbarScrolled && isDark,
         }
       )}
     >
-      <div className='flex h-16 items-center layout'>
+      <div className='layout flex items-center h-16'>
         <nav className='w-full'>
           {/* Desktop View Navbar */}
           <div className='hidden w-full lg:block'>
-            <div className='flex h-full items-center justify-between w-full'>
+            <div className='flex justify-between items-center w-full h-full'>
               <UnstyledLink href='/'>
                 <NavigationLogo isDark={isDark} isNavOpen={isNavOpen} />
               </UnstyledLink>
@@ -89,9 +88,12 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                       {({ open }) => (
                         <>
                           <Popover.Button
-                            className={`
-                ${open ? '' : 'text-opacity-90'}
-                text-black dark:text-white group  px-3 inline-flex items-center text-base font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
+                            className={clsxm(
+                              'group inline-flex items-center px-3 text-base font-light text-white hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75',
+                              {
+                                'text-black': isDark,
+                              }
+                            )}
                           >
                             <span className='font-fivo text-lg'>Event</span>
                             <ChevronDownIcon
@@ -109,26 +111,28 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                             leaveFrom='opacity-100 translate-y-0'
                             leaveTo='opacity-0 translate-y-1'
                           >
-                            <Popover.Panel className='-translate-x-1/2 absolute left-1/2 max-w-sm mt-3 px-4 transform w-72 z-10 sm:px-0 lg:max-w-3xl'>
+                            <Popover.Panel className='absolute left-1/2 z-10 px-4 mt-3 w-72 max-w-sm transform -translate-x-1/2 sm:px-0 lg:max-w-3xl'>
                               <div className='g overflow-hidden ring-opacity-5'>
-                                <div className='bg-[#efedea] bg-bottom bg-no-repeat border-0 gap-4 grid pb-2 pt-5 px-5 relative'>
+                                <div className='bg-[#efedea] grid relative gap-4 px-5 pt-5 pb-2 bg-bottom bg-no-repeat border-0'>
                                   {eventLinks.map((item, index) => (
                                     <HeaderLink
                                       href={item.href}
                                       className={clsxm(
-                                        'font-fivo text-black text-lg',
+                                        ' font-fivo text-lg text-black ',
                                         {
-                                          'border-b-[3px] border-black divide-y-2 space-y-2 border-dashed':
+                                          'border-b-[3px] border-black divide-y-2 space-y-2 border-dashed ':
                                             index !== eventLinks.length - 1,
                                         }
                                       )}
                                       key={index}
                                     >
-                                      {item.label}
+                                      <span className='pb-1 ml-2'>
+                                        {item.label}
+                                      </span>
                                     </HeaderLink>
                                   ))}
                                 </div>
-                                <div className='bg-no-repeat bg-ticketbottom h-48 w-full'></div>
+                                <div className='bg-ticketbottom w-full h-48 bg-no-repeat'></div>
                                 {/* <div className='bg-gray-50 p-4'>
                                   <a
                                     href='##'
@@ -180,12 +184,12 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
             </div>
           </div>
           {/* Mobile View Navbar */}
-          <div className='block h-16 items-center relative lg:hidden'>
-            <div className='absolute flex inset-0 items-center justify-between w-full z-40'>
+          <div className='block relative items-center h-16 lg:hidden'>
+            <div className='flex absolute inset-0 z-40 justify-between items-center w-full'>
               <UnstyledLink href='/'>
                 <NavigationLogo isDark={isDark} isNavOpen={isNavOpen} />
               </UnstyledLink>
-              <ul className='flex items-center justify-between space-x-4'>
+              <ul className='flex justify-between items-center space-x-4'>
                 <button
                   onClick={() => setIsNavOpen(!isNavOpen)}
                   className={clsxm('cursor-pointer', {
@@ -205,9 +209,9 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                     duration: 0.05,
                   },
                 }}
-                className='/ bg-cdark/90 fixed h-screen inset-0 transition-all z-30'
+                className='/ bg-cdark/90 fixed inset-0 z-30 pl-3 h-screen transition-all'
               >
-                <div className='/ flex flex-col justify-center layout min-h-main pt-16'>
+                <div className='/ layout min-h-main flex flex-col justify-center pt-16'>
                   {/* anchor link */}
                   <motion.ul
                     className='flex flex-col gap-8'
@@ -234,40 +238,40 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                       </li>
                     ))}
                     <li>
-                      <HeaderLink
-                        href='#'
-                        className='flex-col items-start text-2xl'
-                      >
-                        <Disclosure>
-                          {({ open }) => (
-                            <>
-                              <Disclosure.Button className='flex'>
+                      <Disclosure>
+                        {({ open }) => (
+                          <>
+                            <Disclosure.Button className='flex'>
+                              <HeaderLink
+                                href='#'
+                                className='flex-col items-start text-2xl'
+                              >
                                 <span>Event</span>
-                              </Disclosure.Button>
-                              <Disclosure.Panel className='flex flex-col gap-5 mx-5'>
-                                <p className='text-left'></p>
-                                {eventLinks.map((item, index) => (
-                                  <HeaderLink
-                                    href={item.href}
-                                    className={clsxm('font-fivo text-lg', {
-                                      'border-b-[3px] border-white divide-y-2 space-y-2 border-dashed':
-                                        index !== eventLinks.length - 1,
-                                    })}
-                                    key={index}
-                                  >
-                                    <span className='font-fivo text-2xl'>
-                                      {item.label}
-                                    </span>
-                                  </HeaderLink>
-                                ))}
-                                {/* <a href='i' className='font-fivo text-2xl'>
+                              </HeaderLink>
+                            </Disclosure.Button>
+                            <Disclosure.Panel className='flex flex-col gap-5 mx-5'>
+                              <p className='text-left'></p>
+                              {eventLinks.map((item, index) => (
+                                <HeaderLink
+                                  href={item.href}
+                                  className={clsxm('font-fivo text-2xl', {
+                                    'border-b-[3px] border-white border-dashed ':
+                                      index !== eventLinks.length - 1,
+                                  })}
+                                  key={index}
+                                >
+                                  <span className='pb-2 ml-2'>
+                                    {item.label}
+                                  </span>
+                                </HeaderLink>
+                              ))}
+                              {/* <a href='i' className='font-fivo text-2xl'>
                                     {item.label}
                                   </a> */}
-                              </Disclosure.Panel>
-                            </>
-                          )}
-                        </Disclosure>
-                      </HeaderLink>
+                            </Disclosure.Panel>
+                          </>
+                        )}
+                      </Disclosure>
                     </li>
                   </motion.ul>
                   {/* {pageLinks.map(({ href, label }) => ( */}
@@ -346,81 +350,81 @@ function NavigationLogo({
 }
 
 // adding function from examples pop over headless ui
-function IconOne() {
-  return (
-    <svg
-      width='48'
-      height='48'
-      viewBox='0 0 48 48'
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
-    >
-      <rect width='48' height='48' rx='8' fill='#FFEDD5' />
-      <path
-        d='M24 11L35.2583 17.5V30.5L24 37L12.7417 30.5V17.5L24 11Z'
-        stroke='#FB923C'
-        strokeWidth='2'
-      />
-      <path
-        fillRule='evenodd'
-        clipRule='evenodd'
-        d='M16.7417 19.8094V28.1906L24 32.3812L31.2584 28.1906V19.8094L24 15.6188L16.7417 19.8094Z'
-        stroke='#FDBA74'
-        strokeWidth='2'
-      />
-      <path
-        fillRule='evenodd'
-        clipRule='evenodd'
-        d='M20.7417 22.1196V25.882L24 27.7632L27.2584 25.882V22.1196L24 20.2384L20.7417 22.1196Z'
-        stroke='#FDBA74'
-        strokeWidth='2'
-      />
-    </svg>
-  );
-}
+// function IconOne() {
+//   return (
+//     <svg
+//       width='48'
+//       height='48'
+//       viewBox='0 0 48 48'
+//       fill='none'
+//       xmlns='http://www.w3.org/2000/svg'
+//     >
+//       <rect width='48' height='48' rx='8' fill='#FFEDD5' />
+//       <path
+//         d='M24 11L35.2583 17.5V30.5L24 37L12.7417 30.5V17.5L24 11Z'
+//         stroke='#FB923C'
+//         strokeWidth='2'
+//       />
+//       <path
+//         fillRule='evenodd'
+//         clipRule='evenodd'
+//         d='M16.7417 19.8094V28.1906L24 32.3812L31.2584 28.1906V19.8094L24 15.6188L16.7417 19.8094Z'
+//         stroke='#FDBA74'
+//         strokeWidth='2'
+//       />
+//       <path
+//         fillRule='evenodd'
+//         clipRule='evenodd'
+//         d='M20.7417 22.1196V25.882L24 27.7632L27.2584 25.882V22.1196L24 20.2384L20.7417 22.1196Z'
+//         stroke='#FDBA74'
+//         strokeWidth='2'
+//       />
+//     </svg>
+//   );
+// }
 
-function IconTwo() {
-  return (
-    <svg
-      width='48'
-      height='48'
-      viewBox='0 0 48 48'
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
-    >
-      <rect width='48' height='48' rx='8' fill='#FFEDD5' />
-      <path
-        d='M28.0413 20L23.9998 13L19.9585 20M32.0828 27.0001L36.1242 34H28.0415M19.9585 34H11.8755L15.9171 27'
-        stroke='#FB923C'
-        strokeWidth='2'
-      />
-      <path
-        fillRule='evenodd'
-        clipRule='evenodd'
-        d='M18.804 30H29.1963L24.0001 21L18.804 30Z'
-        stroke='#FDBA74'
-        strokeWidth='2'
-      />
-    </svg>
-  );
-}
+// function IconTwo() {
+//   return (
+//     <svg
+//       width='48'
+//       height='48'
+//       viewBox='0 0 48 48'
+//       fill='none'
+//       xmlns='http://www.w3.org/2000/svg'
+//     >
+//       <rect width='48' height='48' rx='8' fill='#FFEDD5' />
+//       <path
+//         d='M28.0413 20L23.9998 13L19.9585 20M32.0828 27.0001L36.1242 34H28.0415M19.9585 34H11.8755L15.9171 27'
+//         stroke='#FB923C'
+//         strokeWidth='2'
+//       />
+//       <path
+//         fillRule='evenodd'
+//         clipRule='evenodd'
+//         d='M18.804 30H29.1963L24.0001 21L18.804 30Z'
+//         stroke='#FDBA74'
+//         strokeWidth='2'
+//       />
+//     </svg>
+//   );
+// }
 
-function IconThree() {
-  return (
-    <svg
-      width='48'
-      height='48'
-      viewBox='0 0 48 48'
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
-    >
-      <rect width='48' height='48' rx='8' fill='#FFEDD5' />
-      <rect x='13' y='32' width='2' height='4' fill='#FDBA74' />
-      <rect x='17' y='28' width='2' height='8' fill='#FDBA74' />
-      <rect x='21' y='24' width='2' height='12' fill='#FDBA74' />
-      <rect x='25' y='20' width='2' height='16' fill='#FDBA74' />
-      <rect x='29' y='16' width='2' height='20' fill='#FB923C' />
-      <rect x='33' y='12' width='2' height='24' fill='#FB923C' />
-    </svg>
-  );
-}
+// function IconThree() {
+//   return (
+//     <svg
+//       width='48'
+//       height='48'
+//       viewBox='0 0 48 48'
+//       fill='none'
+//       xmlns='http://www.w3.org/2000/svg'
+//     >
+//       <rect width='48' height='48' rx='8' fill='#FFEDD5' />
+//       <rect x='13' y='32' width='2' height='4' fill='#FDBA74' />
+//       <rect x='17' y='28' width='2' height='8' fill='#FDBA74' />
+//       <rect x='21' y='24' width='2' height='12' fill='#FDBA74' />
+//       <rect x='25' y='20' width='2' height='16' fill='#FDBA74' />
+//       <rect x='29' y='16' width='2' height='20' fill='#FB923C' />
+//       <rect x='33' y='12' width='2' height='24' fill='#FB923C' />
+//     </svg>
+//   );
+// }

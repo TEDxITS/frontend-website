@@ -33,7 +33,7 @@ export default function HeaderLink({
         {...rest}
         className={clsxm(
           'animated-underline custom-link font-fivo inline-flex items-center text-lg',
-          'border-b border-dotted border-transparent hover:border-black/0',
+          'border-b border-transparent border-dotted hover:border-black/0',
           {
             'text-primary-500 pointer-events-none': isActive,
           },
