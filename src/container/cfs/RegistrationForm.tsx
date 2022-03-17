@@ -162,7 +162,7 @@ export default function RegistrationForm() {
       const proof = await uploadToFirebase(
         'Proof',
         1,
-        data.cv[0],
+        data.proof[0],
         folderName,
         `${data.nrp}_proof`
       );
@@ -178,7 +178,7 @@ export default function RegistrationForm() {
       const essay = await uploadToFirebase(
         'Essay',
         3,
-        data.cv[0],
+        data.essay[0],
         folderName,
         `${data.nrp}_essay`
       );
