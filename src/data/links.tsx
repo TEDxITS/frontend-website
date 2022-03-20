@@ -3,7 +3,7 @@ import LinkedinLogoIllustration from '@/assets/svg/LinkedinLogoIllustration';
 import TwitterLogoIllustration from '@/assets/svg/TwitterLogoIllustration';
 
 //#region  //*=========== Type ===========
-type LinkType = {
+export type LinkType = {
   href: string;
   label: React.ReactNode;
 };
@@ -14,23 +14,29 @@ type SoialMediaLinkType = LinkType & {
 //#endregion  //*======== Type ===========
 
 //#region  //*=========== Link Data ===========
-export const pageLinks: LinkType[] = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  // { href: '/join-us', label: 'Be Part of Us!' },
-];
+export const pageLinks: LinkType[] = [{ href: '/', label: 'Home' }];
 
 // event links
 export const eventLinks: LinkType[] = [
-  {
-    href: '/merch',
-    label: 'Merchandise',
-  },
+  { href: '/call-for-local-speaker', label: 'Call for Local Speakers' },
+];
+
+export const aboutLinks: LinkType[] = [
   {
     href: '/grand-theme',
     label: 'Grand Theme',
   },
-  { href: '/call-for-local-speaker', label: 'Call for Local Speakers' },
+  {
+    href: '/about',
+    label: 'Past Events',
+  },
+];
+
+export const merchLinks: LinkType[] = [
+  {
+    href: '/merch',
+    label: 'Merchandise',
+  },
 ];
 
 export const socialMediaLinks: SoialMediaLinkType[] = [
