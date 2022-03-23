@@ -2,9 +2,7 @@
 import React from 'react';
 
 import { merchData } from '@/data/merch';
-import { MerchUrl } from '@/data/url';
 
-import ButtonLink from '@/components/links/ButtonLink';
 import NextImage from '@/components/NextImage';
 
 import ProductCard from './ProductCard';
@@ -42,14 +40,6 @@ export default function MissionSection() {
             />
           ))}
         </div>
-      </div>
-      <div className='block fixed bottom-12 z-20 mx-auto mt-16 animate-bounce'>
-        <ButtonLink
-          className='from-cdark to-cdark px-16 py-4 shadow-2xl'
-          href={MerchUrl}
-        >
-          BUY NOW
-        </ButtonLink>
       </div>
     </div>
   );
