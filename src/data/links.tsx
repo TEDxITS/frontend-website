@@ -27,6 +27,7 @@ export const pageLinks: LinkType[] = [
     label: 'Grand Theme',
   },
   { href: '/call-for-local-speaker', label: 'Call for Local Speakers' },
+  { href: '/meet-the-team', label: 'Meet The Team' },
 ];
 
 export const socialMediaLinks: SoialMediaLinkType[] = [
