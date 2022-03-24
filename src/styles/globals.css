@@ -154,6 +154,7 @@
   .min-h-main {
     @apply min-h-[calc(100vh-64px)];
   }
+
 }
 
 @layer utilities {

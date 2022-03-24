@@ -6,6 +6,7 @@ import * as React from 'react';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
 import '@/styles/globals.css';
+import 'react-quill/dist/quill.snow.css';
 
 import * as gtag from '@/lib/gtag';
 
