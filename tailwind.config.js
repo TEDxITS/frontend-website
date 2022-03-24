@@ -29,6 +29,7 @@ module.exports = {
         'meet-the-team':
           'url(/images/meet-the-team/meet-the-team-cover-bg.png)',
         footer: 'url(/images/background/bg-footer.jpg)',
+        paper: 'url(/images/background/bg-paper.png)',
         texture: 'url(/images/background/bg-texture.png)',
         newspaper: 'url(/images/background/bg-newspaper.jpg)',
         ticketbottom: "url('/svg/ticket-bottom.svg')",

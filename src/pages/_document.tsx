@@ -65,6 +65,7 @@ class MyDocument extends Document {
             as='font'
             crossOrigin=''
           />
+          <meta charSet='utf-8' />
         </Head>
         <body>
           <Main />
