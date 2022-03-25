@@ -103,7 +103,7 @@ export default function FormCard({
   //#endregion  //*======== Connection with server ===========
 
   return (
-    <div className='flex relative flex-col gap-6' id='form'>
+    <div className='flex relative flex-col gap-6 w-full' id='form'>
       <div className='flex justify-between w-full'>
         <small className={clsxm('font-fivo text-sm font-normal ')}>
           Black Elephant Mail
