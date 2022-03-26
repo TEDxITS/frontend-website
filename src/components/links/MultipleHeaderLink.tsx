@@ -25,7 +25,7 @@ export default function MultipleHeaderLink({
             <>
               <Popover.Button
                 className={clsxm(
-                  'group inline-flex items-center px-1 text-base font-light text-white hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75',
+                  'font-light group inline-flex items-center px-1 text-base text-white hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white',
                   {
                     'text-black': isDark,
                   }
@@ -47,23 +47,23 @@ export default function MultipleHeaderLink({
                 leaveFrom='opacity-100 translate-y-0'
                 leaveTo='opacity-0 translate-y-1'
               >
-                <Popover.Panel className='absolute left-1/2 z-10 px-4 mt-3 w-72 max-w-sm drop-shadow-xl transform -translate-x-1/2 sm:px-0 lg:max-w-3xl'>
+                <Popover.Panel className='-translate-x-1/2 absolute drop-shadow-xl left-1/2 max-w-sm mt-3 px-4 transform w-72 z-10 sm:px-0 lg:max-w-3xl'>
                   <div className='g overflow-hidden'>
-                    <div className='bg-[#efedea] grid relative gap-4 px-5 pt-5 pb-2 bg-bottom bg-no-repeat border-0'>
+                    <div className='bg-[#efedea] bg-bottom bg-no-repeat border-0 gap-4 grid pb-2 pt-5 px-5 relative'>
                       {linksData.map((item, index) => (
                         <HeaderLink
                           href={item.href}
-                          className={clsxm(' font-fivo text-lg text-black ', {
+                          className={clsxm(' font-fivo text-black text-lg ', {
                             'border-b-[3px] border-black divide-y-2 space-y-2 border-dashed ':
                               index !== linksData.length - 1,
                           })}
                           key={index}
                         >
-                          <span className='pb-1 ml-2'>{item.label}</span>
+                          <span className='ml-2 pb-1'>{item.label}</span>
                         </HeaderLink>
                       ))}
                     </div>
-                    <div className='bg-ticketbottom w-full h-48 bg-no-repeat'></div>
+                    <div className='bg-no-repeat bg-ticketbottom h-48 w-full'></div>
                   </div>
                 </Popover.Panel>
               </Transition>

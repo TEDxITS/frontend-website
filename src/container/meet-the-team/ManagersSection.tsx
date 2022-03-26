@@ -45,14 +45,14 @@ const ManagersSection = () => {
         width={589}
         height={589}
         alt='bg'
-        className='-rotate-[130deg] bottom-[185rem] absolute right-0 brightness-0'
+        className='-rotate-[130deg] absolute bottom-[185rem] brightness-0 right-0'
       />
       <NextImage
         src='/images/background/bg-blob-fill.png'
         width={589}
         height={589}
         alt='bg'
-        className='-rotate-[130deg] bottom-[125rem] absolute left-0 brightness-0'
+        className='-rotate-[130deg] absolute bottom-[125rem] brightness-0 left-0'
       />
       <NextImage
         src='/images/background/bg-blob-fill.png'
@@ -60,24 +60,24 @@ const ManagersSection = () => {
         height={589}
         alt='bg'
         priority={true}
-        className='bottom-[79rem] absolute right-48 brightness-0'
+        className='absolute bottom-[79rem] brightness-0 right-48'
       />
       <NextImage
         src='/images/background/bg-blob-fill.png'
         width={589}
         height={589}
         alt='bg'
-        className='-left-30 bottom-[34rem] absolute brightness-0 rotate-180'
+        className='-left-30 absolute bottom-[34rem] brightness-0 rotate-180'
       />
       <NextImage
         src='/images/background/bg-blob-fill.png'
         width={589}
         height={589}
         alt='bg'
-        className='-bottom-[12rem] absolute right-0 brightness-0'
+        className='-bottom-[12rem] absolute brightness-0 right-0'
       />
-      <YellowLine className='-scale-50 bottom-[90rem] absolute -right-56 z-0 brightness-95 sm:-right-24 sm:scale-75 lg:-scale-100 lg:-right-4' />
-      <YellowLine3 className='absolute -bottom-36 -right-96 z-0 brightness-95' />
+      <YellowLine className='-right-56 -scale-50 absolute bottom-[90rem] brightness-95 z-0 sm:-right-24 sm:scale-75 lg:-right-4 lg:-scale-100' />
+      <YellowLine3 className='-bottom-36 -right-96 absolute brightness-95 z-0' />
       <ManagersBoardThreeOrFive data={directors} {...directorsdata} />
       <ManagersBoardThreeOrFive data={event} {...eventdata} />
       <ManagersBoardFour data={mnb} {...mnbdata} />

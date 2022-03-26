@@ -52,11 +52,11 @@ function ManagersBoardFive({ data, name, description, isManager }: BoardProps) {
   }, [active, data]);
 
   return (
-    <div className='bg-cblue bg-texture layout my-6 bg-repeat sm:my-16'>
-      <div className='flex flex-wrap-reverse gap-6 justify-between mt-3 mb-2 sm:flex-nowrap sm:mb-9'>
-        <div className='z-10 w-full sm:w-1/3'>
-          <h3 className='font-fivo mb-5 font-medium'>{name} Departement</h3>
-          <p className='font-fivo text-xs leading-tight'>{description}</p>
+    <div className='bg-cblue bg-repeat bg-texture layout my-6 sm:my-16'>
+      <div className='flex flex-wrap-reverse gap-6 justify-between mb-2 mt-3 sm:flex-nowrap sm:mb-9'>
+        <div className='w-full z-10 sm:w-1/3'>
+          <h3 className='font-fivo font-medium mb-5'>{name} Departement</h3>
+          <p className='font-fivo leading-tight text-xs'>{description}</p>
         </div>
         <div className='flex justify-center mx-16 w-full sm:w-1/3'>
           <NextImage
@@ -66,17 +66,17 @@ function ManagersBoardFive({ data, name, description, isManager }: BoardProps) {
             layout='responsive'
             objectFit='cover'
             alt='circle'
-            className='absolute -translate-y-6 sm:-translate-y-4 md:-translate-y-2'
+            className='-translate-y-6 absolute sm:-translate-y-4 md:-translate-y-2'
           />
-          <h2 className='font-fivo z-10 font-medium text-center text-white'>
-            BO<span className='font-pilow font-normal'>A</span>RD OF<> </>
+          <h2 className='font-fivo font-medium text-center text-white z-10'>
+            BO<span className='font-normal font-pilow'>A</span>RD OF<> </>
             {isManager ? (
               <>
-                MANA<span className='font-pilow font-normal'>G</span>ERS
+                MANA<span className='font-normal font-pilow'>G</span>ERS
               </>
             ) : (
               <>
-                D<span className='font-pilow font-normal'>I</span>RECTORS
+                D<span className='font-normal font-pilow'>I</span>RECTORS
               </>
             )}
           </h2>
@@ -96,13 +96,13 @@ function ManagersBoardFive({ data, name, description, isManager }: BoardProps) {
         <div className='flex'>
           <button
             onClick={() => setActive(active + 1)}
-            className='bg-clight shdaow-lg absolute right-1 z-10 w-16 h-16 rounded-full translate-y-52 sm:right-16'
+            className='absolute bg-clight h-16 right-1 rounded-full shdaow-lg translate-y-52 w-16 z-10 sm:right-16'
           >
             <h2 className='mb-2 text-5xl text-black'>&rarr;</h2>
           </button>
           <button
             onClick={() => setActive(active - 1)}
-            className='bg-clight shdaow-lg absolute left-1 z-10 w-16 h-16 rounded-full translate-y-52 sm:left-16'
+            className='absolute bg-clight h-16 left-1 rounded-full shdaow-lg translate-y-52 w-16 z-10 sm:left-16'
           >
             <h2 className='mb-2 text-5xl text-black'>&larr;</h2>
           </button>
@@ -113,11 +113,11 @@ function ManagersBoardFive({ data, name, description, isManager }: BoardProps) {
             <div
               key={index}
               className={clsxm(
-                'absolute rounded-lg transition-all ease-in-out',
+                'absolute ease-in-out rounded-lg transition-all',
                 [teamStyle[num]]
               )}
             >
-              <div className='overflow-hidden rounded-lg border-0 shadow-lg'>
+              <div className='border-0 overflow-hidden rounded-lg shadow-lg'>
                 <NextImage
                   src={foto}
                   width={366}
@@ -128,10 +128,10 @@ function ManagersBoardFive({ data, name, description, isManager }: BoardProps) {
                   useSkeleton={true}
                 />
               </div>
-              <h3 className='font-fivo mt-5 mb-4 font-bold drop-shadow-lg'>
+              <h3 className='drop-shadow-lg font-bold font-fivo mb-4 mt-5'>
                 {nama}
               </h3>
-              <h4 className='font-fivo text-md drop-shadow-lg'>
+              <h4 className='drop-shadow-lg font-fivo text-md'>
                 {jabatan} of <br />
                 {divisi}
               </h4>
