@@ -46,10 +46,11 @@ export default function FormCard({
   //#region  //*=========== React Hook Form ===========
   const methods = useForm<MailDataType>({
     defaultValues: initialValueMail,
-    mode: 'onTouched',
+    mode: 'onChange',
     reValidateMode: 'onChange',
   });
-  const { handleSubmit, reset, setError, getValues, clearErrors } = methods;
+  const { handleSubmit, reset, setError, getValues, clearErrors, watch } =
+    methods;
   //#endregion  //*======== React Hook Form ===========
 
   //#region  //*=========== Connection with server ===========
@@ -121,8 +122,9 @@ export default function FormCard({
           <MailInput
             dark={true}
             id={MailInputField.SUBJECT}
+            helperText={`(${(watch('subject') as string).length} / 20)`}
             label={<>SUBJECT OF THE UNSPOKEN TABOO WORDS :</>}
-            validation={{ required: true }}
+            validation={{ required: true, maxLength: 20 }}
           />
           <TextInput textValue={textValue} setTextValue={setTextValue} />
           <div className='flex justify-between items-end'>

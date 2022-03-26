@@ -77,8 +77,8 @@ export default function MailInput({
             >
               {errors[id]?.type === 'pattern' && `Please enter valid value}`}
               {errors[id]?.type === 'required' && `This field is required`}
-              {errors[id]?.type === 'size' &&
-                `File exceeded maximum size of 2 MB`}
+              {errors[id]?.type === 'maxLength' &&
+                `Max length of 20 characters exceeded`}
             </p>
           )}
         </div>
