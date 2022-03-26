@@ -31,6 +31,7 @@ module.exports = {
         footer: 'url(/images/background/bg-footer.jpg)',
         texture: 'url(/images/background/bg-texture.png)',
         newspaper: 'url(/images/background/bg-newspaper.jpg)',
+        ticketbottom: "url('/svg/ticket-bottom.svg')",
       },
       dropShadow: {
         'solid-sm': '-1px 1px rgb(33 33 33)',

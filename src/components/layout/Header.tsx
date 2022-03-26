@@ -1,5 +1,7 @@
+/* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable @next/next/no-img-element */
 
+// import addition from headless ui examples
 import { motion } from 'framer-motion';
 import { Sling as Hamburger } from 'hamburger-react';
 import * as React from 'react';
@@ -7,17 +9,23 @@ import * as React from 'react';
 import clsxm from '@/lib/clsxm';
 
 import {
+  aboutLinks,
+  eventLinks,
+  merchLinks,
   pageLinks,
   socialMediaLinks,
   socialMediaLinksDark,
 } from '@/data/links';
 
 import HeaderLink from '../links/HeaderLink';
+import MultipleHeaderLink from '../links/MultipleHeaderLink';
+import MultipleMobileLinks from '../links/MultipleMobileLinks';
 import UnstyledLink from '../links/UnstyledLink';
 
 //#region  //*=========== Type ===========
 type HeaderProps = {
   topBreakpoint?: number;
+  // (tulisan warna hitam)
   isDark?: boolean;
 };
 //#endregion  //*======== Type ===========
@@ -59,19 +67,47 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
               <UnstyledLink href='/'>
                 <NavigationLogo isDark={isDark} isNavOpen={isNavOpen} />
               </UnstyledLink>
+              {/* list starting here */}
               <ul
-                className={clsxm('flex gap-8 items-center lg:gap-16', {
+                className={clsxm('flex gap-8 items-center lg:gap-14', {
                   'text-cdark': isDark,
                 })}
               >
                 {pageLinks.map(({ href, label }) => (
                   <li key={`${href}${label}`}>
+                    {/* header link here */}
                     <HeaderLink href={href} className='/ font-fivo text-lg'>
                       {label}
                     </HeaderLink>
                   </li>
                 ))}
+                {/* Pop Over starting here */}
+
+                {/* about */}
+                <MultipleHeaderLink
+                  isDark={isDark}
+                  linksData={aboutLinks}
+                  title='About'
+                />
+                {/* Event */}
+                <MultipleHeaderLink
+                  isDark={isDark}
+                  linksData={eventLinks}
+                  title='Event'
+                />
+
+                {/* merchandise */}
+                {merchLinks.map(({ href, label }) => (
+                  <li key={`${href}${label}`}>
+                    {/* header link here */}
+                    <HeaderLink href={href} className='/ font-fivo px text-lg'>
+                      {label}
+                    </HeaderLink>
+                  </li>
+                ))}
               </ul>
+              {/* edit here */}
+
               <ul className='flex gap-4 items-center'>
                 {(isDark ? socialMediaLinksDark : socialMediaLinks).map(
                   ({ href, label, logo }) => (
@@ -109,9 +145,10 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                     duration: 0.05,
                   },
                 }}
-                className='/ bg-cdark/90 fixed inset-0 z-30 h-screen transition-all'
+                className='/ bg-cdark/90 fixed inset-0 z-30 pl-3 h-screen transition-all'
               >
-                <div className='/ layout min-h-main flex flex-col justify-center items-end pt-16'>
+                <div className='/ layout min-h-main flex flex-col justify-center pt-16'>
+                  {/* anchor link */}
                   <motion.ul
                     className='flex flex-col gap-8'
                     initial={{
@@ -125,9 +162,31 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                       },
                     }}
                   >
+                    {/* home */}
                     {pageLinks.map(({ href, label }) => (
                       <li key={`${href}${label}`}>
-                        <p className='text-right'>
+                        <p className='text-left'>
+                          <HeaderLink href={href} className='text-2xl'>
+                            <span className='font-fivo text-2xl text-right'>
+                              {label}
+                            </span>
+                          </HeaderLink>
+                        </p>
+                      </li>
+                    ))}
+                    {/* about */}
+                    <MultipleMobileLinks
+                      title='About'
+                      linksData={aboutLinks}
+                    ></MultipleMobileLinks>
+                    {/* event */}
+                    <MultipleMobileLinks
+                      title='Event'
+                      linksData={eventLinks}
+                    ></MultipleMobileLinks>
+                    {merchLinks.map(({ href, label }) => (
+                      <li key={`${href}${label}`}>
+                        <p className='text-left'>
                           <HeaderLink href={href} className='text-2xl'>
                             <span className='font-fivo text-2xl text-right'>
                               {label}
@@ -138,7 +197,7 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                     ))}
                   </motion.ul>
                   <motion.ul
-                    className='flex gap-4 items-center mt-8'
+                    className='flex flex-row-reverse gap-4 mt-8'
                     initial={{
                       y: 60,
                     }}
