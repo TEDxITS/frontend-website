@@ -81,7 +81,7 @@ function Managers({ data }: exeProps) {
                   layout='responsive'
                   objectFit='cover'
                   alt='Executive Photo'
-                  priority={true}
+                  useSkeleton={true}
                 />
               </div>
               <h3 className='font-fivo w-[366px] mt-5 mb-4 font-bold drop-shadow-lg'>

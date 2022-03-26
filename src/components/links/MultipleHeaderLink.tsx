@@ -34,7 +34,7 @@ export default function MultipleHeaderLink({
                 <span className='font-fivo text-lg'>{title}</span>
                 <HiChevronDown
                   className={`${open ? '' : 'text-opacity-70'}
-                  ml-2 h-5 w-5 text-orange-300 group-hover:text-opacity-80 transition ease-in-out duration-150`}
+                  ml-2 h-5 w-5 text-primary-500 group-hover:text-opacity-80 transition ease-in-out duration-150`}
                   aria-hidden='true'
                 />
               </Popover.Button>
@@ -47,8 +47,8 @@ export default function MultipleHeaderLink({
                 leaveFrom='opacity-100 translate-y-0'
                 leaveTo='opacity-0 translate-y-1'
               >
-                <Popover.Panel className='absolute left-1/2 z-10 px-4 mt-3 w-72 max-w-sm transform -translate-x-1/2 sm:px-0 lg:max-w-3xl'>
-                  <div className='g overflow-hidden ring-opacity-5'>
+                <Popover.Panel className='absolute left-1/2 z-10 px-4 mt-3 w-72 max-w-sm drop-shadow-xl transform -translate-x-1/2 sm:px-0 lg:max-w-3xl'>
+                  <div className='g overflow-hidden'>
                     <div className='bg-[#efedea] grid relative gap-4 px-5 pt-5 pb-2 bg-bottom bg-no-repeat border-0'>
                       {linksData.map((item, index) => (
                         <HeaderLink

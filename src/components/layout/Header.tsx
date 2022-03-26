@@ -93,7 +93,7 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                 <MultipleHeaderLink
                   isDark={isDark}
                   linksData={eventLinks}
-                  title='Event'
+                  title='Events'
                 />
 
                 {/* merchandise */}
@@ -181,7 +181,7 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                     ></MultipleMobileLinks>
                     {/* event */}
                     <MultipleMobileLinks
-                      title='Event'
+                      title='Events'
                       linksData={eventLinks}
                     ></MultipleMobileLinks>
                     {merchLinks.map(({ href, label }) => (

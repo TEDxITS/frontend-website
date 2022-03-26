@@ -78,7 +78,7 @@ export default function CoverSection() {
                 />
                 <div className='aspect-h-9 aspect-w-16 bg-cdark overflow-hidden z-10 w-full rounded-2xl md:rounded-3xl'>
                   <ReactPlayer
-                    url='https://www.youtube.com/embed/VinuTH1_4YI'
+                    url='https://www.youtube.com/embed/qtVxOYCuICw'
                     width={'100%'}
                     height={'100%'}
                     playing={false}

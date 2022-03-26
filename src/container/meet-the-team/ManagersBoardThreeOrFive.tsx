@@ -57,7 +57,6 @@ function Managers({ data, name, description, isManager }: BoardProps) {
             layout='responsive'
             objectFit='cover'
             alt='circle'
-            priority={true}
             className='absolute -translate-y-8 sm:-translate-y-4 md:-translate-y-2'
           />
           <h2 className='font-fivo z-10 mx-0 font-medium text-center text-white md:mx-16'>
@@ -81,7 +80,6 @@ function Managers({ data, name, description, isManager }: BoardProps) {
             layout='responsive'
             objectFit='cover'
             alt='arrow'
-            priority={true}
             className='--translate-y-4 relative z-0 sm:-translate-y-2'
           />
         </div>
@@ -125,7 +123,7 @@ function Managers({ data, name, description, isManager }: BoardProps) {
                   layout='responsive'
                   objectFit='cover'
                   alt='Manager Photo'
-                  priority={true}
+                  useSkeleton={true}
                 />
               </div>
               <h3 className='font-fivo w-[366px] mt-5 mb-4 font-bold drop-shadow-lg'>

@@ -88,13 +88,14 @@ function Staff({ name, description }: staffProps) {
                 <div key={i} className='flex flex-col items-center mx-5 my-2'>
                   <div className='overflow-hidden rounded-full border-0'>
                     <NextImage
-                      src={foto || '/images/merch/cap.png'}
+                      src={foto}
                       width={circleDimensions.expertstaff}
                       height={circleDimensions.expertstaff}
                       layout='responsive'
                       objectFit='cover'
                       alt='bg'
                       quality={50}
+                      useSkeleton={true}
                     />
                   </div>
                   <h4 className='font-fivo mt-7 mb-4 font-medium'>{nama}</h4>
@@ -126,6 +127,7 @@ function Staff({ name, description }: staffProps) {
                       objectFit='cover'
                       alt='bg'
                       quality={50}
+                      useSkeleton={true}
                     />
                   </div>
                   <div className='h-1/5'>
