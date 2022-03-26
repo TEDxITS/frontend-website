@@ -19,23 +19,28 @@ export const pageLinks: LinkType[] = [{ href: '/', label: 'Home' }];
 // event links
 export const eventLinks: LinkType[] = [
   { href: '/call-for-local-speaker', label: 'Call for Local Speakers' },
+  { href: '/black-elephant-mail', label: 'Black Elephant Mail' },
 ];
 
 export const aboutLinks: LinkType[] = [
+  {
+    href: '/about',
+    label: 'TEDxITS Journey',
+  },
   {
     href: '/grand-theme',
     label: 'Grand Theme',
   },
   {
-    href: '/about',
-    label: 'Past Events',
+    href: '/meet-the-team',
+    label: 'Meet The Team',
   },
 ];
 
 export const merchLinks: LinkType[] = [
   {
     href: '/merch',
-    label: 'Merchandise',
+    label: 'Order Now!',
   },
 ];
 

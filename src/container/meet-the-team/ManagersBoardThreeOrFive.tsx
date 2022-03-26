@@ -41,13 +41,13 @@ function Managers({ data, name, description, isManager }: BoardProps) {
   }
 
   return (
-    <div className='bg-cblue bg-texture layout my-6 bg-repeat sm:my-16'>
-      <div className='flex flex-wrap-reverse gap-6 justify-between mt-3 mb-9 sm:flex-nowrap'>
-        <div className='z-10 w-full sm:w-1/3'>
-          <h3 className='font-fivo mb-5 font-medium'>
+    <div className='bg-cblue bg-repeat bg-texture layout my-6 sm:my-16'>
+      <div className='flex flex-wrap-reverse gap-6 justify-between mb-9 mt-3 sm:flex-nowrap'>
+        <div className='w-full z-10 sm:w-1/3'>
+          <h3 className='font-fivo font-medium mb-5'>
             {name ? name + ' Department' : ''}
           </h3>
-          <p className='font-fivo text-xs leading-tight'>{description}</p>
+          <p className='font-fivo leading-tight text-xs'>{description}</p>
         </div>
         <div className='flex justify-center mb-8 w-full sm:mb-0 sm:w-1/3'>
           <NextImage
@@ -57,18 +57,17 @@ function Managers({ data, name, description, isManager }: BoardProps) {
             layout='responsive'
             objectFit='cover'
             alt='circle'
-            priority={true}
-            className='absolute -translate-y-8 sm:-translate-y-4 md:-translate-y-2'
+            className='-translate-y-8 absolute sm:-translate-y-4 md:-translate-y-2'
           />
-          <h2 className='font-fivo z-10 mx-0 font-medium text-center text-white md:mx-16'>
-            BO<span className='font-pilow font-normal'>A</span>RD OF<> </>
+          <h2 className='font-fivo font-medium mx-0 text-center text-white z-10 md:mx-16'>
+            BO<span className='font-normal font-pilow'>A</span>RD OF<> </>
             {isManager ? (
               <>
-                MANA<span className='font-pilow font-normal'>G</span>ERS
+                MANA<span className='font-normal font-pilow'>G</span>ERS
               </>
             ) : (
               <>
-                D<span className='font-pilow font-normal'>I</span>RECTORS
+                D<span className='font-normal font-pilow'>I</span>RECTORS
               </>
             )}
           </h2>
@@ -81,7 +80,6 @@ function Managers({ data, name, description, isManager }: BoardProps) {
             layout='responsive'
             objectFit='cover'
             alt='arrow'
-            priority={true}
             className='--translate-y-4 relative z-0 sm:-translate-y-2'
           />
         </div>
@@ -95,13 +93,13 @@ function Managers({ data, name, description, isManager }: BoardProps) {
         >
           <button
             onClick={() => setActive(active + 1)}
-            className='bg-clight absolute right-1 z-10 w-16 h-16 rounded-full shadow-lg translate-y-52 sm:right-16'
+            className='absolute bg-clight h-16 right-1 rounded-full shadow-lg translate-y-52 w-16 z-10 sm:right-16'
           >
             <h2 className='mb-2 text-5xl text-black'>&rarr;</h2>
           </button>
           <button
             onClick={() => setActive(active - 1)}
-            className='bg-clight absolute left-1 z-10 w-16 h-16 rounded-full shadow-lg translate-y-52 sm:left-16'
+            className='absolute bg-clight h-16 left-1 rounded-full shadow-lg translate-y-52 w-16 z-10 sm:left-16'
           >
             <h2 className='mb-2 text-5xl text-black'>&larr;</h2>
           </button>
@@ -113,11 +111,11 @@ function Managers({ data, name, description, isManager }: BoardProps) {
             <div
               key={index}
               className={clsxm(
-                'absolute rounded-lg transition-all ease-in-out',
+                'absolute ease-in-out rounded-lg transition-all',
                 [teamStyle[num]]
               )}
             >
-              <div className='overflow-hidden rounded-lg border-0 shadow-lg'>
+              <div className='border-0 overflow-hidden rounded-lg shadow-lg'>
                 <NextImage
                   src={foto}
                   width={366}
@@ -125,13 +123,13 @@ function Managers({ data, name, description, isManager }: BoardProps) {
                   layout='responsive'
                   objectFit='cover'
                   alt='Manager Photo'
-                  priority={true}
+                  useSkeleton={true}
                 />
               </div>
-              <h3 className='font-fivo w-[366px] mt-5 mb-4 font-bold drop-shadow-lg'>
+              <h3 className='drop-shadow-lg font-bold font-fivo mb-4 mt-5 w-[366px]'>
                 {nama}
               </h3>
-              <h4 className='font-fivo text-md drop-shadow-lg'>
+              <h4 className='drop-shadow-lg font-fivo text-md'>
                 {jabatan} of <br />
                 {divisi}
               </h4>

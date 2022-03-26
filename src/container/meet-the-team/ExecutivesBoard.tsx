@@ -51,13 +51,13 @@ function Managers({ data }: exeProps) {
         >
           <button
             onClick={() => setActive(active + 1)}
-            className='bg-clight absolute right-1 z-10 w-16 h-16 rounded-full shadow-lg translate-y-52 sm:right-16'
+            className='absolute bg-clight h-16 right-1 rounded-full shadow-lg translate-y-52 w-16 z-10 sm:right-16'
           >
             <h2 className='mb-2 text-5xl text-black'>&rarr;</h2>
           </button>
           <button
             onClick={() => setActive(active - 1)}
-            className='bg-clight absolute left-1 z-10 w-16 h-16 rounded-full shadow-lg translate-y-52 sm:left-16'
+            className='absolute bg-clight h-16 left-1 rounded-full shadow-lg translate-y-52 w-16 z-10 sm:left-16'
           >
             <h2 className='mb-2 text-5xl text-black'>&larr;</h2>
           </button>
@@ -69,11 +69,11 @@ function Managers({ data }: exeProps) {
             <div
               key={index}
               className={clsxm(
-                'absolute rounded-lg transition-all ease-in-out',
+                'absolute ease-in-out rounded-lg transition-all',
                 [teamStyle[num]]
               )}
             >
-              <div className='overflow-hidden rounded-lg border-0 shadow-lg'>
+              <div className='border-0 overflow-hidden rounded-lg shadow-lg'>
                 <NextImage
                   src={foto}
                   width={366}
@@ -81,13 +81,13 @@ function Managers({ data }: exeProps) {
                   layout='responsive'
                   objectFit='cover'
                   alt='Executive Photo'
-                  priority={true}
+                  useSkeleton={true}
                 />
               </div>
-              <h3 className='font-fivo w-[366px] mt-5 mb-4 font-bold drop-shadow-lg'>
+              <h3 className='drop-shadow-lg font-bold font-fivo mb-4 mt-5 w-[366px]'>
                 {nama}
               </h3>
-              <h4 className='font-fivo text-md drop-shadow-lg'>{jabatan}</h4>
+              <h4 className='drop-shadow-lg font-fivo text-md'>{jabatan}</h4>
             </div>
           );
         })}

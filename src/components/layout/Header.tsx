@@ -52,18 +52,18 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
   return (
     <header
       className={clsxm(
-        'sticky top-0 z-50 bg-gradient-to-b from-transparent to-transparent transition-all duration-700 ease-in',
+        'bg-gradient-to-b duration-700 ease-in from-transparent sticky to-transparent top-0 transition-all z-50',
         {
           'from-cdark/60 backdrop-blur-sm ': isNavbarScrolled && !isDark,
           ' backdrop-blur-sm ': isNavbarScrolled && isDark,
         }
       )}
     >
-      <div className='layout flex items-center h-16'>
+      <div className='flex h-16 items-center layout'>
         <nav className='w-full'>
           {/* Desktop View Navbar */}
           <div className='hidden w-full lg:block'>
-            <div className='flex justify-between items-center w-full h-full'>
+            <div className='flex h-full items-center justify-between w-full'>
               <UnstyledLink href='/'>
                 <NavigationLogo isDark={isDark} isNavOpen={isNavOpen} />
               </UnstyledLink>
@@ -93,7 +93,7 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                 <MultipleHeaderLink
                   isDark={isDark}
                   linksData={eventLinks}
-                  title='Event'
+                  title='Events'
                 />
 
                 {/* merchandise */}
@@ -120,12 +120,12 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
             </div>
           </div>
           {/* Mobile View Navbar */}
-          <div className='block relative items-center h-16 lg:hidden'>
-            <div className='flex absolute inset-0 z-40 justify-between items-center w-full'>
+          <div className='block h-16 items-center relative lg:hidden'>
+            <div className='absolute flex inset-0 items-center justify-between w-full z-40'>
               <UnstyledLink href='/'>
                 <NavigationLogo isDark={isDark} isNavOpen={isNavOpen} />
               </UnstyledLink>
-              <ul className='flex justify-between items-center space-x-4'>
+              <ul className='flex items-center justify-between space-x-4'>
                 <button
                   onClick={() => setIsNavOpen(!isNavOpen)}
                   className={clsxm('cursor-pointer', {
@@ -145,9 +145,9 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                     duration: 0.05,
                   },
                 }}
-                className='/ bg-cdark/90 fixed inset-0 z-30 pl-3 h-screen transition-all'
+                className='/ bg-cdark/90 fixed h-screen inset-0 pl-3 transition-all z-30'
               >
-                <div className='/ layout min-h-main flex flex-col justify-center pt-16'>
+                <div className='/ flex flex-col justify-center layout min-h-main pt-16'>
                   {/* anchor link */}
                   <motion.ul
                     className='flex flex-col gap-8'
@@ -181,7 +181,7 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                     ></MultipleMobileLinks>
                     {/* event */}
                     <MultipleMobileLinks
-                      title='Event'
+                      title='Events'
                       linksData={eventLinks}
                     ></MultipleMobileLinks>
                     {merchLinks.map(({ href, label }) => (
