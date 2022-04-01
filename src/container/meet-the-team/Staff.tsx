@@ -62,31 +62,31 @@ function Staff({ name, description }: staffProps) {
 
   return (
     <div className='bg-cdark layout my-16'>
-      <div className='grid grid-cols-3 relative z-10'>
+      <div className='grid relative z-10 grid-cols-3'>
         <div className='col-span-1 mr-10'>
-          <h3 className='font-fivo font-medium mb-5'>{name}</h3>
+          <h3 className='font-fivo mb-5 font-medium'>{name}</h3>
         </div>
         <div className='col-span-2 text-justify'>
-          <p className='font-fivo leading-tight text-sm'>{description}</p>
+          <p className='font-fivo text-sm leading-tight'>{description}</p>
         </div>
       </div>
-      <div className='grid grid-cols-10 py-10 relative z-10'>
-        <div className='hidden items-center justify-end sm:col-span-1 sm:flex'>
-          <p className='-rotate-90 cursor-vertical-text font-fivo whitespace-nowrap'>
+      <div className='grid relative z-10 grid-cols-10 py-10'>
+        <div className='hidden justify-end items-center sm:flex sm:col-span-1'>
+          <p className='cursor-vertical-text font-fivo whitespace-nowrap -rotate-90'>
             General Team Member
           </p>
         </div>
-        <div className='col-span-10 relative z-10 sm:col-span-8'>
+        <div className='relative z-10 col-span-10 sm:col-span-8'>
           <div
             className={clsxm(
-              'flex flex-wrap items-center justify-center min-h-[41rem]',
+              'min-h-[41rem] flex flex-wrap justify-center items-center',
               [hidden && expertStaff.length !== 0 ? '' : 'hidden']
             )}
           >
             {expertStaff.map(({ nama, foto, jabatan, divisi }, i) => {
               return (
                 <div key={i} className='flex flex-col items-center mx-5 my-2'>
-                  <div className='border-0 overflow-hidden rounded-full'>
+                  <div className='overflow-hidden rounded-full border-0'>
                     <NextImage
                       src={foto}
                       width={circleDimensions.expertstaff}
@@ -98,8 +98,8 @@ function Staff({ name, description }: staffProps) {
                       useSkeleton={true}
                     />
                   </div>
-                  <h4 className='font-fivo font-medium mb-4 mt-7'>{nama}</h4>
-                  <p className='text-center text-xs'>
+                  <h4 className='font-fivo mt-7 mb-4 font-medium'>{nama}</h4>
+                  <p className='text-xs text-center'>
                     {jabatan} of <br /> {divisi}
                   </p>
                 </div>
@@ -108,7 +108,7 @@ function Staff({ name, description }: staffProps) {
           </div>
           <div
             className={clsxm(
-              'flex-wrap grid grid-cols-2 items-center justify-center min-h-[41rem] py-6 sm:flex',
+              'min-h-[41rem] grid flex-wrap grid-cols-2 justify-center items-center py-6 sm:flex',
               [hidden && expertStaff.length !== 0 ? 'hidden sm:hidden' : '']
             )}
           >
@@ -116,9 +116,9 @@ function Staff({ name, description }: staffProps) {
               return (
                 <div
                   key={i}
-                  className='flex flex-col items-center m-2 sm:h-[16rem] sm:mx-0 sm:my-2 sm:w-[14rem]'
+                  className='flex flex-col items-center m-2 sm:h-[16rem] sm:w-[14rem] sm:mx-0 sm:my-2'
                 >
-                  <div className='border-0 overflow-hidden rounded-full'>
+                  <div className='overflow-hidden rounded-full border-0'>
                     <NextImage
                       src={foto || '/images/merch/cap.png'}
                       width={circleDimensions.staff}
@@ -131,10 +131,10 @@ function Staff({ name, description }: staffProps) {
                     />
                   </div>
                   <div className='h-1/5'>
-                    <h4 className='font-fivo font-medium mb-2 mt-4 text-center text-sm sm:text-base'>
+                    <h4 className='font-fivo mt-4 mb-2 text-sm font-medium text-center sm:text-base'>
                       {nama}
                     </h4>
-                    <p className='text-center text-xs sm:text-xs'>
+                    <p className='text-xs text-center sm:text-xs'>
                       {jabatan} of {divisi}
                     </p>
                   </div>
@@ -155,16 +155,16 @@ function Staff({ name, description }: staffProps) {
                 }}
                 key={idx}
                 className={clsxm(
-                  'border flex h-7 items-center justify-center rounded-full w-7',
+                  'flex justify-center items-center w-7 h-7 rounded-full border',
                   [idx === active ? 'border-cgray' : 'border-transparent']
                 )}
               >
                 <span
                   className={clsxm(
                     'h-[14px] w-[14px]',
-                    'border border-cgray flex-shrink-0 rounded-full ',
+                    'border-cgray flex-shrink-0 rounded-full border ',
 
-                    'duration-100 ease-in-out transition-all',
+                    'transition-all duration-100 ease-in-out',
                     [
                       idx === active
                         ? 'bg-cgray'
@@ -178,8 +178,8 @@ function Staff({ name, description }: staffProps) {
             ))}
           </div>
         </div>
-        <div className='hidden items-center justify-start sm:col-span-1 sm:flex'>
-          <p className='-rotate-90 cursor-vertical-text font-fivo whitespace-nowrap'>
+        <div className='hidden justify-start items-center sm:flex sm:col-span-1'>
+          <p className='cursor-vertical-text font-fivo whitespace-nowrap -rotate-90'>
             General Team Member
           </p>
         </div>

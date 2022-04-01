@@ -9,6 +9,7 @@ export type UnstyledLinkProps = {
   children: React.ReactNode;
   nextLinkProps?: Omit<LinkProps, 'href'>;
   className?: string;
+  animated?: boolean;
 } & React.ComponentPropsWithoutRef<'a'>;
 
 export default function HeaderLink({
@@ -16,6 +17,7 @@ export default function HeaderLink({
   href,
   className,
   nextLinkProps,
+  animated = true,
   ...rest
 }: UnstyledLinkProps) {
   //#region  //*=========== Active Route ===========
@@ -32,11 +34,15 @@ export default function HeaderLink({
       <a
         {...rest}
         className={clsxm(
-          'animated-underline custom-link font-fivo inline-flex items-center text-lg',
+          {
+            'animated-underline': animated,
+          },
+          'custom-link font-fivo inline-flex items-center text-lg',
           'border-b border-transparent border-dotted hover:border-black/0',
           {
             'text-primary-500 pointer-events-none': isActive,
           },
+
           className
         )}
       >
