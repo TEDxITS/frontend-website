@@ -21,7 +21,7 @@ export default function InstagramLogoIllustration({
       <g
         fill='#efedea'
         className={clsxm(pathClassName, {
-          'fill-primary-500': isHover,
+          'fill-cred': isHover,
         })}
       >
         <path
