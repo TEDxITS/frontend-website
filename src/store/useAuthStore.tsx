@@ -3,6 +3,8 @@ import produce from 'immer';
 import create from 'zustand';
 import { devtools } from 'zustand/middleware';
 
+import { removeToken, setToken } from '@/lib/auth';
+
 import { User } from '@/types/auth';
 
 type AuthStoreType = {
@@ -21,7 +23,7 @@ const useAuthStoreBase = create<AuthStoreType>(
       isAuthenticated: false,
       isLoading: true,
       login: (user) => {
-        localStorage.setItem('token', user.token);
+        setToken(user.token);
         set(
           produce<AuthStoreType>((state) => {
             state.isAuthenticated = true;
@@ -30,7 +32,7 @@ const useAuthStoreBase = create<AuthStoreType>(
         );
       },
       logout: () => {
-        localStorage.removeItem('token');
+        removeToken();
         set(
           produce<AuthStoreType>((state) => {
             state.isAuthenticated = false;

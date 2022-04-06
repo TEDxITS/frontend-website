@@ -4,12 +4,13 @@ import { FormProvider, useForm } from 'react-hook-form';
 
 import Button from '@/components/buttons/Button';
 import Input from '@/components/input/Input';
+import InputPassword from '@/components/input/InputPassword';
 import Layout from '@/components/layout/Layout';
 import UnderlineLink from '@/components/links/UnderlineLink';
 import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 
-import ForgotPasswordTitle from '@/assets/svg/ForgotPasswordTitle';
+import RegisterTitle from '@/assets/svg/RegisterTitle';
 
 enum ExampleInputField {
   'EMAIL' = 'email',
@@ -23,7 +24,7 @@ const initialValueCFS: ExampleDataType = {
   email: '',
 };
 
-export default function ForgotPasswordPage() {
+export default function RegisterPage() {
   const methods = useForm<ExampleDataType>({
     defaultValues: initialValueCFS,
     mode: 'onTouched',
@@ -44,29 +45,29 @@ export default function ForgotPasswordPage() {
   };
   return (
     <Layout>
-      <Seo templateTitle='Forgot Password' />
+      <Seo templateTitle='Register' />
 
       <main className='bg-clight bg-texture'>
-        <section className='px-8 py-48 min-h-screen md:px-[30vw]'>
-          <small className='font-fivo text-cdark absolute top-24 text-base md:left-40'>
+        <section className='px-8 py-32 min-h-screen md:px-[30vw]'>
+          <small className='font-fivo text-cdark absolute top-24 text-lg font-medium md:left-40'>
             Time to See the Unseen.
           </small>
-          <div className='flex justify-start items-center pb-6'>
-            <div className='text-lg'>
-              <UnderlineLink href='/login' className='text-cdark'>
-                To Login Page
-              </UnderlineLink>
-            </div>
-          </div>
           <div className='flex justify-center'>
-            <ForgotPasswordTitle />
+            <RegisterTitle />
           </div>
           <FormProvider {...methods}>
-            {' '}
             <form
               onSubmit={handleSubmit(() => submitData())}
               className='flex flex-col gap-8 mt-8 w-full'
             >
+              <Input
+                dark={true}
+                id='name'
+                type='name'
+                label='Name'
+                validation={{ required: true, pattern: /^[A-Za-z]+$/ }}
+                className='bg-clight border-slate-300 rounded-md border'
+              />
               <Input
                 dark={true}
                 id={ExampleInputField.EMAIL}
@@ -75,9 +76,40 @@ export default function ForgotPasswordPage() {
                 validation={{ required: true, pattern: /^\S+@\S+$/i }}
                 className='bg-clight border-slate-300 rounded-md border'
               />
+              <InputPassword
+                dark={true}
+                id='password'
+                type='password'
+                label='Password'
+                className='bg-clight border-slate-300 rounded-md border'
+              />
+              <InputPassword
+                dark={true}
+                id='password'
+                type='password'
+                label='Repeat Password'
+                className='bg-clight border-slate-300 rounded-md border'
+              />
+
               <Button type='submit' isLoading={isLoading} className='block'>
-                Send reset password
+                Register
               </Button>
+              <div className='flex justify-evenly items-center'>
+                <div className='flex items-center'>
+                  <p className='text-cdark font-medium'>
+                    Already have an account?
+                  </p>
+                </div>
+
+                <div className='text-sm'>
+                  <UnderlineLink
+                    href='/login'
+                    className='text-cdark font-medium'
+                  >
+                    Login Now
+                  </UnderlineLink>
+                </div>
+              </div>
             </form>
           </FormProvider>
           <NextImage

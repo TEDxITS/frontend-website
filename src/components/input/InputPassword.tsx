@@ -1,8 +1,9 @@
 import clsx from 'clsx';
-import * as React from 'react';
+import { useState } from 'react';
 import { RegisterOptions, useFormContext } from 'react-hook-form';
+import { HiEye, HiEyeOff } from 'react-icons/hi';
 
-export type InputProps = {
+export type InputPasswordProps = {
   /** Input label */
   label: React.ReactNode;
   /**
@@ -23,40 +24,36 @@ export type InputProps = {
   readOnly?: boolean;
   /** Manual validation using RHF, it is encouraged to use yup resolver instead */
   validation?: RegisterOptions;
-  checkId?: string;
   dark?: boolean;
+  patternMessage?: string;
 } & React.ComponentPropsWithoutRef<'input'>;
 
-export default function Input({
-  id,
+export default function InputPassword({
   label,
-  className,
-  type = 'text',
-  helperText,
   placeholder = '',
-  validation,
+  helperText,
+  id,
   readOnly = false,
-  checkId,
+  validation,
   dark = false,
+  patternMessage = '',
   ...rest
-}: InputProps) {
+}: InputPasswordProps) {
   const {
     register,
     formState: { errors },
   } = useFormContext();
+
+  const [showPassword, setShowPassword] = useState(false);
+  const togglePassword = () => setShowPassword((prev) => !prev);
+
   return (
-    <div
-      className={clsx({
-        'justify-end flex flex-row-reverse items-center ': type === 'checkbox',
-      })}
-    >
+    <div>
       <label
-        htmlFor={type === 'checkbox' ? `${id}${checkId}` : id}
+        htmlFor={id}
         className={clsx(
           'font-fivo text-clight block ',
-          {
-            'text-primary-900': type === 'checkbox',
-          },
+
           {
             'text-cdark': dark,
           }
@@ -64,26 +61,36 @@ export default function Input({
       >
         {label}
       </label>
-      <input
-        {...register(id, validation)}
-        {...rest}
-        className={clsx(
-          'file:-ml-2 file:bg-cdark file:border-0 file:duration-100 file:hover:bg-cred file:mr-2 file:text-clight file:transition-all',
-          {
-            'cursor-not-allowed bg-primary-200/30': readOnly,
-          },
-          'bg-clight font-fivo placeholder-cdark/40 text-cdark px-4 py-2 w-full border border-transparent shadow-inner focus:border-primary-900 focus:ring-0',
-          {
-            'w-6 h-6  checked:bg-teal px-0 py-0 mr-2 ': type === 'checkbox',
-          },
-          className
-        )}
-        type={type}
-        id={type === 'checkbox' ? `${id}${checkId}` : id}
-        name={id}
-        aria-describedby={id}
-        placeholder={placeholder}
-      />
+      <div className='relative'>
+        <input
+          {...register(id, validation)}
+          {...rest}
+          type={showPassword ? 'text' : 'password'}
+          name={id}
+          id={id}
+          readOnly={readOnly}
+          className={clsx(
+            {
+              'cursor-not-allowed bg-primary-200/30': readOnly,
+            },
+            'bg-clight font-fivo placeholder-cdark/40 text-cdark px-4 py-2 w-full rounded-md border border-transparent shadow-inner focus:border-primary-900 focus:ring-0'
+          )}
+          placeholder={placeholder}
+          aria-describedby={id}
+        />
+
+        <button
+          onClick={togglePassword}
+          type='button'
+          className='flex absolute inset-y-0 right-0 items-center p-1 mr-3 rounded-lg focus:ring focus:ring-primary-500 focus:outline-none'
+        >
+          {showPassword ? (
+            <HiEyeOff className='text-xl text-gray-500 cursor-pointer hover:text-gray-600' />
+          ) : (
+            <HiEye className='text-xl text-gray-500 cursor-pointer hover:text-gray-600' />
+          )}
+        </button>
+      </div>
       <div className='mb-1'>
         {helperText && (
           <p
@@ -102,7 +109,9 @@ export default function Input({
           >
             {errors[id]?.type === 'required'
               ? `This field is required`
-              : errors[id]?.type === 'pattern' && `Please enter valid value`}
+              : errors[id]?.type === 'pattern' && patternMessage
+              ? patternMessage
+              : `Please enter valid value`}
             {errors[id]?.type === 'size' &&
               `File exceeded maximum size of 2 MB`}
           </p>
