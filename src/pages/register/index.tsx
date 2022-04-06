@@ -4,6 +4,7 @@ import { FormProvider, useForm } from 'react-hook-form';
 
 import Button from '@/components/buttons/Button';
 import Input from '@/components/input/Input';
+import InputPassword from '@/components/input/InputPassword';
 import Layout from '@/components/layout/Layout';
 import UnderlineLink from '@/components/links/UnderlineLink';
 import Seo from '@/components/Seo';
@@ -20,7 +21,7 @@ const initialValueCFS: ExampleDataType = {
   email: '',
 };
 
-export default function ForgotPasswordPage() {
+export default function RegisterPage() {
   const methods = useForm<ExampleDataType>({
     defaultValues: initialValueCFS,
     mode: 'onTouched',
@@ -41,20 +42,12 @@ export default function ForgotPasswordPage() {
   };
   return (
     <Layout>
-      <Seo templateTitle='Forgot Password' />
+      <Seo templateTitle='Register' />
 
       <main className='bg-clight bg-texture'>
-        <section className='px-8 py-48 min-h-screen md:px-[30vw]'>
-          <div className='flex justify-start items-center pb-6'>
-            <div className='text-lg'>
-              <UnderlineLink href='/login' className='text-cdark'>
-                To Login Page
-              </UnderlineLink>
-            </div>
-          </div>
-          <h1 className='text-cdark'>Forgot Password</h1>
+        <section className='px-8 py-32 min-h-screen md:px-[30vw]'>
+          <h1 className='text-cdark'>Register</h1>
           <FormProvider {...methods}>
-            {' '}
             <form
               onSubmit={handleSubmit(() => submitData())}
               className='flex flex-col gap-8 mt-8 w-full'
@@ -67,9 +60,34 @@ export default function ForgotPasswordPage() {
                 validation={{ required: true, pattern: /^\S+@\S+$/i }}
                 className='border-slate-300 bg-white rounded-md border'
               />
+              <InputPassword
+                dark={true}
+                id='password'
+                type='password'
+                label='Password'
+                validation={{ required: true, pattern: /^\S+@\S+$/i }}
+                className='border-slate-300 bg-white rounded-md border'
+              />
+
               <Button type='submit' isLoading={isLoading} className='block'>
-                Send reset password
+                Register
               </Button>
+              <div className='flex justify-evenly items-center'>
+                <div className='flex items-center'>
+                  <p className='text-cdark font-medium'>
+                    Already have an account?
+                  </p>
+                </div>
+
+                <div className='text-sm'>
+                  <UnderlineLink
+                    href='/login'
+                    className='text-cdark font-medium'
+                  >
+                    Login Now
+                  </UnderlineLink>
+                </div>
+              </div>
             </form>
           </FormProvider>
         </section>
