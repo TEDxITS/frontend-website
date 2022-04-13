@@ -3,14 +3,26 @@ import * as React from 'react';
 import { RegisterOptions, useFormContext } from 'react-hook-form';
 
 export type InputProps = {
+  /** Input label */
   label: React.ReactNode;
+  /**
+   * id to be initialized with React Hook Form,
+   * must be the same with the pre-defined types.
+   */
   id: string;
-  className?: string;
-  type?: React.HTMLInputTypeAttribute;
-  helperText?: string;
+  /** Input placeholder */
   placeholder?: string;
-  validation?: RegisterOptions;
+  /** Small text below input, useful for additional information */
+  helperText?: string;
+  /**
+   * Input type
+   * @example text, email, password
+   */
+  type?: React.HTMLInputTypeAttribute;
+  /** Disables the input and shows defaultValue (can be set from React Hook Form) */
   readOnly?: boolean;
+  /** Manual validation using RHF, it is encouraged to use yup resolver instead */
+  validation?: RegisterOptions;
   checkId?: string;
   dark?: boolean;
 } & React.ComponentPropsWithoutRef<'input'>;
@@ -88,8 +100,9 @@ export default function Input({
               'text-red-700': dark,
             })}
           >
-            {errors[id]?.type === 'pattern' && `Please enter valid value}`}
-            {errors[id]?.type === 'required' && `This field is required`}
+            {errors[id]?.type === 'required'
+              ? `This field is required`
+              : errors[id]?.type === 'pattern' && `Please enter valid value`}
             {errors[id]?.type === 'size' &&
               `File exceeded maximum size of 2 MB`}
           </p>
