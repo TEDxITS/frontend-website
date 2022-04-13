@@ -8,6 +8,8 @@ import * as React from 'react';
 
 import clsxm from '@/lib/clsxm';
 
+import useAuthStore from '@/store/useAuthStore';
+
 import HeaderLink from '../links/HeaderLink';
 import UnstyledLink from '../links/UnstyledLink';
 import NextImage from '../NextImage';
@@ -33,6 +35,9 @@ export default function DashboardHeader({
   sidebarOpen,
   setSidebarOpen,
 }: HeaderProps) {
+  //#region  //*=========== Store ===========
+  const isAuthenticated = useAuthStore().isAuthenticated;
+  //#endregion  //*======== Store ===========
   //#region  //*=========== Navigation Mobile State ===========
   const [isNavOpen, setIsNavOpen] = React.useState<boolean>(false);
   //#endregion  //*======== Navigation Mobile State ===========
@@ -69,16 +74,16 @@ export default function DashboardHeader({
               <UnstyledLink href='/'>
                 <NavigationLogo isDark={isDark} isNavOpen={isNavOpen} />
               </UnstyledLink>
-              <ProfilePopover sidebarOpen={sidebarOpen} />
+              {isAuthenticated && <ProfilePopover sidebarOpen={sidebarOpen} />}
             </div>
           </div>
           {/* Mobile View Navbar */}
           <div className='block relative items-center h-16 lg:hidden'>
             <div className='flex absolute inset-0 z-40 justify-between items-center'>
-              <ProfilePopover sidebarOpen={sidebarOpen} />
+              {isAuthenticated && <ProfilePopover sidebarOpen={sidebarOpen} />}
               <button
                 onClick={() => setSidebarOpen(!sidebarOpen)}
-                className={clsxm('cursor-pointer', {
+                className={clsxm('ml-auto cursor-pointer', {
                   'text-cdark': isDark,
                   hidden: sidebarOpen,
                 })}
