@@ -33,6 +33,8 @@ module.exports = {
         texture: 'url(/images/background/bg-texture.png)',
         newspaper: 'url(/images/background/bg-newspaper.jpg)',
         ticketbottom: "url('/svg/ticket-bottom.svg')",
+        checkoutPage: 'url(/images/checkout-page/card.png)',
+        confirmationPage: 'url(/images/checkout-page/payment.png)',
       },
       dropShadow: {
         'solid-sm': '-1px 1px rgb(33 33 33)',
@@ -75,6 +77,7 @@ module.exports = {
 
         //text color
         cgray: '#EFEDEA',
+        corange: '#EB5124',
       },
       fill: {
         primary: {
