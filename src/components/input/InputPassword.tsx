@@ -52,7 +52,7 @@ export default function InputPassword({
       <label
         htmlFor={id}
         className={clsx(
-          'block font-fivo text-clight ',
+          'font-fivo text-clight block ',
 
           {
             'text-cdark': dark,
@@ -73,7 +73,7 @@ export default function InputPassword({
             {
               'cursor-not-allowed bg-primary-200/30': readOnly,
             },
-            'bg-clight border border-transparent font-fivo placeholder-cdark/40 px-4 py-2 shadow-inner text-cdark w-full focus:border-primary-900 focus:ring-0'
+            'bg-clight font-fivo placeholder-cdark/40 text-cdark px-4 py-2 w-full rounded-md border border-transparent shadow-inner focus:border-primary-900 focus:ring-0'
           )}
           placeholder={placeholder}
           aria-describedby={id}
@@ -82,19 +82,19 @@ export default function InputPassword({
         <button
           onClick={togglePassword}
           type='button'
-          className='absolute flex inset-y-0 items-center mr-3 p-1 right-0 rounded-lg focus:outline-none focus:ring focus:ring-primary-500'
+          className='flex absolute inset-y-0 right-0 items-center p-1 mr-3 rounded-lg focus:ring focus:ring-primary-500 focus:outline-none'
         >
           {showPassword ? (
-            <HiEyeOff className='cursor-pointer text-gray-500 text-xl hover:text-gray-600' />
+            <HiEyeOff className='text-xl text-gray-500 cursor-pointer hover:text-gray-600' />
           ) : (
-            <HiEye className='cursor-pointer text-gray-500 text-xl hover:text-gray-600' />
+            <HiEye className='text-xl text-gray-500 cursor-pointer hover:text-gray-600' />
           )}
         </button>
       </div>
       <div className='mb-1'>
         {helperText && (
           <p
-            className={clsx('mt-1 text-clight text-xs', {
+            className={clsx('text-clight mt-1 text-xs', {
               'text-cdark': dark,
             })}
           >
@@ -103,7 +103,7 @@ export default function InputPassword({
         )}
         {errors[id] && (
           <p
-            className={clsx('mt-1 text-cred text-xs', {
+            className={clsx('text-cred mt-1 text-xs', {
               'text-red-700': dark,
             })}
           >

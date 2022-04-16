@@ -70,7 +70,7 @@ export default function Input({
         className={clsx(
           'file:-ml-2 file:bg-cdark file:border-0 file:duration-100 file:hover:bg-cred file:mr-2 file:text-clight file:transition-all',
           {
-            'cursor-not-allowed bg-primary-200/30': readOnly,
+            'cursor-not-allowed bg-gray-300': readOnly,
           },
           'bg-clight font-fivo placeholder-cdark/40 text-cdark px-4 py-2 w-full border border-transparent shadow-inner focus:border-primary-900 focus:ring-0',
           {
@@ -83,6 +83,7 @@ export default function Input({
         name={id}
         aria-describedby={id}
         placeholder={placeholder}
+        readOnly={readOnly}
       />
       <div className='mb-1'>
         {helperText && (

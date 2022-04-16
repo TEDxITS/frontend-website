@@ -7,7 +7,10 @@ import Input from '@/components/input/Input';
 import InputPassword from '@/components/input/InputPassword';
 import Layout from '@/components/layout/Layout';
 import UnderlineLink from '@/components/links/UnderlineLink';
+import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
+
+import RegisterTitle from '@/assets/svg/RegisterTitle';
 
 enum ExampleInputField {
   'EMAIL' = 'email',
@@ -46,7 +49,12 @@ export default function RegisterPage() {
 
       <main className='bg-clight bg-texture'>
         <section className='px-8 py-32 min-h-screen md:px-[30vw]'>
-          <h1 className='text-cdark'>Register</h1>
+          <small className='font-fivo text-cdark absolute top-24 text-lg font-medium md:left-40'>
+            Time to See the Unseen.
+          </small>
+          <div className='flex justify-center'>
+            <RegisterTitle />
+          </div>
           <FormProvider {...methods}>
             <form
               onSubmit={handleSubmit(() => submitData())}
@@ -54,19 +62,33 @@ export default function RegisterPage() {
             >
               <Input
                 dark={true}
+                id='name'
+                type='name'
+                label='Name'
+                validation={{ required: true, pattern: /^[A-Za-z]+$/ }}
+                className='bg-clight border-slate-300 rounded-md border'
+              />
+              <Input
+                dark={true}
                 id={ExampleInputField.EMAIL}
                 type='email'
                 label='Email'
                 validation={{ required: true, pattern: /^\S+@\S+$/i }}
-                className='border-slate-300 bg-white rounded-md border'
+                className='bg-clight border-slate-300 rounded-md border'
               />
               <InputPassword
                 dark={true}
                 id='password'
                 type='password'
                 label='Password'
-                validation={{ required: true, pattern: /^\S+@\S+$/i }}
-                className='border-slate-300 bg-white rounded-md border'
+                className='bg-clight border-slate-300 rounded-md border'
+              />
+              <InputPassword
+                dark={true}
+                id='password'
+                type='password'
+                label='Repeat Password'
+                className='bg-clight border-slate-300 rounded-md border'
               />
 
               <Button type='submit' isLoading={isLoading} className='block'>
@@ -90,6 +112,13 @@ export default function RegisterPage() {
               </div>
             </form>
           </FormProvider>
+          <NextImage
+            src='/images/forgot-password/float.png'
+            width={365}
+            height={402}
+            alt='float'
+            className='max-w-[50vw] absolute right-28 w-full md:max-w-[30vw] md:right-0 md:top-96'
+          />
         </section>
       </main>
     </Layout>
