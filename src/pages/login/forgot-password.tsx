@@ -6,7 +6,10 @@ import Button from '@/components/buttons/Button';
 import Input from '@/components/input/Input';
 import Layout from '@/components/layout/Layout';
 import UnderlineLink from '@/components/links/UnderlineLink';
+import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
+
+import ForgotPasswordTitle from '@/assets/svg/ForgotPasswordTitle';
 
 enum ExampleInputField {
   'EMAIL' = 'email',
@@ -45,6 +48,9 @@ export default function ForgotPasswordPage() {
 
       <main className='bg-clight bg-texture'>
         <section className='px-8 py-48 min-h-screen md:px-[30vw]'>
+          <small className='font-fivo text-cdark absolute top-24 text-base md:left-40'>
+            Time to See the Unseen.
+          </small>
           <div className='flex justify-start items-center pb-6'>
             <div className='text-lg'>
               <UnderlineLink href='/login' className='text-cdark'>
@@ -52,7 +58,9 @@ export default function ForgotPasswordPage() {
               </UnderlineLink>
             </div>
           </div>
-          <h1 className='text-cdark'>Forgot Password</h1>
+          <div className='flex justify-center'>
+            <ForgotPasswordTitle />
+          </div>
           <FormProvider {...methods}>
             {' '}
             <form
@@ -65,13 +73,20 @@ export default function ForgotPasswordPage() {
                 type='email'
                 label='Email'
                 validation={{ required: true, pattern: /^\S+@\S+$/i }}
-                className='border-slate-300 bg-white rounded-md border'
+                className='bg-clight border-slate-300 rounded-md border'
               />
               <Button type='submit' isLoading={isLoading} className='block'>
                 Send reset password
               </Button>
             </form>
           </FormProvider>
+          <NextImage
+            src='/images/forgot-password/float.png'
+            width={365}
+            height={402}
+            alt='float'
+            className='max-w-[50vw] absolute right-28 w-full md:max-w-[30vw] md:right-0 md:top-96'
+          />
         </section>
       </main>
     </Layout>

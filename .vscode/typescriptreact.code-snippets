@@ -76,6 +76,31 @@
       "}"
     ]
   },
+  "Next Pages With Auth": {
+    "prefix": "npa",
+    "body": [
+      "import * as React from 'react';\n",
+      "import Layout from '@/components/layout/Layout';",
+      "import Seo from '@/components/Seo';\n",
+      "import { PageWithAuth } from '@/types/auth';\n",
+      "const ${1:${TM_FILENAME_BASE/(^[a-zA-Z])(.*)/${1:/upcase}${2}/}}Page: PageWithAuth = () => {",
+      "  return (",
+      "    <Layout withDashboard={true}>",
+      "      <Seo templateTitle='${1:${TM_FILENAME_BASE/(^[a-zA-Z])(.*)/${1:/upcase}${2}/}}' />\n",
+      "      <main>\n",
+      "        <section className=''>",
+      "          <div className='layout py-20 min-h-screen'>",
+      "            $0",
+      "          </div>",
+      "        </section>",
+      "      </main>",
+      "    </Layout>",
+      "  )",
+      "}\n",
+      "${1:${TM_FILENAME_BASE/(^[a-zA-Z])(.*)/${1:/upcase}${2}/}}Page.permission = 'auth';\n",
+      "export default ${1:${TM_FILENAME_BASE/(^[a-zA-Z])(.*)/${1:/upcase}${2}/}}Page;"
+    ]
+  },
   "Next API": {
     "prefix": "napi",
     "body": [

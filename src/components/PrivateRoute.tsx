@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import * as React from 'react';
+import toast from 'react-hot-toast';
 import { ImSpinner8 } from 'react-icons/im';
 
 import { getToken, removeToken } from '@/lib/auth';
@@ -7,8 +8,7 @@ import api from '@/lib/axios';
 
 import useAuthStore from '@/store/useAuthStore';
 
-import { ApiResponse } from '@/types/api';
-import { User } from '@/types/auth';
+import { ApiAuthResponse } from '@/types/api';
 
 type PrivateRouteProps = {
   children: JSX.Element;
@@ -20,69 +20,58 @@ export default function PrivateRoute({
   permission: routePermission,
 }: PrivateRouteProps) {
   const router = useRouter();
-  const { query } = router;
 
   //#region  //*=========== STORE ===========
   const isAuthenticated = useAuthStore.useIsAuthenticated();
-  const isLoading = useAuthStore.useIsLoading();
   const login = useAuthStore.useLogin();
+  const isLoading = useAuthStore.useIsLoading();
   const stopLoading = useAuthStore.useStopLoading();
-  const user = useAuthStore.useUser();
   //#endregion  //*======== STORE ===========
 
-  React.useEffect(() => {
-    const loadUser = async () => {
-      try {
-        const token = getToken();
-        if (!token) {
-          return;
-        }
-        const res = await api.get<ApiResponse<User>>('/me');
-
-        login({
-          token: res.data.data.token,
-        });
-      } catch (err) {
-        removeToken();
-      } finally {
-        stopLoading();
+  const redirect = () => {
+    if (!isAuthenticated && router.asPath !== '/login') {
+      router.replace(`/login`);
+      toast.error('Please Login or Register your Account First!');
+    }
+  };
+  const loadUser = async () => {
+    try {
+      const token = getToken();
+      if (!token) {
+        redirect();
+        return;
       }
-    };
-
+      const res = await api.post<ApiAuthResponse>(`/auth/check-account`, {
+        token: token,
+      });
+      if (res.data.success) {
+        login({
+          token: token,
+        });
+      } else {
+        redirect();
+      }
+    } catch (err) {
+      redirect();
+      removeToken();
+    } finally {
+      stopLoading();
+    }
+  };
+  React.useEffect(() => {
     loadUser();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  React.useEffect(() => {
-    if (!isLoading) {
-      if (isAuthenticated) {
-        // Prevent authenticated user from accessing auth or other role pages
-        if (routePermission === 'auth') {
-          if (query?.redirect) {
-            router.push(query.redirect as string);
-          } else {
-            router.replace('/');
-          }
-        }
-        // Prevent unauthenticated user from accessing protected pages
-      } else {
-        if (routePermission !== 'auth') {
-          router.replace(`/login/?redirect=${router.asPath}`, `/login/`);
-        }
-      }
-    }
-  }, [isAuthenticated, isLoading, query, router, routePermission, user]);
-
   if (
-    // If authenticated user want to access auth or other role pages
-    ((isLoading || isAuthenticated) && routePermission === 'auth') ||
-    // If unauthenticated user want to access protected pages
-    ((isLoading || !isAuthenticated) && routePermission !== 'auth')
+    (isLoading || !isAuthenticated) &&
+    routePermission === 'auth' &&
+    router.asPath !== '/login'
   ) {
     return (
-      <div className='flex flex-col justify-center items-center min-h-screen text-gray-800'>
-        <ImSpinner8 className='mb-4 text-4xl animate-spin' />
-        <p>Loading...</p>
+      <div className='bg-cdark flex flex-col items-center justify-center min-h-screen text-gray-800'>
+        <ImSpinner8 className='animate-spin mb-4 text-4xl text-clight' />
+        <p className='text-clight'>Loading...</p>
       </div>
     );
   }

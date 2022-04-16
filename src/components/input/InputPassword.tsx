@@ -51,13 +51,9 @@ export default function InputPassword({
     <div>
       <label
         htmlFor={id}
-        className={clsx(
-          'block font-fivo text-clight ',
-
-          {
-            'text-cdark': dark,
-          }
-        )}
+        className={clsx('block font-fivo text-clight ', {
+          'text-cdark': dark,
+        })}
       >
         {label}
       </label>
@@ -73,7 +69,7 @@ export default function InputPassword({
             {
               'cursor-not-allowed bg-primary-200/30': readOnly,
             },
-            'bg-clight border border-transparent font-fivo placeholder-cdark/40 px-4 py-2 shadow-inner text-cdark w-full focus:border-primary-900 focus:ring-0'
+            'bg-clight border border-transparent font-fivo placeholder-cdark/40 px-4 py-2 rounded-md shadow-inner text-cdark w-full focus:border-primary-900 focus:ring-0'
           )}
           placeholder={placeholder}
           aria-describedby={id}
