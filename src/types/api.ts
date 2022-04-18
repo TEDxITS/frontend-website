@@ -1,10 +1,10 @@
 export type ApiResponse<DataType> = {
-  success: true;
+  success: boolean;
   message: string;
   data: DataType;
 };
 
 export type ApiAuthResponse = {
-  success: true;
+  success: boolean;
   message: string;
 };
