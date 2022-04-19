@@ -51,9 +51,9 @@ export default function TicketingCard({ cardType }: TicketingCardProps) {
           </h4>
           {whatWillYouGetNoKit.map(({ text }, i) => {
             return (
-              <div key={i} className='flex gap-2'>
+              <div key={i} className='shrink-0 flex gap-2'>
                 <NextImage
-                  src='/images/checkout-page/checklist.png'
+                  src='/images/checkout-page/checklist.svg'
                   width={20}
                   height={20}
                   alt='checklist'
@@ -101,9 +101,9 @@ export default function TicketingCard({ cardType }: TicketingCardProps) {
             </h4>
             {whatWillYouGetWithKit.map(({ text }, i) => {
               return (
-                <div key={i} className='flex gap-2'>
+                <div key={i} className='shrink-0 flex gap-2'>
                   <NextImage
-                    src='/images/checkout-page/checklist.png'
+                    src='/images/checkout-page/checklist.svg'
                     width={20}
                     height={20}
                     alt='checklist'
@@ -142,9 +142,9 @@ export default function TicketingCard({ cardType }: TicketingCardProps) {
           </h4>
           {whatWillYouGetNoKit.map(({ text }, i) => {
             return (
-              <div key={i} className='flex gap-2'>
+              <div key={i} className='shrink-0 flex gap-2'>
                 <NextImage
-                  src='/images/checkout-page/checklist.png'
+                  src='/images/checkout-page/checklist.svg'
                   width={20}
                   height={20}
                   alt='checklist'
