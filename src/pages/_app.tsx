@@ -70,13 +70,16 @@ function MyApp({ Component, pageProps, router }: AppAuthProps) {
       <ParallaxProvider>
         {Component.permission ? (
           <AnimatePresence>
-            <DismissableToast />
             <PrivateRoute permission={Component.permission} key={1}>
-              <Component {...pageProps} key={router.route} />
+              <React.Fragment>
+                <DismissableToast />
+                <Component {...pageProps} key={router.route} />
+              </React.Fragment>
             </PrivateRoute>
           </AnimatePresence>
         ) : (
           <AnimatePresence exitBeforeEnter>
+            <DismissableToast />
             <Component {...pageProps} key={router.route} />
           </AnimatePresence>
         )}
