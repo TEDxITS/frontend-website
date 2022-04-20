@@ -51,13 +51,9 @@ export default function InputPassword({
     <div>
       <label
         htmlFor={id}
-        className={clsx(
-          'font-fivo text-clight block ',
-
-          {
-            'text-cdark': dark,
-          }
-        )}
+        className={clsx('font-fivo text-clight block ', {
+          'text-cdark': dark,
+        })}
       >
         {label}
       </label>

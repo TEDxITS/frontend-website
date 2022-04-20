@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
@@ -14,10 +15,10 @@ import NextImage from '@/components/NextImage';
 import { DEFAULT_TOAST_MESSAGE } from '@/constant/toast';
 
 enum InputField {
-  'NAME' = 'name',
-  'EMAIL' = 'email',
-  'PASSWORD' = 'password',
-  'CONFIRMPASSWORD' = 'confirmpassword',
+  'NAME' = 'user_name',
+  'EMAIL' = 'user_email',
+  'PASSWORD' = 'user_password',
+  'CONFIRMPASSWORD' = 'user_confirmpassword',
 }
 
 type ProfileDataType = {
@@ -28,6 +29,7 @@ type ProfileDataType = {
 };
 
 const ProfileForm = ({ initialvalue }: { initialvalue: ProfileDataType }) => {
+  const router = useRouter();
   const [isEditing, setIsEditing] = React.useState<boolean>(false);
   const [passwordError, setPasswordError] = React.useState<string>('');
   const isLoading = useLoadingToast();
@@ -36,22 +38,16 @@ const ProfileForm = ({ initialvalue }: { initialvalue: ProfileDataType }) => {
     mode: 'onTouched',
     reValidateMode: 'onChange',
   });
-  const { handleSubmit, setValue } = methods;
+  const { handleSubmit } = methods;
 
   const postProfile = (data: ProfileDataType) => {
     toast.promise(
       api.post(`/profile/edit`, data).then(() => {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        setValue('name', data.name);
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        setValue('email', data.email);
-        setIsEditing(false);
+        router.reload();
       }),
       {
         ...DEFAULT_TOAST_MESSAGE,
-        success: 'Berhasil! Anda bisa masuk ke akun anda',
+        success: 'Berhasil! profil anda telah berubah',
       }
     );
     return;
@@ -60,16 +56,16 @@ const ProfileForm = ({ initialvalue }: { initialvalue: ProfileDataType }) => {
   const onSubmit: SubmitHandler<ProfileDataType> = async (data) => {
     setPasswordError('');
     if (isEditing) {
-      if (data.password) {
-        if (data.password !== data.confirmpassword) {
+      if (data.user_password) {
+        if (data.user_password !== data.user_confirmpassword) {
           setPasswordError('Password dont match');
           return;
         }
-        delete data.confirmpassword;
+        delete data.user_confirmpassword;
         postProfile(data);
       } else {
-        delete data.password;
-        delete data.confirmpassword;
+        delete data.user_password;
+        delete data.user_confirmpassword;
         postProfile(data);
       }
     } else {
@@ -116,7 +112,7 @@ const ProfileForm = ({ initialvalue }: { initialvalue: ProfileDataType }) => {
                 height={60}
                 alt='sticker'
                 quality={100}
-                className='absolute -top-4 scale-75 -translate-x-24 sm:scale-100 sm:-translate-x-8'
+                className='-z-10 absolute -top-4 scale-75 -translate-x-24 sm:scale-100 sm:-translate-x-8'
               />
             </div>
             <p className='text-cdark mt-6 mb-4 text-xs'>
@@ -175,7 +171,7 @@ const ProfileForm = ({ initialvalue }: { initialvalue: ProfileDataType }) => {
                 label={'Confirm Password'}
                 readOnly={isEditing ? false : true}
               />
-              <p className='mt-1 text-xs text-red-700'>{passwordError}</p>
+              <p className='text-xs text-red-700'>{passwordError}</p>
             </div>
             <div className='flex flex-grow justify-end items-end'>
               <Button type='submit' isLoading={isLoading}>
@@ -188,6 +184,7 @@ const ProfileForm = ({ initialvalue }: { initialvalue: ProfileDataType }) => {
             width={600}
             height={600}
             alt='paw'
+            priority={true}
             className='-z-10 absolute -bottom-48 -right-56 scale-75 sm:-right-32 sm:scale-100'
           />
         </div>

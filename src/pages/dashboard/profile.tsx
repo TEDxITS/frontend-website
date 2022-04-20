@@ -25,20 +25,6 @@ const ProfilePage: PageWithAuth = ({
   data,
   message,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  const [initialValue, SetInitialValue] =
-    React.useState<{ name: string; email: string }>();
-  const [isError, setIsError] = React.useState<boolean>(false);
-  const [isLoading, setIsLoading] = React.useState<boolean>(false);
-
-  React.useEffect(() => {
-    setIsLoading(true);
-    if (message || !data) {
-      setIsError(true);
-    } else {
-      SetInitialValue({ name: data.user_name, email: data.user_email });
-    }
-  }, [message, data]);
-
   return (
     <Layout
       showFooter={true}
@@ -67,12 +53,15 @@ const ProfilePage: PageWithAuth = ({
           priority={true}
         />
         <section className='relative z-20 px-4 py-8'>
-          {isLoading ? (
-            <p className='text-cdark'>Loading...</p>
-          ) : isError || !initialValue ? (
-            <p className='text-cdark'>Loading...</p>
+          {!message && data ? (
+            <ProfileForm
+              initialvalue={{
+                user_name: data.user_name,
+                user_email: data.user_email,
+              }}
+            />
           ) : (
-            <ProfileForm initialvalue={initialValue} />
+            <p className='text-cdark'>Not Found</p>
           )}
         </section>
       </main>
