@@ -3,7 +3,6 @@ import * as React from 'react';
 
 import clsxm from '@/lib/clsxm';
 
-import AnimatedCharacters from '@/components/AnimatedCharacters';
 import NextImage from '@/components/NextImage';
 
 type TicketingCardProps = {
@@ -28,10 +27,11 @@ const TITLE_NO_KIT: React.ReactNode = (
         <span className='ml-1 font-normal'>LINE</span>
       </h1>
     </div>
-    <AnimatedCharacters
-      text="Minimalism that's what we called for this package, the essential
-      package will be delivered right on the spot"
-    />
+
+    <p>
+      Minimalism that&apos;s what we called for this package, the essential
+      package will be delivered right on the spot
+    </p>
   </>
 );
 //#endregion  //*======== No Kit ===========
@@ -60,8 +60,10 @@ const TITLE_WITH_KIT: React.ReactNode = (
         With <span className='font-bold'>Kit</span>
       </h2>
     </div>
-
-    <AnimatedCharacters text='The live experiences of TEDx Talk from the distinguished speakers with event companion exceptional kit.' />
+    <p>
+      The live experiences of TEDx Talk from the distinguished speakers with
+      event companion exceptional kit.
+    </p>
   </>
 );
 
@@ -119,8 +121,9 @@ export default function TicketingCard({
           priority={true}
         />
         <div className='flex flex-col gap-2 bg-white rounded-b-3xl'>
-          <div className='flex flex-col gap-2 px-8 pt-4 pb-16'>
-            <AnimatedCharacters text='What you will get' className='mb-4' />
+          <div className='flex flex-col gap-2 px-8 pt-4 pb-4'>
+            <p className='mb-4 font-semibold'>What you will get</p>
+
             {(type === 'offline-no-kit'
               ? BENEFIT_NO_KIT
               : BENEFIT_WITH_KIT
