@@ -79,8 +79,12 @@ export default function DashboardHeader({
           </div>
           {/* Mobile View Navbar */}
           <div className='block relative items-center h-16 lg:hidden'>
-            <div className='flex absolute inset-0 z-40 justify-between items-center'>
-              {isAuthenticated && <ProfilePopover sidebarOpen={sidebarOpen} />}
+            <div className='flex absolute inset-0 z-30 justify-between items-center'>
+              {isAuthenticated ? (
+                <ProfilePopover sidebarOpen={sidebarOpen} />
+              ) : (
+                <NavigationLogo isDark={isDark} isNavOpen={isNavOpen} />
+              )}
               <button
                 onClick={() => setSidebarOpen(!sidebarOpen)}
                 className={clsxm('ml-auto cursor-pointer', {

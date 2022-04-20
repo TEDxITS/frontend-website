@@ -10,6 +10,7 @@ import Sidebar from './Sidebar';
 type LayoutProps = {
   withDashboard?: boolean;
   showFooter?: boolean;
+  isDark?: boolean;
 } & React.ComponentPropsWithoutRef<'div'>;
 
 export default function Layout({
@@ -17,13 +18,18 @@ export default function Layout({
   className,
   showFooter = true,
   withDashboard = false,
+  isDark = false,
 }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = React.useState<boolean>(false);
 
   if (withDashboard) {
     return (
       <div className='bg-cdark'>
-        <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+        <Sidebar
+          isDark={isDark}
+          sidebarOpen={sidebarOpen}
+          setSidebarOpen={setSidebarOpen}
+        />
         <div
           className={clsxm(
             'bg-cdark flex flex-col flex-1 pt-8 min-h-screen lg:pt-16 lg:pl-64',
@@ -31,6 +37,7 @@ export default function Layout({
           )}
         >
           <DashboardHeader
+            isDark={isDark}
             sidebarOpen={sidebarOpen}
             setSidebarOpen={setSidebarOpen}
             isDark={true}

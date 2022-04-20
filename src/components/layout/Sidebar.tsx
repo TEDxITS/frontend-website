@@ -21,6 +21,7 @@ import UnstyledLink from '../links/UnstyledLink';
 
 type SidebarProps = {
   sidebarOpen: boolean;
+  isDark?: boolean;
   setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
@@ -28,13 +29,17 @@ const navigation = [
   { name: 'Ticket', href: '#', icon: IoTicket, current: true },
   { name: 'Merch', href: '#', icon: RiTShirtFill, current: false },
 ];
-export default function Sidebar({ sidebarOpen, setSidebarOpen }: SidebarProps) {
+export default function Sidebar({
+  sidebarOpen,
+  setSidebarOpen,
+  isDark = false,
+}: SidebarProps) {
   return (
     <>
       <Transition.Root show={sidebarOpen} as={React.Fragment}>
         <Dialog
           as='div'
-          className='flex fixed inset-0 z-40 lg:hidden'
+          className='z-[100] flex fixed inset-0 lg:hidden'
           onClose={setSidebarOpen}
         >
           <Transition.Child
@@ -70,7 +75,12 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }: SidebarProps) {
                 <div className='absolute top-0 right-0 pt-2 -mr-12'>
                   <button
                     type='button'
-                    className='flex p-2 ml-1 w-10 h-10 rounded-full focus:ring-2 focus:ring-inset focus:ring-white focus:outline-none'
+                    className={clsxm(
+                      'flex p-2 ml-1 w-10 h-10 rounded-full focus:ring-2 focus:ring-inset focus:outline-none ',
+                      isDark
+                        ? 'focus:ring-cdark text-cdark'
+                        : 'focus:ring-white text-white'
+                    )}
                     onClick={() => setSidebarOpen(false)}
                   >
                     <span className='sr-only'>Close sidebar</span>
