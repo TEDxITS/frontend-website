@@ -1,14 +1,20 @@
 export type Payment = 'normal' | 'presale' | 'earlybird';
 
-export type Event = 'offline-kit' | 'offline-non-kit' | 'online';
-export type PaymentData = {
+export type Event = 'offline-kit' | 'offline-non-kit';
+
+export type EventPaymentType = {
+  payment: Payment;
+  type: Event;
+};
+
+export type PaymentApiData = {
   payment_id: string;
   type: Payment;
-  price: string;
+  price: number;
   quota: number;
 };
 
-export type EventData = {
+export type EventApiData = {
   event_id: string;
   event_name: string;
   event_date: string;
@@ -17,6 +23,6 @@ export type EventData = {
   event_type: string;
 };
 
-export type EventPaymentData = EventData & {
-  event_price: PaymentData[];
+export type EventPaymentApiData = EventApiData & {
+  event_price: PaymentApiData[];
 };

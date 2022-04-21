@@ -1,4 +1,8 @@
+import api from './axios';
 import { LinkData } from './type/data';
+
+import { ApiResponse } from '@/types/api';
+import { Event, EventPaymentApiData, Payment } from '@/types/event';
 
 export const postLink = async (value: LinkData) => {
   const res = await fetch('/api/createUrl', {

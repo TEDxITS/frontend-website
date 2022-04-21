@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import * as React from 'react';
 
@@ -8,6 +9,7 @@ import Footer from './Footer';
 import Sidebar from './Sidebar';
 
 type LayoutProps = {
+  wrapperClassName?: string;
   withDashboard?: boolean;
   showFooter?: boolean;
   isDark?: boolean;
@@ -15,6 +17,7 @@ type LayoutProps = {
 
 export default function Layout({
   children,
+  wrapperClassName,
   className,
   showFooter = true,
   withDashboard = false,
@@ -24,15 +27,15 @@ export default function Layout({
 
   if (withDashboard) {
     return (
-      <div className='bg-cdark'>
+      <div className={clsxm('bg-cdark', wrapperClassName)}>
         <Sidebar
           isDark={isDark}
           sidebarOpen={sidebarOpen}
           setSidebarOpen={setSidebarOpen}
         />
         <div
-          className={clsxm(
-            'bg-cdark flex flex-col flex-1 pt-8 min-h-screen lg:pt-16 lg:pl-64',
+          className={clsx(
+            'bg-cdark flex flex-1 flex-col min-h-screen pt-8 lg:pl-64 lg:pt-16',
             className
           )}
         >
@@ -40,7 +43,6 @@ export default function Layout({
             isDark={isDark}
             sidebarOpen={sidebarOpen}
             setSidebarOpen={setSidebarOpen}
-            isDark={true}
           />
           {children}
           {showFooter && <Footer />}
@@ -49,7 +51,7 @@ export default function Layout({
     );
   } else {
     return (
-      <div className={clsxm('bg-cdark flex relative flex-col', className)}>
+      <div className={clsx('bg-cdark flex flex-col relative', className)}>
         <motion.div
           exit={{ opacity: 0 }}
           initial={{ opacity: 1 }}

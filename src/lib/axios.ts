@@ -16,8 +16,10 @@ export const setApiContext = (_context: GetServerSidePropsContext) => {
   return;
 };
 
+export const baseURL = 'https://tesdeveloper.me/api';
+
 export const api = axios.create({
-  baseURL: 'https://tesdeveloper.me/api',
+  baseURL: baseURL,
   headers: {
     'Content-Type': 'application/json',
   },

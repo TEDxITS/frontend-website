@@ -1,14 +1,15 @@
 import { InferGetServerSidePropsType } from 'next';
-import { useRouter } from 'next/router';
 import * as React from 'react';
 
 import { getEventData } from '@/lib/hooks/event';
 
 import ArrowDownButton from '@/components/buttons/ArrowDownButton';
 import Button from '@/components/buttons/Button';
+import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
 import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
+import LoginModal from '@/container/modal/LoginModal';
 import TicketClosedModal from '@/container/modal/TicketClosedModal';
 import CoverSection from '@/container/ticket/CoverSection';
 import {
@@ -21,53 +22,33 @@ import TicketingCard from '@/container/ticketing/TicketingCard';
 import DrawTopRight from '@/assets/svg/DrawTopRight';
 import { offlineNonKit, offlineWithKit } from '@/constant/links';
 
-import { PageWithAuth } from '@/types/auth';
 import { EventPaymentType } from '@/types/event';
 
-const TicketPage: PageWithAuth = ({
+export default function TicketPage({
   data,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  const router = useRouter();
-
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
+  const [quota, setQuota] = React.useState<number>(0);
   const [eventData, setEventData] =
     React.useState<EventPaymentType>(offlineNonKit);
 
-  const [isOfflineNonKitLoading, setIsOfflineNonKitLoading] =
-    React.useState<boolean>(false);
-  const [isOfflineWithKitLoading, setIsOfflineWithKitLoading] =
-    React.useState<boolean>(false);
-
   const openModalOfflineNonKit = () => {
-    setIsOfflineNonKitLoading(true);
+    setQuota(data[0].event_price[0].quota);
     setEventData(offlineNonKit);
-    if (data[0].event_price[0].quota <= 0) {
-      setIsOpen(true);
-      setIsOfflineNonKitLoading(false);
-    } else {
-      router.push(
-        `/dashboard/ticket/checkout?type=${offlineNonKit.type}&payment=${offlineNonKit.payment}`
-      );
-    }
+    setIsOpen(true);
   };
 
   const openModalOfflineWithKit = () => {
-    setIsOfflineWithKitLoading(true);
+    setQuota(data[1].event_price[0].quota);
     setEventData(offlineWithKit);
-    if (data[1].event_price[0].quota <= 0) {
-      setIsOpen(true);
-      setIsOfflineWithKitLoading(false);
-    } else {
-      router.push(
-        `/dashboard/ticket/checkout?type=${offlineWithKit.type}&payment=${offlineWithKit.payment}`
-      );
-    }
+    setIsOpen(true);
   };
-
   return (
-    <Layout className='bg-[#EAEAE2]' withDashboard={true}>
+    <Layout className='bg-[#EAEAE2]'>
       <Seo templateTitle='Ticket' />
-      {isOpen && (
+      {isOpen && quota > 0 ? (
+        <LoginModal isOpen={isOpen} setIsOpen={setIsOpen} />
+      ) : (
         <TicketClosedModal
           isOpen={isOpen}
           setIsOpen={setIsOpen}
@@ -76,7 +57,9 @@ const TicketPage: PageWithAuth = ({
       )}
 
       <main className='bg-blob-blue bg-cover bg-no-repeat bg-top flex flex-col gap-16'>
-        <section className='flex flex-col gap-8 relative z-10'>
+        <section className='flex flex-col gap-8 pt-8 relative z-10 md:pt-16'>
+          <Header isDark={true} />
+
           <div className='overflow-hidden w-full'>
             <div className='flex flex-col items-center layout relative'>
               <NextImage
@@ -148,7 +131,6 @@ const TicketPage: PageWithAuth = ({
                         <span className='font-normal text-2xl'>/ticket</span>
                       </h1>
                       <Button
-                        isLoading={isOfflineNonKitLoading}
                         onClick={openModalOfflineNonKit}
                         className='font-bold my-4 py-1 shadow-lg text-lg'
                       >
@@ -169,7 +151,6 @@ const TicketPage: PageWithAuth = ({
                         <span className='font-normal text-2xl'>/ticket</span>
                       </h1>
                       <Button
-                        isLoading={isOfflineWithKitLoading}
                         onClick={openModalOfflineWithKit}
                         className='font-bold my-4 py-1 shadow-lg text-lg'
                       >
@@ -211,12 +192,7 @@ const TicketPage: PageWithAuth = ({
       </main>
     </Layout>
   );
-};
-
-TicketPage.permission = 'auth';
-
-export default TicketPage;
-
+}
 export const getServerSideProps = async () => {
   const eventNonKit = await getEventData(
     offlineNonKit.type,

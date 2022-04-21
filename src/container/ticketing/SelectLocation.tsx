@@ -2,10 +2,11 @@
 import React from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 
-import Input from '@/components/input/Input';
-import SelectInput from '@/components/input/SelectInput';
-import TextAreaInput from '@/components/input/TextAreaInput';
+import clsxm from '@/lib/clsxm';
 
+import SelectInput from '@/components/input/SelectInput';
+
+//#region  //*=========== Initial Value ===========
 const PROVINSI_URL = 'https://ibnux.github.io/data-indonesia/provinsi.json';
 const KABUPATEN_URL = 'https://ibnux.github.io/data-indonesia/kabupaten/';
 const KECAMATAN_URL = 'https://ibnux.github.io/data-indonesia/kecamatan/';
@@ -15,21 +16,18 @@ type LocationDataType = {
   id: string;
   nama: string;
 };
+
 enum InputField {
   'PROVINSI' = 'provinsi',
   'KABUPATEN' = 'kabupaten',
   'KECAMATAN' = 'kecamatan',
   'KELURAHAN' = 'kelurahan',
-  'ALAMAT' = 'alamat',
-  'KODEPOS' = 'kodepos',
 }
 type LocationInputType = {
   [InputField.PROVINSI]: string;
   [InputField.KABUPATEN]: string;
   [InputField.KECAMATAN]: string;
   [InputField.KELURAHAN]: string;
-  [InputField.ALAMAT]: string;
-  [InputField.KODEPOS]: string;
 };
 
 const initialValueCFS: LocationInputType = {
@@ -37,23 +35,51 @@ const initialValueCFS: LocationInputType = {
   kabupaten: '',
   kecamatan: '',
   kelurahan: '',
-  alamat: '',
-  kodepos: '',
+};
+//#endregion  //*======== Initial Value ===========
+
+const getLocationValue = (
+  data: LocationDataType[] | undefined,
+  locationId: string
+) => {
+  if (!data) {
+    return '';
+  }
+  return data.filter(({ id }) => id === locationId)[0]
+    ? data.filter(({ id }) => id === locationId)[0].nama
+    : '';
 };
 
-export default function SelectLocation() {
+type SelectLocationProps = {
+  setLocation: React.Dispatch<React.SetStateAction<string>>;
+  isLoading: boolean;
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+} & React.ComponentPropsWithoutRef<'form'>;
+
+export default function SelectLocation({
+  className,
+  setLocation,
+  isLoading,
+  setIsLoading,
+}: SelectLocationProps) {
+  //#region  //*=========== Data Location State ===========
   const [provinsi, setProvinsi] = React.useState<LocationDataType[]>();
   const [kabupaten, setKabupaten] = React.useState<LocationDataType[]>();
   const [kecamatan, setKecamatan] = React.useState<LocationDataType[]>();
   const [kelurahan, setKelurahan] = React.useState<LocationDataType[]>();
+  //#endregion  //*======== Data Location State ===========
 
+  //#region  //*=========== Use Form Hook ===========
   const methods = useForm<LocationInputType>({
     defaultValues: initialValueCFS,
     mode: 'onTouched',
     reValidateMode: 'onChange',
   });
-  const { handleSubmit, reset, getValues, watch, setValue } = methods;
 
+  const { getValues, watch, setValue } = methods;
+  //#endregion  //*======== Use Form Hook ===========
+
+  //#region  //*=========== Fetch Function ===========
   const fetchProvinsiData = async () => {
     try {
       const res = await fetch(PROVINSI_URL);
@@ -112,125 +138,127 @@ export default function SelectLocation() {
         }
       } catch (error) {
         return;
+      } finally {
+        setIsLoading(false);
       }
     } else {
       return;
     }
   };
+  //#endregion  //*======== Fetch Function ===========
 
+  //#region  //*=========== Update Value ===========
   React.useEffect(() => {
-    console.log(
-      `${getValues('provinsi')} ${getValues('kabupaten')} ${getValues(
-        'kecamatan'
-      )} ${getValues('kelurahan')}`
-    );
+    if (!isLoading) {
+      setLocation(
+        `${getLocationValue(
+          kelurahan,
+          getValues('kelurahan')
+        )}, ${getLocationValue(
+          kecamatan,
+          getValues('kecamatan')
+        )}, ${getLocationValue(
+          kabupaten,
+          getValues('kabupaten')
+        )}, ${getLocationValue(provinsi, getValues('provinsi'))} 
+        `
+      );
+    }
   }, [
     watch('provinsi'),
     watch('kabupaten'),
     watch('kecamatan'),
     watch('kelurahan'),
+    isLoading,
   ]);
+  //#endregion  //*======== Update Value ===========
+
+  //#region  //*=========== Refetch Data ===========
 
   React.useEffect(() => {
     fetchProvinsiData();
   }, []);
 
   React.useEffect(() => {
+    setIsLoading(true);
     fetchKabupatenData(getValues('provinsi') as string);
   }, [watch('provinsi')]);
 
   React.useEffect(() => {
+    setIsLoading(true);
     fetchKecamatanData(getValues('kabupaten') as string);
   }, [watch('kabupaten')]);
 
   React.useEffect(() => {
+    setIsLoading(true);
     fetchKelurahanData(getValues('kecamatan') as string);
   }, [watch('kecamatan')]);
-
-  const submitData = async (data: LocationInputType) => {
-    /* eslint-disable no-console */
-    console.log(data);
-  };
+  //#endregion  //*======== Refetch Data ===========
 
   return (
-    <div>
-      <FormProvider {...methods}>
-        <form
-          onSubmit={handleSubmit(submitData)}
-          className='w-[calc(100%-4rem)] flex flex-col gap-8 sm:w-full'
+    <FormProvider {...methods}>
+      <form className={className}>
+        <SelectInput
+          dark={true}
+          id={InputField.PROVINSI}
+          label='Provinsi'
+          validation={{ required: true }}
+          className={clsxm('border border-cdark', {
+            'animate-pulse opacity-10 pointer-events-none': isLoading,
+          })}
         >
-          <div className='grid gap-y-4 mx-0 sm:mx-24'>
-            <SelectInput
-              dark={true}
-              id={InputField.PROVINSI}
-              label='Provinsi'
-              validation={{ required: true }}
-              className={'border border-cdark'}
-            >
-              {provinsi?.map(({ id, nama }) => (
-                <option value={id} key={id}>
-                  {nama}
-                </option>
-              ))}
-            </SelectInput>
-            <SelectInput
-              dark={true}
-              id={InputField.KABUPATEN}
-              label='Kabupaten'
-              validation={{ required: true }}
-              className={'border border-cdark'}
-            >
-              {kabupaten?.map(({ id, nama }) => (
-                <option value={id} key={id}>
-                  {nama}
-                </option>
-              ))}
-            </SelectInput>
-            <SelectInput
-              dark={true}
-              id={InputField.KECAMATAN}
-              label='kecamatan'
-              validation={{ required: true }}
-              className={'border border-cdark'}
-            >
-              {kecamatan?.map(({ id, nama }) => (
-                <option value={id} key={id}>
-                  {nama}
-                </option>
-              ))}
-            </SelectInput>
-            <SelectInput
-              dark={true}
-              id={InputField.KELURAHAN}
-              label='kelurahan'
-              validation={{ required: true }}
-              className={'border border-cdark'}
-            >
-              {kelurahan?.map(({ id, nama }) => (
-                <option value={id} key={id}>
-                  {nama}
-                </option>
-              ))}
-            </SelectInput>
-            <TextAreaInput
-              dark={true}
-              id={InputField.ALAMAT}
-              label='No Rumah, Jl, Blok, etc'
-              validation={{ required: true }}
-              className={'border border-cdark'}
-            />
-            <Input
-              dark={true}
-              id={InputField.KODEPOS}
-              type='number'
-              label='Kode Pos'
-              validation={{ required: true }}
-              className={'border border-cdark'}
-            />
-          </div>
-          <div className='flex relative justify-center mx-0 mt-4 sm:mx-24'></div>
-        </form>
-      </FormProvider>
-    </div>
+          {provinsi?.map(({ id, nama }) => (
+            <option value={id} key={id}>
+              {nama}
+            </option>
+          ))}
+        </SelectInput>
+        <SelectInput
+          dark={true}
+          id={InputField.KABUPATEN}
+          label='Kabupaten/Kota'
+          validation={{ required: true }}
+          className={clsxm('border border-cdark', {
+            'animate-pulse opacity-10 pointer-events-none': isLoading,
+          })}
+        >
+          {kabupaten?.map(({ id, nama }) => (
+            <option value={id} key={id}>
+              {nama}
+            </option>
+          ))}
+        </SelectInput>
+        <SelectInput
+          dark={true}
+          id={InputField.KECAMATAN}
+          label='Kecamatan'
+          validation={{ required: true }}
+          className={clsxm('border border-cdark', {
+            'animate-pulse opacity-10 pointer-events-none': isLoading,
+          })}
+        >
+          {kecamatan?.map(({ id, nama }) => (
+            <option value={id} key={id}>
+              {nama}
+            </option>
+          ))}
+        </SelectInput>
+        <SelectInput
+          dark={true}
+          id={InputField.KELURAHAN}
+          label='Kelurahan'
+          validation={{ required: true }}
+          className={clsxm('border border-cdark', {
+            'animate-pulse opacity-10 pointer-events-none': isLoading,
+          })}
+        >
+          {kelurahan?.map(({ id, nama }) => (
+            <option value={id} key={id}>
+              {nama}
+            </option>
+          ))}
+        </SelectInput>
+      </form>
+    </FormProvider>
   );
 }

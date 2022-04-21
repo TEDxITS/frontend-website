@@ -25,8 +25,8 @@ type HeaderProps = {
 //#endregion  //*======== Type ===========
 
 const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'History', href: '#' },
+  { name: 'Your Profile', href: '/dashboard/profile' },
+  { name: 'History', href: '/dashboard/history' },
 ];
 
 export default function DashboardHeader({
@@ -59,18 +59,18 @@ export default function DashboardHeader({
   return (
     <header
       className={clsxm(
-        'sticky top-0 z-50 bg-gradient-to-b from-transparent to-transparent transition-all duration-700 ease-in',
+        'bg-gradient-to-b duration-700 ease-in from-transparent sticky to-transparent top-0 transition-all z-50',
         {
           'from-cdark/60 backdrop-blur-sm ': isNavbarScrolled && !isDark,
           ' backdrop-blur-sm ': isNavbarScrolled && isDark,
         }
       )}
     >
-      <div className='layout flex items-center h-16'>
+      <div className='flex h-16 items-center layout'>
         <nav className='w-full'>
           {/* Desktop View Navbar */}
           <div className='hidden w-full lg:block'>
-            <div className='flex justify-between items-center w-full h-full'>
+            <div className='flex h-full items-center justify-between w-full'>
               <UnstyledLink href='/'>
                 <NavigationLogo isDark={isDark} isNavOpen={isNavOpen} />
               </UnstyledLink>
@@ -78,8 +78,8 @@ export default function DashboardHeader({
             </div>
           </div>
           {/* Mobile View Navbar */}
-          <div className='block relative items-center h-16 lg:hidden'>
-            <div className='flex absolute inset-0 z-30 justify-between items-center'>
+          <div className='block h-16 items-center relative lg:hidden'>
+            <div className='absolute flex inset-0 items-center justify-between z-30'>
               {isAuthenticated ? (
                 <ProfilePopover sidebarOpen={sidebarOpen} />
               ) : (
@@ -87,7 +87,7 @@ export default function DashboardHeader({
               )}
               <button
                 onClick={() => setSidebarOpen(!sidebarOpen)}
-                className={clsxm('ml-auto cursor-pointer', {
+                className={clsxm('cursor-pointer ml-auto', {
                   'text-cdark': isDark,
                   hidden: sidebarOpen,
                 })}
@@ -127,13 +127,13 @@ function ProfilePopover({ sidebarOpen }: { sidebarOpen: boolean }) {
     <Menu as='div' className={clsxm('relative', { hidden: sidebarOpen })}>
       <Menu.Button
         as='button'
-        className='flex items-center max-w-xs text-sm bg-white rounded-full focus:ring-clight focus:ring-2 focus:outline-none'
+        className='bg-white flex items-center max-w-xs rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-clight'
       >
         <span className='sr-only'>Open user menu</span>
         <NextImage
-          className='aspect-h-1 aspect-w-1 overflow-hidden w-10 h-10 rounded-full'
+          className='aspect-h-1 aspect-w-1 h-10 overflow-hidden rounded-full w-10'
           imgClassName={clsxm(
-            ' object-cover w-full transition-all ease-in-out'
+            ' ease-in-out object-cover transition-all w-full'
           )}
           layout='fill'
           objectFit='cover'
@@ -151,7 +151,7 @@ function ProfilePopover({ sidebarOpen }: { sidebarOpen: boolean }) {
         leaveFrom='transform opacity-100 scale-100'
         leaveTo='transform opacity-0 scale-95'
       >
-        <Menu.Items className='absolute left-0 mt-2 w-48 drop-shadow-lg origin-top-left lg:right-0 lg:left-auto lg:origin-top-right focus:outline-none'>
+        <Menu.Items className='absolute drop-shadow-lg left-0 mt-2 origin-top-left w-48 lg:left-auto lg:origin-top-right lg:right-0 focus:outline-none'>
           <svg
             data-name='Layer 1'
             xmlns='http://www.w3.org/2000/svg'
@@ -186,7 +186,7 @@ function ProfilePopover({ sidebarOpen }: { sidebarOpen: boolean }) {
                     animated={false}
                     href={item.href}
                     className={clsxm(
-                      'text-clight block px-4 py-2 mx-2 text-sm rounded-sm',
+                      'block mx-2 px-4 py-2 rounded-sm text-clight text-sm',
                       {
                         'bg-cred': active,
                       }
@@ -197,14 +197,14 @@ function ProfilePopover({ sidebarOpen }: { sidebarOpen: boolean }) {
                 )}
               </Menu.Item>
             ))}
-            <hr className='my-2 border-dashed' />
+            <hr className='border-dashed my-2' />
             <Menu.Item>
               {({ active }) => (
                 <HeaderLink
                   animated={false}
                   href={'/logout'}
                   className={clsxm(
-                    'text-clight block px-4 py-2 mx-2 text-sm rounded-sm',
+                    'block mx-2 px-4 py-2 rounded-sm text-clight text-sm',
                     {
                       'bg-cdark first-letter:': active,
                     }

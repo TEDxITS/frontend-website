@@ -29,6 +29,7 @@ export type InputPasswordProps = {
 } & React.ComponentPropsWithoutRef<'input'>;
 
 export default function InputPassword({
+  className,
   label,
   placeholder = '',
   helperText,
@@ -69,7 +70,8 @@ export default function InputPassword({
             {
               'cursor-not-allowed bg-primary-200/30': readOnly,
             },
-            'bg-clight font-fivo placeholder-cdark/40 text-cdark px-4 py-2 w-full rounded-md border border-transparent shadow-inner focus:border-primary-900 focus:ring-0'
+            'bg-clight font-fivo placeholder-cdark/40 text-cdark px-4 py-2 w-full border border-transparent shadow-inner focus:border-primary-900 focus:ring-0',
+            className
           )}
           placeholder={placeholder}
           aria-describedby={id}
@@ -78,7 +80,7 @@ export default function InputPassword({
         <button
           onClick={togglePassword}
           type='button'
-          className='flex absolute inset-y-0 right-0 items-center p-1 mr-3 rounded-lg focus:ring focus:ring-primary-500 focus:outline-none'
+          className='flex absolute inset-y-0 right-0 items-center p-1 mr-3 rounded-sm focus:ring-cblue focus:ring focus:outline-none'
         >
           {showPassword ? (
             <HiEyeOff className='text-xl text-gray-500 cursor-pointer hover:text-gray-600' />
