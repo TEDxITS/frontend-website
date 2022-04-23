@@ -3,6 +3,8 @@ import * as React from 'react';
 
 import clsxm from '@/lib/clsxm';
 
+import { getEventData } from '@/data/event';
+
 import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
 import NextImage from '@/components/NextImage';
@@ -17,6 +19,15 @@ export default function HomePage() {
       <Seo />
       <main className='bg-cgray flex flex-col'>
         <section className='bg-blob-1 bg-cdark text-clight relative z-20 pt-8 h-full bg-bottom bg-no-repeat bg-cover md:pt-16'>
+          <div
+            className='absolute inset-0 bg-center bg-cover opacity-20'
+            style={{
+              backgroundImage: `url(${
+                getEventData('pre-event-2').backgroundImage
+              })`,
+            }}
+          ></div>
+          <div className='to-cdark absolute inset-0 z-10 bg-cover bg-gradient-to-b from-transparent'></div>
           <Header />
           <CoverSection />
           <NextImage

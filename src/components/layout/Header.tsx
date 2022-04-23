@@ -175,15 +175,12 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                       </li>
                     ))}
                     {/* about */}
-                    <MultipleMobileLinks
-                      title='About'
-                      linksData={aboutLinks}
-                    ></MultipleMobileLinks>
+                    <MultipleMobileLinks title='About' linksData={aboutLinks} />
                     {/* event */}
                     <MultipleMobileLinks
                       title='Events'
                       linksData={eventLinks}
-                    ></MultipleMobileLinks>
+                    />
                     {merchLinks.map(({ href, label }) => (
                       <li key={`${href}${label}`}>
                         <p className='text-left'>
