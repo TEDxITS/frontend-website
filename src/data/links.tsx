@@ -20,6 +20,7 @@ export const pageLinks: LinkType[] = [{ href: '/', label: 'Home' }];
 export const eventLinks: LinkType[] = [
   { href: '/call-for-local-speaker', label: 'Call for Local Speakers' },
   { href: '/black-elephant-mail', label: 'Black Elephant Mail' },
+  { href: '/pre-events', label: 'Pre Events' },
 ];
 
 export const aboutLinks: LinkType[] = [
