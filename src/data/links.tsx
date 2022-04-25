@@ -41,7 +41,15 @@ export const aboutLinks: LinkType[] = [
 export const merchLinks: LinkType[] = [
   {
     href: '/merch',
-    label: 'Order Now!',
+    label: 'Merch 1.0',
+  },
+  {
+    href: '/ticket',
+    label: 'Ticket',
+  },
+  {
+    href: '/faq',
+    label: 'FAQ',
   },
 ];
 

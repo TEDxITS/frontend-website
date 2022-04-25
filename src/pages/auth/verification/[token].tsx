@@ -11,9 +11,7 @@ import Layout from '@/components/layout/Layout';
 import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 
-import useAuthStore from '@/store/useAuthStore';
-
-import { DASHBOARD_PAGE } from '@/constant/links';
+import { LOGIN_PAGE } from '@/constant/links';
 
 import { ApiResponse } from '@/types/api';
 import { User } from '@/types/auth';
@@ -21,20 +19,15 @@ import { User } from '@/types/auth';
 const VerificationPage = ({
   success,
   message,
-  token,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const router = useRouter();
-  const login = useAuthStore.useLogin();
 
   React.useEffect(() => {
     if (success) {
-      login({
-        token: token,
-      });
-      setTimeout(() => {
-        toast.success('Success! You have logged in to your account');
-        router.push(DASHBOARD_PAGE);
-      }, 500);
+      toast.success(
+        'Success! You have verify your account, please Log in again'
+      );
+      router.push(LOGIN_PAGE);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -42,12 +35,12 @@ const VerificationPage = ({
     <Layout className='bg-[#EAEAE2]' showFooter={false}>
       <Seo templateTitle='Verification' />
 
-      <main className='bg-blob-blue bg-cover flex flex-col overflow-hidden relative'>
-        <section className='flex items-center justify-center layout min-h-screen z-10'>
-          <div className='drop-shadow-lg max-w-md w-full'>
-            <div className='flex flex-col pb-2 relative'>
-              <img src='/svg/ticket-top.svg' alt='' className='w-full z-20' />
-              <div className='-mb-1 bg-cgray flex flex-col gap-4 items-center pb-1 pt-8 px-8 z-10'>
+      <main className='bg-blob-blue flex overflow-hidden relative flex-col bg-cover'>
+        <section className='layout flex z-10 justify-center items-center min-h-screen'>
+          <div className='w-full max-w-md drop-shadow-lg'>
+            <div className='flex relative flex-col pb-2'>
+              <img src='/svg/ticket-top.svg' alt='' className='z-20 w-full' />
+              <div className='bg-cgray flex z-10 flex-col gap-4 items-center px-8 pt-8 pb-1 -mb-1'>
                 <img
                   src='/svg/tedx-logo.svg'
                   alt='TedxITS logo'
@@ -66,13 +59,13 @@ const VerificationPage = ({
                 </svg>
 
                 {success ? (
-                  <p className='font-fivo font-medium text-cdark text-center'>
+                  <p className='font-fivo text-cdark font-medium text-center'>
                     Verification account Success!
                     <br />
                     <span className='text-cblue'>redirecting ...</span>
                   </p>
                 ) : (
-                  <p className='font-fivo font-medium text-cdark text-center'>
+                  <p className='font-fivo text-cdark font-medium text-center'>
                     Verification account Failed!
                     <br />
                     <span className='text-cblue'>
@@ -97,18 +90,18 @@ const VerificationPage = ({
               <img
                 src='/svg/ticket-bottom.svg'
                 alt=''
-                className='w-full z-20'
+                className='z-20 w-full'
               />
             </div>
           </div>
         </section>
-        <div className='absolute blur-sm inset-0 md:blur-none'>
+        <div className='absolute inset-0 blur-sm md:blur-none'>
           <NextImage
             src='/images/checkout-page/sticker-ticket-1.png'
             width={441}
             height={220}
             alt='Ticket'
-            className='-left-16 -rotate-12 absolute top-1/2'
+            className='absolute -left-16 top-1/2 -rotate-12'
             imgClassName='drop-shadow-lg'
           />
           <NextImage
@@ -116,7 +109,7 @@ const VerificationPage = ({
             width={488}
             height={259}
             alt='Ticket'
-            className='-right-16 absolute rotate-6 top-0'
+            className='absolute top-0 -right-16 rotate-6'
             imgClassName='drop-shadow-lg'
           />
           <NextImage
@@ -124,7 +117,7 @@ const VerificationPage = ({
             width={401}
             height={189}
             alt='Ticket'
-            className='absolute bottom-1/2 left-0 rotate-3'
+            className='absolute left-0 bottom-1/2 rotate-3'
             imgClassName='drop-shadow-lg'
           />
         </div>
@@ -151,7 +144,6 @@ export const getServerSideProps = async (
         props: {
           success: true,
           message: response.data.message,
-          token: response.data.data.token,
         },
       };
     } else {
@@ -159,7 +151,6 @@ export const getServerSideProps = async (
         props: {
           success: false,
           message: response.data.message,
-          token: '',
         },
       };
     }
@@ -169,7 +160,6 @@ export const getServerSideProps = async (
         props: {
           success: false,
           message: error.response?.data.message as string,
-          token: '',
         },
       };
     }
@@ -177,7 +167,6 @@ export const getServerSideProps = async (
       props: {
         success: false,
         message: '',
-        token: '',
       },
     };
   }

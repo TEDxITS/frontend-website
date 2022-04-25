@@ -5,6 +5,7 @@
 import { motion } from 'framer-motion';
 import { Sling as Hamburger } from 'hamburger-react';
 import * as React from 'react';
+import { BsPerson } from 'react-icons/bs';
 
 import clsxm from '@/lib/clsxm';
 
@@ -16,6 +17,8 @@ import {
   socialMediaLinks,
   socialMediaLinksDark,
 } from '@/data/links';
+
+import { LOGIN_PAGE } from '@/constant/links';
 
 import HeaderLink from '../links/HeaderLink';
 import MultipleHeaderLink from '../links/MultipleHeaderLink';
@@ -97,14 +100,11 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                 />
 
                 {/* merchandise */}
-                {merchLinks.map(({ href, label }) => (
-                  <li key={`${href}${label}`}>
-                    {/* header link here */}
-                    <HeaderLink href={href} className='/ font-fivo px text-lg'>
-                      {label}
-                    </HeaderLink>
-                  </li>
-                ))}
+                <MultipleHeaderLink
+                  isDark={isDark}
+                  linksData={merchLinks}
+                  title='Order Now'
+                />
               </ul>
               {/* edit here */}
 
@@ -117,6 +117,16 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                   )
                 )}
               </ul>
+              <UnstyledLink
+                href={LOGIN_PAGE}
+                className={clsxm(
+                  'font-fivo flex gap-1 items-center px-4 py-1 text-base rounded-full transition-all duration-200 hover:bg-cred hover:text-clight ',
+                  isDark ? 'bg-cdark text-clight' : 'bg-clight text-cdark'
+                )}
+              >
+                <BsPerson size={18} />
+                Login
+              </UnstyledLink>
             </div>
           </div>
           {/* Mobile View Navbar */}
@@ -181,17 +191,10 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                       title='Events'
                       linksData={eventLinks}
                     />
-                    {merchLinks.map(({ href, label }) => (
-                      <li key={`${href}${label}`}>
-                        <p className='text-left'>
-                          <HeaderLink href={href} className='text-2xl'>
-                            <span className='font-fivo text-2xl text-right'>
-                              {label}
-                            </span>
-                          </HeaderLink>
-                        </p>
-                      </li>
-                    ))}
+                    <MultipleMobileLinks
+                      linksData={merchLinks}
+                      title='Order Now'
+                    />
                   </motion.ul>
                   <motion.ul
                     className='flex flex-row-reverse gap-4 mt-8'
@@ -212,6 +215,16 @@ export default function Header({ topBreakpoint, isDark = false }: HeaderProps) {
                         {logo}
                       </UnstyledLink>
                     ))}
+                    <UnstyledLink
+                      href={LOGIN_PAGE}
+                      className={clsxm(
+                        'font-fivo flex gap-1 items-center px-4 py-1 text-base rounded-full transition-all duration-200 hover:bg-cred hover:text-clight ',
+                        isDark ? 'bg-cdark text-clight' : 'bg-clight text-cdark'
+                      )}
+                    >
+                      <BsPerson size={18} />
+                      Login
+                    </UnstyledLink>
                   </motion.ul>
                 </div>
               </motion.div>

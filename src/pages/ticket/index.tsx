@@ -175,7 +175,7 @@ export default function TicketPage({
                 width={488}
                 height={259}
                 alt='Ticket'
-                className='absolute top-0 -right-16 rotate-6'
+                className='absolute top-4 -right-16 rotate-6'
                 imgClassName='drop-shadow-lg'
               />
               <NextImage

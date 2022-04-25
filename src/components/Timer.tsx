@@ -2,18 +2,19 @@ import { differenceInSeconds, isBefore } from 'date-fns';
 import React from 'react';
 import { useTimer } from 'react-timer-hook';
 
+import clsxm from '@/lib/clsxm';
 import { toDate } from '@/lib/date';
 
 type TimerPropsType = {
   endTime: string;
-};
+} & React.ComponentPropsWithoutRef<'div'>;
 
 const getStringValue = (value: number) => {
   const leftDigit = value >= 10 ? value.toString()[0] : '0';
   const rightDigit = value >= 10 ? value.toString()[1] : value.toString();
   return `${leftDigit}${rightDigit}`;
 };
-export default function Timer({ endTime }: TimerPropsType) {
+export default function Timer({ endTime, className }: TimerPropsType) {
   const [isEnd, setIsEnd] = React.useState<boolean>(false);
 
   const end = toDate(endTime);
@@ -32,7 +33,12 @@ export default function Timer({ endTime }: TimerPropsType) {
     return <div className='hidden'>Timer</div>;
   } else if (!isEnd) {
     return (
-      <div className='text-clight flex justify-center items-center'>
+      <div
+        className={clsxm(
+          'text-clight flex justify-center items-center',
+          className
+        )}
+      >
         <TimerNumber value={days} type='days' />
         <span className='font-fivo text-cdark mx-1 text-lg'>:</span>
         <TimerNumber value={hours} type='hours' />

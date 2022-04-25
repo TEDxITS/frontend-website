@@ -63,7 +63,7 @@ export default function SelectInput({
         {...rest}
         name={id}
         id={id}
-        className={clsx(
+        className={clsxm(
           {
             'cursor-not-allowed bg-primary-200/30': readOnly,
           },

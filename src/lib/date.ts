@@ -57,7 +57,7 @@ export function formatLocale(
   date: Date,
   formatKey: keyof typeof DATE_FORMAT
 ): string {
-  return format(date, DATE_FORMAT[formatKey], { locale: id });
+  return format(date, DATE_FORMAT[formatKey]);
 }
 
 export function toDate(date: string) {

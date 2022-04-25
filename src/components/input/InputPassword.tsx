@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { RegisterOptions, useFormContext } from 'react-hook-form';
 import { HiEye, HiEyeOff } from 'react-icons/hi';
 
+import clsxm from '@/lib/clsxm';
+
 export type InputPasswordProps = {
   /** Input label */
   label: React.ReactNode;
@@ -66,7 +68,7 @@ export default function InputPassword({
           name={id}
           id={id}
           readOnly={readOnly}
-          className={clsx(
+          className={clsxm(
             {
               'cursor-not-allowed bg-primary-200/30': readOnly,
             },

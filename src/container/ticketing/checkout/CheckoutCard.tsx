@@ -13,6 +13,7 @@ import TextAreaInput from '@/components/input/TextAreaInput';
 import Tooltip from '@/components/Tooltip';
 import CheckoutSuccess from '@/container/modal/CheckoutSuccessModal';
 
+import { LOGIN_PAGE } from '@/constant/links';
 import { DEFAULT_TOAST_MESSAGE } from '@/constant/toast';
 
 import SelectLocation from '../SelectLocation';
@@ -100,7 +101,7 @@ export default function CheckoutCard({ data }: CheckoutCardPropsType) {
       if (axios.isAxiosError(error)) {
         if (error.code === '401') {
           toast.error('Your Session is Timeout, please log in again');
-          router.push('/login');
+          router.push(LOGIN_PAGE);
         } else {
           toast.error(error.response?.data.message);
         }

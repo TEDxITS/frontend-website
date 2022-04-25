@@ -4,6 +4,7 @@
 // import addition from headless ui examples
 import { Menu, Transition } from '@headlessui/react';
 import { Sling as Hamburger } from 'hamburger-react';
+import { useRouter } from 'next/router';
 import * as React from 'react';
 
 import clsxm from '@/lib/clsxm';
@@ -123,6 +124,12 @@ function NavigationLogo({
 }
 
 function ProfilePopover({ sidebarOpen }: { sidebarOpen: boolean }) {
+  const router = useRouter();
+  const logOut = useAuthStore.useLogout();
+  const LogoutAccount = () => {
+    logOut();
+    router.replace('/');
+  };
   return (
     <Menu as='div' className={clsxm('relative', { hidden: sidebarOpen })}>
       <Menu.Button
@@ -137,8 +144,8 @@ function ProfilePopover({ sidebarOpen }: { sidebarOpen: boolean }) {
           )}
           layout='fill'
           objectFit='cover'
-          alt='Melissa Gloria'
-          src='https://res.cloudinary.com/tedxits/image/upload/v1646040060/team/Melissa_Gloria_Executive_Producer-Co-Lead_Organizer_jkhs8s.jpg'
+          alt='Profile'
+          src='https://res.cloudinary.com/tedxits/image/upload/v1650805104/images/ticket/image-ticket_a82grw.jpg'
         />
       </Menu.Button>
 
@@ -200,9 +207,10 @@ function ProfilePopover({ sidebarOpen }: { sidebarOpen: boolean }) {
             <hr className='my-2 border-dashed' />
             <Menu.Item>
               {({ active }) => (
-                <HeaderLink
-                  animated={false}
-                  href={'/logout'}
+                <button
+                  onClick={() => {
+                    LogoutAccount();
+                  }}
                   className={clsxm(
                     'text-clight block px-4 py-2 mx-2 text-sm rounded-sm',
                     {
@@ -211,7 +219,7 @@ function ProfilePopover({ sidebarOpen }: { sidebarOpen: boolean }) {
                   )}
                 >
                   Log Out
-                </HeaderLink>
+                </button>
               )}
             </Menu.Item>
           </div>

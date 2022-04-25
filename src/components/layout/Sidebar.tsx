@@ -1,19 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
 import { Dialog, Transition } from '@headlessui/react';
 import Hamburger from 'hamburger-react';
+import { useRouter } from 'next/router';
 import * as React from 'react';
 import { IoTicket } from 'react-icons/io5';
-import { RiTShirtFill } from 'react-icons/ri';
+import { RiQuestionMark, RiTShirtFill } from 'react-icons/ri';
 
 import clsxm from '@/lib/clsxm';
 
 import {
   aboutLinks,
   eventLinks,
-  merchLinks,
   pageLinks,
   socialMediaLinks,
 } from '@/data/links';
+
+import useAuthStore from '@/store/useAuthStore';
 
 import HeaderLink from '../links/HeaderLink';
 import MultipleMobileLinks from '../links/MultipleMobileLinks';
@@ -25,15 +27,34 @@ type SidebarProps = {
   setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const navigation = [
-  { name: 'Ticket', href: '#', icon: IoTicket, current: true },
-  { name: 'Merch', href: '#', icon: RiTShirtFill, current: false },
-];
 export default function Sidebar({
   sidebarOpen,
   setSidebarOpen,
   isDark = false,
 }: SidebarProps) {
+  const isAuthenticated = useAuthStore.useIsAuthenticated();
+  const router = useRouter();
+  const navigation = [
+    {
+      name: 'Ticket',
+      href: isAuthenticated ? '/dashboard/ticket' : '/ticket',
+      icon: IoTicket,
+      current:
+        router.asPath === '/ticket' || router.asPath === '/dashboard/ticket',
+    },
+    {
+      name: 'Merch',
+      href: '/merch',
+      icon: RiTShirtFill,
+      current: router.asPath === '/merch',
+    },
+    {
+      name: 'FAQ',
+      href: isAuthenticated ? '/dashboard/faq' : '/faq',
+      icon: RiQuestionMark,
+      current: router.asPath === '/faq' || router.asPath === '/dashboard/faq',
+    },
+  ];
   return (
     <>
       <Transition.Root show={sidebarOpen} as={React.Fragment}>
@@ -91,7 +112,74 @@ export default function Sidebar({
               <div className='flex flex-shrink-0 items-center px-4'>
                 <NavigationLogo isDark={false} />
               </div>
-              <SidebarLinks />
+              <div className='flex overflow-y-auto flex-col px-4 my-4 h-full'>
+                <nav className='space-y-1'>
+                  {navigation.map((item) => (
+                    <HeaderLink
+                      animated={false}
+                      key={item.name}
+                      href={item.href}
+                      className={clsxm(
+                        item.current
+                          ? 'bg-cblue text-clight'
+                          : 'text-clight hover:bg-cblue/40',
+                        'px-2 py-2 w-full text-base font-medium rounded-md border-b-0'
+                      )}
+                    >
+                      <item.icon
+                        className='text-clight flex-shrink-0 mr-2'
+                        aria-hidden='true'
+                        size={25}
+                      />
+                      {item.name}
+                    </HeaderLink>
+                  ))}
+                </nav>
+
+                <div className='flex flex-col gap-2 justify-center mx-2 mt-auto'>
+                  <ul className='flex flex-col gap-4'>
+                    {/* home */}
+                    {pageLinks.map(({ href, label }) => (
+                      <li key={`${href}${label}`}>
+                        <p className='text-left'>
+                          <HeaderLink href={href} className='text-base'>
+                            <span className='font-fivo text-base text-right'>
+                              {label}
+                            </span>
+                          </HeaderLink>
+                        </p>
+                      </li>
+                    ))}
+                    {/* about */}
+                    <MultipleMobileLinks
+                      animated={false}
+                      title='About'
+                      linksData={aboutLinks}
+                      titleClassName='text-base'
+                      linkClassName='text-base border-b-0'
+                      linkWrapperClassName='mx-0 gap-1 py-2'
+                    />
+                    {/* event */}
+                    <MultipleMobileLinks
+                      animated={false}
+                      title='Events'
+                      linksData={eventLinks}
+                      titleClassName='text-base'
+                      linkClassName='text-base border-b-0'
+                      linkWrapperClassName='mx-0 gap-1 py-2'
+                    />
+
+                    <p className='mt-8 text-xs'>SOCIAL MEDIA</p>
+                    <div className='flex gap-x-4'>
+                      {socialMediaLinks.map(({ href, label, logo }) => (
+                        <UnstyledLink key={`${href}${label}`} href={href}>
+                          {logo}
+                        </UnstyledLink>
+                      ))}
+                    </div>
+                  </ul>
+                </div>
+              </div>
             </div>
           </Transition.Child>
           <div className='flex-shrink-0 w-14' aria-hidden='true'>
@@ -106,7 +194,74 @@ export default function Sidebar({
         )}
       >
         <div className='flex overflow-y-auto flex-col flex-grow py-8 lg:py-16'>
-          <SidebarLinks />
+          <div className='flex overflow-y-auto flex-col px-4 my-4 h-full'>
+            <nav className='space-y-1'>
+              {navigation.map((item) => (
+                <HeaderLink
+                  animated={false}
+                  key={item.name}
+                  href={item.href}
+                  className={clsxm(
+                    item.current
+                      ? 'bg-cblue text-clight'
+                      : 'text-clight hover:bg-cblue/40',
+                    'px-2 py-2 w-full text-base font-medium rounded-md border-b-0'
+                  )}
+                >
+                  <item.icon
+                    className='text-clight flex-shrink-0 mr-2'
+                    aria-hidden='true'
+                    size={25}
+                  />
+                  {item.name}
+                </HeaderLink>
+              ))}
+            </nav>
+
+            <div className='flex flex-col gap-2 justify-center mx-2 mt-auto'>
+              <ul className='flex flex-col gap-4'>
+                {/* home */}
+                {pageLinks.map(({ href, label }) => (
+                  <li key={`${href}${label}`}>
+                    <p className='text-left'>
+                      <HeaderLink href={href} className='text-base'>
+                        <span className='font-fivo text-base text-right'>
+                          {label}
+                        </span>
+                      </HeaderLink>
+                    </p>
+                  </li>
+                ))}
+                {/* about */}
+                <MultipleMobileLinks
+                  animated={false}
+                  title='About'
+                  linksData={aboutLinks}
+                  titleClassName='text-base'
+                  linkClassName='text-base border-b-0'
+                  linkWrapperClassName='mx-0 gap-1 py-2'
+                />
+                {/* event */}
+                <MultipleMobileLinks
+                  animated={false}
+                  title='Events'
+                  linksData={eventLinks}
+                  titleClassName='text-base'
+                  linkClassName='text-base border-b-0'
+                  linkWrapperClassName='mx-0 gap-1 py-2'
+                />
+
+                <p className='mt-8 text-xs'>SOCIAL MEDIA</p>
+                <div className='flex gap-x-4'>
+                  {socialMediaLinks.map(({ href, label, logo }) => (
+                    <UnstyledLink key={`${href}${label}`} href={href}>
+                      {logo}
+                    </UnstyledLink>
+                  ))}
+                </div>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </>
@@ -124,90 +279,5 @@ function NavigationLogo({ isDark }: { isDark: boolean }) {
       alt='TedxITS logo'
       className='flex-shrink-0 h-12'
     />
-  );
-}
-
-function SidebarLinks() {
-  return (
-    <>
-      <div className='flex overflow-y-auto flex-col px-4 my-4 h-full'>
-        <nav className='space-y-1'>
-          {navigation.map((item) => (
-            <HeaderLink
-              animated={false}
-              key={item.name}
-              href={item.href}
-              className={clsxm(
-                item.current
-                  ? 'bg-cblue text-clight'
-                  : 'text-clight hover:bg-cblue/40',
-                'px-2 py-2 w-full text-base font-medium rounded-md border-b-0'
-              )}
-            >
-              <item.icon
-                className='text-clight flex-shrink-0 mr-2'
-                aria-hidden='true'
-                size={25}
-              />
-              {item.name}
-            </HeaderLink>
-          ))}
-        </nav>
-
-        <div className='flex flex-col gap-2 justify-center mx-2 mt-auto'>
-          <ul className='flex flex-col gap-4'>
-            {/* home */}
-            {pageLinks.map(({ href, label }) => (
-              <li key={`${href}${label}`}>
-                <p className='text-left'>
-                  <HeaderLink href={href} className='text-base'>
-                    <span className='font-fivo text-base text-right'>
-                      {label}
-                    </span>
-                  </HeaderLink>
-                </p>
-              </li>
-            ))}
-            {/* about */}
-            <MultipleMobileLinks
-              animated={false}
-              title='About'
-              linksData={aboutLinks}
-              titleClassName='text-base'
-              linkClassName='text-base border-b-0'
-              linkWrapperClassName='mx-0 gap-1 py-2'
-            />
-            {/* event */}
-            <MultipleMobileLinks
-              animated={false}
-              title='Events'
-              linksData={eventLinks}
-              titleClassName='text-base'
-              linkClassName='text-base border-b-0'
-              linkWrapperClassName='mx-0 gap-1 py-2'
-            />
-            {merchLinks.map(({ href, label }) => (
-              <li key={`${href}${label}`}>
-                <p className='text-left'>
-                  <HeaderLink href={href} className='text-base'>
-                    <span className='font-fivo text-base text-right'>
-                      {label}
-                    </span>
-                  </HeaderLink>
-                </p>
-              </li>
-            ))}
-            <p className='mt-8 text-xs'>SOCIAL MEDIA</p>
-            <div className='flex gap-x-4'>
-              {socialMediaLinks.map(({ href, label, logo }) => (
-                <UnstyledLink key={`${href}${label}`} href={href}>
-                  {logo}
-                </UnstyledLink>
-              ))}
-            </div>
-          </ul>
-        </div>
-      </div>
-    </>
   );
 }

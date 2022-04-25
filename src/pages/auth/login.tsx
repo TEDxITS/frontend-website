@@ -18,7 +18,12 @@ import Logo from '@/components/tabs/Logo';
 import useAuthStore from '@/store/useAuthStore';
 
 import LoginTitle from '@/assets/svg/LoginTitle';
-import { FORGOT_PASSWORD_PAGE, REGISTER_PAGE } from '@/constant/links';
+import {
+  DASHBOARD_PAGE,
+  FORGOT_PASSWORD_PAGE,
+  REGISTER_PAGE,
+  RESEND_VERIFICATION_PAGE,
+} from '@/constant/links';
 import { DEFAULT_TOAST_MESSAGE } from '@/constant/toast';
 
 import { ApiResponse } from '@/types/api';
@@ -75,6 +80,7 @@ const LoginPage: PageWithAuth = () => {
         login({
           token: response.data.data.token,
         });
+        router.push(DASHBOARD_PAGE);
       }
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -121,13 +127,23 @@ const LoginPage: PageWithAuth = () => {
                   className='border-cdark bg-transparent border'
                 />
 
-                <ArrowLink
-                  as={UnstyledLink}
-                  href={FORGOT_PASSWORD_PAGE}
-                  className='font-fivo text-cred flex items-center ml-auto text-sm'
-                >
-                  Forgot your password?
-                </ArrowLink>
+                <div className='flex flex-col gap-4 justify-between md:flex-row'>
+                  {' '}
+                  <ArrowLink
+                    as={UnstyledLink}
+                    href={FORGOT_PASSWORD_PAGE}
+                    className='font-fivo text-cred flex items-center text-sm'
+                  >
+                    Forgot your password?
+                  </ArrowLink>
+                  <ArrowLink
+                    as={UnstyledLink}
+                    href={RESEND_VERIFICATION_PAGE}
+                    className='font-fivo text-cblue flex items-center text-sm'
+                  >
+                    Resend Email Verification
+                  </ArrowLink>
+                </div>
 
                 <Button type='submit' isLoading={isLoading} className='block'>
                   Log in

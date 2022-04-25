@@ -2,6 +2,8 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { RegisterOptions, useFormContext } from 'react-hook-form';
 
+import clsxm from '@/lib/clsxm';
+
 export type InputProps = {
   label: React.ReactNode;
   id: string;
@@ -55,7 +57,7 @@ export default function TextAreaInput({
       <textarea
         {...register(id, validation)}
         {...rest}
-        className={clsx(
+        className={clsxm(
           {
             'cursor-not-allowed bg-primary-200/30': readOnly,
           },

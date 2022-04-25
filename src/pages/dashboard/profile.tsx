@@ -23,10 +23,10 @@ type Profile = {
 
 const ProfilePage: PageWithAuth = ({
   data,
-  message,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <Layout
+      isDark={true}
       showFooter={true}
       withDashboard={true}
       className='bg-clight z-20 min-h-screen'
@@ -53,16 +53,12 @@ const ProfilePage: PageWithAuth = ({
           priority={true}
         />
         <section className='relative z-20 px-4 py-8'>
-          {!message && data ? (
-            <ProfileForm
-              initialvalue={{
-                user_name: data.user_name,
-                user_email: data.user_email,
-              }}
-            />
-          ) : (
-            <p className='text-cdark'>Not Found</p>
-          )}
+          <ProfileForm
+            initialvalue={{
+              user_name: data?.user_name,
+              user_email: data?.user_email,
+            }}
+          />
         </section>
       </main>
     </Layout>
@@ -87,7 +83,7 @@ export const getServerSideProps = async (
       return {
         props: {
           data: null,
-          message: 'error',
+          message: error.response?.data.message as string,
         },
       };
     }

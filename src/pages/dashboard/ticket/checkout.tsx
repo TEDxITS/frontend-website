@@ -31,9 +31,13 @@ const WithssrPage: PageWithAuth = ({
 
   if (data) {
     return (
-      <Layout withDashboard={true} className='bg-cgray' isDark={true}>
+      <Layout
+        withDashboard={true}
+        className='bg-blob-blue bg-cgray bg-no-repeat bg-cover'
+        isDark={true}
+      >
         <Seo templateTitle='Checkout' />
-        <main className='bg-cgray layout flex flex-col pt-4 pb-8 md:pb-16'>
+        <main className='layout flex flex-col pt-4 pb-8 md:pb-16'>
           <div className='flex flex-col gap-y-8 items-start md:flex-row'>
             <TicketingCard
               type={data.type}

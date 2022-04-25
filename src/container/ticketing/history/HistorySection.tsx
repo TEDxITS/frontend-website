@@ -6,7 +6,7 @@ import { TicketResponse } from '@/types/api';
 
 function HistorySection({ data }: { data: TicketResponse[] }) {
   return (
-    <div className='layout'>
+    <div className='layout min-h-main flex flex-col gap-8'>
       {data.map((ticketdata) => {
         return <Ticket key={ticketdata.booking_id} data={ticketdata} />;
       })}

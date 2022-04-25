@@ -19,7 +19,7 @@ export const REGISTER_PAGE = '/auth/register';
 export const RESEND_VERIFICATION_PAGE =
   '/auth/verification/resend-verification';
 
-export const DASHBOARD_PAGE = '/dashboard';
+export const DASHBOARD_PAGE = '/dashboard/ticket';
 
 export const TICKET_PAGE_AUTH = '/dashboard/ticket';
 export const TICKET_PAGE_NO_AUTH = '/ticket';

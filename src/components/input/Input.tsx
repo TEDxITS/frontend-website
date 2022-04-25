@@ -2,6 +2,8 @@ import clsx from 'clsx';
 import * as React from 'react';
 import { RegisterOptions, useFormContext } from 'react-hook-form';
 
+import clsxm from '@/lib/clsxm';
+
 export type InputProps = {
   /** Input label */
   label: React.ReactNode;
@@ -67,7 +69,7 @@ export default function Input({
       <input
         {...register(id, validation)}
         {...rest}
-        className={clsx(
+        className={clsxm(
           'file:-ml-2 file:bg-cdark file:border-0 file:duration-100 file:hover:bg-cred file:mr-2 file:text-clight file:transition-all',
           {
             'cursor-not-allowed bg-gray-300': readOnly,

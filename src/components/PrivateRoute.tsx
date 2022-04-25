@@ -1,15 +1,14 @@
 import { useRouter } from 'next/router';
 import * as React from 'react';
 import toast from 'react-hot-toast';
+import { ImSpinner8 } from 'react-icons/im';
 
 import { getToken, removeToken } from '@/lib/auth';
 import api from '@/lib/axios';
 
 import useAuthStore from '@/store/useAuthStore';
 
-import { LOGIN_PAGE } from '@/constant/links';
-
-import LoadingPage from './layout/LoadingPage';
+import { LOGIN_PAGE, REGISTER_PAGE } from '@/constant/links';
 
 import { ApiAuthResponse } from '@/types/api';
 
@@ -32,8 +31,12 @@ export default function PrivateRoute({
   //#endregion  //*======== STORE ===========
 
   const redirect = () => {
-    if (!isAuthenticated && router.asPath !== LOGIN_PAGE) {
-      router.replace(LOGIN_PAGE);
+    if (
+      !isAuthenticated &&
+      router.asPath !== LOGIN_PAGE &&
+      router.asPath !== REGISTER_PAGE
+    ) {
+      router.replace(`/auth/login`);
       toast.error('Please Login or Register your Account First!');
     }
   };
@@ -69,9 +72,15 @@ export default function PrivateRoute({
   if (
     (isLoading || !isAuthenticated) &&
     routePermission === 'auth' &&
-    router.asPath !== LOGIN_PAGE
+    router.asPath !== LOGIN_PAGE &&
+    router.asPath !== REGISTER_PAGE
   ) {
-    return <LoadingPage />;
+    return (
+      <div className='bg-cdark flex flex-col justify-center items-center min-h-screen text-gray-800'>
+        <ImSpinner8 className='text-clight mb-4 text-4xl animate-spin' />
+        <p className='text-clight'>Loading...</p>
+      </div>
+    );
   }
 
   return children;

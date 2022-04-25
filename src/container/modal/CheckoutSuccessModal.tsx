@@ -21,7 +21,9 @@ export default function CheckoutSuccess({
   setIsOpen,
 }: CheckoutSuccessProps) {
   const copyToClipBoard = () => {
-    navigator.clipboard.writeText(data.booking_id);
+    navigator.clipboard.writeText(
+      `Halo! Aku mau konfirmasi pesanan tiket dengan kode unik: ${data.booking_id}. Tolong diproses segera, ya!`
+    );
     toast.success('Copied to clipboard');
   };
 
@@ -117,6 +119,10 @@ export default function CheckoutSuccess({
                           />
                           Confirm Payment
                         </UnstyledLink>
+                        <small className='text-cdark'>
+                          copy the payment detail text above and send it via
+                          chat to our admin
+                        </small>
                         <div className='text-cdark flex flex-wrap gap-2 items-center'>
                           <p>or confirm via</p>
                           <UnderlineLink

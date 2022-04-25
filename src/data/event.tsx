@@ -138,3 +138,37 @@ export const preEventData: PreEventDataType[] = [
     },
   },
 ];
+
+export type FaqDataType = {
+  question: string;
+  answer: string;
+};
+export const FaqData: FaqDataType[] = [
+  {
+    question: 'When and where the main event will be held?',
+    answer:
+      'TEDxITS 2022 main event details are to be announced, but for sure, this event will be held offline so you can get new and refreshing experiences on the D-day.',
+  },
+  {
+    question:
+      'Where do we have to send the evidence of transfer after buying the tickets?',
+    answer:
+      'You can send it to Ticketing TEDxITS 2022 Line Official Account (Line ID : @193pbtpg)',
+  },
+  {
+    question: 'Can I cancel my ticket purchase and get my money back?',
+    answer:
+      'All types of TEDxITS 2022 tickets can not be canceled and are non-refundable after the payment.',
+  },
+  {
+    question: 'How do I receive my ticket(s)?',
+    answer:
+      'We provide two shipping options; you can pick the ticket(s) at ITS campus or choose the delivery option. If you want it the to be delivered, please write down your address as detail as possible. Also, the shipping fee will be added to the total price. We will inform you later about ticket(s) pick-up and shipping schedules. ',
+  },
+  {
+    question:
+      'What should I do on D-day if my ticket(s) were lost, stolen, or destroyed?',
+    answer:
+      'If something happened to your ticket(s), you are still able to come to the event on the D-day by showing us the unique code that you got when processing ticket purchases. We recommend you to keep your ticket(s) intact until the event is over.',
+  },
+];

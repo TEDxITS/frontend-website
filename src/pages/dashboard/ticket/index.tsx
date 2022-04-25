@@ -65,7 +65,7 @@ const TicketPage: PageWithAuth = ({
   };
 
   return (
-    <Layout className='bg-[#EAEAE2]' withDashboard={true}>
+    <Layout className='bg-[#EAEAE2]' withDashboard={true} isDark={true}>
       <Seo templateTitle='Ticket' />
       {isOpen && (
         <TicketClosedModal
@@ -194,7 +194,7 @@ const TicketPage: PageWithAuth = ({
                 width={488}
                 height={259}
                 alt='Ticket'
-                className='absolute top-0 -right-16 rotate-6'
+                className='absolute top-4 -right-16 rotate-6'
                 imgClassName='drop-shadow-lg'
               />
               <NextImage

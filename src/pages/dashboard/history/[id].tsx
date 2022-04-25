@@ -9,8 +9,7 @@ import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 import TicketDetail from '@/container/ticketing/history/TicketDetail';
 
-import { ApiResponse } from '@/types/api';
-import { TicketResponse } from '@/types/api';
+import { ApiResponse, TicketResponse } from '@/types/api';
 import { PageWithAuth } from '@/types/auth';
 
 const TicketDetailPage: PageWithAuth = ({
@@ -18,6 +17,7 @@ const TicketDetailPage: PageWithAuth = ({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <Layout
+      isDark={true}
       showFooter={true}
       withDashboard={true}
       className='bg-clight z-20 min-h-screen'
@@ -43,7 +43,7 @@ const TicketDetailPage: PageWithAuth = ({
           className='absolute -bottom-28 -left-28 scale-50 -translate-x-6 sm:scale-100'
           priority={true}
         />
-        <section className='min-h-[75vh] relative z-20 px-4 py-8'>
+        <section className='layout min-h-[calc(100vh-64px-32px)] flex relative z-20 justify-center py-8 lg:min-h-[calc(100vh-64px-64px)]'>
           <TicketDetail data={data as TicketResponse} />
         </section>
       </main>
