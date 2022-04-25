@@ -124,7 +124,7 @@ export default function CheckoutCard({ data }: CheckoutCardPropsType) {
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className='flex flex-col gap-8 layout mt-8 text-cdark'
+        className='layout text-cdark flex flex-col gap-8 mt-8'
       >
         <SectionHeader number='01' title="Let's start with your identity!" />
         <Input
@@ -137,7 +137,7 @@ export default function CheckoutCard({ data }: CheckoutCardPropsType) {
             required: true,
             pattern: /[a-zA-Z][a-zA-Z ]{2,}$/g,
           }}
-          className='border border-cdark'
+          className='border-cdark border'
         />
         <Input
           dark={true}
@@ -150,11 +150,11 @@ export default function CheckoutCard({ data }: CheckoutCardPropsType) {
             required: true,
             pattern: /^08\d{9,10}$/g,
           }}
-          className='border border-cdark'
+          className='border-cdark border'
         />
         <SectionHeader number='02' title='Fill in your Complete Address!' />
         <SelectLocation
-          className='gap-4 grid text-cdark lg:grid-cols-2'
+          className='text-cdark grid gap-4 lg:grid-cols-2'
           isLoading={isLocationLoading}
           setIsLoading={setIsLocationLoading}
           setLocation={setAutoLocation}
@@ -177,7 +177,7 @@ export default function CheckoutCard({ data }: CheckoutCardPropsType) {
             </div>
           }
           validation={{ required: true }}
-          className='border border-cdark'
+          className='border-cdark border'
         />
         <Input
           dark={true}
@@ -185,14 +185,14 @@ export default function CheckoutCard({ data }: CheckoutCardPropsType) {
           id={CheckoutInputField.KODEPOS}
           label='Postal Code'
           validation={{ required: true }}
-          className='border border-cdark'
+          className='border-cdark border'
         />{' '}
         <div className='flex flex-col gap-y-2 items-center md:items-end'>
           <Button
             type='submit'
             isLoading={isLoading}
             variant='secondary'
-            className='drop-shadow-md w-fit'
+            className='w-fit drop-shadow-md'
           >
             Checkout
           </Button>
@@ -208,7 +208,7 @@ export default function CheckoutCard({ data }: CheckoutCardPropsType) {
 function SectionHeader({ number, title }: { number: string; title: string }) {
   return (
     <div className=''>
-      <p className='font-semibold text-cdark text-xl'>
+      <p className='text-cdark text-xl font-semibold'>
         <span className='font-sympath'>{number}</span>. {title}
       </p>
       <hr className='border-cdark' />

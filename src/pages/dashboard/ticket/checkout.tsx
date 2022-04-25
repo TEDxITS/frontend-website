@@ -33,26 +33,26 @@ const WithssrPage: PageWithAuth = ({
     return (
       <Layout withDashboard={true} className='bg-cgray' isDark={true}>
         <Seo templateTitle='Checkout' />
-        <main className='bg-cgray flex flex-col layout pb-8 pt-4 md:pb-16'>
+        <main className='bg-cgray layout flex flex-col pt-4 pb-8 md:pb-16'>
           <div className='flex flex-col gap-y-8 items-start md:flex-row'>
             <TicketingCard
               type={data.type}
-              className='max-w-none w-full md:max-w-xs md:sticky md:top-14'
+              className='w-full max-w-none md:sticky md:top-14 md:max-w-xs'
             >
-              <h4 className='font-bold text-cdark text-xl'>Price</h4>
+              <h4 className='text-cdark text-xl font-bold'>Price</h4>
               <h1 className='text-cdark'>
                 {data.price / 1000}k
-                <span className='font-normal text-2xl text-cdark'>/ticket</span>
+                <span className='text-cdark text-2xl font-normal'>/ticket</span>
               </h1>
             </TicketingCard>
-            <div className='rounded-3xl w-full md:pl-4 lg:pl-8'>
-              <div className='bg-white drop-shadow-lg grid pb-8 pt-32 relative rounded-3xl'>
+            <div className='w-full rounded-3xl md:pl-4 lg:pl-8'>
+              <div className='grid relative pt-32 pb-8 bg-white rounded-3xl drop-shadow-lg'>
                 <NextImage
                   src='https://res.cloudinary.com/tedxits/image/upload/v1650805104/images/ticket/image-ticket_a82grw.jpg'
                   width={716}
                   height={345}
                   alt='Ticket'
-                  className='absolute max-h-24 overflow-hidden rounded-sm rounded-t-3xl top-0 w-full'
+                  className='overflow-hidden absolute top-0 w-full max-h-24 rounded-sm rounded-t-3xl'
                   useSkeleton
                 />
                 <CheckoutCard data={data} />

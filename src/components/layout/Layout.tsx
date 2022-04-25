@@ -35,7 +35,7 @@ export default function Layout({
         />
         <div
           className={clsx(
-            'bg-cdark flex flex-1 flex-col min-h-screen pt-8 lg:pl-64 lg:pt-16',
+            'bg-cdark flex flex-col flex-1 pt-8 min-h-screen lg:pt-16 lg:pl-64',
             className
           )}
         >
@@ -51,7 +51,7 @@ export default function Layout({
     );
   } else {
     return (
-      <div className={clsx('bg-cdark flex flex-col relative', className)}>
+      <div className={clsx('bg-cdark flex relative flex-col', className)}>
         <motion.div
           exit={{ opacity: 0 }}
           initial={{ opacity: 1 }}

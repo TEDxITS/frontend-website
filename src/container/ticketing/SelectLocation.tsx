@@ -203,7 +203,7 @@ export default function SelectLocation({
           id={InputField.PROVINSI}
           label='Provinsi'
           validation={{ required: true }}
-          className={clsxm('border border-cdark', {
+          className={clsxm('border-cdark border', {
             'animate-pulse opacity-10 pointer-events-none': isLoading,
           })}
         >
@@ -218,7 +218,7 @@ export default function SelectLocation({
           id={InputField.KABUPATEN}
           label='Kabupaten/Kota'
           validation={{ required: true }}
-          className={clsxm('border border-cdark', {
+          className={clsxm('border-cdark border', {
             'animate-pulse opacity-10 pointer-events-none': isLoading,
           })}
         >
@@ -233,7 +233,7 @@ export default function SelectLocation({
           id={InputField.KECAMATAN}
           label='Kecamatan'
           validation={{ required: true }}
-          className={clsxm('border border-cdark', {
+          className={clsxm('border-cdark border', {
             'animate-pulse opacity-10 pointer-events-none': isLoading,
           })}
         >
@@ -248,7 +248,7 @@ export default function SelectLocation({
           id={InputField.KELURAHAN}
           label='Kelurahan'
           validation={{ required: true }}
-          className={clsxm('border border-cdark', {
+          className={clsxm('border-cdark border', {
             'animate-pulse opacity-10 pointer-events-none': isLoading,
           })}
         >

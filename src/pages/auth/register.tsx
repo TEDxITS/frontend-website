@@ -118,12 +118,12 @@ export default function RegisterPage() {
       {/* modal */}
       <RegisterModal isOpen={isOpen} setIsOpen={setIsOpen} email={email} />
       {/* form */}
-      <main className='bg-blob-blue bg-cover grid min-h-screen overflow-hidden py-8 relative md:py-16'>
-        <section className='flex flex-col gap-16 layout relative z-10'>
-          <p className='text-cdark text-left text-sm'>
+      <main className='bg-blob-blue grid overflow-hidden relative py-8 min-h-screen bg-cover md:py-16'>
+        <section className='layout flex relative z-10 flex-col gap-16'>
+          <p className='text-cdark text-sm text-left'>
             Time to See the Unseen.
           </p>
-          <div className='flex flex-col gap-8 justify-center max-w-lg mx-auto my-auto w-full'>
+          <div className='flex flex-col gap-8 justify-center mx-auto my-auto w-full max-w-lg'>
             <RegisterTitle className='w-full' />
 
             <FormProvider {...methods}>
@@ -141,7 +141,7 @@ export default function RegisterPage() {
                     required: true,
                     pattern: /[a-zA-Z][a-zA-Z ]{2,}$/g,
                   }}
-                  className='bg-transparent border border-cdark'
+                  className='border-cdark bg-transparent border'
                 />
                 <Input
                   dark={true}
@@ -149,7 +149,7 @@ export default function RegisterPage() {
                   type='email'
                   label='Email'
                   validation={{ required: true, pattern: /^\S+@\S+$/i }}
-                  className='bg-transparent border border-cdark'
+                  className='border-cdark bg-transparent border'
                 />
                 <InputPassword
                   dark={true}
@@ -161,7 +161,7 @@ export default function RegisterPage() {
                     required: true,
                     pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/g,
                   }}
-                  className='bg-transparent border border-cdark'
+                  className='border-cdark bg-transparent border'
                 />
                 <InputPassword
                   dark={true}
@@ -169,7 +169,7 @@ export default function RegisterPage() {
                   type='password'
                   label='Repeat your password'
                   validation={{ required: true }}
-                  className='bg-transparent border border-cdark'
+                  className='border-cdark bg-transparent border'
                 />
 
                 <Button
@@ -186,7 +186,7 @@ export default function RegisterPage() {
               <p className='text-cdark'>Already have an account ?</p>
               <UnstyledLink
                 href={LOGIN_PAGE}
-                className='duration-75 flex font-bold font-fivo items-center text-base text-cblue/90 transition-colors hover:text-cblue'
+                className='font-fivo text-cblue/90 flex items-center text-base font-bold transition-colors duration-75 hover:text-cblue'
               >
                 Login Now
               </UnstyledLink>
@@ -194,12 +194,12 @@ export default function RegisterPage() {
             <ArrowLink
               as={UnstyledLink}
               href={RESEND_VERIFICATION_PAGE}
-              className='flex font-fivo items-center mx-auto text-cred text-sm'
+              className='font-fivo text-cred flex items-center mx-auto text-sm'
             >
               Resend Email Verification
             </ArrowLink>
           </div>
-          <div className='flex items-start justify-between'>
+          <div className='flex justify-between items-start'>
             <Logo isDark className='w-20' />
             <p className='text-cdark text-sm'>@2022</p>
           </div>
@@ -209,7 +209,7 @@ export default function RegisterPage() {
           width={365}
           height={402}
           alt='float'
-          className='absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-1/2'
+          className='absolute right-0 bottom-0 w-1/2 translate-x-1/4 translate-y-1/4'
         />
       </main>
     </Layout>

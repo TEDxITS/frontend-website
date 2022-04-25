@@ -94,12 +94,12 @@ export default function NotifyPage({
       <Seo templateTitle='Notify Me' />
 
       {/* form */}
-      <main className='bg-blob-blue bg-cover grid min-h-screen overflow-hidden py-8 relative md:py-16'>
-        <section className='flex items-center justify-center layout min-h-screen z-10'>
-          <div className='drop-shadow-lg max-w-md w-full'>
-            <div className='flex flex-col pb-2 relative'>
-              <img src='/svg/ticket-top.svg' alt='' className='w-full z-20' />
-              <div className='-mb-1 bg-cgray flex flex-col gap-4 items-center pb-1 pt-8 px-8 z-10'>
+      <main className='bg-blob-blue grid overflow-hidden relative py-8 min-h-screen bg-cover md:py-16'>
+        <section className='layout flex z-10 justify-center items-center min-h-screen'>
+          <div className='w-full max-w-md drop-shadow-lg'>
+            <div className='flex relative flex-col pb-2'>
+              <img src='/svg/ticket-top.svg' alt='' className='z-20 w-full' />
+              <div className='bg-cgray flex z-10 flex-col gap-4 items-center px-8 pt-8 pb-1 -mb-1'>
                 <img
                   src='/svg/tedx-logo.svg'
                   alt='TedxITS logo'
@@ -117,7 +117,7 @@ export default function NotifyPage({
                   />
                 </svg>
 
-                <p className='font-medium leading-none text-cdark text-center text-lg'>
+                <p className='text-cdark text-lg font-medium leading-none text-center'>
                   Notify me on Ticket Restock!
                   <br />
                   <span className='text-cdark/80 text-sm'>
@@ -136,7 +136,7 @@ export default function NotifyPage({
                       type='email'
                       label='Email'
                       validation={{ required: true, pattern: /^\S+@\S+$/i }}
-                      className='bg-transparent border border-cdark'
+                      className='border-cdark bg-transparent border'
                     />
 
                     <Button
@@ -152,7 +152,7 @@ export default function NotifyPage({
                   as={UnstyledLink}
                   href={TICKET_PAGE_NO_AUTH}
                   direction='left'
-                  className='flex font-fivo items-center text-cred text-sm'
+                  className='font-fivo text-cred flex items-center text-sm'
                 >
                   Discover Ticket
                 </ArrowLink>
@@ -171,18 +171,18 @@ export default function NotifyPage({
               <img
                 src='/svg/ticket-bottom.svg'
                 alt=''
-                className='w-full z-20'
+                className='z-20 w-full'
               />
             </div>
           </div>
         </section>
-        <div className='absolute blur-sm inset-0 md:blur-none'>
+        <div className='absolute inset-0 blur-sm md:blur-none'>
           <NextImage
             src='/images/checkout-page/sticker-ticket-1.png'
             width={441}
             height={220}
             alt='Ticket'
-            className='-left-16 -rotate-12 absolute top-1/2'
+            className='absolute -left-16 top-1/2 -rotate-12'
             imgClassName='drop-shadow-lg'
           />
           <NextImage
@@ -190,7 +190,7 @@ export default function NotifyPage({
             width={488}
             height={259}
             alt='Ticket'
-            className='-right-16 absolute rotate-6 top-0'
+            className='absolute top-0 -right-16 rotate-6'
             imgClassName='drop-shadow-lg'
           />
           <NextImage
@@ -198,7 +198,7 @@ export default function NotifyPage({
             width={401}
             height={189}
             alt='Ticket'
-            className='absolute bottom-1/2 left-0 rotate-3'
+            className='absolute left-0 bottom-1/2 rotate-3'
             imgClassName='drop-shadow-lg'
           />
         </div>

@@ -56,36 +56,36 @@ export default function TicketPage({
         />
       )}
 
-      <main className='bg-blob-blue bg-cover bg-no-repeat bg-top flex flex-col gap-16'>
-        <section className='flex flex-col gap-8 pt-8 relative z-10 md:pt-16'>
+      <main className='bg-blob-blue flex flex-col gap-16 bg-top bg-no-repeat bg-cover'>
+        <section className='flex relative z-10 flex-col gap-8 pt-8 md:pt-16'>
           <Header isDark={true} />
 
           <div className='overflow-hidden w-full'>
-            <div className='flex flex-col items-center layout relative'>
+            <div className='layout flex relative flex-col items-center'>
               <NextImage
                 width={690}
                 height={566}
                 src='/images/ticket/blue-blob.png'
                 alt='Blue Blob'
-                className='absolute bottom-0 top-0'
+                className='absolute top-0 bottom-0'
               />
-              <div className='flex flex-col items-center justify-center layout w-full z-20 md:mt-32'>
+              <div className='layout flex z-20 flex-col justify-center items-center w-full md:mt-32'>
                 <CoverSection />
               </div>
-              <div className='flex justify-center max-w-[50%] my-16 relative w-full z-10 md:max-w-[18%] md:my-0'>
+              <div className='max-w-[50%] flex relative z-10 justify-center my-16 w-full md:max-w-[18%] md:my-0'>
                 <BookNowText className='w-full' />
                 <DrawTopRight
-                  className='-translate-y-1/2 absolute right-0 top-0 translate-x-full w-16'
+                  className='absolute top-0 right-0 w-16 translate-x-full -translate-y-1/2'
                   drawStroke='#2F65E7'
                 />
                 <DrawTopRight
-                  className='-scale-100 -translate-x-full absolute bottom-0 left-0 translate-y-1/2 w-16'
+                  className='-scale-100 absolute bottom-0 left-0 w-16 -translate-x-full translate-y-1/2'
                   drawStroke='#2F65E7'
                 />
               </div>
-              <div className='flex flex-col items-center w-full z-10'>
+              <div className='flex z-10 flex-col items-center w-full'>
                 <div className='relative'>
-                  <ScrollDownText className='-left-full -right-full absolute' />
+                  <ScrollDownText className='absolute -right-full -left-full' />
                   <ArrowDownButton
                     href='#book'
                     iconClassName='mt-[150%] text-cblue hover:border-cblue'
@@ -95,44 +95,44 @@ export default function TicketPage({
             </div>
           </div>
         </section>
-        <section className='flex flex-col overflow-hidden pb-32 pt-16 relative'>
-          <div className='flex flex-col items-center layout max-w-md z-10'>
+        <section className='flex overflow-hidden relative flex-col pt-16 pb-32'>
+          <div className='layout flex z-10 flex-col items-center max-w-md'>
             <GrabTicketText className='w-1/2' />
-            <p className='flex flex-wrap mt-4 text-[#808080]'>
+            <p className='text-[#808080] flex flex-wrap mt-4'>
               Ready to spread the ideas of{' '}
-              <span className='mx-1 text-cblue'>visibility </span> and
-              <span className='mx-1 text-cblue'>vulnerability? </span> Join us,
+              <span className='text-cblue mx-1'>visibility </span> and
+              <span className='text-cblue mx-1'>vulnerability? </span> Join us,
               feel the impact and be the witness of
               <NextImage
                 width={78.97}
                 height={14.85}
                 src='/images/logo/tedxits-text.svg'
                 alt='TedXITS 2022'
-                className='h-3 ml-1'
+                className='ml-1 h-3'
               />{' '}
-              <span className='font-bold text-cdark'>2022</span>
+              <span className='text-cdark font-bold'>2022</span>
             </p>
           </div>
-          <div className='flex flex-col relative'>
-            <div className='flex flex-col layout mt-16 z-10'>
+          <div className='flex relative flex-col'>
+            <div className='layout flex z-10 flex-col mt-16'>
               <div
-                className='gap-x-16 gap-y-8 grid mx-auto md:grid-cols-2'
+                className='grid gap-y-8 gap-x-16 mx-auto md:grid-cols-2'
                 id='book'
               >
                 <TicketingCard
                   type='offline-non-kit'
-                  className='duration-300 ease transition-all hover:-translate-y-2'
+                  className='ease transition-all duration-300 hover:-translate-y-2'
                 >
                   <div className='flex flex-col items-center my-auto'>
                     <div className='flex flex-col items-center'>
-                      <p className='font-semibold mr-auto'>Price</p>
+                      <p className='mr-auto font-semibold'>Price</p>
                       <h1 className='text-cblue'>
                         {data[0].event_price[0].price / 1000}k
-                        <span className='font-normal text-2xl'>/ticket</span>
+                        <span className='text-2xl font-normal'>/ticket</span>
                       </h1>
                       <Button
                         onClick={openModalOfflineNonKit}
-                        className='font-bold my-4 py-1 shadow-lg text-lg'
+                        className='py-1 my-4 text-lg font-bold shadow-lg'
                       >
                         Buy Now
                       </Button>
@@ -141,18 +141,18 @@ export default function TicketPage({
                 </TicketingCard>
                 <TicketingCard
                   type='offline-kit'
-                  className='duration-300 ease transition-all hover:-translate-y-2'
+                  className='ease transition-all duration-300 hover:-translate-y-2'
                 >
                   <div className='flex flex-col items-center my-auto'>
                     <div className='flex flex-col items-center'>
-                      <p className='font-semibold mr-auto'>Price</p>
+                      <p className='mr-auto font-semibold'>Price</p>
                       <h1 className='text-cblue'>
                         {data[1].event_price[0].price / 1000}k
-                        <span className='font-normal text-2xl'>/ticket</span>
+                        <span className='text-2xl font-normal'>/ticket</span>
                       </h1>
                       <Button
                         onClick={openModalOfflineWithKit}
-                        className='font-bold my-4 py-1 shadow-lg text-lg'
+                        className='py-1 my-4 text-lg font-bold shadow-lg'
                       >
                         Buy Now
                       </Button>
@@ -167,7 +167,7 @@ export default function TicketPage({
                 width={441}
                 height={220}
                 alt='Ticket'
-                className='-left-16 -rotate-12 absolute top-1/2'
+                className='absolute -left-16 top-1/2 -rotate-12'
                 imgClassName='drop-shadow-lg'
               />
               <NextImage
@@ -175,7 +175,7 @@ export default function TicketPage({
                 width={488}
                 height={259}
                 alt='Ticket'
-                className='-right-16 absolute rotate-6 top-0'
+                className='absolute top-0 -right-16 rotate-6'
                 imgClassName='drop-shadow-lg'
               />
               <NextImage
@@ -183,7 +183,7 @@ export default function TicketPage({
                 width={401}
                 height={189}
                 alt='Ticket'
-                className='absolute bottom-1/2 left-0 rotate-3'
+                className='absolute left-0 bottom-1/2 rotate-3'
                 imgClassName='drop-shadow-lg'
               />
             </div>

@@ -34,10 +34,10 @@ export default function CheckoutSuccess({
       <Transition appear show={isOpen} as={React.Fragment}>
         <Dialog
           as='div'
-          className='fixed inset-0 overflow-y-auto z-10'
+          className='overflow-y-auto fixed inset-0 z-10'
           onClose={closeModal}
         >
-          <div className='backdrop-blur-sm bg-cdark/80 min-h-screen text-center'>
+          <div className='bg-cdark/80 min-h-screen text-center backdrop-blur-sm'>
             <Transition.Child
               as={React.Fragment}
               enter='ease-out duration-300'
@@ -51,7 +51,7 @@ export default function CheckoutSuccess({
             </Transition.Child>
 
             <span
-              className='align-middle h-screen inline-block'
+              className='inline-block h-screen align-middle'
               aria-hidden='true'
             >
               &#8203;
@@ -65,15 +65,15 @@ export default function CheckoutSuccess({
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'
             >
-              <div className='align-middle inline-block text-left transform transition-all w-full'>
-                <div className='bg-cgray layout rounded-3xl z-10'>
-                  <div className='flex flex-col gap-4 items-center layout py-8'>
+              <div className='inline-block w-full text-left align-middle transition-all transform'>
+                <div className='bg-cgray layout z-10 rounded-3xl'>
+                  <div className='layout flex flex-col gap-4 items-center py-8'>
                     <NextImage
                       src='/images/checkout-page/confirmation-page-title.svg'
                       width={525}
                       height={111.461}
                       alt='checklist'
-                      className='max-w-lg w-full'
+                      className='w-full max-w-lg'
                     />
                     <p className='text-cdark'>
                       Thankyou for your Purchase, please confirm your payment in
@@ -82,42 +82,42 @@ export default function CheckoutSuccess({
 
                     <div className='flex flex-col gap-4 w-full'>
                       <SectionHeader title='Payment Information' />
-                      <div className='flex gap-1 items-center relative text-cdark'>
+                      <div className='text-cdark flex relative gap-1 items-center'>
                         {data.booking_id}
                         <MdContentCopy
                           size={25}
-                          className='cursor-pointer text-cdark'
+                          className='text-cdark cursor-pointer'
                           onClick={copyToClipBoard}
                         />
                       </div>
 
                       <SectionHeader title='Personal Information' />
-                      <div className='bg-cgray bg-texture px-2 text-cdark'>
+                      <div className='bg-cgray bg-texture text-cdark px-2'>
                         <p>{data.booking_name}</p>
                         <p>{data.booking_address}</p>
                         <p>{data.booking_telp}</p>
                       </div>
-                      <div className='flex items-center px-2 text-cdark'>
+                      <div className='text-cdark flex items-center px-2'>
                         <p>Price : </p>
-                        <p className='font-bold text-lg'>
+                        <p className='text-lg font-bold'>
                           {data.PaymentType?.price}
                         </p>
                       </div>
                       <div className='flex flex-col gap-y-2 items-center mt-8'>
                         <UnstyledLink
                           href={'https://page.line.me/193pbtpg'}
-                          className='animate-bounce bg-cred duration-75 flex font-bold font-fivo gap-4 items-center px-8 py-3 rounded-full text-center text-cgray text-lg transition-all hover:drop-shadow-xl hover:scale-105'
+                          className='bg-cred font-fivo text-cgray flex gap-4 items-center px-8 py-3 text-lg font-bold text-center rounded-full transition-all duration-75 animate-bounce hover:drop-shadow-xl hover:scale-105'
                         >
                           <NextImage
                             width={256}
                             height={256}
                             src='https://res.cloudinary.com/tedxits/image/upload/v1650892536/LINE_logo.svg_ub0rpu.png'
-                            className='drop-shadow-lg w-6'
+                            className='w-6 drop-shadow-lg'
                             alt='Line'
                           />
                           Confirm Payment
                         </UnstyledLink>
-                        <div className='flex flex-wrap gap-2 items-center text-cdark'>
+                        <div className='text-cdark flex flex-wrap gap-2 items-center'>
                           <p>or confirm via</p>
                           <UnderlineLink
                             className='text-cgreen'
@@ -142,7 +142,7 @@ export default function CheckoutSuccess({
 function SectionHeader({ title }: { title: string }) {
   return (
     <div className=''>
-      <p className='font-semibold text-cdark text-xl'>{title}</p>
+      <p className='text-cdark text-xl font-semibold'>{title}</p>
       <hr className='border-cdark' />
     </div>
   );

@@ -92,12 +92,12 @@ const LoginPage: PageWithAuth = () => {
     <Layout className='bg-[#EAEAE2]'>
       <Seo templateTitle='Login' />
 
-      <main className='bg-blob-blue bg-cover grid min-h-screen py-8 md:py-16'>
-        <section className='flex flex-col gap-16 layout relative'>
-          <p className='text-cdark text-left text-sm'>
+      <main className='bg-blob-blue grid py-8 min-h-screen bg-cover md:py-16'>
+        <section className='layout flex relative flex-col gap-16'>
+          <p className='text-cdark text-sm text-left'>
             Time to See the Unseen.
           </p>
-          <div className='flex flex-col gap-8 justify-center max-w-lg mx-auto my-auto w-full'>
+          <div className='flex flex-col gap-8 justify-center mx-auto my-auto w-full max-w-lg'>
             <LoginTitle className='w-full' />
             <FormProvider {...methods}>
               <form
@@ -111,20 +111,20 @@ const LoginPage: PageWithAuth = () => {
                   type='email'
                   label='Email'
                   validation={{ required: true, pattern: /^\S+@\S+$/i }}
-                  className='bg-transparent border border-cdark'
+                  className='border-cdark bg-transparent border'
                 />
                 <InputPassword
                   autoComplete='current-password'
                   dark={true}
                   id={LoginInputField.PASSWORD}
                   label='Password'
-                  className='bg-transparent border border-cdark'
+                  className='border-cdark bg-transparent border'
                 />
 
                 <ArrowLink
                   as={UnstyledLink}
                   href={FORGOT_PASSWORD_PAGE}
-                  className='flex font-fivo items-center ml-auto text-cred text-sm'
+                  className='font-fivo text-cred flex items-center ml-auto text-sm'
                 >
                   Forgot your password?
                 </ArrowLink>
@@ -141,13 +141,13 @@ const LoginPage: PageWithAuth = () => {
 
               <UnstyledLink
                 href={REGISTER_PAGE}
-                className='duration-75 flex font-bold font-fivo items-center text-base text-cblue/90 transition-colors hover:text-cblue'
+                className='font-fivo text-cblue/90 flex items-center text-base font-bold transition-colors duration-75 hover:text-cblue'
               >
                 Register Now
               </UnstyledLink>
             </div>
           </div>
-          <div className='flex items-start justify-between'>
+          <div className='flex justify-between items-start'>
             <Logo isDark className='w-20' />
             <p className='text-cdark text-sm'>@2022</p>
           </div>

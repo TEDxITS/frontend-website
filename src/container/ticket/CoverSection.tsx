@@ -27,7 +27,7 @@ export default function CoverSection() {
       {/* early bird text */}
       <div
         className={clsxm(
-          'duration-700 ease-in flex flex-col gap-y-4 origin-top-left transition-all w-full md:w-1/3',
+          'flex flex-col gap-y-4 w-full transition-all duration-700 ease-in origin-top-left md:w-1/3',
           ticketState[0] ? 'md:scale-100' : 'md:scale-[300%]'
         )}
       >
@@ -54,14 +54,14 @@ export default function CoverSection() {
             width={44.05}
             height={62.85}
             alt='Blue Star'
-            className='-translate-y-1/2 absolute right-1/4 top-0 w-12'
+            className='absolute top-0 right-1/4 w-12 -translate-y-1/2'
           />
           <NextImage
             src='/images/ticket/star-red.svg'
             width={81.65}
             height={81.65}
             alt='Red Star'
-            className='-left-2 absolute bottom-0 translate-y-1/2 w-1/4'
+            className='absolute bottom-0 -left-2 w-1/4 translate-y-1/2'
           />
         </div>
         <div className='grid grid-cols-2'>
@@ -85,7 +85,7 @@ export default function CoverSection() {
             height={288.83}
             alt='Blue Star'
             className={clsxm(
-              'delay-700 duration-500 ease transition-all w-full',
+              'ease w-full transition-all duration-500 delay-700',
               ticketState[0]
                 ? 'opacity-1 translate-y-0 -rotate-3 translate-x-0 '
                 : 'opacity-0 translate-y-full -rotate-45 translate-x-full'
@@ -93,13 +93,13 @@ export default function CoverSection() {
           />
         </div>
 
-        <div className='gap-x-2 grid grid-cols-3 ml-auto mt-4 w-1/3 md:translate-y-16'>
+        <div className='grid grid-cols-3 gap-x-2 mt-4 ml-auto w-1/3 md:translate-y-16'>
           <PhotoCard
             image='https://res.cloudinary.com/tedxits/image/upload/v1650805104/images/ticket/image-speak_z48qnp.jpg'
             alt='Speak'
             text='Speak your taboo'
             className={clsxm(
-              'duration-300 ease transition-all',
+              'ease transition-all duration-300',
               ticketState[1]
                 ? 'translate-x-0 opacity-100'
                 : 'translate-x-full opacity-0'
@@ -110,7 +110,7 @@ export default function CoverSection() {
             alt='Listen'
             text='Widen your ears to the truth'
             className={clsxm(
-              'delay-300 duration-300 ease transition-all',
+              'ease transition-all duration-300 delay-300',
               ticketState[1]
                 ? 'translate-x-0 opacity-100'
                 : 'translate-x-full opacity-0'
@@ -121,7 +121,7 @@ export default function CoverSection() {
             alt='See'
             text="See what you've ignored"
             className={clsxm(
-              'delay-700 duration-300 ease transition-all',
+              'ease transition-all duration-300 delay-700',
               ticketState[1]
                 ? 'translate-x-0 opacity-100'
                 : 'translate-x-full opacity-0'
@@ -154,7 +154,7 @@ function PhotoCard({
         className='w-full'
         useSkeleton
       />
-      <p className='text-[#8B8B8B] text-justify text-xs'>{text}</p>
+      <p className='text-[#8B8B8B] text-xs text-justify'>{text}</p>
     </div>
   );
 }

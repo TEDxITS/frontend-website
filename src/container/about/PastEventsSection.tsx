@@ -56,7 +56,7 @@ export default function PastEventsSection() {
         <li className='layout flex flex-col gap-y-8 gap-x-12 md:flex-row'>
           <div className='bg-blob-outline h-[47rem] rotate-[120deg] w-[50rem] absolute -left-80 bg-no-repeat transform -translate-y-32'></div>
           <NextImage
-            src='/images/past-events/social-experiment.jpg'
+            src='https://res.cloudinary.com/tedxits/image/upload/v1650787186/past-event/social-experiment_ckb4iy.jpg'
             alt=''
             width='100%'
             height={102}
@@ -107,7 +107,7 @@ export default function PastEventsSection() {
             </div>
           </div>
           <NextImage
-            src='/images/past-events/guiding-passion.jpg'
+            src='https://res.cloudinary.com/tedxits/image/upload/v1650787186/past-event/guiding-passion_o18qes.jpg'
             alt=''
             width='100%'
             height={102}
@@ -122,7 +122,7 @@ export default function PastEventsSection() {
         <li className='layout flex flex-col gap-y-8 gap-x-12 md:flex-row'>
           <div className='bg-blob-outline h-[47rem] rotate-[40deg] w-[50rem] absolute -left-48 bg-no-repeat transform -translate-y-20'></div>
           <NextImage
-            src='/images/past-events/space-mind.jpg'
+            src='https://res.cloudinary.com/tedxits/image/upload/v1650787187/past-event/space-mind_guldnp.jpg'
             alt=''
             width='100%'
             height={102}

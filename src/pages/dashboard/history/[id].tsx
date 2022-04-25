@@ -20,18 +20,18 @@ const TicketDetailPage: PageWithAuth = ({
     <Layout
       showFooter={true}
       withDashboard={true}
-      className='bg-clight min-h-screen z-20'
+      className='bg-clight z-20 min-h-screen'
     >
       <Seo templateTitle='Details' />
 
-      <main className='bg-clight flex flex-col overflow-x-clip relative'>
+      <main className='bg-clight overflow-x-clip flex relative flex-col'>
         <NextImage
           src='/images/ticketing/blue-blob-2.png'
           width={500}
           height={500}
           alt='sticker'
           quality={100}
-          className='-top-32 absolute scale-50 sm:-right-40 sm:-top-30 sm:scale-100'
+          className='absolute -top-32 scale-50 sm:-top-30 sm:-right-40 sm:scale-100'
           priority={true}
         />
         <NextImage
@@ -40,10 +40,10 @@ const TicketDetailPage: PageWithAuth = ({
           height={500}
           alt='sticker'
           quality={100}
-          className='-bottom-28 -left-28 -translate-x-6 absolute scale-50 sm:scale-100'
+          className='absolute -bottom-28 -left-28 scale-50 -translate-x-6 sm:scale-100'
           priority={true}
         />
-        <section className='min-h-[75vh] px-4 py-8 relative z-20'>
+        <section className='min-h-[75vh] relative z-20 px-4 py-8'>
           <TicketDetail data={data as TicketResponse} />
         </section>
       </main>

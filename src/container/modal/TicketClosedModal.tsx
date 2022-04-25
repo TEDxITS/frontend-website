@@ -27,10 +27,10 @@ export default function TicketClosedModal({
     <Transition appear show={isOpen} as={React.Fragment}>
       <Dialog
         as='div'
-        className='fixed inset-0 overflow-y-auto z-10'
+        className='overflow-y-auto fixed inset-0 z-10'
         onClose={closeModal}
       >
-        <div className='bg-cdark/40 min-h-screen px-4 text-center'>
+        <div className='bg-cdark/40 px-4 min-h-screen text-center'>
           <Transition.Child
             as={React.Fragment}
             enter='ease-out duration-300'
@@ -44,7 +44,7 @@ export default function TicketClosedModal({
           </Transition.Child>
 
           <span
-            className='align-middle h-screen inline-block'
+            className='inline-block h-screen align-middle'
             aria-hidden='true'
           >
             &#8203;
@@ -58,13 +58,13 @@ export default function TicketClosedModal({
             leaveFrom='opacity-100 scale-100'
             leaveTo='-translate-y-96 opacity-0 scale-95'
           >
-            <div className='align-top inline-block max-w-xl overflow-hidden text-left transform transition-all w-full'>
-              <div className='flex flex-col relative'>
-                <div className='flex flex-col items-center px-0 relative z-10 md:px-8'>
-                  <TicketClosed className='-translate-x-1 -translate-y-8 max-w-sm w-full' />
+            <div className='inline-block overflow-hidden w-full max-w-xl text-left align-top transition-all transform'>
+              <div className='flex relative flex-col'>
+                <div className='flex relative z-10 flex-col items-center px-0 md:px-8'>
+                  <TicketClosed className='w-full max-w-sm -translate-x-1 -translate-y-8' />
                   <ButtonLink
                     href={`/ticket/notify-me?type=${data.type}&payment=${data.payment}`}
-                    className='-translate-y-16 border border-cdark font-medium text-lg to-cred hover:from-cgreen'
+                    className='border-cdark to-cred text-lg font-medium border -translate-y-16 hover:from-cgreen'
                     variant='secondary'
                   >
                     Notify me on Restock

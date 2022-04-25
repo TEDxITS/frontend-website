@@ -25,6 +25,7 @@ module.exports = {
         'blob-outline': 'url(/images/background/bg-blob-outline.png)',
         'blob-green': 'url(/images/background/bg-blob-green.jpg)',
         'blob-blue': 'url(/images/background/bg-blob-blue.png)',
+        'gradient-red': 'url(/images/background/bg-gradient-red.png)',
         'story-desktop': 'url(/images/background/bg-story-desktop.jpg)',
         'story-mobile': 'url(/images/background/bg-story-mobile.jpg)',
         'meet-the-team':

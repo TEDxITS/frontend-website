@@ -32,13 +32,13 @@ export default function Timer({ endTime }: TimerPropsType) {
     return <div className='hidden'>Timer</div>;
   } else if (!isEnd) {
     return (
-      <div className='flex items-center justify-center text-clight'>
+      <div className='text-clight flex justify-center items-center'>
         <TimerNumber value={days} type='days' />
-        <span className='font-fivo mx-1 text-cdark text-lg'>:</span>
+        <span className='font-fivo text-cdark mx-1 text-lg'>:</span>
         <TimerNumber value={hours} type='hours' />
-        <span className='font-fivo mx-1 text-cdark text-lg'>:</span>
+        <span className='font-fivo text-cdark mx-1 text-lg'>:</span>
         <TimerNumber value={minutes} type='min' />
-        <span className='font-fivo mx-1 text-cdark text-lg'>:</span>
+        <span className='font-fivo text-cdark mx-1 text-lg'>:</span>
         <TimerNumber value={seconds} type='sec' />
       </div>
     );
@@ -50,7 +50,7 @@ export default function Timer({ endTime }: TimerPropsType) {
 function TimerNumber({ value, type }: { value: number; type: string }) {
   return (
     <div className='text-center'>
-      <div className='bg-cdark flex items-center justify-center leading-none min-w-[40px] px-2 py-1 rounded-lg'>
+      <div className='bg-cdark min-w-[40px] flex justify-center items-center px-2 py-1 leading-none rounded-lg'>
         <p>{getStringValue(value)}</p>
       </div>
       <small className='font-fivo text-cdark text-xs'>{type}</small>

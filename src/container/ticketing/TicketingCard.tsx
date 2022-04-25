@@ -24,9 +24,9 @@ const BENEFIT_NO_KIT: React.ReactNode[] = [
 const TITLE_NO_KIT: React.ReactNode = (
   <>
     <div className='animate-float my-auto'>
-      <h1 className='leading-none text-5xl text-cdark'>
+      <h1 className='text-cdark text-5xl leading-none'>
         <span className='italic'>OFF</span>
-        <span className='font-normal ml-1'>LINE</span>
+        <span className='ml-1 font-normal'>LINE</span>
       </h1>
     </div>
 
@@ -54,11 +54,11 @@ const BENEFIT_WITH_KIT: React.ReactNode[] = [
 const TITLE_WITH_KIT: React.ReactNode = (
   <>
     <div className='animate-float my-auto'>
-      <h1 className='leading-none text-5xl text-cdark'>
+      <h1 className='text-cdark text-5xl leading-none'>
         <span className='italic'>OFF</span>
-        <span className='font-normal ml-1'>LINE</span>
+        <span className='ml-1 font-normal'>LINE</span>
       </h1>
-      <h2 className='leading-none text-cred md:text-4xl'>
+      <h2 className='text-cred leading-none md:text-4xl'>
         With <span className='font-bold'>Kit</span>
       </h2>
     </div>
@@ -79,12 +79,12 @@ export default function TicketingCard({
   return (
     <div
       className={clsxm(
-        'drop-shadow-lg max-w-xs relative text-cdark',
+        'text-cdark relative max-w-xs drop-shadow-lg',
         className
       )}
     >
       {type === 'offline-kit' && (
-        <div className='-right-4 absolute top-0 z-10'>
+        <div className='absolute top-0 -right-4 z-10'>
           <NextImage
             src='/images/sticker/yellow-circle.png'
             width={484}
@@ -108,12 +108,12 @@ export default function TicketingCard({
           alt='Card Background'
           priority={true}
         />
-        <div className='absolute flex flex-col h-full px-8 py-4 top-0'>
+        <div className='flex absolute top-0 flex-col px-8 py-4 h-full'>
           {type === 'offline-non-kit' ? TITLE_NO_KIT : TITLE_WITH_KIT}
         </div>
       </div>
       {/* Card Contents */}
-      <div className='flex flex-col min-h-32'>
+      <div className='min-h-32 flex flex-col'>
         <NextImage
           width={217.7}
           height={4}
@@ -122,9 +122,9 @@ export default function TicketingCard({
           alt='Card Content Top'
           priority={true}
         />
-        <div className='bg-white flex flex-col gap-2 rounded-b-3xl'>
-          <div className='flex flex-col gap-2 pb-4 pt-4 px-8'>
-            <p className='font-semibold mb-4'>What you will get</p>
+        <div className='flex flex-col gap-2 bg-white rounded-b-3xl'>
+          <div className='flex flex-col gap-2 px-8 pt-4 pb-4'>
+            <p className='mb-4 font-semibold'>What you will get</p>
 
             {(type === 'offline-non-kit'
               ? BENEFIT_NO_KIT
