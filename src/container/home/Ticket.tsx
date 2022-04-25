@@ -50,7 +50,7 @@ export default function Ticket({
         )}
       >
         <div className='flex relative flex-col pb-2 drop-shadow-lg'>
-          <div className='/ bg-cgray flex z-10 flex-col gap-4 items-center px-8 pt-8 pb-1 -mb-1'>
+          <div className='bg-cgray flex z-10 flex-col gap-4 items-center px-8 pt-8 pb-1 -mb-1'>
             <img src='/svg/tedx-logo.svg' alt='TedxITS logo' className='h-10' />
             <svg viewBox='0 0 498.33 2.18'>
               <path

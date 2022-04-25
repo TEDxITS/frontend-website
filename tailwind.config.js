@@ -24,6 +24,7 @@ module.exports = {
         'blob-3': 'url(/images/background/bg-blob-3.png)',
         'blob-outline': 'url(/images/background/bg-blob-outline.png)',
         'blob-green': 'url(/images/background/bg-blob-green.jpg)',
+        'blob-blue': 'url(/images/background/bg-blob-blue.png)',
         'gradient-red': 'url(/images/background/bg-gradient-red.png)',
         'story-desktop': 'url(/images/background/bg-story-desktop.jpg)',
         'story-mobile': 'url(/images/background/bg-story-mobile.jpg)',
@@ -34,6 +35,7 @@ module.exports = {
         texture: 'url(/images/background/bg-texture.png)',
         newspaper: 'url(/images/background/bg-newspaper.jpg)',
         ticketbottom: "url('/svg/ticket-bottom.svg')",
+        confirmationPage: 'url(/images/checkout-page/payment.png)',
       },
       dropShadow: {
         'solid-sm': '-1px 1px rgb(33 33 33)',
@@ -76,6 +78,7 @@ module.exports = {
 
         //text color
         cgray: '#EFEDEA',
+        corange: '#EB5124',
       },
       fill: {
         primary: {
