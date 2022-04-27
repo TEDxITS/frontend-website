@@ -145,25 +145,24 @@ export type FaqDataType = {
 };
 export const FaqData: FaqDataType[] = [
   {
-    question: 'When and where the main event will be held?',
+    question: 'When and where will the main event be held?',
     answer:
-      'TEDxITS 2022 main event details are to be announced, but for sure, this event will be held offline so you can get new and refreshing experiences on the D-day.',
+      "Our main event will be held on 19th June 2022 at Auditorium Research Center ITS after all finals are finished. You'll be sure to get new and refreshing experience on-site",
   },
   {
-    question:
-      'Where do we have to send the evidence of transfer after buying the tickets?',
+    question: 'How do we send our payment receipt?',
     answer:
-      'You can send it to Ticketing TEDxITS 2022 Line Official Account (Line ID : @193pbtpg)',
+      'You can confirm your payment send the receipt to our ticketing official account (Line ID : @193pbtpg).',
   },
   {
-    question: 'Can I cancel my ticket purchase and get my money back?',
+    question: 'Can I cancel my ticket purchase and get a refund?',
     answer:
       'All types of TEDxITS 2022 tickets can not be canceled and are non-refundable after the payment.',
   },
   {
     question: 'How do I receive my ticket(s)?',
     answer:
-      'We provide two shipping options; you can pick the ticket(s) at ITS campus or choose the delivery option. If you want it the to be delivered, please write down your address as detail as possible. Also, the shipping fee will be added to the total price. We will inform you later about ticket(s) pick-up and shipping schedules. ',
+      'We provide two shipping options; you can pick the ticket(s) at ITS campus or choose the delivery option. If you want it the to be delivered, please write down your address as detailed as possible. Also, the shipping fee will be added to the total price. We will inform you later about ticket(s) pick-up and shipping schedules. ',
   },
   {
     question:
