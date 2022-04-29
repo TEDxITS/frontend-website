@@ -2,6 +2,7 @@ import { InferGetServerSidePropsType } from 'next';
 import { useRouter } from 'next/router';
 import * as React from 'react';
 
+import { isTicketOpen } from '@/lib/date';
 import { getEventData } from '@/lib/hooks/event';
 
 import ArrowDownButton from '@/components/buttons/ArrowDownButton';
@@ -41,7 +42,7 @@ const TicketPage: PageWithAuth = ({
   const openModalOfflineNonKit = () => {
     setIsOfflineNonKitLoading(true);
     setEventData(offlineNonKit);
-    if (data[0].event_price[0].quota <= 0) {
+    if (data[0].event_price[0].quota <= 0 || isTicketOpen()) {
       setIsOpen(true);
       setIsOfflineNonKitLoading(false);
     } else {
@@ -54,7 +55,7 @@ const TicketPage: PageWithAuth = ({
   const openModalOfflineWithKit = () => {
     setIsOfflineWithKitLoading(true);
     setEventData(offlineWithKit);
-    if (data[1].event_price[0].quota <= 0) {
+    if (data[1].event_price[0].quota <= 0 || isTicketOpen()) {
       setIsOpen(true);
       setIsOfflineWithKitLoading(false);
     } else {
@@ -112,6 +113,7 @@ const TicketPage: PageWithAuth = ({
             </div>
           </div>
         </section>
+
         <section className='flex overflow-hidden relative flex-col pt-16 pb-32'>
           <div className='layout flex z-10 flex-col items-center max-w-md'>
             <GrabTicketText className='w-1/2' />

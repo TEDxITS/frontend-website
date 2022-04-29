@@ -5,6 +5,8 @@ import { MdContentCopy } from 'react-icons/md';
 
 import { formatLocale, toDate } from '@/lib/date';
 
+import UnderlineLink from '@/components/links/UnderlineLink';
+import UnstyledLink from '@/components/links/UnstyledLink';
 import NextImage from '@/components/NextImage';
 import Timer from '@/components/Timer';
 
@@ -60,7 +62,7 @@ function TicketDetail({ data }: { data: TicketResponse }) {
               className='col-span-2'
             />
             <div className='text-cdark flex relative col-span-2 gap-1 items-center'>
-              {data.booking_id}
+              {/* {data.booking_id} */}
               <MdContentCopy
                 size={25}
                 className='text-cdark cursor-pointer'
@@ -115,6 +117,36 @@ function TicketDetail({ data }: { data: TicketResponse }) {
             </p>
             <p>Price</p>
             <p className='font-medium'>Rp {data.PaymentType?.price}</p>
+          </div>
+          <div className='flex justify-end'>
+            <div className='flex flex-col gap-y-2 items-end mt-8'>
+              <UnstyledLink
+                href={'https://page.line.me/193pbtpg'}
+                className='bg-cred font-fivo text-cgray flex gap-4 items-center px-8 py-3 text-lg font-bold text-center rounded-full transition-all duration-75 animate-bounce hover:drop-shadow-xl hover:scale-105'
+              >
+                <NextImage
+                  width={256}
+                  height={256}
+                  src='https://res.cloudinary.com/tedxits/image/upload/v1650892536/LINE_logo.svg_ub0rpu.png'
+                  className='w-6 drop-shadow-lg'
+                  alt='Line'
+                />
+                Confirm Payment
+              </UnstyledLink>
+              <small className='text-cdark'>
+                copy the payment detail text above and send it via chat to our
+                admin
+              </small>
+              <div className='text-cdark flex flex-wrap gap-2 items-center'>
+                <p>or confirm via</p>
+                <UnderlineLink
+                  className='text-cgreen'
+                  href={`https://api.whatsapp.com/send/?phone=6281519457059&text=Halo! Aku mau konfirmasi pesanan tiket dengan kode unik: ${data.booking_id}. Tolong diproses segera, ya!`}
+                >
+                  {'Whatsapp'}
+                </UnderlineLink>
+              </div>
+            </div>
           </div>
         </div>
       </div>

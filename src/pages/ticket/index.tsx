@@ -1,6 +1,7 @@
 import { InferGetServerSidePropsType } from 'next';
 import * as React from 'react';
 
+import { isTicketOpen } from '@/lib/date';
 import { getEventData } from '@/lib/hooks/event';
 
 import ArrowDownButton from '@/components/buttons/ArrowDownButton';
@@ -43,17 +44,22 @@ export default function TicketPage({
     setEventData(offlineWithKit);
     setIsOpen(true);
   };
+
   return (
     <Layout className='bg-[#EAEAE2]'>
       <Seo templateTitle='Ticket' />
-      {isOpen && quota > 0 ? (
-        <LoginModal isOpen={isOpen} setIsOpen={setIsOpen} />
-      ) : (
-        <TicketClosedModal
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-          data={eventData}
-        />
+      {isOpen && (
+        <>
+          {quota <= 0 || isTicketOpen() ? (
+            <TicketClosedModal
+              isOpen={isOpen}
+              setIsOpen={setIsOpen}
+              data={eventData}
+            />
+          ) : (
+            <LoginModal isOpen={isOpen} setIsOpen={setIsOpen} />
+          )}
+        </>
       )}
 
       <main className='bg-blob-blue flex flex-col gap-16 bg-top bg-no-repeat bg-cover'>
