@@ -5,6 +5,8 @@ import { MdContentCopy } from 'react-icons/md';
 
 import { formatLocale, toDate } from '@/lib/date';
 
+import UnderlineLink from '@/components/links/UnderlineLink';
+import UnstyledLink from '@/components/links/UnstyledLink';
 import NextImage from '@/components/NextImage';
 import Timer from '@/components/Timer';
 
@@ -24,9 +26,9 @@ function TicketDetail({ data }: { data: TicketResponse }) {
     toast.success('Copied to clipboard');
   };
   return (
-    <div className='text-cdark flex flex-col gap-4 items-center max-w-3xl'>
+    <div className='flex flex-col gap-4 items-center max-w-3xl text-cdark'>
       <div>
-        <div className='relative mb-5'>
+        <div className='mb-5 relative'>
           <NextImage
             src='/svg/yellow-circle.svg'
             width={30}
@@ -34,7 +36,7 @@ function TicketDetail({ data }: { data: TicketResponse }) {
             alt='sticker'
             quality={100}
             priority={true}
-            className='right-[7.5vw] top-[40%] absolute z-10 animate-bounce'
+            className='absolute animate-bounce right-[7.5vw] top-[40%] z-10'
           />
           <NextImage
             src='/svg/pink-sun.svg'
@@ -43,27 +45,27 @@ function TicketDetail({ data }: { data: TicketResponse }) {
             alt='sticker'
             quality={100}
             priority={true}
-            className='animate-[spin_8s_linear_infinite] left-[6vw] top-[30%] absolute z-10'
+            className='absolute animate-[spin_8s_linear_infinite] left-[6vw] top-[30%] z-10'
           />
-          <h2 className='font-fivo text-cblue tracking-[-0.15rem] -mb-2 text-5xl font-normal text-center'>
+          <h2 className='-mb-2 font-fivo font-normal text-5xl text-cblue text-center tracking-[-0.15rem]'>
             PAYM<span className='font-pilow'>E</span>NT
           </h2>
-          <h2 className='font-fivo text-cblue tracking-[-0.15rem] text-5xl font-normal text-center'>
+          <h2 className='font-fivo font-normal text-5xl text-cblue text-center tracking-[-0.15rem]'>
             DETAILS
           </h2>
         </div>
-        <div className='flex flex-col px-10 pt-10 pb-9 overflow-clip bg-white rounded-3xl drop-shadow'>
-          <div className='text-cdark grid grid-cols-2 gap-x-2 gap-y-4'>
+        <div className='bg-white drop-shadow flex flex-col overflow-clip pb-9 pt-10 px-10 rounded-3xl'>
+          <div className='gap-x-2 gap-y-4 grid grid-cols-2 text-cdark'>
             <SectionHeader
               number='01'
               title='Payment Information'
               className='col-span-2'
             />
-            <div className='text-cdark flex relative col-span-2 gap-1 items-center'>
-              {data.booking_id}
+            <div className='col-span-2 flex gap-1 items-center relative text-cdark'>
+              {/* {data.booking_id} */}
               <MdContentCopy
                 size={25}
-                className='text-cdark cursor-pointer'
+                className='cursor-pointer text-cdark'
                 onClick={copyToClipBoard}
               />
             </div>
@@ -75,7 +77,7 @@ function TicketDetail({ data }: { data: TicketResponse }) {
             </p>
 
             {!data.booking_status && (
-              <div className='grid col-span-2 gap-x-2 gap-y-4 md:grid-cols-2'>
+              <div className='col-span-2 gap-x-2 gap-y-4 grid md:grid-cols-2'>
                 <p>Confirmation Payment Until</p>
                 <Timer
                   endTime={data.booking_finish_time}
@@ -101,7 +103,7 @@ function TicketDetail({ data }: { data: TicketResponse }) {
               title='Ticket Information'
               className='col-span-2'
             />
-            <div className='bg-cgray bg-texture text-cdark col-span-2 px-2'>
+            <div className='bg-cgray bg-texture col-span-2 px-2 text-cdark'>
               <p>{data.booking_name}</p>
               <p>{data.booking_address}</p>
               <p>{data.booking_telp}</p>
@@ -115,6 +117,36 @@ function TicketDetail({ data }: { data: TicketResponse }) {
             </p>
             <p>Price</p>
             <p className='font-medium'>Rp {data.PaymentType?.price}</p>
+          </div>
+          <div className='flex justify-end'>
+            <div className='flex flex-col gap-y-2 items-end mt-8'>
+              <UnstyledLink
+                href={'https://page.line.me/193pbtpg'}
+                className='animate-bounce bg-cred duration-75 flex font-bold font-fivo gap-4 items-center px-8 py-3 rounded-full text-center text-cgray text-lg transition-all hover:drop-shadow-xl hover:scale-105'
+              >
+                <NextImage
+                  width={256}
+                  height={256}
+                  src='https://res.cloudinary.com/tedxits/image/upload/v1650892536/LINE_logo.svg_ub0rpu.png'
+                  className='drop-shadow-lg w-6'
+                  alt='Line'
+                />
+                Confirm Payment
+              </UnstyledLink>
+              <small className='text-cdark'>
+                copy the payment detail text above and send it via chat to our
+                admin
+              </small>
+              <div className='flex flex-wrap gap-2 items-center text-cdark'>
+                <p>or confirm via</p>
+                <UnderlineLink
+                  className='text-cgreen'
+                  href={`https://api.whatsapp.com/send/?phone=6281519457059&text=Halo! Aku mau konfirmasi pesanan tiket dengan kode unik: {data.booking_id}. Tolong diproses segera, ya!`}
+                >
+                  {'Whatsapp'}
+                </UnderlineLink>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -135,7 +167,7 @@ function SectionHeader({
 }) {
   return (
     <div className={className}>
-      <p className='text-cdark text-xl font-semibold'>
+      <p className='font-semibold text-cdark text-xl'>
         <span className='font-sympath'>{number}</span>. {title}
       </p>
       <hr className='border-cdark' />
