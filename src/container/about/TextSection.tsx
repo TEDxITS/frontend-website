@@ -10,7 +10,7 @@ import AboutCircleThird from '@/assets/svg/AboutCircleThird';
 export default function TextSection() {
   return (
     <div className='layout flex flex-col justify-center items-center min-h-screen text-center'>
-      <ul className='font-fivo grid gap-8 mt-8 w-full'>
+      <ul className='font-fivo gap-8 mt-8 max-w-lg'>
         <div className='aspect-h-9 aspect-w-16 bg-cdark overflow-hidden z-10 rounded-2xl md:rounded-3xl'>
           <ReactPlayer
             url='https://www.youtube.com/embed/VinuTH1_4YI'

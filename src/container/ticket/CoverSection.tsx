@@ -32,10 +32,10 @@ export default function CoverSection() {
         )}
       >
         <NextImage
-          width={346}
-          height={107}
-          src='/images/ticket/text-early-bird.svg'
-          alt='Early Bird'
+          width={324.72}
+          height={105.78}
+          src='/images/ticket/text-presale.svg'
+          alt='Presale'
           className='w-full'
           priority={true}
         />

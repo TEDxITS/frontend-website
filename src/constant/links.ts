@@ -4,11 +4,11 @@ export const AllPaymentType: Payment[] = ['earlybird', 'normal', 'presale'];
 export const AllEventType: Event[] = ['offline-kit', 'offline-non-kit'];
 
 export const offlineNonKit: EventPaymentType = {
-  payment: 'earlybird',
+  payment: 'presale',
   type: 'offline-non-kit',
 };
 export const offlineWithKit: EventPaymentType = {
-  payment: 'earlybird',
+  payment: 'presale',
   type: 'offline-kit',
 };
 

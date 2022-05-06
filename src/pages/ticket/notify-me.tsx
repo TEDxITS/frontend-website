@@ -121,7 +121,7 @@ export default function NotifyPage({
                   Notify me on Ticket Restock!
                   <br />
                   <span className='text-cdark/80 text-sm'>
-                    don&apos;t worry we wont spam you
+                    don&apos;t worry we won&apos;t spam you
                   </span>
                 </p>
 
