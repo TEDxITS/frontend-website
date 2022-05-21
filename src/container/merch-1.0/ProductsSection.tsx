@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
 
-import { merchData } from '@/data/merch';
+import { merch_1_data } from '@/data/merch';
 
 import NextImage from '@/components/NextImage';
 
@@ -31,7 +31,7 @@ export default function MissionSection() {
       />
       <div className='layout flex z-10 flex-col justify-center items-center'>
         <div className='flex flex-wrap gap-24 justify-center items-center w-full'>
-          {merchData.map((item, i) => (
+          {merch_1_data.map((item, i) => (
             <ProductCard
               image={item.image}
               title={item.title}

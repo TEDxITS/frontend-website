@@ -3,22 +3,20 @@ import * as React from 'react';
 import Button from '@/components/buttons/Button';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
-import CarouselSection from '@/container/merch-2.0/CarouselSection';
-import CoverSection from '@/container/merch-2.0/CoverSection';
-import ProductsSection from '@/container/merch-2.0/ProductsSection';
+import CoverSection from '@/container/merch-1.0/CoverSection';
+import ProductsSection from '@/container/merch-1.0/ProductsSection';
 import MerchClosedModal from '@/container/modal/MerchClosedModal';
 
 export default function MerchPage() {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
+  const [isOpen, setIsOpen] = React.useState<boolean>(true);
   return (
     <Layout withDashboard={true} className='bg-cgray' isDark={true}>
-      <Seo templateTitle='Merch 2.0' />
+      <Seo templateTitle='Merch 1.0' />
 
       <MerchClosedModal isOpen={isOpen} setIsOpen={setIsOpen} />
       <section className='bg-cgray flex overflow-hidden relative z-10 flex-col'>
         <CoverSection />
         <ProductsSection />
-        <CarouselSection />
         <div className='flex flex-col justify-center items-center mb-16 text-center'>
           <div className='block fixed bottom-12 z-20 mx-auto mt-16 animate-bounce'>
             <Button

@@ -4,7 +4,7 @@ import Hamburger from 'hamburger-react';
 import { useRouter } from 'next/router';
 import * as React from 'react';
 import { IoTicket } from 'react-icons/io5';
-import { RiQuestionMark, RiTShirtFill } from 'react-icons/ri';
+import { RiQuestionMark, RiTShirtFill, RiTShirtLine } from 'react-icons/ri';
 
 import clsxm from '@/lib/clsxm';
 
@@ -43,10 +43,16 @@ export default function Sidebar({
         router.asPath === '/ticket' || router.asPath === '/dashboard/ticket',
     },
     {
-      name: 'Merch',
+      name: 'Merch 2.0',
       href: '/merch',
       icon: RiTShirtFill,
       current: router.asPath === '/merch',
+    },
+    {
+      name: 'Merch 1.0',
+      href: '/merch-1.0',
+      icon: RiTShirtLine,
+      current: router.asPath === '/merch-1.0',
     },
     {
       name: 'FAQ',
