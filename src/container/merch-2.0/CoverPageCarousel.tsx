@@ -18,7 +18,7 @@ const carouselData: CarouselDataType[] = [
     id: 0,
     image:
       'https://res.cloudinary.com/tedxits/image/upload/v1652954157/merch/cover/bucket-hat-inside.png',
-    title: 'BUCKET HAT',
+    title: 'REVERSIBLE BUCKET HAT',
     ref: 'bucket',
   },
   {

@@ -28,27 +28,27 @@ export default function ProductSection() {
     </div>
   );
 }
-
+type PhotoStateType = { photo: PhotoType; zoom_origin: string };
 function ProductCard({ data }: { data: MerchProductDataType }) {
   const [carouselState, setCarouselState] = React.useState<number>(0);
   const [modalOpen, setModalOpen] = React.useState<boolean>(false);
-  const [photoState, setPhotoState] = React.useState<PhotoType>();
+  const [photoState, setPhotoState] = React.useState<PhotoStateType>();
 
-  const openPhotoModal = (photo: PhotoType) => {
-    setPhotoState(photo);
+  const openPhotoModal = (photo: PhotoType, zoom_origin: string) => {
+    setPhotoState({ photo, zoom_origin });
     setModalOpen(true);
   };
   return (
-    <div className='grid md:grid-cols-5 md:gap-4' id={data.ref}>
-      {photoState?.url && (
+    <div className='grid md:grid-cols-2 md:gap-4 2xl:grid-cols-5' id={data.ref}>
+      {photoState?.photo.url && (
         <PhotoModal
           isOpen={modalOpen}
           setIsOpen={setModalOpen}
-          photo={photoState as PhotoType}
+          data={photoState as PhotoStateType}
         />
       )}
 
-      <div className='font-fivo flex flex-col md:col-span-2'>
+      <div className='font-fivo flex flex-col 2xl:col-span-2'>
         <h3 className='text-cdark text-4xl font-extrabold md:text-2xl'>
           {data.title}
         </h3>
@@ -92,12 +92,12 @@ function ProductCard({ data }: { data: MerchProductDataType }) {
           </div>
         )}
       </div>
-      <div className='flex flex-col gap-4 items-center md:col-span-3'>
+      <div className='flex flex-col gap-4 items-center 2xl:col-span-3'>
         <div className={clsxm('flex overflow-hidden relative flex-col w-full')}>
           {data.photo.map((photo, i) => (
             <NextImage
               useSkeleton
-              onClick={() => openPhotoModal(photo)}
+              onClick={() => openPhotoModal(photo, data.zoom_origin)}
               key={i}
               src={photo.url}
               alt='cover'
@@ -106,7 +106,7 @@ function ProductCard({ data }: { data: MerchProductDataType }) {
               layout='fill'
               className={clsxm(
                 'aspect-h-1 aspect-w-1 absolute w-full',
-                'bg-cdark drop-shadow-xl',
+                'bg-cdark drop-shadow-xl md:hover:brightness-90',
                 'transition-all duration-300 ease-in',
 
                 carouselState === i
@@ -140,10 +140,10 @@ function ProductCard({ data }: { data: MerchProductDataType }) {
 
 type PhotoModalProps = {
   isOpen: boolean;
-  photo: PhotoType;
+  data: PhotoStateType;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
-function PhotoModal({ isOpen, setIsOpen, photo }: PhotoModalProps) {
+function PhotoModal({ isOpen, setIsOpen, data }: PhotoModalProps) {
   const [zoom, setZoom] = React.useState<number>(120);
 
   function closeModal() {
@@ -169,10 +169,10 @@ function PhotoModal({ isOpen, setIsOpen, photo }: PhotoModalProps) {
     <Transition appear show={isOpen} as={React.Fragment}>
       <Dialog
         as='div'
-        className='bg-cdark/80 flex overflow-hidden fixed inset-0 z-10 flex-col'
+        className='bg-cdark/80 flex overflow-hidden fixed inset-0 z-50 flex-col'
         onClose={closeModal}
       >
-        <div className='z-20 px-4 min-h-screen text-center'>
+        <div className='min-h-main z-20 text-center'>
           <Transition.Child
             as={React.Fragment}
             enter='ease-out duration-300'
@@ -201,8 +201,8 @@ function PhotoModal({ isOpen, setIsOpen, photo }: PhotoModalProps) {
             leaveFrom='opacity-100 scale-100'
             leaveTo='opacity-0 scale-95'
           >
-            <div className='layout ring-clight inline-block overflow-hidden w-full align-middle rounded-3xl ring-1 transition-all transform'>
-              <main className='bg-cdark flex relative flex-col justify-center items-center'>
+            <div className='layout inline-block w-full align-middle transition-all transform'>
+              <main className='bg-cdark ring-clight flex overflow-hidden relative flex-col justify-center items-center rounded-3xl ring-1'>
                 <div className='text-cdark flex absolute top-8 right-8 bottom-8 z-10 flex-col justify-between'>
                   <HiX onClick={closeModal} size={35} className={buttonStyle} />
                   <div className='flex flex-col gap-4'>
@@ -219,16 +219,19 @@ function PhotoModal({ isOpen, setIsOpen, photo }: PhotoModalProps) {
                   </div>
                 </div>
                 <div
-                  className='ease flex justify-center w-full transition-all duration-150'
+                  className={clsxm(
+                    'ease flex justify-center w-full max-w-md transition-all duration-150',
+                    data.zoom_origin
+                  )}
                   style={{ transform: `scale(${zoom}%)` }}
                 >
                   <NextImage
                     useSkeleton
                     alt='Merch Image'
-                    width={photo.width}
-                    height={photo.height}
-                    src={photo.url}
-                    className={clsxm('w-full max-w-3xl')}
+                    width={data.photo.width}
+                    height={data.photo.height}
+                    src={data.photo.url}
+                    className={clsxm(' w-full')}
                   />
                 </div>
               </main>

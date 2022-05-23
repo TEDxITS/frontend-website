@@ -22,6 +22,7 @@ export type MerchProductDataType = {
   description?: string[];
   photo: PhotoType[];
   ref: string;
+  zoom_origin: string;
 };
 
 export type BundleProductDataType = {
@@ -154,6 +155,7 @@ export const merch_2_data: MerchProductDataType[] = [
         height: 1500,
       },
     ],
+    zoom_origin: 'origin-center',
   },
   {
     title: 'TUMBLR',
@@ -174,27 +176,29 @@ export const merch_2_data: MerchProductDataType[] = [
         height: 2000,
       },
     ],
+    zoom_origin: 'origin-center',
   },
   {
-    title: 'BUCKET HAT',
+    title: 'REVERSIBLE BUCKET HAT',
     ref: 'bucket',
     subtitle: '*Reversible',
     price: '55.000',
     description: ['Drill premium', 'All size diameter 58cm'],
     photo: [
       {
-        url: 'https://res.cloudinary.com/tedxits/image/upload/v1653133537/merch/bucket-hat/Reversible_Bucket_Hat_Inside_majwup.png',
+        url: 'https://res.cloudinary.com/tedxits/image/upload/v1653133534/merch/bucket-hat/Reversible_Bucket_Hat_Outside_rk7gkr.png',
         description: 'Outside View',
         width: 3264,
         height: 3348,
       },
       {
-        url: 'https://res.cloudinary.com/tedxits/image/upload/v1653133534/merch/bucket-hat/Reversible_Bucket_Hat_Outside_rk7gkr.png',
+        url: 'https://res.cloudinary.com/tedxits/image/upload/v1653133537/merch/bucket-hat/Reversible_Bucket_Hat_Inside_majwup.png',
         description: 'Inside View',
         width: 3264,
         height: 3348,
       },
     ],
+    zoom_origin: 'origin-center',
   },
   {
     title: 'STICKER PACK',
@@ -207,6 +211,7 @@ export const merch_2_data: MerchProductDataType[] = [
         height: 768,
       },
     ],
+    zoom_origin: 'origin-center',
   },
   {
     title: 'SAKO WALLET',
@@ -215,11 +220,12 @@ export const merch_2_data: MerchProductDataType[] = [
     price: '35.000',
     photo: [
       {
-        url: 'https://res.cloudinary.com/tedxits/image/upload/v1653133642/merch/lanyard/Lanyard_Sako_Waterproof_Wallet-01_xsftbm.png',
-        width: 960,
-        height: 615,
+        url: 'https://res.cloudinary.com/tedxits/image/upload/v1653276947/merch/lanyard/Lanyard_Sako_Waterproof_Wallet_vmtp4q.png',
+        width: 2500,
+        height: 1600,
       },
     ],
+    zoom_origin: 'origin-bottom-right',
   },
 ];
 
