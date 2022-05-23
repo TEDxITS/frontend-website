@@ -231,7 +231,7 @@ export const merch_2_data: MerchProductDataType[] = [
 
 export const merch_2_bundle_data: BundleProductDataType[] = [
   {
-    title: 'FIND YOUR LIGHT',
+    title: 'THE ANIMATED BUNDLE',
     subtitle: 'T-SHIRT + TUMBLER',
     price: '155RB',
     photo: {
@@ -241,8 +241,8 @@ export const merch_2_bundle_data: BundleProductDataType[] = [
     },
   },
   {
-    title: 'Breakthrough the darkness',
-    subtitle: 'BUCKET HAT + SAKO WALLET',
+    title: 'THE ILLUSTRATED BUNDLE',
+    subtitle: 'REVERSIBLE BUCKET HAT + SAKO WALLET',
     price: '85RB',
     photo: {
       url: 'https://res.cloudinary.com/tedxits/image/upload/v1653279356/merch/bundle/bundle-02_tibphw.png',
