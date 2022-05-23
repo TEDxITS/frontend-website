@@ -245,7 +245,7 @@ export const merch_2_bundle_data: BundleProductDataType[] = [
     subtitle: 'BUCKET HAT + SAKO WALLET',
     price: '85RB',
     photo: {
-      url: 'https://res.cloudinary.com/tedxits/image/upload/v1653155148/merch/bundle/bundle-02_f674ql.png',
+      url: 'https://res.cloudinary.com/tedxits/image/upload/v1653279356/merch/bundle/bundle-02_tibphw.png',
       width: 2000,
       height: 2000,
     },
