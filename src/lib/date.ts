@@ -68,10 +68,10 @@ export function toDate(date: string) {
 
 export function isTicketOpen() {
   const nowDate = utcToZonedTime(new Date(), 'Asia/Jakarta');
-  const openDate = new Date(2022, 4, 8, 15);
+  const openDate = new Date(2022, 4, 25, 12);
   if (isBefore(nowDate, openDate)) {
-    return true;
-  } else {
     return false;
+  } else {
+    return true;
   }
 }
