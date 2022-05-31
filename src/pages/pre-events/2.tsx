@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player';
 
 import clsxm from '@/lib/clsxm';
 
-import { EventType, getEventData, getThumbnailData } from '@/data/event';
+import { pre_event_2_data } from '@/data/event';
 
 import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
@@ -13,21 +13,6 @@ import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 
 export default function PreEventsPage() {
-  const [eventState, setEventState] =
-    React.useState<keyof typeof EventType>('pre-event-2');
-
-  const [animationTrigger, setAnimationTrigger] =
-    React.useState<boolean>(false);
-
-  const viewVideo = (type: keyof typeof EventType) => {
-    setAnimationTrigger(true);
-    setTimeout(() => {
-      setEventState(type);
-    }, 200);
-    setTimeout(() => {
-      setAnimationTrigger(false);
-    }, 500);
-  };
   return (
     <Layout>
       <Seo templateTitle='Pre-events' />
@@ -43,34 +28,29 @@ export default function PreEventsPage() {
               <div
                 className={clsxm(
                   ' min-h-[calc(100vh-64px-64px)] pr-0 md:pr-8 md:min-h-0 md:translate-y-0',
-                  'flex flex-col gap-y-10 justify-center w-full transition-all duration-200 md:w-2/3',
-                  animationTrigger ? 'opacity-0' : ' opacity-1'
+                  'flex flex-col gap-y-10 justify-center w-full transition-all duration-200 md:w-2/3'
                 )}
               >
                 <div className='max-w-[80%] flex gap-4 md:max-w-xs'>
                   <NextImage
                     width={287.63}
                     height={275.9}
-                    src={getEventData(eventState).logo}
+                    src={pre_event_2_data.logo}
                     alt={`Elephant logo`}
                     className='flex-shrink-0 w-16 drop-shadow-lg md:w-20'
                   />
                   <p className='text-sm text-justify'>
-                    {getEventData(eventState).logoText}
+                    {pre_event_2_data.logoText}
                   </p>
                 </div>
                 <div>
-                  <h2 className='font-fivo'>
-                    {getEventData(eventState).subTitle}
-                  </h2>
+                  <h2 className='font-fivo'>{pre_event_2_data.subTitle}</h2>
                   <h1 className='font-fivo mt-2 font-bold'>
-                    {getEventData(eventState).title}
+                    {pre_event_2_data.title}
                   </h1>
                 </div>
                 <ArrowDown className='w-16' />
-                <p className='text-lg'>
-                  {getEventData(eventState).description}
-                </p>
+                <p className='text-lg'>{pre_event_2_data.description}</p>
                 <UnstyledLink
                   href='#watch'
                   className='ease flex gap-4 items-center transition-all duration-200 origin-left cursor-pointer select-none hover:animate-flicker hover:scale-105'
@@ -79,61 +59,16 @@ export default function PreEventsPage() {
                   <h2 className='font-fivo'>Watch Now</h2>
                 </UnstyledLink>
               </div>
-              {/* Thumbnail */}
-              <div
-                className={clsxm(
-                  'ease flex flex-col gap-4 w-full transition-all duration-200 md:w-1/3 ',
-                  animationTrigger
-                    ? 'md:translate-x-1/2 opacity-0'
-                    : 'md:translate-x-0 opacity-1'
-                )}
-              >
-                <h2 className='font-fivo block mt-16 md:hidden'>
-                  Explore another pre-events
-                </h2>
-                {getThumbnailData(eventState).map(
-                  ({ type, thumbnail }, key) => (
-                    <UnstyledLink
-                      href='#explore'
-                      key={key}
-                      className='ease flex relative shadow-xl transition-all duration-200 origin-top hover:scale-105 hover:-translate-y-2'
-                      onClick={() => viewVideo(type)}
-                    >
-                      <NextImage
-                        width={328}
-                        height={189}
-                        src={thumbnail.backgroundImage}
-                        alt={`Elephant logo`}
-                        className='overflow-hidden w-full rounded-md'
-                        useSkeleton
-                      />
-                      <div className='flex absolute bottom-0 gap-4 items-end p-4 w-full'>
-                        <div className='user w-full select-none'>
-                          <p className='text-sm'>{thumbnail.subTitle}</p>
-                          <p className='mt-4 text-base font-bold leading-none'>
-                            {thumbnail.title}
-                          </p>
-                          <p className='mt-1 text-xs leading-none'>
-                            {thumbnail.description}
-                          </p>
-                        </div>
-                        <GoPlay size={'16%'} />
-                      </div>
-                    </UnstyledLink>
-                  )
-                )}
-              </div>
             </div>
           </div>
         </section>
         <div className='bg-gradient-red absolute inset-0 z-10 bg-no-repeat bg-cover drop-shadow-md'></div>
         <div
           className={clsxm(
-            `absolute bg-fixed inset-0 bg-cover bg-no-repeat bg-center transition-all duration-200 ease`,
-            animationTrigger ? 'opacity-0' : 'opacity-40'
+            `absolute bg-fixed inset-0 bg-cover opacity-40 bg-no-repeat bg-center transition-all duration-200 ease`
           )}
           style={{
-            backgroundImage: `url(${getEventData(eventState).backgroundImage})`,
+            backgroundImage: `url(${pre_event_2_data.backgroundImage})`,
           }}
         />
       </main>
@@ -144,26 +79,24 @@ export default function PreEventsPage() {
             <NextImage
               width={287.63}
               height={275.9}
-              src={getEventData(eventState).logo}
+              src={pre_event_2_data.logo}
               alt={`Elephant logo`}
               className='hidden flex-shrink-0 w-16 md:block md:w-20'
             />
             <div className='border-cdark pl-4 border-l'>
-              <p className='text-lg'>
-                {getEventData(eventState).thumbnail.subTitle}
-              </p>
+              <p className='text-lg'>{pre_event_2_data.thumbnail.subTitle}</p>
               <p className='mt-4 text-xl font-bold leading-none'>
-                {getEventData(eventState).thumbnail.title}
+                {pre_event_2_data.thumbnail.title}
               </p>
               <p className='mt-1 leading-none'>
-                {getEventData(eventState).thumbnail.description}
+                {pre_event_2_data.thumbnail.description}
               </p>
             </div>
           </div>
 
           <div className='aspect-h-9 aspect-w-16 bg-cdark overflow-hidden z-10 mt-8 rounded-2xl md:rounded-3xl'>
             <ReactPlayer
-              url={getEventData(eventState).video}
+              url={pre_event_2_data.video}
               width={'100%'}
               height={'100%'}
               controls={true}

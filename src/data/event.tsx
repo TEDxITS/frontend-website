@@ -3,6 +3,7 @@ export enum EventType {
   'pre-event-1-2',
   'pre-event-1-3',
   'pre-event-2',
+  'pre-event-3',
 }
 
 export type PreEventThumbnailVideoType = {
@@ -10,6 +11,15 @@ export type PreEventThumbnailVideoType = {
   title: React.ReactNode;
   subTitle: string;
   description: string;
+};
+
+export type PreEventCuratedDataType = {
+  logo: string;
+  logoText: string;
+  backgroundImage: string;
+  title: React.ReactNode;
+  subTitle: string;
+  url: string;
 };
 
 export type PreEventDataType = {
@@ -24,22 +34,42 @@ export type PreEventDataType = {
   thumbnail: PreEventThumbnailVideoType;
 };
 
-export const getEventData = (type: keyof typeof EventType) => {
-  return preEventData.filter((data) => data.type === (type as string))[0];
+// Pre-event
+export const get_pre_event_thumbnail_data = () => {
+  return [...pre_event_1_data, pre_event_2_data].map(
+    ({ thumbnail }) => thumbnail
+  );
 };
 
-export const getThumbnailData = (type: keyof typeof EventType) => {
-  return preEventData.filter((data) => data.type !== (type as string));
-};
+export const pre_event_cover_data: string[] = [
+  'https://res.cloudinary.com/tedxits/image/upload/v1650714433/event/pre-event-04_rcg8eu.jpg',
+  'https://res.cloudinary.com/tedxits/image/upload/v1650714432/event/pre-event-01_l4sp87.jpg',
+  'https://res.cloudinary.com/tedxits/image/upload/v1650714432/event/pre-event-02_akpyxh.jpg',
+  'https://res.cloudinary.com/tedxits/image/upload/v1650714434/event/pre-event-03_lczkkm.jpg',
+];
 
-//TODO change youtube video link for pre-event-2
-export const preEventData: PreEventDataType[] = [
+export const pre_event_curated_data: PreEventCuratedDataType[] = [
   {
-    type: 'pre-event-2',
+    logo: '/svg/elephant-black.svg',
+    logoText:
+      'Breaking the unseen wall of prohibition to speak the final taboo.',
+    backgroundImage:
+      'https://res.cloudinary.com/tedxits/image/upload/v1650714432/event/pre-event-01_l4sp87.jpg',
+    title: (
+      <>
+        Social <span className='font-pilow'>E</span>xperiment :
+        <br />
+        Blind Conversation
+      </>
+    ),
+    subTitle: 'Pre-Event 1',
+    url: '/pre-events/1',
+  },
+  {
+    logo: '/svg/elephant-red.svg',
+    logoText: 'Fending the tasteful lie to see the great importance.',
     backgroundImage:
       'https://res.cloudinary.com/tedxits/image/upload/v1650714433/event/pre-event-04_rcg8eu.jpg',
-    logo: '/svg/elephant-red-outline.svg',
-    logoText: 'Fending the tasteful lie to see the great importance.',
     title: (
       <>
         TH<span className='font-pilow'>E</span> ACCEPT
@@ -48,18 +78,37 @@ export const preEventData: PreEventDataType[] = [
       </>
     ),
     subTitle: 'Pre-Event 2',
-    description:
-      'The easy access to clean water conceals the huge struggle of the process. Now, let’s take a look at the dark side of water treatment and the biggest floodgate in Surabaya, Pintu Air Jagir.',
-
-    video: 'https://www.youtube.com/embed/KbMNCfR04Ak',
-    thumbnail: {
-      title: 'Deadly Water:',
-      subTitle: 'Pre-Event 2',
-      description: 'The Acceptable Poison',
-      backgroundImage:
-        'https://res.cloudinary.com/tedxits/image/upload/v1650786606/event/thumbnail-small-2_ye3igi.jpg',
-    },
+    url: '/pre-events/2',
   },
+  {
+    logo: '/svg/elephant-white.svg',
+    logoText: 'Fending the tasteful lie to see the great importance.',
+    backgroundImage:
+      'https://res.cloudinary.com/tedxits/image/upload/v1650714433/event/pre-event-04_rcg8eu.jpg',
+    title: (
+      <>
+        TH<span className='font-pilow'>E</span> ACCEPT
+        <span className='font-pilow'>A</span>BLE <br />
+        POISO<span className='font-pilow'>N</span>.
+      </>
+    ),
+    subTitle: 'Pre-Event 2',
+    url: '/pre-events/2',
+  },
+];
+
+// Pre-event 1
+export const get_active_pre_event_1_data = (type: keyof typeof EventType) => {
+  return pre_event_1_data.filter((data) => data.type === (type as string))[0];
+};
+
+export const get_pre_event_1_thumbnail_data = (
+  type: keyof typeof EventType
+) => {
+  return pre_event_1_data.filter((data) => data.type !== (type as string));
+};
+
+export const pre_event_1_data: PreEventDataType[] = [
   {
     type: 'pre-event-1-1',
     backgroundImage:
@@ -139,35 +188,30 @@ export const preEventData: PreEventDataType[] = [
   },
 ];
 
-export type FaqDataType = {
-  question: string;
-  answer: string;
+// Pre-event 2
+export const pre_event_2_data: PreEventDataType = {
+  type: 'pre-event-2',
+  backgroundImage:
+    'https://res.cloudinary.com/tedxits/image/upload/v1650714433/event/pre-event-04_rcg8eu.jpg',
+  logo: '/svg/elephant-red-outline.svg',
+  logoText: 'Fending the tasteful lie to see the great importance.',
+  title: (
+    <>
+      TH<span className='font-pilow'>E</span> ACCEPT
+      <span className='font-pilow'>A</span>BLE <br />
+      POISO<span className='font-pilow'>N</span>.
+    </>
+  ),
+  subTitle: 'Pre-Event 2',
+  description:
+    'The easy access to clean water conceals the huge struggle of the process. Now, let’s take a look at the dark side of water treatment and the biggest floodgate in Surabaya, Pintu Air Jagir.',
+
+  video: 'https://www.youtube.com/embed/KbMNCfR04Ak',
+  thumbnail: {
+    title: 'Deadly Water:',
+    subTitle: 'Pre-Event 2',
+    description: 'The Acceptable Poison',
+    backgroundImage:
+      'https://res.cloudinary.com/tedxits/image/upload/v1650786606/event/thumbnail-small-2_ye3igi.jpg',
+  },
 };
-export const FaqData: FaqDataType[] = [
-  {
-    question: 'When and where will the main event be held?',
-    answer:
-      "Our main event will be held on 19th June 2022 at Auditorium Research Center ITS after all finals are finished. You'll be sure to get new and refreshing experience on-site",
-  },
-  {
-    question: 'How do we send our payment receipt?',
-    answer:
-      'You can confirm your payment send the receipt to our ticketing official account (Line ID : @193pbtpg).',
-  },
-  {
-    question: 'Can I cancel my ticket purchase and get a refund?',
-    answer:
-      'All types of TEDxITS 2022 tickets can not be canceled and are non-refundable after the payment.',
-  },
-  {
-    question: 'How do I receive my ticket(s)?',
-    answer:
-      'We provide two shipping options; you can pick the ticket(s) at ITS campus or choose the delivery option. If you want it the to be delivered, please write down your address as detailed as possible. Also, the shipping fee will be added to the total price. We will inform you later about ticket(s) pick-up and shipping schedules. ',
-  },
-  {
-    question:
-      'What should I do on D-day if my ticket(s) were lost, stolen, or destroyed?',
-    answer:
-      'If something happened to your ticket(s), you are still able to come to the event on the D-day by showing us the unique code that you got when processing ticket purchases. We recommend you to keep your ticket(s) intact until the event is over.',
-  },
-];
