@@ -18,14 +18,14 @@ export default function HomePage() {
     <Layout>
       <Seo />
       <main className='bg-cgray flex flex-col'>
-        <section className='bg-blob-1 bg-cdark text-clight relative z-20 pt-8 h-full bg-bottom bg-no-repeat bg-cover md:pt-16'>
+        <section className='bg-blob-1 bg-bottom bg-cdark bg-cover bg-no-repeat h-full pt-8 relative text-clight z-20 md:pt-16'>
           <div
-            className='absolute inset-0 bg-center bg-cover opacity-20'
+            className='absolute bg-center bg-cover inset-0 opacity-20'
             style={{
               backgroundImage: `url(${pre_event_3_data.backgroundImage})`,
             }}
           ></div>
-          <div className='to-cdark absolute inset-0 z-10 bg-cover bg-gradient-to-b from-transparent'></div>
+          <div className='absolute bg-cover bg-gradient-to-b from-transparent inset-0 to-cdark z-10'></div>
           <Header />
           <CoverSection />
           <NextImage
@@ -34,13 +34,13 @@ export default function HomePage() {
             width={1276}
             height={178}
             alt='bottom'
-            className='translate-y-[98%] absolute bottom-0 w-full drop-shadow-md'
+            className='absolute bottom-0 drop-shadow-md translate-y-[98%] w-full'
           />
         </section>
-        <section className={clsxm('flex relative z-10 flex-col')}>
+        <section className={clsxm('flex flex-col relative z-10')}>
           <MissionSection />
         </section>
-        <section className='bg-blob-green flex overflow-hidden relative flex-col justify-center items-center pt-80 pb-32 bg-bottom bg-no-repeat bg-cover'>
+        <section className='bg-blob-green bg-bottom bg-cover bg-no-repeat flex flex-col items-center justify-center overflow-hidden pb-32 pt-80 relative'>
           <RegisterSection />
         </section>
       </main>

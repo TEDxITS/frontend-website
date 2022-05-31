@@ -11,9 +11,9 @@ import HomePageCarousel from './HomePageCarousel';
 export default function CoverSection() {
   return (
     <div className='overflow-hidden relative z-20'>
-      <div className='grid-cols layout min-h-[calc(100vh-64px-32px)] grid relative lg:min-h-[calc(100vh-64px-64px)] lg:grid-cols-2'>
-        <DynamicCarousel className='min-h-[30vh] block h-full lg:hidden' />
-        <div className='flex flex-col gap-4 items-center mt-8 text-center lg:justify-center lg:items-start lg:mt-0 lg:text-left'>
+      <div className='grid grid-cols layout min-h-[calc(100vh-64px-32px)] relative lg:grid-cols-2 lg:min-h-[calc(100vh-64px-64px)]'>
+        <DynamicCarousel className='block h-full min-h-[30vh] lg:hidden' />
+        <div className='flex flex-col gap-4 items-center mt-8 text-center lg:items-start lg:justify-center lg:mt-0 lg:text-left'>
           {/* <h1>
             TEDxITS is on!
             <br />
@@ -28,7 +28,7 @@ export default function CoverSection() {
 
           <div className='flex flex-col md:gap-4'>
             <h2 className='font-fivo'>{pre_event_3_data.subTitle}</h2>
-            <h1 className='font-fivo mt-2 font-bold'>
+            <h1 className='font-bold font-fivo mt-2'>
               {pre_event_3_data.title}
             </h1>
             <p className='text-lg'>
@@ -52,16 +52,16 @@ export default function CoverSection() {
           <HomePageCarousel />
         </div>
         {/* Absolute item */}
-        <small className='font-fivo absolute bottom-0 left-0 text-sm'>
+        <small className='absolute bottom-0 font-fivo left-0 text-sm'>
           <span className='font-black'>TED</span>
           <span className='font-extrabold'>x</span>
           <span className='font-bold'>ITS</span>
         </small>
-        <small className='font-fivo absolute right-0 bottom-0 text-sm font-normal'>
+        <small className='absolute bottom-0 font-fivo font-normal right-0 text-sm'>
           © 2022
         </small>
         <ArrowDownButton
-          className='absolute bottom-0 left-1/2 -translate-x-1/2'
+          className='-translate-x-1/2 absolute bottom-0 left-1/2'
           href={'#about'}
         />
       </div>
