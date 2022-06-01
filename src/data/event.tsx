@@ -36,12 +36,13 @@ export type PreEventDataType = {
 
 // Pre-event
 export const get_pre_event_thumbnail_data = () => {
-  return [...pre_event_1_data, pre_event_2_data].map(
+  return [pre_event_3_data, pre_event_2_data, ...pre_event_1_data].map(
     ({ thumbnail }) => thumbnail
   );
 };
 
 export const pre_event_cover_data: string[] = [
+  'https://res.cloudinary.com/tedxits/image/upload/v1654054451/event/pre-event-05_sg9fkm.jpg',
   'https://res.cloudinary.com/tedxits/image/upload/v1650714433/event/pre-event-04_rcg8eu.jpg',
   'https://res.cloudinary.com/tedxits/image/upload/v1650714432/event/pre-event-01_l4sp87.jpg',
   'https://res.cloudinary.com/tedxits/image/upload/v1650714432/event/pre-event-02_akpyxh.jpg',
@@ -82,18 +83,18 @@ export const pre_event_curated_data: PreEventCuratedDataType[] = [
   },
   {
     logo: '/svg/elephant-white.svg',
-    logoText: 'Fending the tasteful lie to see the great importance.',
+    logoText: 'Unravelling the serenity to listen to the unheard voices.',
     backgroundImage:
-      'https://res.cloudinary.com/tedxits/image/upload/v1650714433/event/pre-event-04_rcg8eu.jpg',
+      'https://res.cloudinary.com/tedxits/image/upload/v1654054451/event/pre-event-05_sg9fkm.jpg',
     title: (
-      <>
-        TH<span className='font-pilow'>E</span> ACCEPT
-        <span className='font-pilow'>A</span>BLE <br />
-        POISO<span className='font-pilow'>N</span>.
-      </>
+      <span>
+        TED<span className='font-light'>x</span>ITS
+        <br />T<span className='font-pilow'>A</span>KE O
+        <span className='font-pilow'>V</span>ER.
+      </span>
     ),
-    subTitle: 'Pre-Event 2',
-    url: '/pre-events/2',
+    subTitle: 'Pre-Event 3',
+    url: '/pre-events/3',
   },
 ];
 
@@ -213,5 +214,32 @@ export const pre_event_2_data: PreEventDataType = {
     description: 'The Acceptable Poison',
     backgroundImage:
       'https://res.cloudinary.com/tedxits/image/upload/v1650786606/event/thumbnail-small-2_ye3igi.jpg',
+  },
+};
+
+// Pre-event 3
+export const pre_event_3_data: PreEventDataType = {
+  type: 'pre-event-3',
+  backgroundImage:
+    'https://res.cloudinary.com/tedxits/image/upload/v1654054451/event/pre-event-05_sg9fkm.jpg',
+  logo: '/svg/elephant-white.svg',
+  logoText: 'Unravelling the serenity to listen to the unheard voices.',
+  title: (
+    <span>
+      TED<span className='font-light'>x</span>ITS
+      <br />T<span className='font-pilow'>A</span>KE O
+      <span className='font-pilow'>V</span>ER.
+    </span>
+  ),
+  subTitle: 'Pre-Event 3',
+  description:
+    'The terrifying backspace that hides undelivered messages is crashed. TEDxITS takes over 4 cafes in 3 days to spark conversation in respect of friendship and relationship.',
+  video: '',
+  thumbnail: {
+    title: 'TEDxITS Take Over',
+    subTitle: 'Pre-Event 3',
+    description: 'TEDxITS takes over 4 cafes in 3 days',
+    backgroundImage:
+      'https://res.cloudinary.com/tedxits/image/upload/v1654054794/event/thumbnail-small-3_u9cecq.jpg',
   },
 };
