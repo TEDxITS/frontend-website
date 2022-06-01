@@ -20,32 +20,32 @@ export default function PreEventsPage() {
       <main className={clsxm(` relative flex flex-col`)}>
         <section
           id='explore'
-          className='flex relative z-20 flex-col gap-8 pt-8 md:pt-16'
+          className='flex flex-col gap-8 pt-8 relative z-20 md:pt-16'
         >
           <Header />
           <div className='grid overflow-hidden'>
-            <div className='layout min-h-[calc(100vh-64px-64px)] flex flex-wrap gap-y-8 items-center pb-16 md:min-h-[calc(100vh-64px-96px)]'>
+            <div className='flex flex-wrap gap-y-8 items-center layout min-h-[calc(100vh-64px-64px)] pb-16 md:min-h-[calc(100vh-64px-96px)]'>
               <div
                 className={clsxm(
-                  ' min-h-[calc(100vh-64px-64px)] pr-0 md:pr-8 md:min-h-0 md:translate-y-0',
-                  'flex flex-col gap-y-10 justify-center w-full transition-all duration-200 md:w-2/3'
+                  ' min-h-[calc(100vh-64px-64px)] pr-0 md:min-h-0 md:pr-8 md:translate-y-0',
+                  'duration-200 flex flex-col gap-y-10 justify-center transition-all w-full md:w-2/3'
                 )}
               >
-                <div className='max-w-[80%] flex gap-4 md:max-w-xs'>
+                <div className='flex gap-4 max-w-[80%] md:max-w-xs'>
                   <NextImage
                     width={287.63}
                     height={275.9}
                     src={pre_event_3_data.logo}
                     alt={`Elephant logo`}
-                    className='flex-shrink-0 w-16 drop-shadow-lg md:w-20'
+                    className='drop-shadow-lg flex-shrink-0 w-16 md:w-20'
                   />
-                  <p className='text-sm text-justify'>
+                  <p className='text-justify text-sm'>
                     {pre_event_3_data.logoText}
                   </p>
                 </div>
                 <div>
                   <h2 className='font-fivo'>{pre_event_3_data.subTitle}</h2>
-                  <h1 className='font-fivo mt-2 font-bold'>
+                  <h1 className='font-bold font-fivo mt-2'>
                     {pre_event_3_data.title}
                   </h1>
                 </div>
@@ -53,7 +53,7 @@ export default function PreEventsPage() {
                 <p className='text-lg'>{pre_event_3_data.description}</p>
                 <UnstyledLink
                   href='#watch'
-                  className='ease flex gap-4 items-center transition-all duration-200 origin-left cursor-pointer select-none hover:animate-flicker hover:scale-105'
+                  className='cursor-pointer duration-200 ease flex gap-4 items-center origin-left select-none transition-all hover:animate-flicker hover:scale-105'
                 >
                   <GoPlay size={40} />
                   <h2 className='font-fivo'>See Documentation</h2>
@@ -62,7 +62,7 @@ export default function PreEventsPage() {
             </div>
           </div>
         </section>
-        <div className='bg-gradient-red absolute inset-0 z-10 bg-no-repeat bg-cover drop-shadow-md'></div>
+        <div className='absolute bg-cover bg-gradient-red bg-no-repeat drop-shadow-md inset-0 z-10'></div>
         <div
           className={clsxm(
             `absolute bg-fixed inset-0 bg-cover opacity-40 bg-no-repeat bg-center transition-all duration-200 ease`
@@ -74,9 +74,9 @@ export default function PreEventsPage() {
       </main>
 
       {/* carousel image */}
-      <main className='bg-cdark flex relative justify-center py-20 min-h-screen'>
+      <main className='bg-cdark flex justify-center min-h-screen py-20 relative'>
         <div
-          className='layout flex z-10 flex-col gap-16 justify-between'
+          className='flex flex-col gap-16 justify-between layout z-10'
           id='watch'
         >
           <div className='flex gap-4'>
@@ -85,31 +85,31 @@ export default function PreEventsPage() {
               height={275.9}
               src={pre_event_3_data.logo}
               alt={`Elephant logo`}
-              className='hidden flex-shrink-0 w-16 md:block md:w-20'
+              className='flex-shrink-0 hidden w-16 md:block md:w-20'
             />
-            <div className='border-clight pl-4 border-l'>
+            <div className='border-clight border-l pl-4'>
               <p className='text-lg'>{pre_event_3_data.thumbnail.subTitle}</p>
-              <p className='mt-4 text-xl font-bold leading-none'>
+              <p className='font-bold leading-none mt-4 text-xl'>
                 {pre_event_3_data.thumbnail.title}
               </p>
-              <p className='mt-1 leading-none'>
+              <p className='leading-none mt-1'>
                 {pre_event_3_data.thumbnail.description}
               </p>
             </div>
           </div>
           {/* carousel */}
           <CarouselSection />
-          <div className='flex justify-between items-center w-full'>
+          <div className='flex items-center justify-between w-full'>
             <small className='font-fivo text-sm'>
               <span className='font-extrabold'>TED</span>
               <span className='font-bold'>x</span>
               <span>ITS</span>
             </small>
-            <small className='font-fivo text-sm font-normal'>© 2022</small>
+            <small className='font-fivo font-normal text-sm'>© 2022</small>
           </div>
         </div>
         <div
-          className='absolute inset-0 bg-center bg-no-repeat bg-cover opacity-40 pointer-events-none'
+          className='absolute bg-center bg-cover bg-no-repeat inset-0 opacity-40 pointer-events-none'
           style={{
             backgroundImage: `url(${pre_event_3_data.textureImage})`,
           }}
@@ -158,12 +158,12 @@ function CarouselSection() {
 
   return (
     <div className='flex flex-col gap-10 w-full'>
-      <div className='hidden-scrollbar snap-x flex overflow-x-scroll gap-1 items-center w-full'>
+      <div className='flex gap-1 hidden-scrollbar items-center overflow-x-scroll snap-x w-full'>
         {pre_event_3_images.map((image, i) => (
           <div
             onClick={() => selectImage(i)}
             className={clsxm(
-              '  snap-center relative w-full',
+              '  relative snap-center w-full',
               i === active
                 ? 'z-10  min-w-[calc((100%/2)+2rem)] lg:min-w-[calc((100%/4)+4rem)] '
                 : 'min-w-[calc((100%/2)-1rem)] lg:min-w-[calc((100%/4)-1rem)] '
@@ -175,7 +175,7 @@ function CarouselSection() {
               alt=''
               src={image}
               className={clsxm(
-                'ease transition-all duration-200',
+                'duration-200 ease transition-all',
                 i === active
                   ? 'aspect-w-1 aspect-h-1'
                   : 'aspect-h-12 aspect-w-16 '
@@ -189,23 +189,23 @@ function CarouselSection() {
         <div
           id={`carousel-${IMAGE_TOTAL}`}
           className={clsxm(
-            'snap-center relative w-full ',
+            'relative snap-center w-full ',
             'min-w-[calc((100%/2)+2rem)] z-10 lg:min-w-[calc((100%/4)+4rem)] '
           )}
         >
           <div
             className={clsxm(
-              'overflow-hidden relative transition-all duration-500 ease-in',
+              'duration-500 ease-in overflow-hidden relative transition-all',
               'aspect-h-1 aspect-w-1 ',
               active === IMAGE_TOTAL - 1 ? 'opacity-100' : 'opacity-0'
             )}
           >
-            <div className='flex z-10 flex-col justify-between p-8 w-full h-full'>
+            <div className='flex flex-col h-full justify-between p-8 w-full z-10'>
               <div className='flex flex-col gap-4 w-full'>
                 <hr
                   className={clsxm(
                     'delay-150',
-                    'relative transition-all duration-500 ease-in origin-left rotate-90',
+                    'duration-500 ease-in origin-left relative rotate-90 transition-all',
 
                     active === IMAGE_TOTAL - 1 ? 'w-full' : 'w-0'
                   )}
@@ -215,11 +215,11 @@ function CarouselSection() {
           </div>
         </div>
       </div>
-      <div className='flex relative flex-col gap-4 w-full md:flex-row md:gap-8'>
+      <div className='flex flex-col gap-4 relative w-full md:flex-row md:gap-8'>
         {/* Track */}
         <div className='bg-clight h-[2px] relative w-full'>
           <div
-            className='bg-cred h-[2px] absolute left-0 transition-all duration-200 ease-in'
+            className='absolute bg-cred duration-200 ease-in h-[2px] left-0 transition-all'
             style={{
               width: `${Math.floor((active * 100) / (IMAGE_TOTAL - 1))}%`,
             }}
@@ -231,7 +231,7 @@ function CarouselSection() {
               <button key={i} onClick={() => selectImage(i)}>
                 <p
                   className={clsxm(
-                    'ease transition-all duration-200',
+                    'duration-200 ease transition-all',
                     i === active ? 'text-cred scale-150 font-bold' : ''
                   )}
                 >
