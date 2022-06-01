@@ -218,7 +218,7 @@ export const pre_event_2_data: PreEventDataType = {
 };
 
 // Pre-event 3
-export const pre_event_3_data: PreEventDataType = {
+export const pre_event_3_data: PreEventDataType & { textureImage: string } = {
   type: 'pre-event-3',
   backgroundImage:
     'https://res.cloudinary.com/tedxits/image/upload/v1654054451/event/pre-event-05_sg9fkm.jpg',
@@ -235,6 +235,8 @@ export const pre_event_3_data: PreEventDataType = {
   description:
     'The terrifying backspace that hides undelivered messages is crashed. TEDxITS takes over 4 cafes in 3 days to spark conversation in respect of friendship and relationship.',
   video: '',
+  textureImage:
+    'https://res.cloudinary.com/tedxits/image/upload/v1654093793/event/pre-event-3-bg_e2hxim.jpg',
   thumbnail: {
     title: 'TEDxITS Take Over',
     subTitle: 'Pre-Event 3',
@@ -243,3 +245,21 @@ export const pre_event_3_data: PreEventDataType = {
       'https://res.cloudinary.com/tedxits/image/upload/v1654054794/event/thumbnail-small-3_u9cecq.jpg',
   },
 };
+
+export const pre_event_3_images: string[] = [
+  'https://res.cloudinary.com/tedxits/image/upload/v1654053864/event/pre-event-3/IMG_01_mjpemw.jpg',
+  'https://res.cloudinary.com/tedxits/image/upload/v1654053865/event/pre-event-3/IMG_02_dma0wi.jpg',
+  'https://res.cloudinary.com/tedxits/image/upload/v1654053865/event/pre-event-3/IMG_03_pl5uwe.jpg',
+  'https://res.cloudinary.com/tedxits/image/upload/v1654053867/event/pre-event-3/IMG_04_tmkvch.jpg',
+  'https://res.cloudinary.com/tedxits/image/upload/v1654053867/event/pre-event-3/IMG_05_r8xzoo.jpg',
+  'https://res.cloudinary.com/tedxits/image/upload/v1654053865/event/pre-event-3/IMG_06_slqwyc.jpg',
+  'https://res.cloudinary.com/tedxits/image/upload/v1654053866/event/pre-event-3/IMG_07_iqzyrm.jpg',
+  'https://res.cloudinary.com/tedxits/image/upload/v1654053866/event/pre-event-3/IMG_08_vdyklm.jpg',
+  'https://res.cloudinary.com/tedxits/image/upload/v1654053867/event/pre-event-3/IMG_09_ajgn7o.jpg',
+  'https://res.cloudinary.com/tedxits/image/upload/v1654053864/event/pre-event-3/IMG_10_xyaucv.jpg',
+  'https://res.cloudinary.com/tedxits/image/upload/v1654053863/event/pre-event-3/IMG_11_hxuczl.jpg',
+  'https://res.cloudinary.com/tedxits/image/upload/v1654053864/event/pre-event-3/IMG_12_mjzypg.jpg',
+  'https://res.cloudinary.com/tedxits/image/upload/v1654053864/event/pre-event-3/IMG_13_aaflc1.jpg',
+  'https://res.cloudinary.com/tedxits/image/upload/v1654053864/event/pre-event-3/IMG_14_clbn4p.jpg',
+  'https://res.cloudinary.com/tedxits/image/upload/v1654053864/event/pre-event-3/IMG_15_fkepzt.jpg',
+];
