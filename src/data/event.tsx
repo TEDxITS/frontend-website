@@ -11,6 +11,7 @@ export type PreEventThumbnailVideoType = {
   title: React.ReactNode;
   subTitle: string;
   description: string;
+  url: string;
 };
 
 export type PreEventCuratedDataType = {
@@ -99,6 +100,11 @@ export const pre_event_curated_data: PreEventCuratedDataType[] = [
 ];
 
 // Pre-event 1
+export const pre_event_1_part: (keyof typeof EventType)[] = [
+  'pre-event-1-1',
+  'pre-event-1-2',
+  'pre-event-1-3',
+];
 export const get_active_pre_event_1_data = (type: keyof typeof EventType) => {
   return pre_event_1_data.filter((data) => data.type === (type as string))[0];
 };
@@ -134,6 +140,7 @@ export const pre_event_1_data: PreEventDataType[] = [
       description: 'To Voice, Recover, and Rescue',
       backgroundImage:
         'https://res.cloudinary.com/tedxits/image/upload/v1650786604/event/thumbnail-small-1-1_psjeoe.jpg',
+      url: '/pre-events/1?part=1',
     },
   },
   {
@@ -159,6 +166,7 @@ export const pre_event_1_data: PreEventDataType[] = [
       description: 'Searching for The Power of Legal',
       backgroundImage:
         'https://res.cloudinary.com/tedxits/image/upload/v1650786605/event/thumbnail-small-1-2_ea68kd.jpg',
+      url: '/pre-events/1?part=2',
     },
   },
   {
@@ -185,6 +193,7 @@ export const pre_event_1_data: PreEventDataType[] = [
       description: 'The Beauty Label in @cantik/ganteng.campus',
       backgroundImage:
         'https://res.cloudinary.com/tedxits/image/upload/v1650786605/event/thumbnail-small-1-3_p1dqbn.jpg',
+      url: '/pre-events/1?part=3',
     },
   },
 ];
@@ -214,6 +223,7 @@ export const pre_event_2_data: PreEventDataType = {
     description: 'The Acceptable Poison',
     backgroundImage:
       'https://res.cloudinary.com/tedxits/image/upload/v1650786606/event/thumbnail-small-2_ye3igi.jpg',
+    url: '/pre-events/2',
   },
 };
 
@@ -243,6 +253,7 @@ export const pre_event_3_data: PreEventDataType & { textureImage: string } = {
     description: 'TEDxITS takes over 4 cafes in 3 days',
     backgroundImage:
       'https://res.cloudinary.com/tedxits/image/upload/v1654054794/event/thumbnail-small-3_u9cecq.jpg',
+    url: '/pre-events/3',
   },
 };
 

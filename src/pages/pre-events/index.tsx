@@ -84,12 +84,12 @@ export default function IndexPage() {
         className='bg-clight bg-paper relative pt-16 pb-16 bg-no-repeat bg-cover md:pt-32'
         id='explore'
       >
-        <div className='layout flex flex-col gap-16 items-start pt-32 md:flex-row'>
-          <div className='text-cdark flex top-32 flex-col gap-8 md:sticky md:w-1/3'>
-            <h1 className='font-fivo text-cdark block font-bold md:hidden'>
+        <div className='layout flex flex-col gap-16 items-start pt-32 lg:flex-row'>
+          <div className='text-cdark flex top-32 flex-col gap-8 lg:sticky lg:w-1/3'>
+            <h1 className='font-fivo text-cdark block font-bold lg:hidden'>
               Our Curated List of Pre-events
             </h1>
-            <h2 className='font-fivo text-cdark hidden font-bold md:block'>
+            <h2 className='font-fivo text-cdark hidden font-bold lg:block'>
               Our Curated List of Pre-events
             </h2>
             <p className='leading-tight text-justify'>
@@ -138,7 +138,7 @@ function PopularSection() {
     <section className='flex relative z-30 flex-col gap-2 -mb-32'>
       <div className='layout stickt flex relative left-0 z-20 gap-8 justify-between pt-8 md:pt-16'>
         <h2 className='font-fivo font-bold'>Popular</h2>
-        <div className='hidden gap-4 md:block'>
+        <div className='hidden gap-4 lg:block'>
           <button onClick={scrollLeft}>
             <AiOutlineArrowLeft
               className={clsxm('text-clight hover:text-clight/70')}
@@ -154,15 +154,15 @@ function PopularSection() {
         </div>
       </div>
       <div
-        className='hidden-scrollbar overflow-x-scroll mt-2 md:mt-6'
+        className='hidden-scrollbar snap-x overflow-x-scroll mt-2 md:snap-none md:mt-6'
         ref={popularRef as React.MutableRefObject<HTMLDivElement>}
       >
         <div className='layout flex relative gap-8'>
           {get_pre_event_thumbnail_data().map((thumbnail, i) => (
             <UnstyledLink
-              href='#explore'
+              href={thumbnail.url}
               key={i}
-              className='ease min-w-[80vw] flex relative w-full shadow-xl transition-all duration-200 origin-top md:min-w-[50vw] lg:min-w-[25vw] hover:brightness-50'
+              className='ease min-w-[calc(100%-1rem)] snap-center flex relative w-full shadow-xl transition-all duration-200 origin-top md:min-w-[calc((100%/2))] lg:min-w-[calc((100%/4))] hover:brightness-50'
             >
               <NextImage
                 width={328}
@@ -186,6 +186,7 @@ function PopularSection() {
               </div>
             </UnstyledLink>
           ))}
+          <div className='min-w-[calc(100%-1rem)] snap-center w-full opacity-0 pointer-events-none md:min-w-[calc(100%/2)] lg:min-w-[calc((100%/4))]'></div>
         </div>
       </div>
     </section>

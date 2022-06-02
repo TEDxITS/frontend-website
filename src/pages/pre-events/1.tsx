@@ -1,13 +1,16 @@
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import * as React from 'react';
 import { GoPlay } from 'react-icons/go';
 import ReactPlayer from 'react-player';
 
+import { setApiContext } from '@/lib/axios';
 import clsxm from '@/lib/clsxm';
 
 import {
   EventType,
   get_active_pre_event_1_data,
   get_pre_event_1_thumbnail_data,
+  pre_event_1_part,
 } from '@/data/event';
 
 import Header from '@/components/layout/Header';
@@ -16,9 +19,12 @@ import UnstyledLink from '@/components/links/UnstyledLink';
 import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 
-export default function PreEventsPage() {
-  const [eventState, setEventState] =
-    React.useState<keyof typeof EventType>('pre-event-1-1');
+export default function PreEventsPage({
+  data,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const [eventState, setEventState] = React.useState<keyof typeof EventType>(
+    pre_event_1_part[parseInt(data as unknown as string)]
+  );
 
   const [animationTrigger, setAnimationTrigger] =
     React.useState<boolean>(false);
@@ -32,6 +38,7 @@ export default function PreEventsPage() {
       setAnimationTrigger(false);
     }, 500);
   };
+
   return (
     <Layout>
       <Seo templateTitle='Pre-events' />
@@ -42,6 +49,7 @@ export default function PreEventsPage() {
           className='flex relative z-20 flex-col gap-8 pt-8 md:pt-16'
         >
           <Header />
+
           <div className='grid overflow-hidden'>
             <div className='layout min-h-[calc(100vh-64px-64px)] flex flex-wrap gap-y-8 items-center pb-16 md:min-h-[calc(100vh-64px-96px)]'>
               <div
@@ -98,7 +106,7 @@ export default function PreEventsPage() {
                 {get_pre_event_1_thumbnail_data(eventState).map(
                   ({ type, thumbnail }, key) => (
                     <UnstyledLink
-                      href='#explore'
+                      href={thumbnail.url}
                       key={key}
                       className='ease flex relative shadow-xl transition-all duration-200 origin-top hover:scale-105 hover:-translate-y-2'
                       onClick={() => viewVideo(type)}
@@ -207,3 +215,18 @@ function ArrowDown({ ...rest }: React.ComponentPropsWithoutRef<'svg'>) {
     </svg>
   );
 }
+
+export const getServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
+  setApiContext(context);
+  let part = context.query.part as unknown as number;
+
+  if (!part || part > pre_event_1_part.length || part <= 0) {
+    part = 1;
+  }
+
+  return {
+    props: { data: part - 1 },
+  };
+};
