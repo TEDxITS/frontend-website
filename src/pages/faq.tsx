@@ -5,7 +5,7 @@ import { HiChevronUp } from 'react-icons/hi';
 
 import clsxm from '@/lib/clsxm';
 
-import { FaqData, FaqDataType } from '@/data/event';
+import { FaqData, FaqDataType } from '@/data/faq';
 
 import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';

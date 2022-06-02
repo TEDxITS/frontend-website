@@ -8,9 +8,9 @@ import NextImage from '@/components/NextImage';
 //#region  //*=========== Image Data ===========
 //change this according to your data
 const homePageImage = [
-  'https://res.cloudinary.com/tedxits/image/upload/v1650792810/photo/pre-event-2-1_fsgvla.jpg',
-  'https://res.cloudinary.com/tedxits/image/upload/v1650789047/photo/pre-event-2-2_fifwdr.jpg',
-  'https://res.cloudinary.com/tedxits/image/upload/v1650789047/photo/pre-event-2-3_babenj.jpg',
+  'https://res.cloudinary.com/tedxits/image/upload/v1654053867/event/pre-event-3/IMG_05_r8xzoo.jpg',
+  'https://res.cloudinary.com/tedxits/image/upload/v1654053864/event/pre-event-3/IMG_01_mjpemw.jpg',
+  'https://res.cloudinary.com/tedxits/image/upload/v1654053864/event/pre-event-3/IMG_12_mjzypg.jpg',
 ];
 const homePageStyle = [
   'relative -top-0 left-0 z-[4]',

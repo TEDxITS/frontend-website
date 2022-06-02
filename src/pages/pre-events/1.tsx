@@ -1,10 +1,17 @@
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import * as React from 'react';
 import { GoPlay } from 'react-icons/go';
 import ReactPlayer from 'react-player';
 
+import { setApiContext } from '@/lib/axios';
 import clsxm from '@/lib/clsxm';
 
-import { EventType, getEventData, getThumbnailData } from '@/data/event';
+import {
+  EventType,
+  get_active_pre_event_1_data,
+  get_pre_event_1_thumbnail_data,
+  pre_event_1_part,
+} from '@/data/event';
 
 import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
@@ -12,9 +19,12 @@ import UnstyledLink from '@/components/links/UnstyledLink';
 import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 
-export default function PreEventsPage() {
-  const [eventState, setEventState] =
-    React.useState<keyof typeof EventType>('pre-event-2');
+export default function PreEventsPage({
+  data,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const [eventState, setEventState] = React.useState<keyof typeof EventType>(
+    pre_event_1_part[parseInt(data as unknown as string)]
+  );
 
   const [animationTrigger, setAnimationTrigger] =
     React.useState<boolean>(false);
@@ -28,6 +38,7 @@ export default function PreEventsPage() {
       setAnimationTrigger(false);
     }, 500);
   };
+
   return (
     <Layout>
       <Seo templateTitle='Pre-events' />
@@ -38,6 +49,7 @@ export default function PreEventsPage() {
           className='flex relative z-20 flex-col gap-8 pt-8 md:pt-16'
         >
           <Header />
+
           <div className='grid overflow-hidden'>
             <div className='layout min-h-[calc(100vh-64px-64px)] flex flex-wrap gap-y-8 items-center pb-16 md:min-h-[calc(100vh-64px-96px)]'>
               <div
@@ -51,25 +63,25 @@ export default function PreEventsPage() {
                   <NextImage
                     width={287.63}
                     height={275.9}
-                    src={getEventData(eventState).logo}
+                    src={get_active_pre_event_1_data(eventState).logo}
                     alt={`Elephant logo`}
                     className='flex-shrink-0 w-16 drop-shadow-lg md:w-20'
                   />
                   <p className='text-sm text-justify'>
-                    {getEventData(eventState).logoText}
+                    {get_active_pre_event_1_data(eventState).logoText}
                   </p>
                 </div>
                 <div>
                   <h2 className='font-fivo'>
-                    {getEventData(eventState).subTitle}
+                    {get_active_pre_event_1_data(eventState).subTitle}
                   </h2>
                   <h1 className='font-fivo mt-2 font-bold'>
-                    {getEventData(eventState).title}
+                    {get_active_pre_event_1_data(eventState).title}
                   </h1>
                 </div>
                 <ArrowDown className='w-16' />
                 <p className='text-lg'>
-                  {getEventData(eventState).description}
+                  {get_active_pre_event_1_data(eventState).description}
                 </p>
                 <UnstyledLink
                   href='#watch'
@@ -91,10 +103,10 @@ export default function PreEventsPage() {
                 <h2 className='font-fivo block mt-16 md:hidden'>
                   Explore another pre-events
                 </h2>
-                {getThumbnailData(eventState).map(
+                {get_pre_event_1_thumbnail_data(eventState).map(
                   ({ type, thumbnail }, key) => (
                     <UnstyledLink
-                      href='#explore'
+                      href={thumbnail.url}
                       key={key}
                       className='ease flex relative shadow-xl transition-all duration-200 origin-top hover:scale-105 hover:-translate-y-2'
                       onClick={() => viewVideo(type)}
@@ -133,7 +145,9 @@ export default function PreEventsPage() {
             animationTrigger ? 'opacity-0' : 'opacity-40'
           )}
           style={{
-            backgroundImage: `url(${getEventData(eventState).backgroundImage})`,
+            backgroundImage: `url(${
+              get_active_pre_event_1_data(eventState).backgroundImage
+            })`,
           }}
         />
       </main>
@@ -144,26 +158,26 @@ export default function PreEventsPage() {
             <NextImage
               width={287.63}
               height={275.9}
-              src={getEventData(eventState).logo}
+              src={get_active_pre_event_1_data(eventState).logo}
               alt={`Elephant logo`}
               className='hidden flex-shrink-0 w-16 md:block md:w-20'
             />
             <div className='border-cdark pl-4 border-l'>
               <p className='text-lg'>
-                {getEventData(eventState).thumbnail.subTitle}
+                {get_active_pre_event_1_data(eventState).thumbnail.subTitle}
               </p>
               <p className='mt-4 text-xl font-bold leading-none'>
-                {getEventData(eventState).thumbnail.title}
+                {get_active_pre_event_1_data(eventState).thumbnail.title}
               </p>
               <p className='mt-1 leading-none'>
-                {getEventData(eventState).thumbnail.description}
+                {get_active_pre_event_1_data(eventState).thumbnail.description}
               </p>
             </div>
           </div>
 
           <div className='aspect-h-9 aspect-w-16 bg-cdark overflow-hidden z-10 mt-8 rounded-2xl md:rounded-3xl'>
             <ReactPlayer
-              url={getEventData(eventState).video}
+              url={get_active_pre_event_1_data(eventState).video}
               width={'100%'}
               height={'100%'}
               controls={true}
@@ -201,3 +215,18 @@ function ArrowDown({ ...rest }: React.ComponentPropsWithoutRef<'svg'>) {
     </svg>
   );
 }
+
+export const getServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
+  setApiContext(context);
+  let part = context.query.part as unknown as number;
+
+  if (!part || part > pre_event_1_part.length || part <= 0) {
+    part = 1;
+  }
+
+  return {
+    props: { data: part - 1 },
+  };
+};
