@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { pre_event_2_data } from '@/data/event';
+import { pre_event_3_data } from '@/data/event';
 
 import ArrowDownButton from '@/components/buttons/ArrowDownButton';
 import ButtonLink from '@/components/links/ButtonLink';
@@ -27,13 +27,13 @@ export default function CoverSection() {
           </h2> */}
 
           <div className='flex flex-col md:gap-4'>
-            <h2 className='font-fivo'>{pre_event_2_data.subTitle}</h2>
+            <h2 className='font-fivo'>{pre_event_3_data.subTitle}</h2>
             <h1 className='font-fivo mt-2 font-bold'>
-              {pre_event_2_data.title}
+              {pre_event_3_data.title}
             </h1>
             <p className='text-lg'>
-              The easy access to clean water conceals the huge struggle of the
-              process.
+              The terrifying backspace that hides undelivered messages is
+              crashed.
             </p>
           </div>
 
