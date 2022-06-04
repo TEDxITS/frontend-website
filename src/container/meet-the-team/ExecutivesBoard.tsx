@@ -82,6 +82,7 @@ function Managers({ data }: exeProps) {
                   objectFit='cover'
                   alt='Executive Photo'
                   useSkeleton={true}
+                  className='transition-all duration-300 ease-in-out hover:scale-[200%]'
                 />
               </div>
               <h3 className='font-fivo w-[366px] mt-5 mb-4 font-bold drop-shadow-lg'>

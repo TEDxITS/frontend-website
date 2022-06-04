@@ -1,6 +1,7 @@
 import { InferGetServerSidePropsType } from 'next';
 import * as React from 'react';
 
+import { isTicketOpen } from '@/lib/date';
 import { getEventData } from '@/lib/hooks/event';
 
 import ArrowDownButton from '@/components/buttons/ArrowDownButton';
@@ -9,6 +10,7 @@ import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
 import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
+import CountdownModal from '@/container/modal/CountdownModal';
 import LoginModal from '@/container/modal/LoginModal';
 import TicketClosedModal from '@/container/modal/TicketClosedModal';
 import CoverSection from '@/container/ticket/CoverSection';
@@ -27,31 +29,57 @@ import { EventPaymentType } from '@/types/event';
 export default function TicketPage({
   data,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [quota, setQuota] = React.useState<number>(0);
+  //#region  //*=========== Modal State ===========
+  const [isQuotaModalOpen, setIsQuotaModalOpen] =
+    React.useState<boolean>(false);
+
+  const [isLoginModalOpen, setIsLoginModalOpen] =
+    React.useState<boolean>(false);
+
+  const [isCountdownModalOpen, setIsCountdownModalOpen] =
+    React.useState<boolean>(false);
+  //#endregion  //*======== Modal State ===========
+
   const [eventData, setEventData] =
     React.useState<EventPaymentType>(offlineNonKit);
 
+  const openModal = (quota: number, data: EventPaymentType) => {
+    if (!isTicketOpen()) {
+      setIsCountdownModalOpen(true);
+      return;
+    }
+    if (quota <= 0) {
+      setEventData(data);
+      setIsQuotaModalOpen(true);
+      return;
+    }
+    setIsLoginModalOpen(true);
+  };
   const openModalOfflineNonKit = () => {
-    setQuota(data[0].event_price[0].quota);
-    setEventData(offlineNonKit);
-    setIsOpen(true);
+    openModal(data[0].event_price[0].quota, offlineNonKit);
   };
 
   const openModalOfflineWithKit = () => {
-    setQuota(data[1].event_price[0].quota);
-    setEventData(offlineWithKit);
-    setIsOpen(true);
+    openModal(data[1].event_price[0].quota, offlineWithKit);
   };
+
   return (
     <Layout className='bg-[#EAEAE2]'>
       <Seo templateTitle='Ticket' />
-      {isOpen && quota > 0 ? (
-        <LoginModal isOpen={isOpen} setIsOpen={setIsOpen} />
-      ) : (
+
+      {isLoginModalOpen && (
+        <LoginModal isOpen={isLoginModalOpen} setIsOpen={setIsLoginModalOpen} />
+      )}
+      {isCountdownModalOpen && (
+        <CountdownModal
+          isOpen={isCountdownModalOpen}
+          setIsOpen={setIsCountdownModalOpen}
+        />
+      )}
+      {isQuotaModalOpen && (
         <TicketClosedModal
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
+          isOpen={isQuotaModalOpen}
+          setIsOpen={setIsQuotaModalOpen}
           data={eventData}
         />
       )}

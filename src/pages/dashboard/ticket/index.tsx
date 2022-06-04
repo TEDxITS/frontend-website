@@ -2,6 +2,7 @@ import { InferGetServerSidePropsType } from 'next';
 import { useRouter } from 'next/router';
 import * as React from 'react';
 
+import { isTicketOpen } from '@/lib/date';
 import { getEventData } from '@/lib/hooks/event';
 
 import ArrowDownButton from '@/components/buttons/ArrowDownButton';
@@ -9,6 +10,7 @@ import Button from '@/components/buttons/Button';
 import Layout from '@/components/layout/Layout';
 import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
+import CountdownModal from '@/container/modal/CountdownModal';
 import TicketClosedModal from '@/container/modal/TicketClosedModal';
 import CoverSection from '@/container/ticket/CoverSection';
 import {
@@ -29,48 +31,77 @@ const TicketPage: PageWithAuth = ({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const router = useRouter();
 
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
+  //#region  //*=========== Modal state ===========
+  const [isQuotaModalOpen, setIsQuotaModalOpen] =
+    React.useState<boolean>(false);
+
+  const [isCountdownModalOpen, setIsCountdownModalOpen] =
+    React.useState<boolean>(false);
+  //#endregion  //*======== Modal state ===========
+
   const [eventData, setEventData] =
     React.useState<EventPaymentType>(offlineNonKit);
 
+  //#region  //*=========== Loading state ===========
   const [isOfflineNonKitLoading, setIsOfflineNonKitLoading] =
     React.useState<boolean>(false);
   const [isOfflineWithKitLoading, setIsOfflineWithKitLoading] =
     React.useState<boolean>(false);
 
-  const openModalOfflineNonKit = () => {
-    setIsOfflineNonKitLoading(true);
-    setEventData(offlineNonKit);
-    if (data[0].event_price[0].quota <= 0) {
-      setIsOpen(true);
-      setIsOfflineNonKitLoading(false);
-    } else {
-      router.push(
-        `/dashboard/ticket/checkout?type=${offlineNonKit.type}&payment=${offlineNonKit.payment}`
-      );
+  //#endregion  //*======== Loading state ===========
+
+  const openModal = (
+    quota: number,
+    data: EventPaymentType,
+    callback: (value: React.SetStateAction<boolean>) => void
+  ) => {
+    callback(true);
+    if (!isTicketOpen()) {
+      setIsCountdownModalOpen(true);
+      callback(false);
+      return;
     }
+    if (quota <= 0) {
+      setEventData(data);
+      setIsQuotaModalOpen(true);
+      callback(false);
+      return;
+    }
+    router.push(
+      `/dashboard/ticket/checkout?type=${data.type}&payment=${data.payment}`
+    );
+    callback(false);
+  };
+
+  const openModalOfflineNonKit = () => {
+    openModal(
+      data[0].event_price[0].quota,
+      offlineNonKit,
+      setIsOfflineNonKitLoading
+    );
   };
 
   const openModalOfflineWithKit = () => {
-    setIsOfflineWithKitLoading(true);
-    setEventData(offlineWithKit);
-    if (data[1].event_price[0].quota <= 0) {
-      setIsOpen(true);
-      setIsOfflineWithKitLoading(false);
-    } else {
-      router.push(
-        `/dashboard/ticket/checkout?type=${offlineWithKit.type}&payment=${offlineWithKit.payment}`
-      );
-    }
+    openModal(
+      data[1].event_price[0].quota,
+      offlineWithKit,
+      setIsOfflineWithKitLoading
+    );
   };
 
   return (
     <Layout className='bg-[#EAEAE2]' withDashboard={true} isDark={true}>
       <Seo templateTitle='Ticket' />
-      {isOpen && (
+      {isCountdownModalOpen && (
+        <CountdownModal
+          isOpen={isCountdownModalOpen}
+          setIsOpen={setIsCountdownModalOpen}
+        />
+      )}
+      {isQuotaModalOpen && (
         <TicketClosedModal
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
+          isOpen={isQuotaModalOpen}
+          setIsOpen={setIsQuotaModalOpen}
           data={eventData}
         />
       )}
@@ -112,6 +143,7 @@ const TicketPage: PageWithAuth = ({
             </div>
           </div>
         </section>
+
         <section className='flex overflow-hidden relative flex-col pt-16 pb-32'>
           <div className='layout flex z-10 flex-col items-center max-w-md'>
             <GrabTicketText className='w-1/2' />

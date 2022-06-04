@@ -126,6 +126,7 @@ function ManagersBoardFive({ data, name, description, isManager }: BoardProps) {
                   objectFit='cover'
                   alt='Manager Photo'
                   useSkeleton={true}
+                  className='transition-all duration-300 ease-in-out hover:scale-[200%]'
                 />
               </div>
               <h3 className='font-fivo mt-5 mb-4 font-bold drop-shadow-lg'>

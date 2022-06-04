@@ -124,6 +124,7 @@ const LoginPage: PageWithAuth = () => {
                   dark={true}
                   id={LoginInputField.PASSWORD}
                   label='Password'
+                  validation={{ required: true }}
                   className='border-cdark bg-transparent border'
                 />
 

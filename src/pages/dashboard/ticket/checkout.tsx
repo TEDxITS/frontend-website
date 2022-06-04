@@ -3,12 +3,14 @@ import { useRouter } from 'next/router';
 import * as React from 'react';
 
 import { setApiContext } from '@/lib/axios';
+import { isTicketOpen } from '@/lib/date';
 import { getEventData } from '@/lib/hooks/event';
 
 import Layout from '@/components/layout/Layout';
 import LoadingPage from '@/components/layout/LoadingPage';
 import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
+import CountdownModal from '@/container/modal/CountdownModal';
 import CheckoutCard from '@/container/ticketing/checkout/CheckoutCard';
 import TicketingCard from '@/container/ticketing/TicketingCard';
 
@@ -22,14 +24,24 @@ const WithssrPage: PageWithAuth = ({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const router = useRouter();
 
+  const [isCountdownModalOpen, setIsCountdownModalOpen] =
+    React.useState<boolean>(false);
+
   React.useEffect(() => {
     if (!data) {
       router.push('/404');
+      return;
+    }
+    if (!isTicketOpen()) {
+      setIsCountdownModalOpen(true);
+      setTimeout(() => {
+        router.push('/dashboard/ticket');
+      }, 500);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (data) {
+  if (data && isTicketOpen()) {
     return (
       <Layout
         withDashboard={true}
@@ -37,6 +49,7 @@ const WithssrPage: PageWithAuth = ({
         isDark={true}
       >
         <Seo templateTitle='Checkout' />
+
         <main className='layout flex flex-col pt-4 pb-8 md:pb-16'>
           <div className='flex flex-col gap-y-8 items-start md:flex-row'>
             <TicketingCard
@@ -67,7 +80,17 @@ const WithssrPage: PageWithAuth = ({
       </Layout>
     );
   } else {
-    return <LoadingPage />;
+    return (
+      <>
+        {isCountdownModalOpen && (
+          <CountdownModal
+            isOpen={isCountdownModalOpen}
+            setIsOpen={setIsCountdownModalOpen}
+          />
+        )}
+        <LoadingPage />
+      </>
+    );
   }
 };
 

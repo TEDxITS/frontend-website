@@ -96,6 +96,7 @@ function Staff({ name, description }: staffProps) {
                       alt='bg'
                       quality={50}
                       useSkeleton={true}
+                      className='transition-all duration-300 ease-in-out hover:scale-[200%]'
                     />
                   </div>
                   <h4 className='font-fivo mt-7 mb-4 font-medium'>{nama}</h4>
@@ -128,6 +129,7 @@ function Staff({ name, description }: staffProps) {
                       alt='bg'
                       quality={50}
                       useSkeleton={true}
+                      className='transition-all duration-300 ease-in-out hover:scale-[200%]'
                     />
                   </div>
                   <div className='h-1/5'>

@@ -44,37 +44,37 @@ export default function CoverSection() {
         )}
       >
         <Header isDark={false} />
-        <div className='flex flex-wrap justify-center items-center -translate-y-20'>
+        <div className='flex flex-wrap justify-center items-center'>
           <div className='overflow-hidden relative z-40 w-full'>
-            <div className='layout min-h-[calc(100vh-64px)] text-clight flex relative justify-items-center'>
+            <div className='layout min-h-[calc(100vh-180px)] text-clight flex relative justify-items-center'>
               <div className='flex flex-col justify-center items-center w-full text-center lg:mt-0'>
                 <NextImage
                   src='/images/meet-the-team/arrow.png'
                   width={42}
                   height={45}
                   alt='bg'
-                  className='-translate-x-[36.2rem] absolute z-40 -translate-y-80'
+                  className='-translate-x-[10rem] absolute z-40 scale-75 -translate-y-32 sm:-translate-x-[20rem] sm:scale-100 sm:-translate-y-56 lg:-translate-x-[36.2rem] lg:-translate-y-80'
                 />
                 <NextImage
                   src='/images/meet-the-team/yellow-circle.png'
                   width={122}
                   height={122}
                   alt='bg'
-                  className='-translate-x-[36rem] absolute z-30 -translate-y-80'
+                  className='-translate-x-[10rem] absolute z-30 scale-75 -translate-y-32 sm:-translate-x-[20rem] sm:scale-100 sm:-translate-y-56 lg:-translate-x-[36rem] lg:-translate-y-80'
                 />
                 <NextImage
                   src='/images/meet-the-team/yellow-circle.png'
                   width={122}
                   height={122}
                   alt='bg'
-                  className='-translate-y-[18rem] -z-10 translate-x-[42rem] absolute'
+                  className='-translate-y-[18rem] -z-10 translate-x-[12rem] absolute scale-75 sm:translate-x-[22rem] sm:scale-100 lg:-translate-y-[18rem] lg:translate-x-[42rem]'
                 />
                 <NextImage
                   src='/images/meet-the-team/yellow-circle.png'
                   width={122}
                   height={122}
                   alt='bg'
-                  className='absolute z-20 -translate-x-80 translate-y-80'
+                  className='absolute z-20 scale-75 -translate-x-24 translate-y-32 sm:scale-100 sm:-translate-x-56 sm:translate-y-48 lg:-translate-x-80 lg:translate-y-80'
                 />
                 <div className='aspect-h-9 aspect-w-16 bg-cdark overflow-hidden z-10 w-full rounded-2xl md:rounded-3xl'>
                   <ReactPlayer
@@ -86,27 +86,35 @@ export default function CoverSection() {
                     controls={true}
                   />
                 </div>
-                <small className='font-fivo text-[8rem] translate-x-[32rem] absolute font-medium -translate-y-56 select-none'>
+                <small className='font-fivo text-[6rem] translate-x-[14rem] absolute font-medium -translate-y-48 select-none sm:translate-x-[18rem] sm:-translate-y-56 md:text-[8rem] lg:translate-x-[32rem]'>
                   MEET
                 </small>
-                <small className='font-fivo text-[8rem] translate-x-[36.5rem] absolute font-medium -translate-y-20 select-none'>
+                <small className='font-fivo text-[6rem] translate-x-[16rem] absolute font-medium -translate-y-20 select-none sm:translate-x-[23rem] md:text-[8rem] lg:translate-x-[36.5rem]'>
                   WE
                 </small>
-                <small className='-translate-x-[31rem] font-fivo absolute text-left -translate-y-24 select-none'>
-                  <h1 className='text-[8rem] font-medium'>OUR</h1>
-                  <h1 className='text-[8rem] font-medium'>TEAM,</h1>
+                <small className='-translate-x-[16rem] font-fivo absolute text-left -translate-y-36 select-none sm:-translate-x-[20.5rem] lg:-translate-x-[31rem] lg:-translate-y-24'>
+                  <h1 className='text-[6rem] mb-16 font-medium underline md:text-[8rem] md:mb-0'>
+                    OUR
+                  </h1>
+                  <h1 className='text-[6rem] font-medium underline md:text-[8rem]'>
+                    TEAM,
+                  </h1>
                 </small>
-                <small className='-translate-x-[29.5rem] font-fivo absolute text-left translate-y-64 select-none'>
-                  <h1 className='text-[8rem] font-medium underline'>LISTEN</h1>
-                  <h1 className='text-[8rem] font-medium underline'>SEE</h1>
+                <small className='-translate-x-[19rem] font-fivo absolute text-left translate-y-48 select-none sm:translate-y-64 lg:-translate-x-[29.5rem]'>
+                  <h1 className='text-[6rem] mb-12 font-medium underline md:mb-0 lg:text-[8rem]'>
+                    LISTEN
+                  </h1>
+                  <h1 className='text-[6rem] font-medium underline lg:text-[8rem]'>
+                    SEE
+                  </h1>
                 </small>
-                <small className='font-fivo text-[8rem] absolute font-medium translate-x-0 translate-y-80 select-none'>
+                <small className='font-fivo text-[6rem] absolute font-medium translate-x-0 translate-y-56 select-none sm:translate-y-80 md:text-[8rem]'>
                   AND
                 </small>
-                <small className='font-fivo text-xs" translate-x-[33rem] absolute w-20 text-sm leading-tight text-left translate-y-24 select-none'>
+                <small className='font-fivo translate-x-[16rem] absolute w-20 text-sm leading-tight text-left translate-y-20 select-none sm:translate-x-[20rem] sm:translate-y-24 md:translate-x-[26rem] lg:translate-x-[33rem]'>
                   Meet the Executives, directors & managers of tedxits 2022
                 </small>
-                <small className='font-fivo text-[8rem] translate-x-[30rem] absolute font-medium underline translate-y-80 select-none'>
+                <small className='font-fivo text-[6rem] translate-x-[24rem] absolute font-medium underline translate-y-56 select-none sm:translate-y-80 md:text-[8rem] lg:translate-x-[30rem]'>
                   SPEAK
                 </small>
               </div>

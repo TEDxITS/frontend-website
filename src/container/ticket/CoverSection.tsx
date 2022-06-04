@@ -24,7 +24,7 @@ export default function CoverSection() {
   });
   return (
     <div className='flex flex-wrap w-full'>
-      {/* early bird text */}
+      {/* normal text */}
       <div
         className={clsxm(
           'flex flex-col gap-y-4 w-full transition-all duration-700 ease-in origin-top-left md:w-1/3',
@@ -32,10 +32,10 @@ export default function CoverSection() {
         )}
       >
         <NextImage
-          width={346}
-          height={107}
-          src='/images/ticket/text-early-bird.svg'
-          alt='Early Bird'
+          width={333}
+          height={113.18}
+          src='/images/ticket/text-normal.svg'
+          alt='Presale'
           className='w-full'
           priority={true}
         />

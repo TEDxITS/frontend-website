@@ -1,6 +1,8 @@
+import { isBefore } from 'date-fns';
 import format from 'date-fns/format';
 import id from 'date-fns/locale/id';
 import parse from 'date-fns/parse';
+import { utcToZonedTime } from 'date-fns-tz';
 
 //#region  //*=========== Constants ===========
 export const DATE_FORMAT = {
@@ -62,4 +64,14 @@ export function formatLocale(
 
 export function toDate(date: string) {
   return new Date(date);
+}
+
+export function isTicketOpen() {
+  const nowDate = utcToZonedTime(new Date(), 'Asia/Jakarta');
+  const openDate = new Date(2022, 4, 25, 12);
+  if (isBefore(nowDate, openDate)) {
+    return false;
+  } else {
+    return true;
+  }
 }

@@ -32,7 +32,7 @@ const TITLE_NO_KIT: React.ReactNode = (
 
     <p>
       Minimalism that&apos;s what we called for this package, the essential
-      package will be delivered right on the spot
+      package will be delivered right on the spot.
     </p>
   </>
 );
@@ -42,7 +42,7 @@ const TITLE_NO_KIT: React.ReactNode = (
 const BENEFIT_WITH_KIT: React.ReactNode[] = [
   <>
     <span className='font-bold'>Special kit:</span> Totebag, Key Chain, and
-    Custom Hand Sanitizer
+    Custom Hand Sanitizer.
   </>,
   'Offline TEDx Talks Experiences',
   `E-certificate`,
