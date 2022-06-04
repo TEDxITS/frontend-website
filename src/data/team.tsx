@@ -30,17 +30,17 @@ export interface BoardProps {
 export const executives: exeType[] = [
   {
     nama: 'Melissa Gloria',
-    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646040060/team/Melissa_Gloria_Executive_Producer-Co-Lead_Organizer_jkhs8s.jpg',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1654347854/team/Melissa_Gloria_Executive_Producer-Co-Lead_Organizer_jkhs8s_y6attd.jpg',
     jabatan: 'Executive Producer / Co-Lead Organizer',
   },
   {
     nama: 'Clara Lourdessa Oryza Emmanuella',
-    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646039963/team/Clara_Lourdessa_Oryza_Emmanuella_Licensee-Co-Lead_Organizer_efi3cz.jpg',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1654347290/team/Clara_Lourdessa_Oryza_Emmanuella_Licensee-Co-Lead_Organizer_efi3cz_g8vavn.jpg',
     jabatan: 'Licensee / Co-Lead Organizer',
   },
   {
     nama: 'Rachel Gracia Simatupang',
-    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646040146/team/Rachel_Gracia_Simatupang_Treasurer_hze9jx.jpg',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1654347765/team/Rachel_Gracia_Simatupang_Treasurer_hze9jx_dl8jsj.jpg',
     jabatan: 'Treasurer',
   },
 ];
@@ -48,32 +48,32 @@ export const executives: exeType[] = [
 export const directors: memberType[] = [
   {
     nama: 'Muhammad Aristo Widyadhana',
-    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646040074/team/Muhammad_Aristo_Widyadhana_Curator_Director_bs31sx.jpg',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1654347999/team/Muhammad_Aristo_Widyadhana_Curator_Director_bs31sx_etlie9.jpg',
     jabatan: 'Director',
     divisi: 'Curating',
   },
   {
     nama: 'Althavida Riris',
-    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646039913/team/Althavida_Riris_Finance_Director_xxztns.jpg',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1654348282/team/Althavida_Riris_Finance_Director_xxztns_qmygii.jpg',
     jabatan: 'Director',
     divisi: 'Fundraising',
   },
   {
     nama: 'Made Krisna Adinarayana',
-    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646040055/team/Made_Krisna_Adinarayana_Director_of_Event-2_smvswv.jpg',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1654348728/team/Made_Krisna_Adinarayana_Director_of_Event-2_smvswv_tohorw.jpg',
     jabatan: 'Director',
     divisi: 'Event',
   },
   {
     nama: 'Theresa Mahardikarani',
-    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646040164/team/Rani_Director-2_jkx94u.jpg',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1654349060/team/Rani_Director-2_jkx94u_kzmce1.jpg',
     jabatan: 'Director',
     divisi: 'Human Resource & Administrative',
   },
 
   {
     nama: 'Ni Putu Putri Marinda Pradnyandari',
-    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646040135/team/Ni_Putu_Putri_Marinda_Pradnyandari_HRA_Director_xocazb.jpg',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1654349329/team/Ni_Putu_Putri_Marinda_Pradnyandari_HRA_Director_xocazb_o5scyr.jpg',
     jabatan: 'Director',
     divisi: 'Human Resource & Administrative',
   },
@@ -82,19 +82,19 @@ export const directors: memberType[] = [
 export const event: memberType[] = [
   {
     nama: 'Salsabila Puti',
-    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646040159/team/Salsabila_Puti_Program_Manager_zqrn7d.jpg',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1654350729/team/Salsabila_Puti_Program_Manager_zqrn7d_thtxpu.jpg',
     jabatan: 'Director',
     divisi: 'Finance',
   },
   {
     nama: 'Reyhans Vigi',
-    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646040172/team/Reyhans_Vigi_Exeriential_Design_pzqntz.jpg',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1654350938/team/Reyhans_Vigi_Exeriential_Design_pzqntz_xqfwqk.jpg',
     jabatan: 'Manager',
     divisi: 'Experimential Design',
   },
   {
     nama: 'Gede Dhiyo Sakaputra',
-    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646039986/team/Gede_Dhiyo_Sakaputra_Logistics_and_Accommodation_dhb1k3.jpg',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1654351050/team/Gede_Dhiyo_Sakaputra_Logistics_and_Accommodation_dhb1k3_xqoshb.jpg',
     jabatan: 'Manager',
     divisi: 'Logistics and Accommodation',
   },
@@ -103,25 +103,25 @@ export const event: memberType[] = [
 export const mnb: memberType[] = [
   {
     nama: 'Febrio Luqman',
-    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646039974/team/Febrio_Luqman_Media_Production_Manager_mddgpl.jpg',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1654351215/team/Febrio_Luqman_Media_Production_Manager_mddgpl_ma7lvi.jpg',
     jabatan: 'Manager',
     divisi: 'Media Production',
   },
   {
     nama: 'Wina Tungmiharja',
-    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646040182/team/Wina_Tungmiharja_Website_Manager_c8pmka.jpg',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1654364335/team/Wina_Tungmiharja_Website_Manager_c8pmka_c0pfwx.jpg',
     jabatan: 'Manager',
     divisi: 'Website',
   },
   {
     nama: 'Silma Elvaretta Aska',
-    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646040201/team/Silma_Elvaretta_Aska_Marketing_Strategist_Manager_k3tlni.jpg',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1654364456/team/Silma_Elvaretta_Aska_Marketing_Strategist_Manager_k3tlni_dwoqil.jpg',
     jabatan: 'Manager',
     divisi: 'Marketing Strategist',
   },
   {
     nama: 'Naomie Kartika Sari',
-    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646040122/team/Naomie_Kartika_Sari_Graphic_Design_Manager-2_bgrzrf.jpg',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1654366777/team/Naomie_Kartika_Sari_Graphic_Design_Manager-2_bgrzrf_stbypa.jpg',
     jabatan: 'Manager',
     divisi: 'Graphic Design',
   },
@@ -130,19 +130,19 @@ export const mnb: memberType[] = [
 export const finance: memberType[] = [
   {
     nama: 'Kherissa',
-    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646040057/team/Kherissa_Fundraising_Manager_ttfeeg.jpg',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1654366930/team/Kherissa_Fundraising_Manager_ttfeeg_vqvxuq.jpg',
     jabatan: 'Manager',
     divisi: 'Fundraising',
   },
   {
     nama: 'Maria Valentia',
-    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646040069/team/Maria_Valentia_Partnership_Manager_dn5nmo.jpg',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1654367002/team/Maria_Valentia_Partnership_Manager_dn5nmo_o83ly5.jpg',
     jabatan: 'Manager',
     divisi: 'Partnership',
   },
   {
     nama: 'Clarisa Puhutiana',
-    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1646039978/team/Clarisa_Puhutiana_Ticketing_Manager_mocfdx.jpg',
+    foto: 'https://res.cloudinary.com/tedxits/image/upload/v1654367098/team/Clarisa_Puhutiana_Ticketing_Manager_mocfdx_uqigvy.jpg',
     jabatan: 'Manager',
     divisi: 'Ticketing',
   },
