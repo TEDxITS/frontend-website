@@ -39,7 +39,7 @@ export default function CoverSection() {
       </div>
       <div
         className={clsxm(
-          'bg-cblue h-[calc(100vh+64px)] pt-8 w-full bg-no-repeat bg-cover md:pt-16',
+          'bg-cblue min-h-[calc(100vh+64px)] pt-8 w-full bg-no-repeat bg-cover md:pt-16',
           [hidden ? 'hidden' : hidden]
         )}
       >
