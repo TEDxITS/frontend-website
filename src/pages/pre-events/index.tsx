@@ -116,7 +116,7 @@ export default function IndexPage() {
                 </p>
               </li>
             </ul>
-            <hr className='border-cdark block w-full md:hidden' />
+            <hr className='block border-cdark w-full md:hidden' />
             <p className='leading-tight text-justify'>
               Take a look at the series of Pre-Events and let&apos;s perceive
               the elephant in the room!
