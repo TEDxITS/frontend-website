@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import clsxm from '@/lib/clsxm';
 
-import { getEventData } from '@/data/event';
+import { pre_event_3_data } from '@/data/event';
 
 import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
@@ -22,9 +22,7 @@ export default function HomePage() {
           <div
             className='absolute inset-0 bg-center bg-cover opacity-20'
             style={{
-              backgroundImage: `url(${
-                getEventData('pre-event-2').backgroundImage
-              })`,
+              backgroundImage: `url(${pre_event_3_data.backgroundImage})`,
             }}
           ></div>
           <div className='to-cdark absolute inset-0 z-10 bg-cover bg-gradient-to-b from-transparent'></div>

@@ -33,7 +33,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='https://res.cloudinary.com/tedxits/image/upload/v1650792810/photo/pre-event-2-1_fsgvla.jpg'
+          src='https://res.cloudinary.com/tedxits/image/upload/v1654053867/event/pre-event-3/IMG_05_r8xzoo.jpg'
           alt=''
           width={1980}
           height={1980}
@@ -48,7 +48,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='https://res.cloudinary.com/tedxits/image/upload/v1650789047/photo/pre-event-2-2_fifwdr.jpg'
+          src='https://res.cloudinary.com/tedxits/image/upload/v1654053864/event/pre-event-3/IMG_01_mjpemw.jpg'
           alt=''
           width={1980}
           height={1980}
@@ -63,7 +63,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='https://res.cloudinary.com/tedxits/image/upload/v1650789047/photo/pre-event-2-3_babenj.jpg'
+          src='https://res.cloudinary.com/tedxits/image/upload/v1654053864/event/pre-event-3/IMG_12_mjzypg.jpg'
           alt=''
           width={1980}
           height={1980}
@@ -78,7 +78,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='https://res.cloudinary.com/tedxits/image/upload/v1650792810/photo/pre-event-2-1_fsgvla.jpg'
+          src='https://res.cloudinary.com/tedxits/image/upload/v1654053867/event/pre-event-3/IMG_05_r8xzoo.jpg'
           alt=''
           width={1980}
           height={1980}
@@ -93,7 +93,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='https://res.cloudinary.com/tedxits/image/upload/v1650789047/photo/pre-event-2-2_fifwdr.jpg'
+          src='https://res.cloudinary.com/tedxits/image/upload/v1654053864/event/pre-event-3/IMG_01_mjpemw.jpg'
           alt=''
           width={1980}
           height={1980}
@@ -108,7 +108,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='https://res.cloudinary.com/tedxits/image/upload/v1650789047/photo/pre-event-2-3_babenj.jpg'
+          src='https://res.cloudinary.com/tedxits/image/upload/v1654053864/event/pre-event-3/IMG_12_mjzypg.jpg'
           alt=''
           width={1980}
           height={1980}
@@ -123,7 +123,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='https://res.cloudinary.com/tedxits/image/upload/v1650792810/photo/pre-event-2-1_fsgvla.jpg'
+          src='https://res.cloudinary.com/tedxits/image/upload/v1654053867/event/pre-event-3/IMG_05_r8xzoo.jpg'
           alt=''
           width={1980}
           height={1980}
@@ -138,7 +138,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='https://res.cloudinary.com/tedxits/image/upload/v1650789047/photo/pre-event-2-2_fifwdr.jpg'
+          src='https://res.cloudinary.com/tedxits/image/upload/v1654053864/event/pre-event-3/IMG_01_mjpemw.jpg'
           alt=''
           width={1980}
           height={1980}
@@ -153,7 +153,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='https://res.cloudinary.com/tedxits/image/upload/v1650789047/photo/pre-event-2-3_babenj.jpg'
+          src='https://res.cloudinary.com/tedxits/image/upload/v1654053864/event/pre-event-3/IMG_12_mjzypg.jpg'
           alt=''
           width={1980}
           height={1980}
