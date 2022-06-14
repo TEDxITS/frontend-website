@@ -80,7 +80,7 @@ export default function MissionSection() {
             width={190}
             height={190}
             alt='bg'
-            className='h-[100px] w-[60px] inset-x-0 z-10 -translate-y-12 md:w-[100px] md:-translate-y-20 lg:h-[140px] lg:w-[140px] lg:-translate-y-24 xl:h-[190px] xl:w-[190px] xl:-translate-y-36'
+            className='h-[100px] w-[60px] inset-x-0 z-10 -translate-y-6 md:w-[100px] md:-translate-y-12 lg:h-[140px] lg:w-[140px] lg:-translate-y-16 xl:h-[190px] xl:w-[190px] xl:-translate-y-24'
           />
         </div>
         <div className='flex flex-wrap justify-start w-full sm:justify-between'>
