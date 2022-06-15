@@ -38,13 +38,13 @@ export default function IndexPage() {
       <Seo templateTitle='Pre-events' />
 
       <main className={clsxm(`relative flex flex-col`)}>
-        <section className='flex flex-col gap-8 pt-8 relative z-30 md:pt-16'>
+        <section className='flex relative z-30 flex-col gap-8 pt-8 md:pt-16'>
           <Header />
-          <div className='flex flex-wrap gap-y-8 items-center layout min-h-[calc(100vh-64px-64px)] relative md:min-h-[calc(100vh-64px-96px)]'>
+          <div className='layout min-h-[calc(100vh-64px-64px)] flex relative flex-wrap gap-y-8 items-center md:min-h-[calc(100vh-64px-96px)]'>
             <div
               className={clsxm(
                 'min-h-[calc(100vh-64px-64px)] pr-0 md:min-h-0 md:translate-y-0',
-                'duration-200 flex flex-col gap-y-10 justify-center transition-all w-full'
+                'flex flex-col gap-y-10 justify-center w-full transition-all duration-200'
               )}
             >
               <div className='flex flex-col gap-4 items-center w-full 2xl:gap-8'>
@@ -53,7 +53,7 @@ export default function IndexPage() {
                   width={648}
                   height={333.11}
                   src='/images/pre-events/pre-events-text.svg'
-                  className='max-w-lg w-full md:w-1/3 2xl:w-2/5'
+                  className='w-full max-w-lg md:w-1/3 2xl:w-2/5'
                 />
                 <hr className='border-clight w-full' />
                 <div className='flex flex-col gap-4 items-center mt-0 2xl:mt-8'>
@@ -62,14 +62,14 @@ export default function IndexPage() {
                 </div>
               </div>
             </div>
-            <div className='absolute bottom-8 flex gap-4 justify-center layout w-full 2xl:bottom-16'>
+            <div className='layout flex absolute bottom-8 gap-4 justify-center w-full 2xl:bottom-16'>
               {pre_event_cover_data.map((_, i) => (
                 <div
                   key={i}
                   onClick={() => setActiveBackgroundState(i)}
                   className={clsxm(
-                    'h-3 w-3',
-                    'bg-clight cursor-pointer duration-100 ease-in rounded-full transition-all hover:bg-clight/70',
+                    'w-3 h-3',
+                    'bg-clight rounded-full transition-all duration-100 ease-in cursor-pointer hover:bg-clight/70',
                     i === activeBackgroundState ? 'opacity-100' : 'opacity-40'
                   )}
                 ></div>
@@ -81,15 +81,15 @@ export default function IndexPage() {
         <BackgroundSection active={activeBackgroundState} />
       </main>
       <main
-        className='bg-clight bg-cover bg-no-repeat bg-paper pb-16 pt-16 relative md:pt-32'
+        className='bg-clight bg-paper relative pt-16 pb-16 bg-no-repeat bg-cover md:pt-32'
         id='explore'
       >
-        <div className='flex flex-col gap-16 items-start layout pt-32 lg:flex-row'>
-          <div className='flex flex-col gap-8 text-cdark top-32 lg:sticky lg:w-1/3'>
-            <h1 className='block font-bold font-fivo text-cdark lg:hidden'>
+        <div className='layout flex flex-col gap-16 items-start pt-32 lg:flex-row'>
+          <div className='text-cdark flex top-32 flex-col gap-8 lg:sticky lg:w-1/3'>
+            <h1 className='font-fivo text-cdark block font-bold lg:hidden'>
               Our Curated List of Pre-events
             </h1>
-            <h2 className='font-bold font-fivo hidden text-cdark lg:block'>
+            <h2 className='font-fivo text-cdark hidden font-bold lg:block'>
               Our Curated List of Pre-events
             </h2>
             <p className='leading-tight text-justify'>
@@ -116,14 +116,14 @@ export default function IndexPage() {
                 </p>
               </li>
             </ul>
-            <hr className='block border-cdark w-full md:hidden' />
+            <hr className='border-cdark block w-full md:hidden' />
             <p className='leading-tight text-justify'>
               Take a look at the series of Pre-Events and let&apos;s perceive
               the elephant in the room!
             </p>
           </div>
 
-          <div className='border-cdark flex flex-col min-h-screen w-full'>
+          <div className='border-cdark flex flex-col w-full min-h-screen'>
             {pre_event_curated_data.map((data, i) => (
               <PreEventCard data={data} key={i} />
             ))}
@@ -156,10 +156,10 @@ function PopularSection() {
   };
 
   return (
-    <section className='-mb-32 flex flex-col gap-2 relative z-30'>
-      <div className='flex gap-8 justify-between layout left-0 pt-8 relative stickt z-20 md:pt-16'>
-        <h2 className='font-bold font-fivo'>Popular</h2>
-        <div className='gap-4 hidden lg:block'>
+    <section className='flex relative z-30 flex-col gap-2 -mb-32'>
+      <div className='layout stickt flex relative left-0 z-20 gap-8 justify-between pt-8 md:pt-16'>
+        <h2 className='font-fivo font-bold'>Popular</h2>
+        <div className='hidden gap-4 lg:block'>
           <button onClick={scrollLeft}>
             <AiOutlineArrowLeft
               className={clsxm('text-clight hover:text-clight/70')}
@@ -175,31 +175,31 @@ function PopularSection() {
         </div>
       </div>
       <div
-        className='hidden-scrollbar mt-2 overflow-x-scroll snap-x md:mt-6 md:snap-none'
+        className='hidden-scrollbar snap-x overflow-x-scroll mt-2 md:snap-none md:mt-6'
         ref={popularRef as React.MutableRefObject<HTMLDivElement>}
       >
-        <div className='flex gap-8 layout relative'>
+        <div className='layout flex relative gap-8'>
           {get_pre_event_thumbnail_data().map((thumbnail, i) => (
             <UnstyledLink
               href={thumbnail.url}
               key={i}
-              className='duration-200 ease flex min-w-[calc(100%-1rem)] origin-top relative shadow-xl snap-center transition-all w-full md:min-w-[calc((100%/2))] lg:min-w-[calc((100%/4))] hover:brightness-50'
+              className='ease min-w-[calc(100%-1rem)] snap-center flex relative w-full shadow-xl transition-all duration-200 origin-top md:min-w-[calc((100%/2))] lg:min-w-[calc((100%/4))] hover:brightness-50'
             >
               <NextImage
                 width={328}
                 height={189}
                 src={thumbnail.backgroundImage}
                 alt={`Elephant logo`}
-                className='overflow-hidden rounded-md w-full'
+                className='overflow-hidden w-full rounded-md'
                 useSkeleton
               />
-              <div className='absolute bottom-0 flex gap-4 items-end p-4 w-full'>
-                <div className='select-none user w-full'>
+              <div className='flex absolute bottom-0 gap-4 items-end p-4 w-full'>
+                <div className='user w-full select-none'>
                   <p className='text-sm'>{thumbnail.subTitle}</p>
-                  <p className='font-bold leading-none mt-4 text-base'>
+                  <p className='mt-4 text-base font-bold leading-none'>
                     {thumbnail.title}
                   </p>
-                  <p className='leading-none mt-1 text-xs'>
+                  <p className='mt-1 text-xs leading-none'>
                     {thumbnail.description}
                   </p>
                 </div>
@@ -207,7 +207,7 @@ function PopularSection() {
               </div>
             </UnstyledLink>
           ))}
-          <div className='min-w-[calc(100%-1rem)] opacity-0 pointer-events-none snap-center w-full md:min-w-[calc(100%/2)] lg:min-w-[calc((100%/4))]'></div>
+          <div className='min-w-[calc(100%-1rem)] snap-center w-full opacity-0 pointer-events-none md:min-w-[calc(100%/2)] lg:min-w-[calc((100%/4))]'></div>
         </div>
       </div>
     </section>
@@ -218,7 +218,7 @@ function BackgroundSection({ active }: { active: number }) {
   return (
     <>
       {' '}
-      <div className='absolute bg-cover bg-gradient-red bg-no-repeat drop-shadow-md inset-0 pointer-events-none z-20'></div>
+      <div className='bg-gradient-red absolute inset-0 z-20 bg-no-repeat bg-cover drop-shadow-md pointer-events-none'></div>
       <div
         className={clsxm(
           `absolute bg-fixed inset-0 bg-cover opacity-40 bg-no-repeat bg-center transition-all duration-500 ease-in pointer-events-none z-10`
@@ -227,13 +227,13 @@ function BackgroundSection({ active }: { active: number }) {
           backgroundImage: `url(${pre_event_cover_data[active]})`,
         }}
       />
-      <div className='absolute inset-0 overflow-hidden pointer-events-none'>
+      <div className='overflow-hidden absolute inset-0 pointer-events-none'>
         <NextImage
           src='https://res.cloudinary.com/tedxits/image/upload/v1653998320/event/lup_qzefqt.png'
           width={1080}
           height={688}
           alt='lup'
-          className='-right-1/3 absolute bottom-1/4 rotate-12 w-full md:bottom-32 md:right-0 md:translate-x-32 md:w-1/2'
+          className='absolute -right-1/3 bottom-1/4 w-full rotate-12 md:right-0 md:bottom-32 md:w-1/2 md:translate-x-32'
         />
       </div>
     </>
@@ -242,20 +242,20 @@ function BackgroundSection({ active }: { active: number }) {
 
 function PreEventCard({ data }: { data: PreEventCuratedDataType }) {
   return (
-    <div className='flex flex-col relative text-cdark'>
-      <div className='flex gap-4 items-center max-w-[80%] md:max-w-[30%]'>
+    <div className='text-cdark flex relative flex-col'>
+      <div className='max-w-[80%] flex gap-4 items-center md:max-w-[30%]'>
         <NextImage
           width={287.63}
           height={275.9}
           src={data.logo}
           alt={`Elephant logo`}
-          className='drop-shadow-md flex-shrink-0 w-16 md:w-20'
+          className='flex-shrink-0 w-16 drop-shadow-md md:w-20'
         />
-        <p className='text-justify text-sm'>{data.logoText}</p>
+        <p className='text-sm text-justify'>{data.logoText}</p>
       </div>
-      <div className='border-cdark border-l ml-8 my-8 pl-8 relative'>
+      <div className='border-cdark relative pl-8 my-8 ml-8 border-l'>
         <div
-          className='aspect-h-16 aspect-w-16 bg-center bg-cover bg-no-repeat drop-shadow-md h-full overflow-hidden relative rounded-md md:aspect-h-4'
+          className='aspect-h-16 aspect-w-16 overflow-hidden relative h-full bg-center bg-no-repeat bg-cover rounded-md drop-shadow-md md:aspect-h-4'
           style={{
             backgroundImage: `url(${data.backgroundImage})`,
           }}
@@ -263,16 +263,16 @@ function PreEventCard({ data }: { data: PreEventCuratedDataType }) {
           <UnstyledLink
             href={data.url}
             className={clsxm(
-              'backdrop-blur-sm bg-bottom bg-cdark/30 bg-cover bg-gradient-red bg-no-repeat md:backdrop-blur-none',
-              'absolute h-full inset-0 w-full z-10',
+              'bg-cdark/30 bg-gradient-red bg-bottom bg-no-repeat bg-cover backdrop-blur-sm md:backdrop-blur-none',
+              'absolute inset-0 z-10 w-full h-full',
               'flex justify-between',
-              'cursor-pointer duration-300 ease transition-all',
-              'p-8 hover:backdrop-blur-sm hover:bg-cdark/50'
+              'ease transition-all duration-300 cursor-pointer',
+              'p-8 hover:bg-cdark/50 hover:backdrop-blur-sm'
             )}
           >
             <div className='flex flex-col justify-center'>
               <h3 className='font-fivo'>{data.subTitle}</h3>
-              <h2 className='font-bold font-fivo mt-2'>{data.title}</h2>
+              <h2 className='font-fivo mt-2 font-bold'>{data.title}</h2>
             </div>
             <div className='flex items-end'>
               <ArrowLink className='font-fivo text-clight' href={data.url}>

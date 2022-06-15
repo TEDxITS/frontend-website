@@ -46,28 +46,28 @@ export default function PreEventsPage({
       <main className={clsxm(` relative flex flex-col`)}>
         <section
           id='explore'
-          className='flex flex-col gap-8 pt-8 relative z-20 md:pt-16'
+          className='flex relative z-20 flex-col gap-8 pt-8 md:pt-16'
         >
           <Header />
 
           <div className='grid overflow-hidden'>
-            <div className='flex flex-wrap gap-y-8 items-center layout min-h-[calc(100vh-64px-64px)] pb-16 md:min-h-[calc(100vh-64px-96px)]'>
+            <div className='layout min-h-[calc(100vh-64px-64px)] flex flex-wrap gap-y-8 items-center pb-16 md:min-h-[calc(100vh-64px-96px)]'>
               <div
                 className={clsxm(
-                  ' min-h-[calc(100vh-64px-64px)] pr-0 md:min-h-0 md:pr-8 md:translate-y-0',
-                  'duration-200 flex flex-col gap-y-10 justify-center transition-all w-full md:w-2/3',
+                  ' min-h-[calc(100vh-64px-64px)] pr-0 md:pr-8 md:min-h-0 md:translate-y-0',
+                  'flex flex-col gap-y-10 justify-center w-full transition-all duration-200 md:w-2/3',
                   animationTrigger ? 'opacity-0' : ' opacity-1'
                 )}
               >
-                <div className='flex gap-4 max-w-[80%] md:max-w-xs'>
+                <div className='max-w-[80%] flex gap-4 md:max-w-xs'>
                   <NextImage
                     width={287.63}
                     height={275.9}
                     src={get_active_pre_event_1_data(eventState).logo}
                     alt={`Elephant logo`}
-                    className='drop-shadow-lg flex-shrink-0 w-16 md:w-20'
+                    className='flex-shrink-0 w-16 drop-shadow-lg md:w-20'
                   />
-                  <p className='text-justify text-sm'>
+                  <p className='text-sm text-justify'>
                     {get_active_pre_event_1_data(eventState).logoText}
                   </p>
                 </div>
@@ -75,7 +75,7 @@ export default function PreEventsPage({
                   <h2 className='font-fivo'>
                     {get_active_pre_event_1_data(eventState).subTitle}
                   </h2>
-                  <h1 className='font-bold font-fivo mt-2'>
+                  <h1 className='font-fivo mt-2 font-bold'>
                     {get_active_pre_event_1_data(eventState).title}
                   </h1>
                 </div>
@@ -85,7 +85,7 @@ export default function PreEventsPage({
                 </p>
                 <UnstyledLink
                   href='#watch'
-                  className='cursor-pointer duration-200 ease flex gap-4 items-center origin-left select-none transition-all hover:animate-flicker hover:scale-105'
+                  className='ease flex gap-4 items-center transition-all duration-200 origin-left cursor-pointer select-none hover:animate-flicker hover:scale-105'
                 >
                   <GoPlay size={40} />
                   <h2 className='font-fivo'>Watch Now</h2>
@@ -94,13 +94,13 @@ export default function PreEventsPage({
               {/* Thumbnail */}
               <div
                 className={clsxm(
-                  'duration-200 ease flex flex-col gap-4 transition-all w-full md:w-1/3 ',
+                  'ease flex flex-col gap-4 w-full transition-all duration-200 md:w-1/3 ',
                   animationTrigger
                     ? 'md:translate-x-1/2 opacity-0'
                     : 'md:translate-x-0 opacity-1'
                 )}
               >
-                <h2 className='block font-fivo mt-16 md:hidden'>
+                <h2 className='font-fivo block mt-16 md:hidden'>
                   Explore another pre-events
                 </h2>
                 {get_pre_event_1_thumbnail_data(eventState).map(
@@ -108,7 +108,7 @@ export default function PreEventsPage({
                     <UnstyledLink
                       href={thumbnail.url}
                       key={key}
-                      className='duration-200 ease flex origin-top relative shadow-xl transition-all hover:-translate-y-2 hover:scale-105'
+                      className='ease flex relative shadow-xl transition-all duration-200 origin-top hover:scale-105 hover:-translate-y-2'
                       onClick={() => viewVideo(type)}
                     >
                       <NextImage
@@ -116,16 +116,16 @@ export default function PreEventsPage({
                         height={189}
                         src={thumbnail.backgroundImage}
                         alt={`Elephant logo`}
-                        className='overflow-hidden rounded-md w-full'
+                        className='overflow-hidden w-full rounded-md'
                         useSkeleton
                       />
-                      <div className='absolute bottom-0 flex gap-4 items-end p-4 w-full'>
-                        <div className='select-none user w-full'>
+                      <div className='flex absolute bottom-0 gap-4 items-end p-4 w-full'>
+                        <div className='user w-full select-none'>
                           <p className='text-sm'>{thumbnail.subTitle}</p>
-                          <p className='font-bold leading-none mt-4 text-base'>
+                          <p className='mt-4 text-base font-bold leading-none'>
                             {thumbnail.title}
                           </p>
-                          <p className='leading-none mt-1 text-xs'>
+                          <p className='mt-1 text-xs leading-none'>
                             {thumbnail.description}
                           </p>
                         </div>
@@ -138,7 +138,7 @@ export default function PreEventsPage({
             </div>
           </div>
         </section>
-        <div className='absolute bg-cover bg-gradient-red bg-no-repeat drop-shadow-md inset-0 z-10'></div>
+        <div className='bg-gradient-red absolute inset-0 z-10 bg-no-repeat bg-cover drop-shadow-md'></div>
         <div
           className={clsxm(
             `absolute bg-fixed inset-0 bg-cover bg-no-repeat bg-center transition-all duration-200 ease`,
@@ -152,30 +152,30 @@ export default function PreEventsPage({
         />
       </main>
 
-      <main className='bg-clight bg-cover bg-no-repeat bg-paper flex flex-col items-center justify-center min-h-screen py-16 relative'>
-        <div id='watch' className='border flex flex-col layout text-cdark z-10'>
+      <main className='bg-clight bg-paper flex relative flex-col justify-center items-center py-16 min-h-screen bg-no-repeat bg-cover'>
+        <div id='watch' className='layout text-cdark flex z-10 flex-col border'>
           <div className='flex gap-4'>
             <NextImage
               width={287.63}
               height={275.9}
               src={get_active_pre_event_1_data(eventState).logo}
               alt={`Elephant logo`}
-              className='flex-shrink-0 hidden w-16 md:block md:w-20'
+              className='hidden flex-shrink-0 w-16 md:block md:w-20'
             />
-            <div className='border-cdark border-l pl-4'>
+            <div className='border-cdark pl-4 border-l'>
               <p className='text-lg'>
                 {get_active_pre_event_1_data(eventState).thumbnail.subTitle}
               </p>
-              <p className='font-bold leading-none mt-4 text-xl'>
+              <p className='mt-4 text-xl font-bold leading-none'>
                 {get_active_pre_event_1_data(eventState).thumbnail.title}
               </p>
-              <p className='leading-none mt-1'>
+              <p className='mt-1 leading-none'>
                 {get_active_pre_event_1_data(eventState).thumbnail.description}
               </p>
             </div>
           </div>
 
-          <div className='aspect-h-9 aspect-w-16 bg-cdark mt-8 overflow-hidden rounded-2xl z-10 md:rounded-3xl'>
+          <div className='aspect-h-9 aspect-w-16 bg-cdark overflow-hidden z-10 mt-8 rounded-2xl md:rounded-3xl'>
             <ReactPlayer
               url={get_active_pre_event_1_data(eventState).video}
               width={'100%'}
@@ -190,7 +190,7 @@ export default function PreEventsPage({
           height={489}
           alt='bg'
           priority={true}
-          className='absolute bottom-0 right-0'
+          className='absolute right-0 bottom-0'
         />
       </main>
     </Layout>
