@@ -2,6 +2,10 @@ import React from 'react';
 
 import clsxm from '@/lib/clsxm';
 
+import { SeatType } from '@/pages/ticket/check';
+
+import { EventSeatApiData } from '@/types/event';
+
 const generateSeat = (
   input: {
     count: number;
@@ -61,13 +65,15 @@ const generateSeat = (
 };
 
 type SeatLayoutProps = {
-  seatNumber: number;
-  setSeatNumber: React.Dispatch<React.SetStateAction<number>>;
+  seatNumber: SeatType;
+  setSeatNumber: React.Dispatch<React.SetStateAction<SeatType>>;
+  seatData: EventSeatApiData[];
 };
 
 export default function SeatLayout({
   seatNumber,
   setSeatNumber,
+  seatData,
 }: SeatLayoutProps) {
   const seatConfiguration = [
     {
@@ -81,6 +87,15 @@ export default function SeatLayout({
       start: 9,
     },
   ];
+
+  const isSeatOccupied = (id: number) => {
+    const data = seatData.find((element) => element.seat_no === id);
+    return data?.status;
+  };
+
+  const setSeat = (title: string, value: number) => {
+    setSeatNumber({ title, value });
+  };
   return (
     <div className='flex flex-col gap-y-4 items-center w-full'>
       {generateSeat(seatConfiguration).map((type) =>
@@ -91,12 +106,15 @@ export default function SeatLayout({
                 {group.map((seat, i) => (
                   <button
                     key={i}
-                    onClick={() => setSeatNumber(seat.value)}
+                    onClick={() => setSeat(seat.title, seat.value)}
+                    tabIndex={isSeatOccupied(seat.value) ? -1 : 0}
+                    disabled={isSeatOccupied(seat.value)}
                     className={clsxm(
                       'inline-flex justify-center items-center px-2 py-1 w-12 rounded-md border ',
-                      seat.value === seatNumber
+                      'disabled:hover:bg-clight disabled:opacity-20 disabled:cursor-not-allowed disabled:select-none',
+                      seat.value === seatNumber.value
                         ? 'bg-cred hover:bg-cred/80'
-                        : 'hover:bg-clight/30'
+                        : 'hover:bg-clight/30 '
                     )}
                   >
                     <p>{seat.title}</p>
