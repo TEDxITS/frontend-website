@@ -288,11 +288,12 @@ function SuccessModal({
                   </svg>
                   <p
                     id='prompt'
-                    className='font-fivo text-cdark mt-2 text-xs font-medium text-center'
+                    className='font-fivo text-cdark mt-2 font-medium text-center'
                   >
-                    scan here or go to <br />
+                    <span className='text-xs'> scan here or go to </span>
+                    <br />
                     <span className='bg-cgreen text-clight inline-flex justify-center items-center px-2 rounded-full'>
-                      https://tedxits.org/links/booklet
+                      tedxits.org/ticket/get-certificate
                     </span>{' '}
                   </p>
                   <img
