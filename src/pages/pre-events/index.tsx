@@ -93,12 +93,33 @@ export default function IndexPage() {
               Our Curated List of Pre-events
             </h2>
             <p className='leading-tight text-justify'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              fermentum efficitur tellus, interdum dapibus diam viverra
-              scelerisque. Nullam ultrices, augue vitae feugiat pellentesque,
-              dolor neque dictum quam, in blandit justo massa ut quam. Sed sit
-              amet nisi ac sem maximus eleifend vel at velit. Integer vestibulum
-              nibh nec tellus accumsan, blandit pellentesque sapien elementum.
+              Wouldn’t we attract the right things to our lives if we had the
+              eagerness to see, the will to listen, and the courage to speak
+              about them? <br />
+              The 3 series of Pre-Event each represent their unique elephant
+              with each mission.
+            </p>
+            <ul className='leading-tight text-justify'>
+              <li>
+                <p>
+                  1. <b>Black Elephant:</b> Speak the unspoken taboo words
+                </p>
+              </li>
+              <li>
+                <p>
+                  2. <b>Red Elephant:</b> See the unseen of great importance
+                </p>
+              </li>
+              <li>
+                <p>
+                  3. <b>White Elephant:</b> Listen to the unheard voices
+                </p>
+              </li>
+            </ul>
+            <hr className='border-cdark block w-full md:hidden' />
+            <p className='leading-tight text-justify'>
+              Take a look at the series of Pre-Events and let&apos;s perceive
+              the elephant in the room!
             </p>
           </div>
 

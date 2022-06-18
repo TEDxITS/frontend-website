@@ -26,3 +26,9 @@ export type EventApiData = {
 export type EventPaymentApiData = EventApiData & {
   event_price: PaymentApiData[];
 };
+
+export type EventSeatApiData = {
+  seat_no: number;
+  status: boolean;
+  booking_id: null | string;
+};

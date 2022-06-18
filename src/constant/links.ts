@@ -23,3 +23,5 @@ export const DASHBOARD_PAGE = '/dashboard/ticket';
 
 export const TICKET_PAGE_AUTH = '/dashboard/ticket';
 export const TICKET_PAGE_NO_AUTH = '/ticket';
+
+export const GUIDEBOOK = '/links/booklet';
