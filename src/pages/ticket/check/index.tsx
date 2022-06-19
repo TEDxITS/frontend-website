@@ -3,7 +3,6 @@ import { Dialog, Transition } from '@headlessui/react';
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import * as React from 'react';
 import toast from 'react-hot-toast';
-import { BiScan } from 'react-icons/bi';
 
 import api, { setApiContext } from '@/lib/axios';
 import { getSeat } from '@/lib/hooks/event';
@@ -109,12 +108,14 @@ export default function CheckPage({
           <h1 className='font-fivo font-bold'>Select Your Seat</h1>
 
           <div className='flex justify-between w-full max-w-3xl'>
-            <div className='flex flex-col gap-2'>
+            <div className='flex flex-col gap-4'>
               <p>
                 Booking Number :{' '}
-                <span className='text-cred font-bold'>
-                  {bookingId ? bookingId : '-'}
-                </span>
+                <input
+                  className='bg-cdark border-clight px-2 py-1 w-full rounded-md border'
+                  onChange={(event) => setBookingId(event.target.value)}
+                  value={bookingId}
+                />
               </p>
               <p>
                 Selected Seat Number :{' '}
@@ -141,12 +142,6 @@ export default function CheckPage({
           />
         </div>
 
-        <Button
-          onClick={() => setIsModalOpen(true)}
-          className='fixed right-8 bottom-8 z-10 px-2 py-2'
-        >
-          <BiScan size={50} />
-        </Button>
         <div className='overflow-hidden absolute inset-0 brightness-50'>
           <NextImage
             src='https://res.cloudinary.com/tedxits/image/upload/v1650805425/images/ticket/sticker-ticket-1_ggkhcm.png'
