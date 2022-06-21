@@ -21,7 +21,6 @@ export const eventLinks: LinkType[] = [
   { href: '/call-for-local-speaker', label: 'Call for Local Speakers' },
   { href: '/black-elephant-mail', label: 'Black Elephant Mail' },
   { href: '/pre-events', label: 'Pre Events' },
-  { href: '/sponsor', label: 'Sponsorships' },
 ];
 
 export const aboutLinks: LinkType[] = [
@@ -37,6 +36,7 @@ export const aboutLinks: LinkType[] = [
     href: '/meet-the-team',
     label: 'Meet The Team',
   },
+  { href: '/sponsor', label: 'Sponsorships' },
 ];
 
 export const merchLinks: LinkType[] = [
