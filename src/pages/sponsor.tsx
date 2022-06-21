@@ -29,32 +29,32 @@ export default function SponsorPage() {
     <Layout className='bg-[#EAEAE2]'>
       <Seo templateTitle='Our Sponsor' />
 
-      <main className='bg-cover bg-no-repeat bg-paper'>
-        <section className='flex flex-col gap-8 pt-8 relative z-10 md:pt-16'>
+      <main className='bg-paper bg-no-repeat bg-cover'>
+        <section className='flex relative z-10 flex-col gap-8 pt-8 md:pt-16'>
           <Header isDark={true} />
 
-          <div className='flex flex-col gap-16 items-center justify-center layout min-h-[calc(100vh-64px-64px)] py-8 text-cdark z-30 md:py-20 lg:min-h-[calc(100vh-64px-96px)]'>
-            <div className='flex flex-col items-start justify-between w-full md:flex-row'>
-              <div className='flex flex-col relative'>
-                <h1 className='-rotate-3 font-normal font-sympath origin-bottomn text-cred'>
+          <div className='layout min-h-[calc(100vh-64px-64px)] text-cdark flex z-30 flex-col gap-16 justify-center items-center py-8 md:py-20 lg:min-h-[calc(100vh-64px-96px)]'>
+            <div className='flex flex-col justify-between items-start w-full md:flex-row'>
+              <div className='flex relative flex-col'>
+                <h1 className='font-sympath origin-bottomn text-cred font-normal -rotate-3'>
                   here are
                 </h1>
-                <h1 className='font-bold text-cdark'>Our</h1>
-                <h1 className='font-bold text-cdark'>
+                <h1 className='text-cdark font-bold'>Our</h1>
+                <h1 className='text-cdark font-bold'>
                   Sponsorsh<span className='font-pilow'>i</span>
                   ps
                 </h1>
               </div>
               <div className='max-w-sm'>
-                <p className='text-justify w-full'>
+                <p className='w-full text-justify'>
                   Thankyou, it&apos;s been a roller coaster journey to host 3
                   Pre-Events and a Main Event in ± 4 months
                 </p>
               </div>
             </div>
 
-            <div className='flex flex-col gap-y-8 items-center justify-center w-4/5 md:gap-y-2'>
-              <div className='gap-x-4 gap-y-8 grid place-items-center md:grid-cols-2'>
+            <div className='flex flex-col gap-y-8 justify-center items-center w-4/5 md:gap-y-2'>
+              <div className='grid gap-x-4 gap-y-8 place-items-center md:grid-cols-2'>
                 {big_sponsor_logo.map((image, i) => (
                   <img
                     key={i}
@@ -64,32 +64,32 @@ export default function SponsorPage() {
                   />
                 ))}
               </div>
-              <div className='gap-x-8 grid grid-cols-3 place-items-center md:grid-cols-5'>
+              <div className='grid grid-cols-3 gap-x-8 place-items-center md:grid-cols-5'>
                 {small_sponsor_logo.map((image, i) => (
                   <img key={i} src={image} alt='logo sponsor' />
                 ))}
               </div>
             </div>
 
-            <div className='flex items-start justify-between w-full'>
+            <div className='flex justify-between items-start w-full'>
               <Logo isDark className='w-20' />
               <p className='text-cdark text-sm'>@2022</p>
             </div>
           </div>
-          <div className='absolute inset-0 overflow-hidden pointer-events-none'>
+          <div className='overflow-hidden absolute inset-0 pointer-events-none'>
             <NextImage
               src='/images/forgot-password/float.png'
               width={365}
               height={402}
               alt='float'
-              className='absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-full md:w-1/2'
+              className='absolute right-0 bottom-0 w-full translate-x-1/4 translate-y-1/4 md:w-1/2'
             />
             <NextImage
               src='/images/forgot-password/float.png'
               width={365}
               height={402}
               alt='float'
-              className='-translate-x-1/3 -translate-y-1/4 absolute left-0 top-0 w-full md:-translate-x-1/2 md:w-1/2'
+              className='absolute top-0 left-0 w-full -translate-x-1/3 -translate-y-1/4 md:w-1/2 md:-translate-x-1/2'
             />
           </div>
         </section>
