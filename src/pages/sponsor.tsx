@@ -27,62 +27,62 @@ export default function SponsorPage() {
     <Layout className='bg-[#EAEAE2]'>
       <Seo templateTitle='Our Sponsor' />
 
-      <main className='bg-paper text-cdark bg-no-repeat bg-cover'>
-        <section className='flex relative z-10 flex-col gap-8 pt-8 md:pt-16'>
+      <main className='bg-cover bg-no-repeat bg-paper'>
+        <section className='flex flex-col gap-8 pt-8 relative z-10 md:pt-16'>
           <Header isDark={true} />
 
-          <div className='layout min-h-[calc(100vh-64px-64px)] flex z-30 flex-col gap-16 justify-center items-center py-8 md:py-20 lg:min-h-[calc(100vh-64px-96px)]'>
-            <div className='flex flex-col justify-between items-start w-full md:flex-row'>
-              <div className='flex relative flex-col'>
-                <h1 className='animate-flicker font-sympath origin-bottomn text-cdark font-normal -rotate-3'>
+          <div className='flex flex-col gap-16 items-center justify-center layout min-h-[calc(100vh-64px-64px)] py-8 text-cdark z-30 md:py-20 lg:min-h-[calc(100vh-64px-96px)]'>
+            <div className='flex flex-col items-start justify-between w-full md:flex-row'>
+              <div className='flex flex-col relative'>
+                <h1 className='-rotate-3 font-normal font-sympath origin-bottomn text-cred'>
                   here are
                 </h1>
-                <h1 className='text-cdark font-bold'>Our</h1>
-                <h1 className='text-cdark font-bold'>
+                <h1 className='font-bold text-cdark'>Our</h1>
+                <h1 className='font-bold text-cdark'>
                   Sponsorsh<span className='font-pilow'>i</span>
                   ps
                 </h1>
               </div>
               <div className='max-w-sm'>
-                <p className='w-full text-justify'>
+                <p className='text-justify w-full'>
                   Thankyou, it&apos;s been a roller coaster journey to host 3
                   Pre-Events and a Main Event in ± 4 months
                 </p>
               </div>
             </div>
 
-            <div className='flex flex-col gap-y-8 justify-center items-center w-4/5 md:gap-y-2'>
-              <div className='grid gap-x-4 gap-y-8 place-items-center md:grid-cols-2'>
+            <div className='flex flex-col gap-y-8 items-center justify-center w-4/5 md:gap-y-2'>
+              <div className='gap-x-4 gap-y-8 grid place-items-center md:grid-cols-2'>
                 {big_sponsor_logo.map((image, i) => (
                   <img key={i} src={image} alt='logo sponsor' />
                 ))}
               </div>
-              <div className='grid grid-cols-2 gap-x-4 place-items-center md:grid-cols-4'>
+              <div className='gap-x-4 grid grid-cols-2 place-items-center md:grid-cols-4'>
                 {small_sponsor_logo.map((image, i) => (
                   <img key={i} src={image} alt='logo sponsor' />
                 ))}
               </div>
             </div>
 
-            <div className='flex justify-between items-start w-full'>
+            <div className='flex items-start justify-between w-full'>
               <Logo isDark className='w-20' />
               <p className='text-cdark text-sm'>@2022</p>
             </div>
           </div>
-          <div className='overflow-hidden absolute inset-0 pointer-events-none'>
+          <div className='absolute inset-0 overflow-hidden pointer-events-none'>
             <NextImage
               src='/images/forgot-password/float.png'
               width={365}
               height={402}
               alt='float'
-              className='absolute right-0 bottom-0 w-full translate-x-1/4 translate-y-1/4 md:w-1/2'
+              className='absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-full md:w-1/2'
             />
             <NextImage
               src='/images/forgot-password/float.png'
               width={365}
               height={402}
               alt='float'
-              className='absolute top-0 left-0 w-full -translate-x-1/3 -translate-y-1/4 md:w-1/2 md:-translate-x-1/2'
+              className='-translate-x-1/3 -translate-y-1/4 absolute left-0 top-0 w-full md:-translate-x-1/2 md:w-1/2'
             />
           </div>
         </section>
