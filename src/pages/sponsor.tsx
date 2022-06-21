@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import * as React from 'react';
 
+import clsxm from '@/lib/clsxm';
+
 import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
 import NextImage from '@/components/NextImage';
@@ -54,10 +56,15 @@ export default function SponsorPage() {
             <div className='flex flex-col gap-y-8 items-center justify-center w-4/5 md:gap-y-2'>
               <div className='gap-x-4 gap-y-8 grid place-items-center md:grid-cols-2'>
                 {big_sponsor_logo.map((image, i) => (
-                  <img key={i} src={image} alt='logo sponsor' />
+                  <img
+                    key={i}
+                    src={image}
+                    alt='logo sponsor'
+                    className={clsxm(i == 1 && 'w-1/3')}
+                  />
                 ))}
               </div>
-              <div className='gap-x-4 grid grid-cols-2 place-items-center md:grid-cols-4'>
+              <div className='gap-x-8 grid grid-cols-3 place-items-center md:grid-cols-5'>
                 {small_sponsor_logo.map((image, i) => (
                   <img key={i} src={image} alt='logo sponsor' />
                 ))}
