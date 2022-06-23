@@ -17,8 +17,7 @@ export function openGraph({
     ? encodeURIComponent(templateTitle.trim())
     : undefined;
   const ogDesc = encodeURIComponent(description.trim());
-  //!TO DO : self host open graph
-  return `https://og.thcl.dev/api/general?siteName=${ogSiteName}&description=${ogDesc}&logo=${ogLogo}${
+  return `https://og-blush.vercel.app/api/general?siteName=${ogSiteName}&description=${ogDesc}&logo=${ogLogo}${
     ogTemplateTitle ? `&templateTitle=${ogTemplateTitle}` : ''
   }`;
 }
