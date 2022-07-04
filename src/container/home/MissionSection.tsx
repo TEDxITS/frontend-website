@@ -9,11 +9,7 @@ import StoryBlobIllustrationMobile from '@/assets/svg/StoryBlobIllustrationMobil
 
 export default function MissionSection() {
   return (
-    <Parallax
-      y={[-10, 10]}
-      tagOuter='figure'
-      className='flex relative flex-col'
-    >
+    <Parallax speed={-10} className='flex relative flex-col'>
       <StoryBlobIllustration className='hidden absolute inset-0 z-10 w-full lg:block' />
       <StoryBlobIllustrationMobile className='block absolute inset-0 z-10 w-full lg:hidden' />
       <div className='bg-story-mobile flex overflow-hidden z-20 pt-20 w-full bg-bottom bg-no-repeat bg-cover md:bg-story-desktop lg:pt-44'>
