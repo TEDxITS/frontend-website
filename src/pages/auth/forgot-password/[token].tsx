@@ -170,7 +170,7 @@ const ResetPasswordPage = () => {
             width={441}
             height={220}
             alt='Ticket'
-            className='absolute -left-16 top-1/2 -rotate-12'
+            className='absolute -left-16 top-1/2 -rotate-90'
             imgClassName='drop-shadow-lg'
           />
           <NextImage
