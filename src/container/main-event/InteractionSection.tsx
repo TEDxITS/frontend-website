@@ -432,7 +432,7 @@ export default function InteractionSection() {
                   <div className='bg-paper absolute inset-0 bg-cover pointer-events-none'></div>
                 </button>
               ))}
-              <div className='bg-clight h-[1px] absolute inset-x-0 top-1/2 w-full -translate-y-1/2'></div>
+              <div className='bg-cdark h-[1px] absolute inset-x-0 top-1/2 w-full -translate-y-1/2'></div>
             </div>
 
             <div className='flex justify-end w-full'>

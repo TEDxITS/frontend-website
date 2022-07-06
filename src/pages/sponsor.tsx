@@ -3,26 +3,13 @@ import * as React from 'react';
 
 import clsxm from '@/lib/clsxm';
 
+import { big_sponsor_logo, small_sponsor_logo } from '@/data/sponsor';
+
 import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
 import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
 import Logo from '@/components/tabs/Logo';
-
-const big_sponsor_logo = [
-  'https://res.cloudinary.com/tedxits/image/upload/v1655782600/merch/sponsor/bni_tslxcg.png',
-  'https://res.cloudinary.com/tedxits/image/upload/v1655782600/merch/sponsor/pamapersada_uoen3f.png',
-];
-
-const small_sponsor_logo = [
-  'https://res.cloudinary.com/tedxits/image/upload/v1655782600/merch/sponsor/skk-migas_fua17w.png',
-  'https://res.cloudinary.com/tedxits/image/upload/v1655782599/merch/sponsor/kei-removebg-preview_ew7izq.png',
-  'https://res.cloudinary.com/tedxits/image/upload/v1655782600/merch/sponsor/pupuk-indonesia_oi8mdp.png',
-  'https://res.cloudinary.com/tedxits/image/upload/v1655782600/merch/sponsor/linus-trans_h5w6xm.png',
-  'https://res.cloudinary.com/tedxits/image/upload/v1655782600/merch/sponsor/paragon_jyiqnd.png',
-  'https://res.cloudinary.com/tedxits/image/upload/v1655782599/merch/sponsor/print-and-print_haojw3.png',
-  'https://res.cloudinary.com/tedxits/image/upload/v1655782600/merch/sponsor/periksain_f8ydg6.png',
-];
 
 export default function SponsorPage() {
   return (
@@ -40,10 +27,7 @@ export default function SponsorPage() {
                   here are
                 </h1>
                 <h1 className='text-cdark font-bold'>Our</h1>
-                <h1 className='text-cdark font-bold'>
-                  Sponsorsh<span className='font-pilow'>i</span>
-                  ps
-                </h1>
+                <h1 className='text-cdark font-bold'>Sponsors</h1>
               </div>
               <div className='max-w-sm'>
                 <p className='w-full text-justify'>
