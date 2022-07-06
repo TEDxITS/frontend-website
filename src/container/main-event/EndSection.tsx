@@ -40,7 +40,7 @@ export default function EndSection() {
               height={322}
               src='https://res.cloudinary.com/tedxits/image/upload/v1656926180/merch/main-event/end/Asset_41-80_l2pzdt.jpg'
               alt='Group Photo'
-              className='overflow-hidden w-16 rounded-full shadow-inner md:w-36'
+              className='overflow-hidden w-12 rounded-full shadow-inner md:w-36'
               useSkeleton
             />
             <h1 className='text-cred font-normal tracking-tighter whitespace-nowrap md:text-8xl'>
@@ -59,7 +59,7 @@ export default function EndSection() {
               height={330}
               src='https://res.cloudinary.com/tedxits/image/upload/v1656931121/merch/main-event/end/Asset_46-100_cifdkr.jpg'
               alt='Group Photo'
-              className='overflow-hidden w-16 rounded-full shadow-inner md:w-36'
+              className='overflow-hidden w-10 rounded-full shadow-inner md:w-36'
               useSkeleton
             />
           </div>
@@ -75,7 +75,7 @@ export default function EndSection() {
               height={329}
               src='https://res.cloudinary.com/tedxits/image/upload/v1656926180/merch/main-event/end/Asset_43-80_nujaso.jpg'
               alt='Group Photo'
-              className='overflow-hidden w-16 rounded-full shadow-inner md:w-36'
+              className='overflow-hidden w-12 rounded-full shadow-inner md:w-36'
               useSkeleton
             />
           </div>

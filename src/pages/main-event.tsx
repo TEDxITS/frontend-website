@@ -4,6 +4,7 @@ import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
 import NextImage from '@/components/NextImage';
 import Seo from '@/components/Seo';
+import AfterMovieSection from '@/container/main-event/AfterMovieSection';
 import ElephantFlocksSection from '@/container/main-event/ElephantFlocksSection';
 import EndSection from '@/container/main-event/EndSection';
 import GallerySection from '@/container/main-event/GallerySection';
@@ -79,6 +80,8 @@ export default function MainEventPage() {
                   alt='Main Event Text'
                   className='w-[70%] md:max-w-xs'
                   src='https://res.cloudinary.com/tedxits/image/upload/v1656570975/merch/main-event/landing-page/main-event-text_wsiyh5.svg'
+                  priority
+                  useSkeleton
                 />
                 <div className='mt-auto'>
                   <p className='leading-none'>
@@ -130,13 +133,9 @@ export default function MainEventPage() {
         </section>
 
         <section className='bg-[#F0EEEB] overflow-hidden'>
-          <div className='bg-paper'>
+          <div className='bg-paper flex flex-col gap-16'>
             <EndSection />
-          </div>
-        </section>
-
-        <section className='bg-[#F0EEEB] overflow-hidden'>
-          <div className='bg-paper'>
+            <AfterMovieSection />
             <SponsorSection />
           </div>
         </section>

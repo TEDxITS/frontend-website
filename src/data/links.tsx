@@ -16,11 +16,11 @@ type SoialMediaLinkType = LinkType & {
 //#region  //*=========== Link Data ===========
 export const pageLinks: LinkType[] = [{ href: '/', label: 'Home' }];
 
-// event links
 export const eventLinks: LinkType[] = [
-  { href: '/call-for-local-speaker', label: 'Call for Local Speakers' },
-  { href: '/black-elephant-mail', label: 'Black Elephant Mail' },
+  { href: '/main-event', label: 'Main Event' },
   { href: '/pre-events', label: 'Pre Events' },
+  { href: '/black-elephant-mail', label: 'Black Elephant Mail' },
+  { href: '/call-for-local-speaker', label: 'Call for Local Speakers' },
 ];
 
 export const aboutLinks: LinkType[] = [
