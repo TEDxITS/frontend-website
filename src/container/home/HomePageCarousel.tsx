@@ -3,15 +3,13 @@ import React from 'react';
 
 import clsxm from '@/lib/clsxm';
 
+import { LANDING_PAGE_PHOTO } from '@/data/main_event';
+
 import NextImage from '@/components/NextImage';
 
 //#region  //*=========== Image Data ===========
 //change this according to your data
-const homePageImage = [
-  'https://res.cloudinary.com/tedxits/image/upload/v1654053867/event/pre-event-3/IMG_05_r8xzoo.jpg',
-  'https://res.cloudinary.com/tedxits/image/upload/v1654053864/event/pre-event-3/IMG_01_mjpemw.jpg',
-  'https://res.cloudinary.com/tedxits/image/upload/v1654053864/event/pre-event-3/IMG_12_mjzypg.jpg',
-];
+const homePageImage = [...LANDING_PAGE_PHOTO];
 const homePageStyle = [
   'relative -top-0 left-0 z-[4]',
   'absolute -top-[2rem] left-[10rem] z-[3] opacity-95',

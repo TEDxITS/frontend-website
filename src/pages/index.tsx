@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import clsxm from '@/lib/clsxm';
 
-import { pre_event_3_data } from '@/data/event';
+import { MAIN_EVENT_DATA } from '@/data/main_event';
 
 import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
@@ -20,9 +20,9 @@ export default function HomePage() {
       <main className='bg-cgray flex flex-col'>
         <section className='bg-blob-1 bg-cdark text-clight relative z-20 pt-8 h-full bg-bottom bg-no-repeat bg-cover md:pt-16'>
           <div
-            className='absolute inset-0 bg-center bg-cover opacity-20'
+            className='absolute inset-0 bg-center bg-cover opacity-70'
             style={{
-              backgroundImage: `url(${pre_event_3_data.backgroundImage})`,
+              backgroundImage: `url(${MAIN_EVENT_DATA.backgroundImage})`,
             }}
           ></div>
           <div className='to-cdark absolute inset-0 z-10 bg-cover bg-gradient-to-b from-transparent'></div>

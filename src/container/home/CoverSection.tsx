@@ -1,9 +1,8 @@
 import React from 'react';
 
-import { pre_event_3_data } from '@/data/event';
-
 import ArrowDownButton from '@/components/buttons/ArrowDownButton';
 import ButtonLink from '@/components/links/ButtonLink';
+import NextImage from '@/components/NextImage';
 
 import DynamicCarousel from './DynamicCarousel';
 import HomePageCarousel from './HomePageCarousel';
@@ -25,15 +24,28 @@ export default function CoverSection() {
             Feel the eye-opening experience by exploring novel ideas and unseen
             perspectives through meaningful interaction.
           </h2> */}
+          <div className='flex flex-col gap-4 items-center w-full md:items-start'>
+            <NextImage
+              width={439}
+              height={228}
+              alt='Main Event Text'
+              className='w-[70%] md:max-w-xs'
+              src='https://res.cloudinary.com/tedxits/image/upload/v1656570975/merch/main-event/landing-page/main-event-text_wsiyh5.svg'
+              priority
+              useSkeleton
+            />
+            <div className='flex items-start mt-auto md:flex-col'>
+              <p className='leading-none'>
+                <span className='font-pilow'>19</span> of
+              </p>
+              <p className='ml-2 leading-none md:ml-4'>
+                June <span className='font-pilow'>2022</span>.
+              </p>
+            </div>
 
-          <div className='flex flex-col md:gap-4'>
-            <h2 className='font-fivo'>{pre_event_3_data.subTitle}</h2>
-            <h1 className='font-fivo mt-2 font-bold'>
-              {pre_event_3_data.title}
-            </h1>
-            <p className='text-lg'>
-              The terrifying backspace that hides undelivered messages is
-              crashed.
+            <p className='max-w-sm text-sm'>
+              Feel the eye-opening experience by exploring novel ideas and
+              unseen perspectives through meaningful interaction.
             </p>
           </div>
 
@@ -42,7 +54,7 @@ export default function CoverSection() {
             <ButtonLink
               variant='primary'
               className='text-md md:text-xl'
-              href='/pre-events'
+              href='/main-event'
             >
               Discover
             </ButtonLink>

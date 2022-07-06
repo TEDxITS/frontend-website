@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { MAIN_EVENT_DATA } from '@/data/main_event';
+
 import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
 import NextImage from '@/components/NextImage';
@@ -22,8 +24,7 @@ export default function MainEventPage() {
         <section
           className='flex relative z-10 flex-col pt-8 bg-center bg-no-repeat bg-cover md:pt-16'
           style={{
-            backgroundImage:
-              'url(https://res.cloudinary.com/tedxits/image/upload/v1656931121/merch/main-event/end/Asset_46-100_cifdkr.jpg)',
+            backgroundImage: `url(${MAIN_EVENT_DATA.backgroundImage})`,
           }}
         >
           <Header />
