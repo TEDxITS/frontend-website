@@ -8,6 +8,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 import clsxm from '@/lib/clsxm';
 
+import { LANDING_PAGE_PHOTO } from '@/data/main_event';
+
 import NextImage from '@/components/NextImage';
 
 // @ts-ignore
@@ -33,7 +35,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='https://res.cloudinary.com/tedxits/image/upload/v1654053867/event/pre-event-3/IMG_05_r8xzoo.jpg'
+          src={LANDING_PAGE_PHOTO[0]}
           alt=''
           width={1980}
           height={1980}
@@ -48,7 +50,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='https://res.cloudinary.com/tedxits/image/upload/v1654053864/event/pre-event-3/IMG_01_mjpemw.jpg'
+          src={LANDING_PAGE_PHOTO[1]}
           alt=''
           width={1980}
           height={1980}
@@ -63,7 +65,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='https://res.cloudinary.com/tedxits/image/upload/v1654053864/event/pre-event-3/IMG_12_mjzypg.jpg'
+          src={LANDING_PAGE_PHOTO[2]}
           alt=''
           width={1980}
           height={1980}
@@ -78,7 +80,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='https://res.cloudinary.com/tedxits/image/upload/v1654053867/event/pre-event-3/IMG_05_r8xzoo.jpg'
+          src={LANDING_PAGE_PHOTO[0]}
           alt=''
           width={1980}
           height={1980}
@@ -93,7 +95,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='https://res.cloudinary.com/tedxits/image/upload/v1654053864/event/pre-event-3/IMG_01_mjpemw.jpg'
+          src={LANDING_PAGE_PHOTO[1]}
           alt=''
           width={1980}
           height={1980}
@@ -108,7 +110,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='https://res.cloudinary.com/tedxits/image/upload/v1654053864/event/pre-event-3/IMG_12_mjzypg.jpg'
+          src={LANDING_PAGE_PHOTO[2]}
           alt=''
           width={1980}
           height={1980}
@@ -123,7 +125,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='https://res.cloudinary.com/tedxits/image/upload/v1654053867/event/pre-event-3/IMG_05_r8xzoo.jpg'
+          src={LANDING_PAGE_PHOTO[0]}
           alt=''
           width={1980}
           height={1980}
@@ -138,7 +140,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='https://res.cloudinary.com/tedxits/image/upload/v1654053864/event/pre-event-3/IMG_01_mjpemw.jpg'
+          src={LANDING_PAGE_PHOTO[1]}
           alt=''
           width={1980}
           height={1980}
@@ -153,7 +155,7 @@ export default function DynamicCarousel({ className }: DynamicCarouselProps) {
       content: (
         <NextImage
           useSkeleton={true}
-          src='https://res.cloudinary.com/tedxits/image/upload/v1654053864/event/pre-event-3/IMG_12_mjzypg.jpg'
+          src={LANDING_PAGE_PHOTO[2]}
           alt=''
           width={1980}
           height={1980}
