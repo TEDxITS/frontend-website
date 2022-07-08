@@ -43,11 +43,11 @@ export default function ElephantFlocksSection() {
             </div>
             <div className='hidden flex-shrink-0 w-full max-w-xs md:block'>
               <p className='animate-[float_4s_ease-in-out_infinite] font-fivo text-xs leading-none'>
-                People beyond the curtain of the successful TEDxITS 2022. We are
+                People behind the scenes of a successful TEDxITS 2022. We are
                 excited to reveal the pack who have participated in our
-                event&apos;s long journey. Mass gratitude was sent to each
-                individual within through the excitement, worrisome, and the
-                roller coaster ride of emotions in the process of TEDxITS.
+                event&apos;s long journey. Mass gratitude are expressed to each
+                and every individual through the excitement, worries, and our
+                roller-coaster ride of preparing TEDxITS 2022.
               </p>
             </div>
           </Tween>
