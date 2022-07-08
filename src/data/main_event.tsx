@@ -1,7 +1,7 @@
 export const MAIN_EVENT_DATA = {
   backgroundImage:
     'https://res.cloudinary.com/tedxits/image/upload/v1656931121/merch/main-event/end/Asset_46-100_cifdkr.jpg',
-  afterMovie: 'https://www.youtube.com/embed/pNxzzJfvrDY',
+  afterMovie: 'https://www.youtube.com/embed/-fJeadTILDc',
 };
 
 type PhotoDataType = {

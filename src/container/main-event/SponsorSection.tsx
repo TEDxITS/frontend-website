@@ -17,7 +17,7 @@ export default function SponsorSection() {
         <p className='text-cdark font-bold'>Supported By</p>
       </div>
 
-      <div className='flex flex-col gap-y-8 justify-center items-center md:gap-y-2'>
+      <div className='flex flex-col gap-y-8 justify-center items-center w-4/5 md:gap-y-2'>
         <div className='grid gap-x-4 gap-y-8 place-items-center md:grid-cols-2'>
           <Tween
             from={{
@@ -37,7 +37,7 @@ export default function SponsorSection() {
                 <img
                   src={image}
                   alt='logo sponsor'
-                  className={clsxm(i == 1 && 'w-2/3', 'mx-auto')}
+                  className={clsxm(i == 1 && 'w-1/3', 'mx-auto')}
                 />
               </div>
             ))}
