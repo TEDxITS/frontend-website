@@ -48,9 +48,9 @@ export const TALK_DATA: PhotoDataType[] = [
     name: 'Dedhy Trunoyudho',
     title: 'Food Waste Isn’t Good Taste',
     title_1:
-      'Believing food waste will turn into compost in a landfill is the equivalent of believing that the Santa Clause exists.',
+      'Believing food waste will turn into compost in a landfill is the equivalent of believing that the Santa Claus exists.',
     title_2:
-      'We’re getting closer to the food crisis, so appreciate your food and clean your plate.',
+      'Food is becoming scarce, so appreciate your food and clean your plate.',
     backgroundImage:
       'https://res.cloudinary.com/tedxits/image/upload/v1656734190/merch/main-event/speaker-photo/3.dedhy/1_jdzhmd.jpg',
     photo: [
@@ -63,9 +63,9 @@ export const TALK_DATA: PhotoDataType[] = [
     name: 'Permata Adinda',
     title: 'Underprivileged Gen Z: Being Young, Woke, and Broke',
     title_1:
-      'Generation Z is often thought of as a life-changer with plenty of privileges they have.',
+      'Gen Z is often considered life-changers with the privileges they have. But, In fact, only a handful of Gen Z have the privilege to be accompanied with a safety net to support their lives.',
     title_2:
-      'In fact, only a handful of Gen Z have the privilege accompanied by a safety net to support their lives. Without a safety net, will only widen the gap of inequality.',
+      'Without this safety net, the gap of inequality is just larger than ever.',
     backgroundImage:
       'https://res.cloudinary.com/tedxits/image/upload/v1656734189/merch/main-event/speaker-photo/4.permata/1_mptaak.jpg',
     photo: [
@@ -106,7 +106,8 @@ export const TALK_DATA: PhotoDataType[] = [
     title: 'Debunking the Virginity Myth',
     title_1:
       'Why does virginity seem so shameful? What do we actually ‘lose’ in losing virginity?',
-    title_2: 'The scientific approach to spread the facts about virginity.',
+    title_2:
+      'This is the scientific approach on virginity and the fact about the female genetalia.',
     backgroundImage:
       'https://res.cloudinary.com/tedxits/image/upload/v1656734192/merch/main-event/speaker-photo/7.%20dea/1_gidwe1.jpg',
     photo: [
@@ -121,7 +122,7 @@ export const TALK_DATA: PhotoDataType[] = [
     title_1:
       'Nurture or Nature? Parents are the people who shape us. The first people we trust and love.',
     title_2:
-      'Do we need to fulfill their desire of seeing us in their point of view? Children in the eye of parents, the ‘successful product’',
+      'Do we need to fulfil all their desires? Follow their point of views? Become their "successful products"?',
     backgroundImage:
       'https://res.cloudinary.com/tedxits/image/upload/v1656734191/merch/main-event/speaker-photo/8.%20lady/1_bn2u2i.jpg',
     photo: [
@@ -135,10 +136,41 @@ export const TALK_DATA: PhotoDataType[] = [
 export const INTERACTION_DATA: PhotoDataType[] = [
   {
     name: 'Interactive Session',
+    title: 'Letter and Envelope',
+    title_1: (
+      <>
+        <b>We’ll talk about it later…</b> Too shy to say what you are actually
+        feeling to your loved ones?
+      </>
+    ),
+    title_2: (
+      <>
+        Disclose by writing it on a piece of paper and wrap it on an envelope.
+        <b>They won’t know but they will listen</b>
+      </>
+    ),
+    backgroundImage:
+      'https://res.cloudinary.com/tedxits/image/upload/v1657281411/merch/main-event/interaction/0.%20letter%20and%20envelope/1_codm14.jpg',
+    photo: [
+      'https://res.cloudinary.com/tedxits/image/upload/v1657281411/merch/main-event/interaction/0.%20letter%20and%20envelope/2_nnxfmz.jpg',
+      'https://res.cloudinary.com/tedxits/image/upload/v1657281411/merch/main-event/interaction/0.%20letter%20and%20envelope/3_akt8fi.jpg',
+      'https://res.cloudinary.com/tedxits/image/upload/v1657281411/merch/main-event/interaction/0.%20letter%20and%20envelope/4_klyziz.jpg',
+    ],
+  },
+  {
+    name: 'Interactive Session',
     title: 'Snowball Fights',
-    title_1:
-      'Write, rumple, and throw! The unraveled words have stained the blank letter.',
-    title_2: 'Let it be thrown in rumpling, voiced loudly, and acted onwards.',
+    title_1: (
+      <>
+        <b>Write, rumple, and throw!</b> The unraveled words have stained the
+        blank letter.
+      </>
+    ),
+    title_2: (
+      <>
+        Let the rumpled paper be <b>read, voiced, and acted upon</b>.
+      </>
+    ),
     backgroundImage:
       'https://res.cloudinary.com/tedxits/image/upload/v1657041718/merch/main-event/interaction/1.%20snow%20ball%20fights/1_pb0gfd.jpg',
     photo: [
@@ -152,8 +184,12 @@ export const INTERACTION_DATA: PhotoDataType[] = [
     title: 'Shush! It’s Taboo',
     title_1:
       'It’s the things we’re told to lower our voices for. It is easier that way, right?',
-    title_2:
-      'But, let me tell you a secret: Unveil the pieces and see what’s actually up.',
+    title_2: (
+      <>
+        But, let me tell you a secret: <b>Unveil the pieces</b> and see what’s
+        actually up.
+      </>
+    ),
     backgroundImage:
       'https://res.cloudinary.com/tedxits/image/upload/v1657041718/merch/main-event/interaction/2.%20sssh/1_c6p6g9.jpg',
     photo: [
@@ -165,10 +201,18 @@ export const INTERACTION_DATA: PhotoDataType[] = [
   {
     name: 'Interactive Session',
     title: 'I am Listening',
-    title_1:
-      '"Lot of words, a lot of thoughts, a lot ofe motions …, but it left unspoken.',
-    title_2:
-      ' So here I am, a piece of board that will hear you, just grab the red paper, and express everything on it."',
+    title_1: (
+      <>
+        Lots of words, thoughts, and emotions.. but they are left{' '}
+        <b>unspoken</b>
+      </>
+    ),
+    title_2: (
+      <>
+        So here I am, a piece of board that will hear you, just grab the red
+        paper, and <b>express everything</b> on it.
+      </>
+    ),
     backgroundImage:
       'https://res.cloudinary.com/tedxits/image/upload/v1657041722/merch/main-event/interaction/3.%20Iam%20listening/1_hc7hnn.jpg',
     photo: [
@@ -201,8 +245,12 @@ export const INTERACTION_DATA: PhotoDataType[] = [
     title: 'The “Dear, Diary”',
     title_1:
       "A camera is the save button for the mind's eyes. It captures the moment that's gone forever,",
-    title_2:
-      'then turns it into a picture that tells a story. Now, it is safe and sound. ',
+    title_2: (
+      <>
+        then turns it into a picture that tells <b>a story</b>. Now, it is safe
+        and sound.{' '}
+      </>
+    ),
     backgroundImage:
       'https://res.cloudinary.com/tedxits/image/upload/v1657041725/merch/main-event/interaction/5.%20Dear%20Diary/1_hlcfq3.jpg',
     photo: [

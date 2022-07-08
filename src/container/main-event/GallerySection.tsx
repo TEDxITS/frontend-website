@@ -80,17 +80,20 @@ const GALLERY_DATA_5: GalleryDataType[] = [
       'https://res.cloudinary.com/tedxits/image/upload/v1656913951/merch/main-event/elephant-flocks/gallery/Asset_29-100_dbbvoy.jpg',
   },
   {
-    content: <div></div>,
+    content:
+      'https://res.cloudinary.com/tedxits/image/upload/v1657279611/merch/main-event/elephant-flocks/gallery/LINE_ALBUM_070722_220708_1_rtnxun.jpg',
   },
   {
     content:
       'https://res.cloudinary.com/tedxits/image/upload/v1656913951/merch/main-event/elephant-flocks/gallery/Asset_30-100_hwmrzo.jpg',
   },
   {
-    content: <div></div>,
+    content:
+      'https://res.cloudinary.com/tedxits/image/upload/v1657279612/merch/main-event/elephant-flocks/gallery/LINE_ALBUM_070722_220708_2_ratmde.jpg',
   },
   {
-    content: <div></div>,
+    content:
+      'https://res.cloudinary.com/tedxits/image/upload/v1657279612/merch/main-event/elephant-flocks/gallery/LINE_ALBUM_070722_220708_0_fowolp.jpg',
   },
   {
     content: (
@@ -108,7 +111,8 @@ const GALLERY_DATA_5: GalleryDataType[] = [
     ),
   },
   {
-    content: <div></div>,
+    content:
+      'https://res.cloudinary.com/tedxits/image/upload/v1657279611/merch/main-event/elephant-flocks/gallery/LINE_ALBUM_070722_220708_bf979y.jpg',
   },
   {
     content:
@@ -257,12 +261,24 @@ const GALLERY_DATA_2: GalleryDataType[] = [
       'https://res.cloudinary.com/tedxits/image/upload/v1656913950/merch/main-event/elephant-flocks/gallery/Asset_31-100_s5y9pb.jpg',
   },
   {
+    content:
+      'https://res.cloudinary.com/tedxits/image/upload/v1657279612/merch/main-event/elephant-flocks/gallery/LINE_ALBUM_070722_220708_2_ratmde.jpg',
+  },
+  {
+    content:
+      'https://res.cloudinary.com/tedxits/image/upload/v1657279612/merch/main-event/elephant-flocks/gallery/LINE_ALBUM_070722_220708_0_fowolp.jpg',
+  },
+  {
     content: (
       <p className='text-cdark text-sm leading-none'>
         We are excited to reveal the pack who have participated in our
         event&apos;s long journey.
       </p>
     ),
+  },
+  {
+    content:
+      'https://res.cloudinary.com/tedxits/image/upload/v1657279611/merch/main-event/elephant-flocks/gallery/LINE_ALBUM_070722_220708_1_rtnxun.jpg',
   },
   {
     content:
@@ -274,7 +290,7 @@ const GALLERY_DATA_2: GalleryDataType[] = [
   },
   {
     content:
-      'https://res.cloudinary.com/tedxits/image/upload/v1656913950/merch/main-event/elephant-flocks/gallery/Asset_34-100_mog8fx.jpg',
+      'https://res.cloudinary.com/tedxits/image/upload/v1657279611/merch/main-event/elephant-flocks/gallery/LINE_ALBUM_070722_220708_bf979y.jpg',
   },
   {
     content: (
@@ -315,6 +331,10 @@ const GALLERY_DATA_2: GalleryDataType[] = [
   {
     content:
       'https://res.cloudinary.com/tedxits/image/upload/v1656913949/merch/main-event/elephant-flocks/gallery/Asset_39-100_jqgvl4.jpg',
+  },
+  {
+    content:
+      'https://res.cloudinary.com/tedxits/image/upload/v1656913950/merch/main-event/elephant-flocks/gallery/Asset_34-100_mog8fx.jpg',
   },
   {
     content: (

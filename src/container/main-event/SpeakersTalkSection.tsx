@@ -308,7 +308,7 @@ export default function SpeakersTalkSection() {
               />
               <div className='flex gap-6 mt-2'>
                 <p className='font-fivo text-[10px] w-full leading-tight select-none'>
-                  {`${TALK_DATA[active].title_1}. ${TALK_DATA[active].title_2}`}
+                  {TALK_DATA[active].title_1}. {TALK_DATA[active].title_2}
                 </p>
 
                 <NextImage
